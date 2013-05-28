@@ -1,0 +1,573 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CE7C0EA3172FBE4B00E4A8AC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7C0EA2172FBE4B00E4A8AC /* UIKit.framework */; };
+		CE7C0EA5172FBE4B00E4A8AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7C0EA4172FBE4B00E4A8AC /* Foundation.framework */; };
+		CE7C0EA7172FBE4B00E4A8AC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7C0EA6172FBE4B00E4A8AC /* CoreGraphics.framework */; };
+		CE7C0EAD172FBE4B00E4A8AC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE7C0EAB172FBE4B00E4A8AC /* InfoPlist.strings */; };
+		CE7C0EAF172FBE4B00E4A8AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7C0EAE172FBE4B00E4A8AC /* main.m */; };
+		CE7C0EF2172FBF1B00E4A8AC /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7C0EDC172FBF1B00E4A8AC /* AFHTTPClient.m */; };
+		CE7C0EF3172FBF1B00E4A8AC /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7C0EDE172FBF1B00E4A8AC /* AFHTTPRequestOperation.m */; };
+		CE7C0EF4172FBF1B00E4A8AC /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7C0EE0172FBF1B00E4A8AC /* AFImageRequestOperation.m */; };
+		CE7C0EF5172FBF1B00E4A8AC /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7C0EE2172FBF1B00E4A8AC /* AFJSONRequestOperation.m */; };
+		CE7C0EF6172FBF1B00E4A8AC /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7C0EE4172FBF1B00E4A8AC /* AFNetworkActivityIndicatorManager.m */; };
+		CE7C0EF7172FBF1B00E4A8AC /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7C0EE7172FBF1B00E4A8AC /* AFPropertyListRequestOperation.m */; };
+		CE7C0EF8172FBF1B00E4A8AC /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7C0EE9172FBF1B00E4A8AC /* AFURLConnectionOperation.m */; };
+		CE7C0EF9172FBF1B00E4A8AC /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7C0EEB172FBF1B00E4A8AC /* AFXMLRequestOperation.m */; };
+		CE7C0EFA172FBF1B00E4A8AC /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7C0EED172FBF1B00E4A8AC /* UIImageView+AFNetworking.m */; };
+		CE7C0EFB172FBF1B00E4A8AC /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CE7C0EEF172FBF1B00E4A8AC /* SVProgressHUD.bundle */; };
+		CE7C0EFC172FBF1B00E4A8AC /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7C0EF1172FBF1B00E4A8AC /* SVProgressHUD.m */; };
+		CE7C0F01172FC00500E4A8AC /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE7C0F00172FC00500E4A8AC /* MainStoryboard.storyboard */; };
+		CE7C0F09172FC04B00E4A8AC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7C0F08172FC04B00E4A8AC /* QuartzCore.framework */; };
+		CE7C0F0B172FC05300E4A8AC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7C0F0A172FC05300E4A8AC /* CoreLocation.framework */; };
+		CE7C0F0D172FC07600E4A8AC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7C0F0C172FC07600E4A8AC /* MobileCoreServices.framework */; };
+		CE7C0F0F172FC08600E4A8AC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7C0F0E172FC08600E4A8AC /* SystemConfiguration.framework */; };
+		CE7C0F22172FC2CC00E4A8AC /* KEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7C0F13172FC2CC00E4A8AC /* KEViewController.m */; };
+		CE7C0F23172FC2CC00E4A8AC /* KELocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7C0F16172FC2CC00E4A8AC /* KELocationManager.m */; };
+		CE7C0F24172FC2CC00E4A8AC /* KEWeatherManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7C0F18172FC2CC00E4A8AC /* KEWeatherManager.m */; };
+		CE7C0F25172FC2CC00E4A8AC /* KEAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7C0F1A172FC2CC00E4A8AC /* KEAppDelegate.m */; };
+		CE7C0F26172FC2CC00E4A8AC /* KEObservation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7C0F1D172FC2CC00E4A8AC /* KEObservation.m */; };
+		CE7C0F27172FC2CC00E4A8AC /* GradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7C0F20172FC2CC00E4A8AC /* GradientView.m */; };
+		CE7C0F2D172FC36500E4A8AC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7C0F29172FC36500E4A8AC /* Default-568h@2x.png */; };
+		CE7C0F2E172FC36500E4A8AC /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7C0F2A172FC36500E4A8AC /* Default.png */; };
+		CE7C0F2F172FC36500E4A8AC /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7C0F2B172FC36500E4A8AC /* Default@2x.png */; };
+		CE7C0F30172FC36500E4A8AC /* images-2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CE7C0F2C172FC36500E4A8AC /* images-2.jpeg */; };
+		CE7C0F3317300F9E00E4A8AC /* KETommorowForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7C0F3217300F9E00E4A8AC /* KETommorowForecast.m */; };
+		CE7F06B21739176D00697A98 /* KEAfterTommorowForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7F06B11739176D00697A98 /* KEAfterTommorowForecast.m */; };
+		CE7F06B5173917AA00697A98 /* KEAfterAfterTommorowForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7F06B4173917AA00697A98 /* KEAfterAfterTommorowForecast.m */; };
+		CE7F06BC173A7E7F00697A98 /* KEMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7F06BB173A7E7F00697A98 /* KEMapViewController.m */; };
+		CE7F06BE173A7F5000697A98 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7F06BD173A7F5000697A98 /* MapKit.framework */; };
+		CE9C75CA173CED00008CFE31 /* WindowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9C75C9173CED00008CFE31 /* WindowView.xib */; };
+		CE9C75CD173CED5C008CFE31 /* KEWindowView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9C75CC173CED5C008CFE31 /* KEWindowView.m */; };
+		CE9D02C617437B2F0057968F /* KECityAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D02C517437B2F0057968F /* KECityAnnotation.m */; };
+		DE953F87174AD64500AC7915 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = DE953F86174AD64500AC7915 /* Place.m */; };
+		DEB839AD1748D7A0005D211F /* KEDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB839AC1748D7A0005D211F /* KEDataManager.m */; };
+		DEDCDCE11748001100D957EC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDCDCE01748001100D957EC /* CoreData.framework */; };
+		DEDCDCE717480B2C00D957EC /* Wezi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DEDCDCE517480B2C00D957EC /* Wezi.xcdatamodeld */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CE7C0E9F172FBE4B00E4A8AC /* Wezi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wezi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE7C0EA2172FBE4B00E4A8AC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CE7C0EA4172FBE4B00E4A8AC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CE7C0EA6172FBE4B00E4A8AC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CE7C0EAA172FBE4B00E4A8AC /* Wezi-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Wezi-Info.plist"; sourceTree = "<group>"; };
+		CE7C0EAC172FBE4B00E4A8AC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CE7C0EAE172FBE4B00E4A8AC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CE7C0EB0172FBE4B00E4A8AC /* Wezi-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Wezi-Prefix.pch"; sourceTree = "<group>"; };
+		CE7C0EDB172FBF1B00E4A8AC /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
+		CE7C0EDC172FBF1B00E4A8AC /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
+		CE7C0EDD172FBF1B00E4A8AC /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		CE7C0EDE172FBF1B00E4A8AC /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		CE7C0EDF172FBF1B00E4A8AC /* AFImageRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFImageRequestOperation.h; sourceTree = "<group>"; };
+		CE7C0EE0172FBF1B00E4A8AC /* AFImageRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFImageRequestOperation.m; sourceTree = "<group>"; };
+		CE7C0EE1172FBF1B00E4A8AC /* AFJSONRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFJSONRequestOperation.h; sourceTree = "<group>"; };
+		CE7C0EE2172FBF1B00E4A8AC /* AFJSONRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFJSONRequestOperation.m; sourceTree = "<group>"; };
+		CE7C0EE3172FBF1B00E4A8AC /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
+		CE7C0EE4172FBF1B00E4A8AC /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
+		CE7C0EE5172FBF1B00E4A8AC /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		CE7C0EE6172FBF1B00E4A8AC /* AFPropertyListRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPropertyListRequestOperation.h; sourceTree = "<group>"; };
+		CE7C0EE7172FBF1B00E4A8AC /* AFPropertyListRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFPropertyListRequestOperation.m; sourceTree = "<group>"; };
+		CE7C0EE8172FBF1B00E4A8AC /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		CE7C0EE9172FBF1B00E4A8AC /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		CE7C0EEA172FBF1B00E4A8AC /* AFXMLRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFXMLRequestOperation.h; sourceTree = "<group>"; };
+		CE7C0EEB172FBF1B00E4A8AC /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
+		CE7C0EEC172FBF1B00E4A8AC /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
+		CE7C0EED172FBF1B00E4A8AC /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		CE7C0EEF172FBF1B00E4A8AC /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		CE7C0EF0172FBF1B00E4A8AC /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		CE7C0EF1172FBF1B00E4A8AC /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		CE7C0F00172FC00500E4A8AC /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		CE7C0F08172FC04B00E4A8AC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CE7C0F0A172FC05300E4A8AC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		CE7C0F0C172FC07600E4A8AC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		CE7C0F0E172FC08600E4A8AC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		CE7C0F12172FC2CC00E4A8AC /* KEViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEViewController.h; sourceTree = "<group>"; };
+		CE7C0F13172FC2CC00E4A8AC /* KEViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEViewController.m; sourceTree = "<group>"; };
+		CE7C0F15172FC2CC00E4A8AC /* KELocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KELocationManager.h; sourceTree = "<group>"; };
+		CE7C0F16172FC2CC00E4A8AC /* KELocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KELocationManager.m; sourceTree = "<group>"; };
+		CE7C0F17172FC2CC00E4A8AC /* KEWeatherManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEWeatherManager.h; sourceTree = "<group>"; };
+		CE7C0F18172FC2CC00E4A8AC /* KEWeatherManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEWeatherManager.m; sourceTree = "<group>"; };
+		CE7C0F19172FC2CC00E4A8AC /* KEAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEAppDelegate.h; sourceTree = "<group>"; };
+		CE7C0F1A172FC2CC00E4A8AC /* KEAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEAppDelegate.m; sourceTree = "<group>"; };
+		CE7C0F1C172FC2CC00E4A8AC /* KEObservation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEObservation.h; sourceTree = "<group>"; };
+		CE7C0F1D172FC2CC00E4A8AC /* KEObservation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEObservation.m; sourceTree = "<group>"; };
+		CE7C0F1F172FC2CC00E4A8AC /* GradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientView.h; sourceTree = "<group>"; };
+		CE7C0F20172FC2CC00E4A8AC /* GradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientView.m; sourceTree = "<group>"; };
+		CE7C0F21172FC2CC00E4A8AC /* WeatherAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherAPIKey.h; sourceTree = "<group>"; };
+		CE7C0F29172FC36500E4A8AC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		CE7C0F2A172FC36500E4A8AC /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		CE7C0F2B172FC36500E4A8AC /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		CE7C0F2C172FC36500E4A8AC /* images-2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "images-2.jpeg"; sourceTree = "<group>"; };
+		CE7C0F3117300F9E00E4A8AC /* KETommorowForecast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KETommorowForecast.h; sourceTree = "<group>"; };
+		CE7C0F3217300F9E00E4A8AC /* KETommorowForecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KETommorowForecast.m; sourceTree = "<group>"; };
+		CE7F06B01739176D00697A98 /* KEAfterTommorowForecast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEAfterTommorowForecast.h; sourceTree = "<group>"; };
+		CE7F06B11739176D00697A98 /* KEAfterTommorowForecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEAfterTommorowForecast.m; sourceTree = "<group>"; };
+		CE7F06B3173917AA00697A98 /* KEAfterAfterTommorowForecast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEAfterAfterTommorowForecast.h; sourceTree = "<group>"; };
+		CE7F06B4173917AA00697A98 /* KEAfterAfterTommorowForecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEAfterAfterTommorowForecast.m; sourceTree = "<group>"; };
+		CE7F06BA173A7E7E00697A98 /* KEMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEMapViewController.h; sourceTree = "<group>"; };
+		CE7F06BB173A7E7F00697A98 /* KEMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEMapViewController.m; sourceTree = "<group>"; };
+		CE7F06BD173A7F5000697A98 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		CE9C75C9173CED00008CFE31 /* WindowView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WindowView.xib; sourceTree = "<group>"; };
+		CE9C75CB173CED5C008CFE31 /* KEWindowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEWindowView.h; sourceTree = "<group>"; };
+		CE9C75CC173CED5C008CFE31 /* KEWindowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEWindowView.m; sourceTree = "<group>"; };
+		CE9D02C417437B2F0057968F /* KECityAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KECityAnnotation.h; sourceTree = "<group>"; };
+		CE9D02C517437B2F0057968F /* KECityAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KECityAnnotation.m; sourceTree = "<group>"; };
+		DE953F85174AD64500AC7915 /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Place.h; sourceTree = "<group>"; };
+		DE953F86174AD64500AC7915 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
+		DEB839AB1748D7A0005D211F /* KEDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEDataManager.h; sourceTree = "<group>"; };
+		DEB839AC1748D7A0005D211F /* KEDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEDataManager.m; sourceTree = "<group>"; };
+		DEDCDCE01748001100D957EC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		DEDCDCE617480B2C00D957EC /* Wezi.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Wezi.xcdatamodel; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CE7C0E9C172FBE4B00E4A8AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEDCDCE11748001100D957EC /* CoreData.framework in Frameworks */,
+				CE7F06BE173A7F5000697A98 /* MapKit.framework in Frameworks */,
+				CE7C0F0F172FC08600E4A8AC /* SystemConfiguration.framework in Frameworks */,
+				CE7C0F0D172FC07600E4A8AC /* MobileCoreServices.framework in Frameworks */,
+				CE7C0F0B172FC05300E4A8AC /* CoreLocation.framework in Frameworks */,
+				CE7C0F09172FC04B00E4A8AC /* QuartzCore.framework in Frameworks */,
+				CE7C0EA3172FBE4B00E4A8AC /* UIKit.framework in Frameworks */,
+				CE7C0EA5172FBE4B00E4A8AC /* Foundation.framework in Frameworks */,
+				CE7C0EA7172FBE4B00E4A8AC /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CE7C0E96172FBE4B00E4A8AC = {
+			isa = PBXGroup;
+			children = (
+				CE7C0F10172FC2CC00E4A8AC /* Classes */,
+				CE7C0EA8172FBE4B00E4A8AC /* Supporting files */,
+				CE7C0EA1172FBE4B00E4A8AC /* Frameworks */,
+				CE7C0ED9172FBF1B00E4A8AC /* Libraries */,
+				CE7C0EFD172FBF2900E4A8AC /* Resourses */,
+				CE7C0EA0172FBE4B00E4A8AC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CE7C0EA0172FBE4B00E4A8AC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE7C0E9F172FBE4B00E4A8AC /* Wezi.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CE7C0EA1172FBE4B00E4A8AC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DEDCDCE01748001100D957EC /* CoreData.framework */,
+				CE7F06BD173A7F5000697A98 /* MapKit.framework */,
+				CE7C0F0E172FC08600E4A8AC /* SystemConfiguration.framework */,
+				CE7C0F0C172FC07600E4A8AC /* MobileCoreServices.framework */,
+				CE7C0F0A172FC05300E4A8AC /* CoreLocation.framework */,
+				CE7C0F08172FC04B00E4A8AC /* QuartzCore.framework */,
+				CE7C0EA2172FBE4B00E4A8AC /* UIKit.framework */,
+				CE7C0EA4172FBE4B00E4A8AC /* Foundation.framework */,
+				CE7C0EA6172FBE4B00E4A8AC /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE7C0EA8172FBE4B00E4A8AC /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				CE7C0EA9172FBE4B00E4A8AC /* Supporting Files */,
+			);
+			name = "Supporting files";
+			path = Wezi;
+			sourceTree = "<group>";
+		};
+		CE7C0EA9172FBE4B00E4A8AC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CE7C0EAA172FBE4B00E4A8AC /* Wezi-Info.plist */,
+				CE7C0EAB172FBE4B00E4A8AC /* InfoPlist.strings */,
+				CE7C0EAE172FBE4B00E4A8AC /* main.m */,
+				CE7C0EB0172FBE4B00E4A8AC /* Wezi-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CE7C0ED9172FBF1B00E4A8AC /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				CE7C0EDA172FBF1B00E4A8AC /* AFNetworking */,
+				CE7C0EEE172FBF1B00E4A8AC /* SVProgressHUD */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		CE7C0EDA172FBF1B00E4A8AC /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				CE7C0EDB172FBF1B00E4A8AC /* AFHTTPClient.h */,
+				CE7C0EDC172FBF1B00E4A8AC /* AFHTTPClient.m */,
+				CE7C0EDD172FBF1B00E4A8AC /* AFHTTPRequestOperation.h */,
+				CE7C0EDE172FBF1B00E4A8AC /* AFHTTPRequestOperation.m */,
+				CE7C0EDF172FBF1B00E4A8AC /* AFImageRequestOperation.h */,
+				CE7C0EE0172FBF1B00E4A8AC /* AFImageRequestOperation.m */,
+				CE7C0EE1172FBF1B00E4A8AC /* AFJSONRequestOperation.h */,
+				CE7C0EE2172FBF1B00E4A8AC /* AFJSONRequestOperation.m */,
+				CE7C0EE3172FBF1B00E4A8AC /* AFNetworkActivityIndicatorManager.h */,
+				CE7C0EE4172FBF1B00E4A8AC /* AFNetworkActivityIndicatorManager.m */,
+				CE7C0EE5172FBF1B00E4A8AC /* AFNetworking.h */,
+				CE7C0EE6172FBF1B00E4A8AC /* AFPropertyListRequestOperation.h */,
+				CE7C0EE7172FBF1B00E4A8AC /* AFPropertyListRequestOperation.m */,
+				CE7C0EE8172FBF1B00E4A8AC /* AFURLConnectionOperation.h */,
+				CE7C0EE9172FBF1B00E4A8AC /* AFURLConnectionOperation.m */,
+				CE7C0EEA172FBF1B00E4A8AC /* AFXMLRequestOperation.h */,
+				CE7C0EEB172FBF1B00E4A8AC /* AFXMLRequestOperation.m */,
+				CE7C0EEC172FBF1B00E4A8AC /* UIImageView+AFNetworking.h */,
+				CE7C0EED172FBF1B00E4A8AC /* UIImageView+AFNetworking.m */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		CE7C0EEE172FBF1B00E4A8AC /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				CE7C0EEF172FBF1B00E4A8AC /* SVProgressHUD.bundle */,
+				CE7C0EF0172FBF1B00E4A8AC /* SVProgressHUD.h */,
+				CE7C0EF1172FBF1B00E4A8AC /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		CE7C0EFD172FBF2900E4A8AC /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				CE7C0F28172FC36500E4A8AC /* Images */,
+				CE7C0F00172FC00500E4A8AC /* MainStoryboard.storyboard */,
+				CE9C75C9173CED00008CFE31 /* WindowView.xib */,
+			);
+			path = Resourses;
+			sourceTree = "<group>";
+		};
+		CE7C0F10172FC2CC00E4A8AC /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				CE7C0F21172FC2CC00E4A8AC /* WeatherAPIKey.h */,
+				CE7C0F19172FC2CC00E4A8AC /* KEAppDelegate.h */,
+				CE7C0F1A172FC2CC00E4A8AC /* KEAppDelegate.m */,
+				CE7C0F11172FC2CC00E4A8AC /* Controllers */,
+				CE7C0F14172FC2CC00E4A8AC /* Helpers */,
+				CE7C0F1B172FC2CC00E4A8AC /* Models */,
+				CE7C0F1E172FC2CC00E4A8AC /* Views */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		CE7C0F11172FC2CC00E4A8AC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CE7C0F12172FC2CC00E4A8AC /* KEViewController.h */,
+				CE7C0F13172FC2CC00E4A8AC /* KEViewController.m */,
+				CE7F06BA173A7E7E00697A98 /* KEMapViewController.h */,
+				CE7F06BB173A7E7F00697A98 /* KEMapViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CE7C0F14172FC2CC00E4A8AC /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CE7C0F15172FC2CC00E4A8AC /* KELocationManager.h */,
+				CE7C0F16172FC2CC00E4A8AC /* KELocationManager.m */,
+				CE7C0F17172FC2CC00E4A8AC /* KEWeatherManager.h */,
+				CE7C0F18172FC2CC00E4A8AC /* KEWeatherManager.m */,
+				CE9D02C417437B2F0057968F /* KECityAnnotation.h */,
+				CE9D02C517437B2F0057968F /* KECityAnnotation.m */,
+				DEB839AB1748D7A0005D211F /* KEDataManager.h */,
+				DEB839AC1748D7A0005D211F /* KEDataManager.m */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CE7C0F1B172FC2CC00E4A8AC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CE7C0F1C172FC2CC00E4A8AC /* KEObservation.h */,
+				CE7C0F1D172FC2CC00E4A8AC /* KEObservation.m */,
+				CE7C0F3117300F9E00E4A8AC /* KETommorowForecast.h */,
+				CE7C0F3217300F9E00E4A8AC /* KETommorowForecast.m */,
+				CE7F06B01739176D00697A98 /* KEAfterTommorowForecast.h */,
+				CE7F06B11739176D00697A98 /* KEAfterTommorowForecast.m */,
+				CE7F06B3173917AA00697A98 /* KEAfterAfterTommorowForecast.h */,
+				CE7F06B4173917AA00697A98 /* KEAfterAfterTommorowForecast.m */,
+				DE953F85174AD64500AC7915 /* Place.h */,
+				DE953F86174AD64500AC7915 /* Place.m */,
+				DEDCDCE517480B2C00D957EC /* Wezi.xcdatamodeld */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CE7C0F1E172FC2CC00E4A8AC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE7C0F1F172FC2CC00E4A8AC /* GradientView.h */,
+				CE7C0F20172FC2CC00E4A8AC /* GradientView.m */,
+				CE9C75CB173CED5C008CFE31 /* KEWindowView.h */,
+				CE9C75CC173CED5C008CFE31 /* KEWindowView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CE7C0F28172FC36500E4A8AC /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				CE7C0F29172FC36500E4A8AC /* Default-568h@2x.png */,
+				CE7C0F2A172FC36500E4A8AC /* Default.png */,
+				CE7C0F2B172FC36500E4A8AC /* Default@2x.png */,
+				CE7C0F2C172FC36500E4A8AC /* images-2.jpeg */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CE7C0E9E172FBE4B00E4A8AC /* Wezi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE7C0EC2172FBE4C00E4A8AC /* Build configuration list for PBXNativeTarget "Wezi" */;
+			buildPhases = (
+				CE7C0E9B172FBE4B00E4A8AC /* Sources */,
+				CE7C0E9C172FBE4B00E4A8AC /* Frameworks */,
+				CE7C0E9D172FBE4B00E4A8AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Wezi;
+			productName = Wezi;
+			productReference = CE7C0E9F172FBE4B00E4A8AC /* Wezi.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CE7C0E97172FBE4B00E4A8AC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = KE;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = EvgenyKarkan;
+			};
+			buildConfigurationList = CE7C0E9A172FBE4B00E4A8AC /* Build configuration list for PBXProject "Wezi" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CE7C0E96172FBE4B00E4A8AC;
+			productRefGroup = CE7C0EA0172FBE4B00E4A8AC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CE7C0E9E172FBE4B00E4A8AC /* Wezi */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CE7C0E9D172FBE4B00E4A8AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE7C0EAD172FBE4B00E4A8AC /* InfoPlist.strings in Resources */,
+				CE7C0EFB172FBF1B00E4A8AC /* SVProgressHUD.bundle in Resources */,
+				CE7C0F01172FC00500E4A8AC /* MainStoryboard.storyboard in Resources */,
+				CE7C0F2D172FC36500E4A8AC /* Default-568h@2x.png in Resources */,
+				CE7C0F2E172FC36500E4A8AC /* Default.png in Resources */,
+				CE7C0F2F172FC36500E4A8AC /* Default@2x.png in Resources */,
+				CE7C0F30172FC36500E4A8AC /* images-2.jpeg in Resources */,
+				CE9C75CA173CED00008CFE31 /* WindowView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CE7C0E9B172FBE4B00E4A8AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE7C0EAF172FBE4B00E4A8AC /* main.m in Sources */,
+				CE7C0EF2172FBF1B00E4A8AC /* AFHTTPClient.m in Sources */,
+				CE7C0EF3172FBF1B00E4A8AC /* AFHTTPRequestOperation.m in Sources */,
+				CE7C0EF4172FBF1B00E4A8AC /* AFImageRequestOperation.m in Sources */,
+				CE7C0EF5172FBF1B00E4A8AC /* AFJSONRequestOperation.m in Sources */,
+				CE7C0EF6172FBF1B00E4A8AC /* AFNetworkActivityIndicatorManager.m in Sources */,
+				CE7C0EF7172FBF1B00E4A8AC /* AFPropertyListRequestOperation.m in Sources */,
+				CE7C0EF8172FBF1B00E4A8AC /* AFURLConnectionOperation.m in Sources */,
+				CE7C0EF9172FBF1B00E4A8AC /* AFXMLRequestOperation.m in Sources */,
+				CE7C0EFA172FBF1B00E4A8AC /* UIImageView+AFNetworking.m in Sources */,
+				CE7C0EFC172FBF1B00E4A8AC /* SVProgressHUD.m in Sources */,
+				CE7C0F22172FC2CC00E4A8AC /* KEViewController.m in Sources */,
+				CE7C0F23172FC2CC00E4A8AC /* KELocationManager.m in Sources */,
+				CE7C0F24172FC2CC00E4A8AC /* KEWeatherManager.m in Sources */,
+				CE7C0F25172FC2CC00E4A8AC /* KEAppDelegate.m in Sources */,
+				CE7C0F26172FC2CC00E4A8AC /* KEObservation.m in Sources */,
+				CE7C0F27172FC2CC00E4A8AC /* GradientView.m in Sources */,
+				CE7C0F3317300F9E00E4A8AC /* KETommorowForecast.m in Sources */,
+				CE7F06B21739176D00697A98 /* KEAfterTommorowForecast.m in Sources */,
+				CE7F06B5173917AA00697A98 /* KEAfterAfterTommorowForecast.m in Sources */,
+				CE7F06BC173A7E7F00697A98 /* KEMapViewController.m in Sources */,
+				CE9C75CD173CED5C008CFE31 /* KEWindowView.m in Sources */,
+				CE9D02C617437B2F0057968F /* KECityAnnotation.m in Sources */,
+				DEDCDCE717480B2C00D957EC /* Wezi.xcdatamodeld in Sources */,
+				DEB839AD1748D7A0005D211F /* KEDataManager.m in Sources */,
+				DE953F87174AD64500AC7915 /* Place.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CE7C0EAB172FBE4B00E4A8AC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE7C0EAC172FBE4B00E4A8AC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CE7C0EC0172FBE4C00E4A8AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		CE7C0EC1172FBE4C00E4A8AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CE7C0EC3172FBE4C00E4A8AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Wezi/Wezi-Prefix.pch";
+				INFOPLIST_FILE = "Wezi/Wezi-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		CE7C0EC4172FBE4C00E4A8AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Wezi/Wezi-Prefix.pch";
+				INFOPLIST_FILE = "Wezi/Wezi-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CE7C0E9A172FBE4B00E4A8AC /* Build configuration list for PBXProject "Wezi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE7C0EC0172FBE4C00E4A8AC /* Debug */,
+				CE7C0EC1172FBE4C00E4A8AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE7C0EC2172FBE4C00E4A8AC /* Build configuration list for PBXNativeTarget "Wezi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE7C0EC3172FBE4C00E4A8AC /* Debug */,
+				CE7C0EC4172FBE4C00E4A8AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DEDCDCE517480B2C00D957EC /* Wezi.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DEDCDCE617480B2C00D957EC /* Wezi.xcdatamodel */,
+			);
+			currentVersion = DEDCDCE617480B2C00D957EC /* Wezi.xcdatamodel */;
+			path = Wezi.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = CE7C0E97172FBE4B00E4A8AC /* Project object */;
+}
