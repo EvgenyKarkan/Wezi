@@ -22,7 +22,6 @@
 @property (nonatomic, strong)       KEDataManager *dataManager;
 @property (nonatomic, readwrite)    BOOL isContextActivated;
 
-
 @end
 
 @implementation KEMapViewController
