@@ -16,11 +16,12 @@
 @interface KEMapViewController ()
 
 @property (nonatomic, strong)       CLGeocoder *geocoder;
-@property (nonatomic, strong)       KECityAnnotation *myAnnotation;
 @property (nonatomic, strong)       NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong)       KECityAnnotation *myAnnotation;
 @property (nonatomic, strong)       KEViewController *viewController;
-@property (nonatomic, readwrite)    BOOL isContextActivated;
 @property (nonatomic, strong)       KEDataManager *dataManager;
+@property (nonatomic, readwrite)    BOOL isContextActivated;
+
 
 @end
 

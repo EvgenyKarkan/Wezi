@@ -14,26 +14,26 @@
 
 @interface KEViewController : UIViewController <UpdateUIWithForecast, UIScrollViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIView *shadowContainerView;
-@property (weak, nonatomic) IBOutlet GradientView *observationContainerView;
+@property (nonatomic, weak)         IBOutlet UIView *shadowContainerView;
+@property (nonatomic, weak)         IBOutlet GradientView *observationContainerView;
 
-@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
-@property (weak, nonatomic) IBOutlet UILabel *currentTemperatureLabel;
-@property (weak, nonatomic) IBOutlet UILabel *feelsLikeTemperatureLabel;
-@property (weak, nonatomic) IBOutlet UILabel *weatherDescriptionLabel;
-@property (weak, nonatomic) IBOutlet UILabel *windDescriptionLabel;
-@property (weak, nonatomic) IBOutlet UILabel *humidityLabel;
-@property (weak, nonatomic) IBOutlet UILabel *devointLabel;
-@property (weak, nonatomic) IBOutlet UILabel *lastUpdateLAbel;
+@property (nonatomic, weak)         IBOutlet UILabel *locationLabel;
+@property (nonatomic, weak)         IBOutlet UILabel *currentTemperatureLabel;
+@property (nonatomic, weak)         IBOutlet UILabel *feelsLikeTemperatureLabel;
+@property (nonatomic, weak)         IBOutlet UILabel *weatherDescriptionLabel;
+@property (nonatomic, weak)         IBOutlet UILabel *windDescriptionLabel;
+@property (nonatomic, weak)         IBOutlet UILabel *humidityLabel;
+@property (nonatomic, weak)         IBOutlet UILabel *devointLabel;
+@property (nonatomic, weak)         IBOutlet UILabel *lastUpdateLAbel;
 
-@property (weak, nonatomic) IBOutlet UIImageView *currentConditionImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *weatherUndegroundImageView;
+@property (nonatomic, weak)         IBOutlet UIImageView *currentConditionImageView;
+@property (nonatomic, weak)         IBOutlet UIImageView *weatherUndegroundImageView;
 
-@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+@property (nonatomic, weak)         IBOutlet UIPageControl *pageControl;
 
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, weak)         IBOutlet UIScrollView *scrollView;
 
-@property (strong, nonatomic) UIStoryboardPopoverSegue *currentPopoverSegue;
+@property (nonatomic, strong)       UIStoryboardPopoverSegue *currentPopoverSegue;
 
 @end
 
