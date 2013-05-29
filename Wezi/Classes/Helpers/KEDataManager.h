@@ -10,9 +10,6 @@
 
 @interface KEDataManager : NSObject
 
-//@property (nonatomic, strong)       NSManagedObjectContext *managedObjectContext;
-
-
 + (KEDataManager *)sharedDataManager;
 
 - (NSManagedObjectContext *)managedObjectContextFromAppDelegate;

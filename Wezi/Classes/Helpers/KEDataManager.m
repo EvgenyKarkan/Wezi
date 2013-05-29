@@ -42,4 +42,5 @@ static KEDataManager *sharedDataManager = nil;
     
     return fetchRequest;
 }
+
 @end
