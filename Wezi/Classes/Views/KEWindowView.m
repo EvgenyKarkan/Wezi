@@ -22,13 +22,10 @@
 @synthesize wind;
 @synthesize humidity;
 @synthesize pressure;
-
 @synthesize tomorrowView;
 @synthesize tommorowTemp;
-
 @synthesize afterTommorowView;
 @synthesize afterTommorowTemp;
-
 @synthesize afterAfterTommorowView;
 @synthesize afrerAfterTommorowTemp;
 
