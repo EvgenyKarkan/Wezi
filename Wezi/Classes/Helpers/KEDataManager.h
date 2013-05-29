@@ -10,8 +10,8 @@
 
 @interface KEDataManager : NSObject
 
-@property (nonatomic, strong)       NSManagedObjectContext *managedObjectContext;
-@property (nonatomic, strong)       NSFetchRequest *fetchRequest;
+//@property (nonatomic, strong)       NSManagedObjectContext *managedObjectContext;
+
 
 + (KEDataManager *)sharedDataManager;
 

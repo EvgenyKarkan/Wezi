@@ -18,6 +18,7 @@
 #import "KEMapViewController.h"
 #import "KEAppDelegate.h"
 #import "Place.h"
+#import "KEDataManager.h"
 
 @interface KEViewController () <UIScrollViewDelegate,KECoordinateFillProtocol>
 
@@ -45,6 +46,7 @@
 
 @property (weak, nonatomic) IBOutlet UINavigationItem *bar;
 
+@property (nonatomic, strong) KEDataManager *dataManager;
 
 @end
 
@@ -55,17 +57,11 @@
 
 - (void)prepareForLoading
 {
-    
-    KEAppDelegate *appDelegate = (KEAppDelegate *)[[UIApplication sharedApplication]delegate];
-    self.managedObjectContext = [appDelegate managedObjectContext];
-    
-        // taking entity
-    NSFetchRequest *fetchRequst = [[NSFetchRequest alloc]init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Place" inManagedObjectContext:self.managedObjectContext];
-    [fetchRequst setEntity:entity];
+    self.managedObjectContext = [self.dataManager managedObjectContextFromAppDelegate];
     
     NSError *error = nil;
-    NSArray *places = [self.managedObjectContext executeFetchRequest:fetchRequst error:&error];
+    NSArray *places = [self.managedObjectContext executeFetchRequest:[self.dataManager requestWithEntityName:@"Place"]
+                                                               error:&error];
     if ([places count] > 0) {
         NSUInteger counter = 1;
         for (Place *place in places) {
@@ -106,7 +102,7 @@
     [super viewDidLoad];
     [self setupViews];
     
-    [self prepareForLoading];
+    
     
     KEWeatherManager *weather = [KEWeatherManager sharedClient];
     weather.delegate = self;
@@ -155,6 +151,9 @@
                                              selector:@selector(didGetMyNotification)
                                                  name:@"Foo"
                                                object:nil];
+    
+    self.dataManager = [KEDataManager sharedDataManager];
+    [self prepareForLoading];
 }
 
 - (void)didGetMyNotification
