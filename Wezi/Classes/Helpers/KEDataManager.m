@@ -26,18 +26,21 @@ static KEDataManager *sharedDataManager = nil;
 - (NSManagedObjectContext *)managedObjectContextFromAppDelegate
 {
     KEAppDelegate *appDelegate = (KEAppDelegate *)[[UIApplication sharedApplication]delegate];
-    self.managedObjectContext = [appDelegate managedObjectContext];
     
-    return self.managedObjectContext;
+    NSManagedObjectContext * managedObjectContext = [[NSManagedObjectContext alloc]init];
+    managedObjectContext = [appDelegate managedObjectContext];
+    
+    return managedObjectContext;
 }
 
 - (NSFetchRequest *)requestWithEntityName:(NSString *)entityName
 {
-    NSFetchRequest *fetchRequst = [[NSFetchRequest alloc]init];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc]init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:entityName
-                                              inManagedObjectContext:[sharedDataManager managedObjectContextFromAppDelegate]];
-    [fetchRequst setEntity:entity];
+                                              inManagedObjectContext:[self managedObjectContextFromAppDelegate]];
+    [fetchRequest setEntity:entity];
     
-    return self.fetchRequest;
+    return fetchRequest;
 }
+
 @end

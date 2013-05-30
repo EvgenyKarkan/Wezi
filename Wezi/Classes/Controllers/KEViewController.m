@@ -18,54 +18,34 @@
 #import "KEMapViewController.h"
 #import "KEAppDelegate.h"
 #import "Place.h"
+#import "KEDataManager.h"
 
 @interface KEViewController () <UIScrollViewDelegate,KECoordinateFillProtocol>
 
-  //@property (nonatomic,strong) NSMutableArray *cities;
-
-@property (nonatomic,strong) KEWindowView *templateView;
-@property (nonatomic) NSMutableArray *cityViewArray;
-
-@property (nonatomic, strong ) KEObservation *geo;
-
-@property (nonatomic, strong) KEMapViewController *mapViewController;
-
-@property (nonatomic, strong ) NSMutableArray *addedLocationsArray;
-@property (nonatomic, readwrite) BOOL isShownMapPopover;
-
-@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
-
-@property (nonatomic, strong) NSMutableArray *entityArrayCoreData;
-
-@property (nonatomic, strong) NSMutableArray *viewWithCoreData;
-
-@property (nonatomic, strong) CLLocation *loc;
-
-@property (nonatomic, readwrite) BOOL pageControlBeingUsed;
-
-@property (weak, nonatomic) IBOutlet UINavigationItem *bar;
-
+@property (nonatomic, strong)       KEWindowView *templateView;
+@property (nonatomic, strong)       KEObservation *geo;
+@property (nonatomic, strong)       KEMapViewController *mapViewController;
+@property (nonatomic, strong)       KEDataManager *dataManager;
+@property (nonatomic, strong)       NSMutableArray *addedLocationsArray;
+@property (nonatomic, strong)       NSMutableArray *entityArrayCoreData;
+@property (nonatomic, strong)       NSMutableArray *viewWithCoreData;
+@property (nonatomic, readwrite)    BOOL isShownMapPopover;
+@property (nonatomic, readwrite)    BOOL pageControlBeingUsed;
+@property (nonatomic, strong)       NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong)       CLLocation *loc;
+@property (nonatomic, weak)         IBOutlet UINavigationItem *bar;
 
 @end
 
 @implementation KEViewController
-@synthesize pageControl;
-
-#pragma mark - UIViewController
 
 - (void)prepareForLoading
 {
-    
-    KEAppDelegate *appDelegate = (KEAppDelegate *)[[UIApplication sharedApplication]delegate];
-    self.managedObjectContext = [appDelegate managedObjectContext];
-    
-        // taking entity
-    NSFetchRequest *fetchRequst = [[NSFetchRequest alloc]init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Place" inManagedObjectContext:self.managedObjectContext];
-    [fetchRequst setEntity:entity];
+    self.managedObjectContext = [self.dataManager managedObjectContextFromAppDelegate];
     
     NSError *error = nil;
-    NSArray *places = [self.managedObjectContext executeFetchRequest:fetchRequst error:&error];
+    NSArray *places = [self.managedObjectContext executeFetchRequest:[self.dataManager requestWithEntityName:@"Place"]
+                                                               error:&error];
     if ([places count] > 0) {
         NSUInteger counter = 1;
         for (Place *place in places) {
@@ -88,7 +68,8 @@
         [self.scrollView addSubview:aView];
         [self.viewWithCoreData addObject:aView];
         
-        CLLocation *location = [[CLLocation alloc]initWithLatitude:[[places objectAtIndex:i-1] latitude] longitude:[[places objectAtIndex:i-1] longitude]];
+        CLLocation *location = [[CLLocation alloc]initWithLatitude:[[places objectAtIndex:i-1] latitude]
+                                                         longitude:[[places objectAtIndex:i-1] longitude]];
         
         [self reloadDataWithNewLocation:location withView:aView];
     }
@@ -97,16 +78,12 @@
     self.scrollView.contentSize = CGSizeMake(1024 * ([places count]+1), self.scrollView.contentSize.height);
 }
 
+#pragma mark - UIViewController lice cycle
 
 - (void)viewDidLoad
 {
-    
-     NSLog(@"self.scrollView.frame.size.width %f", self.scrollView.frame.size.width);
-    
     [super viewDidLoad];
     [self setupViews];
-    
-    [self prepareForLoading];
     
     KEWeatherManager *weather = [KEWeatherManager sharedClient];
     weather.delegate = self;
@@ -121,54 +98,17 @@
                                                       [weakSelf reloadData];
                                                   }];
     
-    
     [[KELocationManager sharedManager] startMonitoringLocationChanges];
     
-    self.scrollView.delegate = self;
-	self.pageControl.currentPage = 0;
-    [self.pageControl addTarget:self action:@selector(changePage:) forControlEvents:UIControlEventValueChanged];
-
-    self.templateView = [KEWindowView returnWindowView];
-    self.templateView.frame = CGRectMake(50, 50, 800, 400);
-    
-    [self.scrollView addSubview:self.templateView];
-    
-    self.mapViewController = [[KEMapViewController alloc]init];
-    self.mapViewController.objectToDelegate = self;
-    
-    self.isShownMapPopover = NO;
-    
-//    NSString *string = @"http://icons-ak.wxug.com/i/c/k/clear.gif";
-//    if ([string rangeOfString:@"nt_clear"].location == NSNotFound) {
-//        NSLog(@"string does not contain bla");
-//    } else {
-//        NSLog(@"string contains bla!");
-//    }
-    
+    [self configurateUIElements];
+       
     NSString *string = @"http://icons-ak.wxug.com/i/c/k/clear.gif";
     if ([string rangeOfString:@"clearf"].location == NSNotFound) {
             NSLog(@"string does not contains bla!");
     }
     
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(didGetMyNotification)
-                                                 name:@"Foo"
-                                               object:nil];
-}
-
-- (void)didGetMyNotification
-{
-    NSLog(@"Received notification %p,",pageControl);
-}
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-    if ([[segue identifier] isEqualToString:@"segPop"]) {
-        self.currentPopoverSegue = (UIStoryboardPopoverSegue *)segue;
-        self.mapViewController = [segue destinationViewController];
-        [self.mapViewController setObjectToDelegate:self];
-    }
+    self.dataManager = [KEDataManager sharedDataManager];
+    [self prepareForLoading];
 }
 
 - (void)didReceiveMemoryWarning
@@ -181,6 +121,40 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [[KELocationManager sharedManager] stopMonitoringLocationChanges];
 }
+
+- (void)viewDidUnload {
+    [self setBar:nil];
+    [super viewDidUnload];
+}
+
+#pragma mark - 
+
+- (void)configurateUIElements
+{
+    self.scrollView.delegate = self;
+    
+	self.pageControl.currentPage = 0;
+    [self.pageControl addTarget:self action:@selector(changePage:) forControlEvents:UIControlEventValueChanged];
+    
+    self.templateView = [KEWindowView returnWindowView];
+    self.templateView.frame = CGRectMake(50, 50, 800, 400);
+    
+    [self.scrollView addSubview:self.templateView];
+    
+    self.mapViewController = [[KEMapViewController alloc]init];
+    self.mapViewController.objectToDelegate = self;
+    self.isShownMapPopover = NO;
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([[segue identifier] isEqualToString:@"segPop"]) {
+        self.currentPopoverSegue = (UIStoryboardPopoverSegue *)segue;
+        self.mapViewController = [segue destinationViewController];
+        [self.mapViewController setObjectToDelegate:self];
+    }
+}
+
 
 #pragma mark - Private
 
@@ -401,11 +375,13 @@
         
         if (self.pageControl.currentPage != 0) {
             
+#warning TODO - use data manager here 
             KEAppDelegate *appDelegate = (KEAppDelegate *)[[UIApplication sharedApplication]delegate];
             self.managedObjectContext = [appDelegate managedObjectContext];
             
             NSFetchRequest *fetchRequst = [[NSFetchRequest alloc]init];
-            NSEntityDescription *entity = [NSEntityDescription entityForName:@"Place" inManagedObjectContext:self.managedObjectContext];
+            NSEntityDescription *entity = [NSEntityDescription entityForName:@"Place"
+                                                      inManagedObjectContext:self.managedObjectContext];
             [fetchRequst setEntity:entity];
             
             NSError *error = nil;
@@ -417,11 +393,12 @@
                                                  longitude:[[self.entityArrayCoreData objectAtIndex:self.pageControl.currentPage - 1] longitude]];
              
             if (self.pageControl.currentPage == [self.entityArrayCoreData count]) {
-                
-                [self reloadDataWithNewLocation:self.loc withView:[self.viewWithCoreData objectAtIndex:self.pageControl.currentPage-1]];
+                [self reloadDataWithNewLocation:self.loc
+                                       withView:[self.viewWithCoreData objectAtIndex:self.pageControl.currentPage-1]];
             }
             else {
-                [self reloadDataWithNewLocation:self.loc withView:[self.viewWithCoreData objectAtIndex:self.pageControl.currentPage-1]];
+                [self reloadDataWithNewLocation:self.loc
+                                       withView:[self.viewWithCoreData objectAtIndex:self.pageControl.currentPage-1]];
             }
         }
 }
@@ -500,7 +477,6 @@
     }
     
     [UIView animateWithDuration:0.3 animations:^{
-                 
         for (UIView *dummyObject in self.viewWithCoreData) {
             NSUInteger index = [self.viewWithCoreData indexOfObject:dummyObject];
             if ((index > self.pageControl.currentPage -1) && (self.pageControl.currentPage != 0)) {
@@ -511,7 +487,8 @@
         if (self.pageControl.currentPage != 0) {
             [self.viewWithCoreData removeObjectAtIndex:self.pageControl.currentPage -1];
             [self.entityArrayCoreData removeObjectAtIndex:self.pageControl.currentPage -1];  //worked code
-                                                                                                                     // taking entity
+#warning TODO replace with dataManager
+            
             NSFetchRequest *fetchRequst = [[NSFetchRequest alloc]init];
             NSEntityDescription *entity = [NSEntityDescription entityForName:@"Place" inManagedObjectContext:self.managedObjectContext];
             [fetchRequst setEntity:entity];
@@ -546,11 +523,9 @@
 - (void)scrollViewDidScroll:(UIScrollView *)sender
 {
     if (!self.pageControlBeingUsed) {
-    // Update the page when more than 50% of the previous/next page is visible
-    CGFloat pageWidth = self.scrollView.frame.size.width;
-    int page = floor((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
-    self.pageControl.currentPage = page;
-        NSLog (@" PAGE IS %ld", (long)self.pageControl.currentPage);
+        CGFloat pageWidth = self.scrollView.frame.size.width;
+        int page = floor((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
+        self.pageControl.currentPage = page;
     }
 }
 
@@ -572,8 +547,4 @@
     return NO;
 }
 
-- (void)viewDidUnload {
-    [self setBar:nil];
-    [super viewDidUnload];
-}
 @end

@@ -66,6 +66,7 @@
 		CE9D02C617437B2F0057968F /* KECityAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D02C517437B2F0057968F /* KECityAnnotation.m */; };
 		DE953F87174AD64500AC7915 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = DE953F86174AD64500AC7915 /* Place.m */; };
 		DEB839AD1748D7A0005D211F /* KEDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB839AC1748D7A0005D211F /* KEDataManager.m */; };
+		DECCC4C21756B043005466C3 /* KERequestor.m in Sources */ = {isa = PBXBuildFile; fileRef = DECCC4C11756B043005466C3 /* KERequestor.m */; };
 		DEDCDCE11748001100D957EC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDCDCE01748001100D957EC /* CoreData.framework */; };
 		DEDCDCE717480B2C00D957EC /* Wezi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DEDCDCE517480B2C00D957EC /* Wezi.xcdatamodeld */; };
 /* End PBXBuildFile section */
@@ -160,6 +161,8 @@
 		DE953F86174AD64500AC7915 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
 		DEB839AB1748D7A0005D211F /* KEDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEDataManager.h; sourceTree = "<group>"; };
 		DEB839AC1748D7A0005D211F /* KEDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEDataManager.m; sourceTree = "<group>"; };
+		DECCC4C01756B043005466C3 /* KERequestor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KERequestor.h; sourceTree = "<group>"; };
+		DECCC4C11756B043005466C3 /* KERequestor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KERequestor.m; sourceTree = "<group>"; };
 		DEDCDCE01748001100D957EC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		DEDCDCE617480B2C00D957EC /* Wezi.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Wezi.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -358,6 +361,8 @@
 				CE9D02C517437B2F0057968F /* KECityAnnotation.m */,
 				DEB839AB1748D7A0005D211F /* KEDataManager.h */,
 				DEB839AC1748D7A0005D211F /* KEDataManager.m */,
+				DECCC4C01756B043005466C3 /* KERequestor.h */,
+				DECCC4C11756B043005466C3 /* KERequestor.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -516,6 +521,7 @@
 				DEB839AD1748D7A0005D211F /* KEDataManager.m in Sources */,
 				DE953F87174AD64500AC7915 /* Place.m in Sources */,
 				CE3802B11757B8DB0086510C /* SUFonts.m in Sources */,
+				DECCC4C21756B043005466C3 /* KERequestor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,13 +11,15 @@
 #import "Place.h"
 #import "KEAppDelegate.h"
 #import "KEViewController.h"
+#import "KEDataManager.h"
 
 @interface KEMapViewController ()
 
 @property (nonatomic, strong)       CLGeocoder *geocoder;
-@property (nonatomic, strong)       KECityAnnotation *myAnnotation;
 @property (nonatomic, strong)       NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong)       KECityAnnotation *myAnnotation;
 @property (nonatomic, strong)       KEViewController *viewController;
+@property (nonatomic, strong)       KEDataManager *dataManager;
 @property (nonatomic, readwrite)    BOOL isContextActivated;
 
 @end
@@ -30,8 +32,11 @@
     if (self) {
         // Custom initialization
     }
+    self.managedObjectContext = [[KEDataManager sharedDataManager] managedObjectContextFromAppDelegate];
     return self;
 }
+
+#pragma mark - Viewcontroller live cycle
 
 - (void)viewDidLoad
 {
@@ -42,12 +47,16 @@
     self.map.showsUserLocation = YES;
     self.viewController = [[KEViewController alloc]init];
     self.isContextActivated = NO;
+    self.dataManager = [KEDataManager sharedDataManager];
+    self.managedObjectContext = [self.dataManager managedObjectContextFromAppDelegate];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
 }
+
+#pragma mark - MapView delegate method & geocoding
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)annotationView didChangeDragState:(MKAnnotationViewDragState)newState fromOldState:(MKAnnotationViewDragState)oldState
 {
@@ -103,38 +112,38 @@
 	}
 }
 
-- (void)performPinDrop
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
-    self.myAnnotation = [[KECityAnnotation alloc] init];
-    self.myAnnotation.coordinate = self.map.centerCoordinate;
-    self.myAnnotation.title = @"Chosen location";
-    self.myAnnotation.subtitle = @"Drag to change location";
-    [self.map addAnnotation:self.myAnnotation];
-    [self.map selectAnnotation:self.myAnnotation animated:YES];
-    
+    if ([annotation isKindOfClass:[MKUserLocation class]]) {
+        return nil;
+    }
+    if ([annotation isKindOfClass:[KECityAnnotation class]]) {
+        MKPinAnnotationView *pinView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"Pin"];
+        if (pinView ==nil) {
+            pinView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"Pin"];
+            pinView.pinColor = MKPinAnnotationColorRed;
+            pinView.animatesDrop = YES;
+            pinView.canShowCallout =YES;
+            pinView.draggable = YES;
+        }
+        return pinView;
+    }
+    else {
+        return nil;
+    }
 }
 
-- (IBAction)dropPinPressed:(id)sender
-{
-    [self performPinDrop];
-}
+#pragma mark - Actions 
 
 - (IBAction)chooseLocation:(id)sender
 {
     CLLocation *item = [[CLLocation alloc]initWithLatitude:self.myAnnotation.coordinate.latitude longitude:self.myAnnotation.coordinate.longitude];
     
     [self.objectToDelegate addPressedWithCoordinate:item];
- 
-    // creating Entity 
-    KEAppDelegate *appDelegate = (KEAppDelegate *)[[UIApplication sharedApplication]delegate];
-    self.managedObjectContext = [appDelegate managedObjectContext];
-    
-    NSFetchRequest *fetchRequst = [[NSFetchRequest alloc]init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Place" inManagedObjectContext:self.managedObjectContext];
-    [fetchRequst setEntity:entity];
-    
+     
     NSError *error = nil;
-    NSArray *places = [self.managedObjectContext executeFetchRequest:fetchRequst error:&error];
+    NSArray *places = [self.managedObjectContext executeFetchRequest:[self.dataManager requestWithEntityName:@"Place"] error:&error];
+    
     if ([places count] == 19) {
         NSLog(@" COUNT IS %i", [places count]);
             return;
@@ -162,25 +171,21 @@
     [[NSNotificationCenter defaultCenter]postNotificationName:@"Foo" object:nil];
 }
 
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
+- (IBAction)dropPinPressed:(id)sender
 {
-    if ([annotation isKindOfClass:[MKUserLocation class]]) {
-        return nil;
-    }
-    if ([annotation isKindOfClass:[KECityAnnotation class]]) {
-        MKPinAnnotationView *pinView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"Pin"];
-        if (pinView ==nil) {
-            pinView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"Pin"];
-            pinView.pinColor = MKPinAnnotationColorRed;
-            pinView.animatesDrop = YES;
-            pinView.canShowCallout =YES;
-            pinView.draggable = YES;
-        }
-        return pinView;
-    }
-    else {
-        return nil;
-    }
+    [self performPinDrop];
 }
+
+- (void)performPinDrop
+{
+    self.myAnnotation = [[KECityAnnotation alloc] init];
+    self.myAnnotation.coordinate = self.map.centerCoordinate;
+    self.myAnnotation.title = @"Chosen location";
+    self.myAnnotation.subtitle = @"Drag to change location";
+    [self.map addAnnotation:self.myAnnotation];
+    [self.map selectAnnotation:self.myAnnotation animated:YES];
+    
+}
+
 
 @end
