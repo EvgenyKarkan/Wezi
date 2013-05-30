@@ -2,7 +2,7 @@
 //  SUFonts.m
 //  VeloLink
 //
-//  Copyright (c) 2013 Sigma Ukraine. All rights reserved.
+//  Created by Evgeniy Karkan on 4/29/13.
 //
 
 #import "SUFonts.h"

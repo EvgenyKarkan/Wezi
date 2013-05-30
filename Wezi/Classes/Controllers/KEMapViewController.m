@@ -84,20 +84,20 @@
              
                  if (geocodedAddress) {
                      if (geocodedHome) {
-                         fooSubtitle = [NSString stringWithFormat:@"%@,%@", geocodedAddress,geocodedHome];
+                         fooSubtitle = [NSString stringWithFormat:@"%@,%@",geocodedAddress,geocodedHome];
                      }
                      else {
-                         fooSubtitle = [NSString stringWithFormat:@"%@", geocodedAddress];
+                         fooSubtitle = [NSString stringWithFormat:@"%@",geocodedAddress];
                      }
                  }
                  else {
-                     fooSubtitle = [NSString stringWithFormat:@"%@", geoSublocality];
+                     fooSubtitle = [NSString stringWithFormat:@"%@",geoSublocality];
                  }
                  if (geoLocality) {
-                     fooTitle = [NSString stringWithFormat:@"%@", geoLocality];
+                     fooTitle = [NSString stringWithFormat:@"%@",geoLocality];
                  }
                  else {
-                     fooTitle = [NSString stringWithFormat:@"%@", geoSublocality];
+                     fooTitle = [NSString stringWithFormat:@"%@",geoSublocality];
                  }
      
              if (fooSubtitle != nil) {
@@ -119,7 +119,7 @@
     }
     if ([annotation isKindOfClass:[KECityAnnotation class]]) {
         MKPinAnnotationView *pinView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"Pin"];
-        if (pinView ==nil) {
+        if (pinView == nil) {
             pinView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"Pin"];
             pinView.pinColor = MKPinAnnotationColorRed;
             pinView.animatesDrop = YES;
@@ -186,6 +186,5 @@
     [self.map selectAnnotation:self.myAnnotation animated:YES];
     
 }
-
 
 @end
