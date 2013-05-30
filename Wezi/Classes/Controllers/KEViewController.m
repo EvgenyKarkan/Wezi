@@ -363,10 +363,7 @@
 
 - (IBAction)goToMap:(id)sender {
     
-    if (!self.isShownMapPopover) {
-        [self performSegueWithIdentifier:@"segPop" sender:self];
-        self.isShownMapPopover = YES;
-    }
+    [self performSegueWithIdentifier:@"segPop" sender:self];
 }
 
 - (IBAction)refresh:(id)sender {

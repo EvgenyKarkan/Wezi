@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="2">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -134,10 +134,22 @@
                                 <rect key="frame" x="0.0" y="704" width="1024" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="Item" id="0th-ln-FmA">
-                                        <connections>
-                                            <action selector="goToMap:" destination="2" id="Dd8-OE-jfh"/>
-                                        </connections>
+                                    <barButtonItem style="plain" id="A2T-el-0bV">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fan-jj-sYi">
+                                            <rect key="frame" x="12" y="6" width="73" height="33"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                            <state key="normal" title="Button">
+                                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <state key="highlighted">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="goToMap:" destination="2" eventType="touchUpInside" id="QHT-z5-RHR"/>
+                                            </connections>
+                                        </button>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Doj-p3-HJO"/>
                                     <barButtonItem style="plain" id="xSv-gb-QSc">
@@ -180,7 +192,7 @@
                         <outlet property="weatherDescriptionLabel" destination="19n-sm-nzN" id="nzS-Pz-505"/>
                         <outlet property="weatherUndegroundImageView" destination="kg9-ma-UGJ" id="FaO-dP-Mu8"/>
                         <outlet property="windDescriptionLabel" destination="AfW-Zb-LbJ" id="m9J-eT-iMv"/>
-                        <segue destination="gDD-F8-kmf" kind="popover" identifier="segPop" popoverAnchorBarButtonItem="0th-ln-FmA" id="cxH-jP-vs3">
+                        <segue destination="gDD-F8-kmf" kind="popover" identifier="segPop" popoverAnchorView="fan-jj-sYi" id="cxH-jP-vs3">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                         </segue>
                     </connections>
@@ -240,12 +252,17 @@
         <class className="KEMapViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/KEMapViewController.h"/>
             <relationships>
+                <relationship kind="action" name="chooseLocation:"/>
+                <relationship kind="action" name="dropPinPressed:"/>
                 <relationship kind="outlet" name="map" candidateClass="MKMapView"/>
             </relationships>
         </class>
         <class className="KEViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/KEViewController.h"/>
             <relationships>
+                <relationship kind="action" name="changePage:"/>
+                <relationship kind="action" name="deletePAge:"/>
+                <relationship kind="action" name="goToMap:"/>
                 <relationship kind="outlet" name="bar" candidateClass="UINavigationItem"/>
                 <relationship kind="outlet" name="currentConditionImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="currentTemperatureLabel" candidateClass="UILabel"/>
