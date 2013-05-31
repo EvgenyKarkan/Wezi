@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Classes/Controllers/KEViewController.m"
-         timestampString = "391718774.008032"
+         timestampString = "391720959.563583"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "491"
-         endingLineNumber = "491"
+         startingLineNumber = "493"
+         endingLineNumber = "493"
          landmarkName = "-deletePAge:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -47,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Classes/Controllers/KEViewController.m"
-         timestampString = "391718774.008032"
+         timestampString = "391720959.563583"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "193"
-         endingLineNumber = "193"
+         startingLineNumber = "190"
+         endingLineNumber = "190"
          landmarkName = "-updateUIWithObservationForCurrentLocation:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -125,11 +125,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Classes/Controllers/KEViewController.m"
-         timestampString = "391718774.008032"
+         timestampString = "391720959.563583"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "390"
-         endingLineNumber = "390"
+         startingLineNumber = "392"
+         endingLineNumber = "392"
          landmarkName = "-refresh:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -138,11 +138,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Classes/Controllers/KEViewController.m"
-         timestampString = "391718774.008032"
+         timestampString = "391720959.563583"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "219"
-         endingLineNumber = "219"
+         startingLineNumber = "218"
+         endingLineNumber = "218"
          landmarkName = "-updateUIForView:observetion:"
          landmarkType = "5">
       </FileBreakpoint>

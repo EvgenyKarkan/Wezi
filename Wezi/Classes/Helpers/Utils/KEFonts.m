@@ -5,9 +5,9 @@
 //  Created by Evgeniy Karkan on 4/29/13.
 //
 
-#import "SUFonts.h"
+#import "KEFonts.h"
 
-@implementation SUFonts
+@implementation KEFonts
 
 + (UIFont *)plutoSansMediumWithSize:(CGFloat)fontSize
 {

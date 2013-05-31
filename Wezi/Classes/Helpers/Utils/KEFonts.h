@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SUFonts : NSObject
+@interface KEFonts : NSObject
 
 + (UIFont *)plutoSansMediumWithSize:(CGFloat)fontSize;
 + (UIFont *)plutoSansLightWithSize:(CGFloat)fontSize;

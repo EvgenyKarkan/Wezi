@@ -20,6 +20,7 @@
 #import "Place.h"
 #import "KEDataManager.h"
 #import "NSString+CommaSubString.h"
+#import "KEUIImageFactoryUtil.h"
 
 @interface KEViewController () <UIScrollViewDelegate,KECoordinateFillProtocol>
 
@@ -103,11 +104,7 @@
     
     [self configurateUIElements];
        
-    NSString *string = @"http://icons-ak.wxug.com/i/c/k/clear.gif";
-    if ([string rangeOfString:@"clearf"].location == NSNotFound) {
-            NSLog(@"string does not contains bla!");
-    }
-    
+       
     self.dataManager = [KEDataManager sharedDataManager];
     [self prepareForLoading];
 }
@@ -210,8 +207,10 @@
 {
     if (observation) {
             
-        [viewtoUpdate.conditionIcon setImageWithURL:[NSURL URLWithString:observation.iconUrl]];
-        [viewtoUpdate.bigImage setImageWithURL:[NSURL URLWithString:observation.iconUrl]];
+            //[viewtoUpdate.conditionIcon setImageWithURL:[NSURL URLWithString:observation.iconUrl]];
+        [viewtoUpdate.conditionIcon setImage:[KEUIImageFactoryUtil imageDependsOnURL:observation.iconUrl]];
+        
+            //[viewtoUpdate.bigImage setImageWithURL:[NSURL URLWithString:observation.iconUrl]];
         viewtoUpdate.currentTemperature.text = observation.temperatureDescription;
         viewtoUpdate.wind.text = observation.windDescription;
         
@@ -251,6 +250,7 @@
 - (void)updateAfterTomorrowWithForecast:(KEAfterTommorowForecast *)forecast withView:(KEWindowView *)viewToUpdate
 {
     [viewToUpdate.afterTommorowView setImageWithURL:[NSURL URLWithString:forecast.iconURL]];
+    
     viewToUpdate.afterTommorowTemp.text = forecast.highTemperature;
 
     
@@ -281,6 +281,8 @@
 //    NSLog(@" %@", forecast.highTemperature  );
 //    NSLog(@" %@", forecast.lowTemperature  );
 }
+
+#pragma mark - Requests
 
 - (void)reloadData
 {

@@ -24,7 +24,6 @@
 		CE3802AC1757B8840086510C /* PlutoSansMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = CE38029B1757B8840086510C /* PlutoSansMedium.otf */; };
 		CE3802AD1757B8840086510C /* PlutoSansRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = CE38029C1757B8840086510C /* PlutoSansRegular.otf */; };
 		CE3802AE1757B8840086510C /* PlutoSansThin.otf in Resources */ = {isa = PBXBuildFile; fileRef = CE38029D1757B8840086510C /* PlutoSansThin.otf */; };
-		CE3802B11757B8DB0086510C /* SUFonts.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3802B01757B8DB0086510C /* SUFonts.m */; };
 		CE7C0EA3172FBE4B00E4A8AC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7C0EA2172FBE4B00E4A8AC /* UIKit.framework */; };
 		CE7C0EA5172FBE4B00E4A8AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7C0EA4172FBE4B00E4A8AC /* Foundation.framework */; };
 		CE7C0EA7172FBE4B00E4A8AC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7C0EA6172FBE4B00E4A8AC /* CoreGraphics.framework */; };
@@ -66,6 +65,8 @@
 		CE9D02C617437B2F0057968F /* KECityAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D02C517437B2F0057968F /* KECityAnnotation.m */; };
 		DE953F87174AD64500AC7915 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = DE953F86174AD64500AC7915 /* Place.m */; };
 		DEB51ED41759267400F04539 /* NSString+CommaSubString.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB51ED31759267400F04539 /* NSString+CommaSubString.m */; };
+		DEB51ED817592D7C00F04539 /* KEFonts.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB51ED717592D7C00F04539 /* KEFonts.m */; };
+		DEB51EDB17592DAB00F04539 /* KEUIImageFactoryUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB51EDA17592DAB00F04539 /* KEUIImageFactoryUtil.m */; };
 		DEB839AD1748D7A0005D211F /* KEDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB839AC1748D7A0005D211F /* KEDataManager.m */; };
 		DECCC4C21756B043005466C3 /* KERequestor.m in Sources */ = {isa = PBXBuildFile; fileRef = DECCC4C11756B043005466C3 /* KERequestor.m */; };
 		DEDCDCE11748001100D957EC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDCDCE01748001100D957EC /* CoreData.framework */; };
@@ -90,8 +91,6 @@
 		CE38029B1757B8840086510C /* PlutoSansMedium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PlutoSansMedium.otf; sourceTree = "<group>"; };
 		CE38029C1757B8840086510C /* PlutoSansRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PlutoSansRegular.otf; sourceTree = "<group>"; };
 		CE38029D1757B8840086510C /* PlutoSansThin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PlutoSansThin.otf; sourceTree = "<group>"; };
-		CE3802AF1757B8DB0086510C /* SUFonts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUFonts.h; sourceTree = "<group>"; };
-		CE3802B01757B8DB0086510C /* SUFonts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUFonts.m; sourceTree = "<group>"; };
 		CE7C0E9F172FBE4B00E4A8AC /* Wezi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wezi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7C0EA2172FBE4B00E4A8AC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CE7C0EA4172FBE4B00E4A8AC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -162,6 +161,10 @@
 		DE953F86174AD64500AC7915 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
 		DEB51ED21759267400F04539 /* NSString+CommaSubString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CommaSubString.h"; sourceTree = "<group>"; };
 		DEB51ED31759267400F04539 /* NSString+CommaSubString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CommaSubString.m"; sourceTree = "<group>"; };
+		DEB51ED617592D7C00F04539 /* KEFonts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEFonts.h; sourceTree = "<group>"; };
+		DEB51ED717592D7C00F04539 /* KEFonts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEFonts.m; sourceTree = "<group>"; };
+		DEB51ED917592DAB00F04539 /* KEUIImageFactoryUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEUIImageFactoryUtil.h; sourceTree = "<group>"; };
+		DEB51EDA17592DAB00F04539 /* KEUIImageFactoryUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEUIImageFactoryUtil.m; sourceTree = "<group>"; };
 		DEB839AB1748D7A0005D211F /* KEDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEDataManager.h; sourceTree = "<group>"; };
 		DEB839AC1748D7A0005D211F /* KEDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEDataManager.m; sourceTree = "<group>"; };
 		DECCC4C01756B043005466C3 /* KERequestor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KERequestor.h; sourceTree = "<group>"; };
@@ -354,8 +357,7 @@
 		CE7C0F14172FC2CC00E4A8AC /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				CE3802AF1757B8DB0086510C /* SUFonts.h */,
-				CE3802B01757B8DB0086510C /* SUFonts.m */,
+				DEB51ED517592D7C00F04539 /* Utils */,
 				CE7C0F15172FC2CC00E4A8AC /* KELocationManager.h */,
 				CE7C0F16172FC2CC00E4A8AC /* KELocationManager.m */,
 				CE7C0F17172FC2CC00E4A8AC /* KEWeatherManager.h */,
@@ -410,6 +412,17 @@
 				CE7C0F2C172FC36500E4A8AC /* images-2.jpeg */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		DEB51ED517592D7C00F04539 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DEB51ED617592D7C00F04539 /* KEFonts.h */,
+				DEB51ED717592D7C00F04539 /* KEFonts.m */,
+				DEB51ED917592DAB00F04539 /* KEUIImageFactoryUtil.h */,
+				DEB51EDA17592DAB00F04539 /* KEUIImageFactoryUtil.m */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -525,9 +538,10 @@
 				DEDCDCE717480B2C00D957EC /* Wezi.xcdatamodeld in Sources */,
 				DEB839AD1748D7A0005D211F /* KEDataManager.m in Sources */,
 				DE953F87174AD64500AC7915 /* Place.m in Sources */,
-				CE3802B11757B8DB0086510C /* SUFonts.m in Sources */,
 				DECCC4C21756B043005466C3 /* KERequestor.m in Sources */,
 				DEB51ED41759267400F04539 /* NSString+CommaSubString.m in Sources */,
+				DEB51ED817592D7C00F04539 /* KEFonts.m in Sources */,
+				DEB51EDB17592DAB00F04539 /* KEUIImageFactoryUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
