@@ -21,6 +21,7 @@
 @property (nonatomic, strong)       KEViewController *viewController;
 @property (nonatomic, strong)       KEDataManager *dataManager;
 @property (nonatomic, readwrite)    BOOL isContextActivated;
+@property (nonatomic, strong)       NSString *bufferCityName;
 
 @end
 
@@ -95,6 +96,7 @@
                  }
                  if (geoLocality) {
                      fooTitle = [NSString stringWithFormat:@"%@",geoLocality];
+                     self.bufferCityName = fooSubtitle;
                  }
                  else {
                      fooTitle = [NSString stringWithFormat:@"%@",geoSublocality];
@@ -145,7 +147,7 @@
     NSArray *places = [self.managedObjectContext executeFetchRequest:[self.dataManager requestWithEntityName:@"Place"] error:&error];
     
     if ([places count] == 19) {
-        NSLog(@" COUNT IS %i", [places count]);
+        NSLog(@"COUNT IS %i", [places count]);
             return;
     }
 
@@ -154,7 +156,7 @@
     if (place != nil) {
         place.latitude = self.myAnnotation.coordinate.latitude;
         place.longitude = self.myAnnotation.coordinate.longitude;
-        
+        place.city = self.bufferCityName;
         NSError *savingError = nil;
         if ([self.managedObjectContext save:&savingError]) {
             NSLog(@"Successfully saving the context");

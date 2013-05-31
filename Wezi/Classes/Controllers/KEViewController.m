@@ -19,6 +19,7 @@
 #import "KEAppDelegate.h"
 #import "Place.h"
 #import "KEDataManager.h"
+#import "NSString+CommaSubString.h"
 
 @interface KEViewController () <UIScrollViewDelegate,KECoordinateFillProtocol>
 
@@ -214,7 +215,11 @@
         viewtoUpdate.currentTemperature.text = observation.temperatureDescription;
         viewtoUpdate.wind.text = observation.windDescription;
         
-        viewtoUpdate.place.text = observation.location[@"full"];
+               
+        viewtoUpdate.place.text = [NSString subStringBeforeFirstCommaInString:observation.location[@"full"]];
+        
+        
+        
         
         KEAppDelegate *appDelegate = (KEAppDelegate *)[[UIApplication sharedApplication]delegate];
         self.managedObjectContext = [appDelegate managedObjectContext];

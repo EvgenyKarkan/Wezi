@@ -65,6 +65,7 @@
 		CE9C75CD173CED5C008CFE31 /* KEWindowView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9C75CC173CED5C008CFE31 /* KEWindowView.m */; };
 		CE9D02C617437B2F0057968F /* KECityAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D02C517437B2F0057968F /* KECityAnnotation.m */; };
 		DE953F87174AD64500AC7915 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = DE953F86174AD64500AC7915 /* Place.m */; };
+		DEB51ED41759267400F04539 /* NSString+CommaSubString.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB51ED31759267400F04539 /* NSString+CommaSubString.m */; };
 		DEB839AD1748D7A0005D211F /* KEDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB839AC1748D7A0005D211F /* KEDataManager.m */; };
 		DECCC4C21756B043005466C3 /* KERequestor.m in Sources */ = {isa = PBXBuildFile; fileRef = DECCC4C11756B043005466C3 /* KERequestor.m */; };
 		DEDCDCE11748001100D957EC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDCDCE01748001100D957EC /* CoreData.framework */; };
@@ -159,6 +160,8 @@
 		CE9D02C517437B2F0057968F /* KECityAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KECityAnnotation.m; sourceTree = "<group>"; };
 		DE953F85174AD64500AC7915 /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Place.h; sourceTree = "<group>"; };
 		DE953F86174AD64500AC7915 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
+		DEB51ED21759267400F04539 /* NSString+CommaSubString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CommaSubString.h"; sourceTree = "<group>"; };
+		DEB51ED31759267400F04539 /* NSString+CommaSubString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CommaSubString.m"; sourceTree = "<group>"; };
 		DEB839AB1748D7A0005D211F /* KEDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEDataManager.h; sourceTree = "<group>"; };
 		DEB839AC1748D7A0005D211F /* KEDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEDataManager.m; sourceTree = "<group>"; };
 		DECCC4C01756B043005466C3 /* KERequestor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KERequestor.h; sourceTree = "<group>"; };
@@ -363,6 +366,8 @@
 				DEB839AC1748D7A0005D211F /* KEDataManager.m */,
 				DECCC4C01756B043005466C3 /* KERequestor.h */,
 				DECCC4C11756B043005466C3 /* KERequestor.m */,
+				DEB51ED21759267400F04539 /* NSString+CommaSubString.h */,
+				DEB51ED31759267400F04539 /* NSString+CommaSubString.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -522,6 +527,7 @@
 				DE953F87174AD64500AC7915 /* Place.m in Sources */,
 				CE3802B11757B8DB0086510C /* SUFonts.m in Sources */,
 				DECCC4C21756B043005466C3 /* KERequestor.m in Sources */,
+				DEB51ED41759267400F04539 /* NSString+CommaSubString.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

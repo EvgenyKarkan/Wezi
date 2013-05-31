@@ -10,4 +10,6 @@
 
 @interface NSString (CommaSubString)
 
++ (NSString *)subStringBeforeFirstCommaInString:(NSString *)longString;
+
 @end

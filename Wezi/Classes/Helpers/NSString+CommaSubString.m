@@ -10,4 +10,12 @@
 
 @implementation NSString (CommaSubString)
 
+
++ (NSString *)subStringBeforeFirstCommaInString:(NSString *)longString
+{
+    NSRange range = [longString rangeOfString:@","];
+    NSString *newShortString = [longString substringToIndex:range.location];
+    return newShortString;
+}
+
 @end
