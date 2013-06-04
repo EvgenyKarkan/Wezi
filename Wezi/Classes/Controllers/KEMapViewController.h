@@ -12,7 +12,6 @@
 
 @required
 
-- (void)fillArrayWithCoordinate:(CLLocation *)location;
 - (void)addPressedWithCoordinate:(CLLocation *)location;
 
 @end

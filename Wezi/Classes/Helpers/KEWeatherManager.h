@@ -28,5 +28,4 @@
 - (void)getForecastObservationForLocation:(CLLocation *)location
                                completion:(void(^)(NSMutableDictionary *threeDays, NSError *error))completion;
 
-
 @end

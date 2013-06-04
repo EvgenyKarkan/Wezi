@@ -148,7 +148,7 @@
     
     if ([places count] == 19) {
         NSLog(@"COUNT IS %i", [places count]);
-            return;
+        return;
     }
 
     Place *place = [NSEntityDescription insertNewObjectForEntityForName:@"Place" inManagedObjectContext:self.managedObjectContext];
@@ -169,8 +169,6 @@
     else {
         NSLog(@"Failed to create new place");
     }
-    
-    [[NSNotificationCenter defaultCenter]postNotificationName:@"Foo" object:nil];
 }
 
 - (IBAction)dropPinPressed:(id)sender
@@ -186,7 +184,6 @@
     self.myAnnotation.subtitle = @"Drag to change location";
     [self.map addAnnotation:self.myAnnotation];
     [self.map selectAnnotation:self.myAnnotation animated:YES];
-    
 }
 
 @end

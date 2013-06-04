@@ -163,7 +163,7 @@
 		DEB51ED31759267400F04539 /* NSString+CommaSubString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CommaSubString.m"; sourceTree = "<group>"; };
 		DEB51ED617592D7C00F04539 /* KEFonts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEFonts.h; sourceTree = "<group>"; };
 		DEB51ED717592D7C00F04539 /* KEFonts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEFonts.m; sourceTree = "<group>"; };
-		DEB51ED917592DAB00F04539 /* KEUIImageFactoryUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEUIImageFactoryUtil.h; sourceTree = "<group>"; };
+		DEB51ED917592DAB00F04539 /* KEUIImageFactoryUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEUIImageFactoryUtil.h; sourceTree = "<group>"; usesTabs = 1; };
 		DEB51EDA17592DAB00F04539 /* KEUIImageFactoryUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEUIImageFactoryUtil.m; sourceTree = "<group>"; };
 		DEB839AB1748D7A0005D211F /* KEDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEDataManager.h; sourceTree = "<group>"; };
 		DEB839AC1748D7A0005D211F /* KEDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEDataManager.m; sourceTree = "<group>"; };

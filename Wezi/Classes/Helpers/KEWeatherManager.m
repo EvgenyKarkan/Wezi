@@ -53,7 +53,6 @@ static NSString * const kWeatherUndergroundAPIBaseURLString = @"http://api.wunde
 - (void)getCurrentWeatherObservationForLocation:(CLLocation *)location completion:(void(^)(KEObservation *observation, NSError *error))completion
 {
     if (location) {
-                
         NSString *getPath = [NSString stringWithFormat:@"conditions/q/%.6f,%.6f.json", location.coordinate.latitude,
                                                                                        location.coordinate.longitude];
            
@@ -62,21 +61,20 @@ static NSString * const kWeatherUndergroundAPIBaseURLString = @"http://api.wunde
         [client getPath:getPath
              parameters:nil
                 success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                    
                     KEObservation *observation = [KEObservation observationWithDictionary:responseObject[@"current_observation"]]; // maybe to change it
                     completion(observation, nil);
                 }
                 failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                     completion(nil, error);
                     if (error) {
-                        //[SVProgressHUD showErrorWithStatus:[error localizedDescription]];
+                        [SVProgressHUD showErrorWithStatus:[error localizedDescription]];
                         NSLog(@"Error occured%@", [error localizedDescription]);
                     }
                 }
          ];
     }
     else {
-        completion(nil, [NSError errorWithDomain:@"Invalid Location as argument" code:-1 userInfo:nil]);
+        completion(nil, [NSError errorWithDomain:@"Invalid Location as argument" code: - 1 userInfo:nil]);
         [SVProgressHUD showErrorWithStatus:@"Error: invalid location"];
     }
 }
@@ -94,7 +92,6 @@ static NSString * const kWeatherUndergroundAPIBaseURLString = @"http://api.wunde
              parameters:nil
                 success:^(AFHTTPRequestOperation *operation, id responseObject) {
                         //NSLog(@" Response   %@", responseObject  );
-
                     NSMutableDictionary *threeDays = [[NSMutableDictionary alloc]initWithObjectsAndKeys:
                                                       [self fillTommorowWithResponse:responseObject], @"Tommorow",
                                                       [self fillAfterTommorowWithResponse:responseObject], @"AfterTommorow",
@@ -104,7 +101,6 @@ static NSString * const kWeatherUndergroundAPIBaseURLString = @"http://api.wunde
                     
                     completion(self.days, nil);
                 }
-         
                 failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                     completion(nil, error);
                     if (error) {
