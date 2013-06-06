@@ -4,4 +4,6 @@
 
 @interface GradientView : UIView
 
++ (UIColor *)randomColor;
+
 @end

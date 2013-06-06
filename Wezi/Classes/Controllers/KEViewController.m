@@ -121,6 +121,8 @@
     self.templateView = [KEWindowView returnWindowView];
     self.templateView.frame = CGRectMake(50, 50, 800, 400);
     
+   
+    
     [self.scrollView addSubview:self.templateView];
     
     self.mapViewController = [[KEMapViewController alloc]init];
@@ -138,8 +140,8 @@
     self.shadowContainerView.backgroundColor = [UIColor clearColor];
     self.shadowContainerView.layer.shadowColor = [[UIColor blackColor] CGColor];
     self.shadowContainerView.layer.shadowOffset = CGSizeZero;
-    self.shadowContainerView.layer.shadowOpacity = 0.65f;
-    self.shadowContainerView.layer.shadowRadius = 4.0f;
+    self.shadowContainerView.layer.shadowOpacity = 0.95f;
+    self.shadowContainerView.layer.shadowRadius = 10.0f;
     //self.shadowContainerView.hidden = YES;
     
 }
@@ -394,7 +396,7 @@
             [self reloadDataWithNewLocation:location withView:foo];
             });
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.5 * NSEC_PER_SEC), dispatch_get_current_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1.0 * NSEC_PER_SEC), dispatch_get_current_queue(), ^{
             [self.scrollView setContentOffset:CGPointMake(1024, 0) animated:YES];
         });
     }    
