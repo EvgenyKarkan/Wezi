@@ -53,7 +53,7 @@
 {
     KEWindowView *dummyView = (KEWindowView *)[self loadViewFromNibWithName:kKEWindowViewNibName];
     CAGradientLayer *gradientLayer  = (CAGradientLayer *)dummyView.layer;
-    gradientLayer.colors            = @[(id)GRADIENT_COLOR_1,(id)GRADIENT_COLOR_2/*,(id)GRADIENT_COLOR_3*/];
+    gradientLayer.colors            = @[(id)GRADIENT_COLOR_1,(id)GRADIENT_COLOR_2];
     
     return dummyView;
 }

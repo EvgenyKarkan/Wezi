@@ -8,7 +8,6 @@
 
 #import "Place.h"
 
-
 @implementation Place
 
 @dynamic latitude;

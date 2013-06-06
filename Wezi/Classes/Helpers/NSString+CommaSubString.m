@@ -10,7 +10,6 @@
 
 @implementation NSString (CommaSubString)
 
-
 + (NSString *)subStringBeforeFirstCommaInString:(NSString *)longString
 {
     NSRange range = [longString rangeOfString:@","];

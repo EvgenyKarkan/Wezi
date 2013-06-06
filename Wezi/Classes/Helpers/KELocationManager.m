@@ -37,17 +37,14 @@ NSString * const kLocationDidChangeNotificationKey = @"locationManagerlocationDi
 
 - (void)startMonitoringLocationChanges
 {
-    if ([CLLocationManager locationServicesEnabled])
-    {
-        if (!self.isMonitoringLocation)
-        {
+    if ([CLLocationManager locationServicesEnabled]) {
+        if (!self.isMonitoringLocation) {
             self.isMonitoringLocation = YES;
             self.locationManager.delegate = self;
             [self.locationManager startMonitoringSignificantLocationChanges];
         }
     }
-    else
-    {
+    else {
         UIAlertView *servicesDisabledAlert = [[UIAlertView alloc] initWithTitle:@"Location Services Disabled"
                                                                         message:@"This app requires location services to be enabled"
                                                                        delegate:nil
@@ -59,8 +56,7 @@ NSString * const kLocationDidChangeNotificationKey = @"locationManagerlocationDi
 
 - (void)stopMonitoringLocationChanges
 {
-    if (_locationManager)
-    {
+    if (_locationManager) {
         [self.locationManager stopMonitoringSignificantLocationChanges];
         self.locationManager.delegate = nil;
         self.isMonitoringLocation = NO;
@@ -72,8 +68,7 @@ NSString * const kLocationDidChangeNotificationKey = @"locationManagerlocationDi
 
 - (CLLocationManager *)locationManager
 {
-    if (!_locationManager)
-    {
+    if (!_locationManager) {
         _locationManager = [[CLLocationManager alloc] init];
         //        [_locationManager setDistanceFilter:1000];
         //        [_locationManager setDesiredAccuracy: kCLLocationAccuracyThreeKilometers];
@@ -106,8 +101,7 @@ NSString * const kLocationDidChangeNotificationKey = @"locationManagerlocationDi
 
 - (void)locationManager:(CLLocationManager*)manager didFailWithError:(NSError*)error
 {
-    if ([error code]== kCLErrorDenied)
-    {
+    if ([error code]== kCLErrorDenied) {
         UIAlertView *servicesDisabledAlert = [[UIAlertView alloc] initWithTitle:@"Location Services Denied"
                                                                         message:@"This app requires location services to be allowed"
                                                                        delegate:nil
