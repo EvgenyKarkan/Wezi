@@ -8,8 +8,8 @@
 
 #import "KEAppDelegate.h"
 #import "Place.h"
+#import "AFHTTPClient.h"
 @implementation KEAppDelegate
-
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
@@ -17,7 +17,22 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-       // Override point for customization after application launch.
+     self.client = [AFHTTPClient clientWithBaseURL:[NSURL URLWithString:@"http://google.com"]];
+    
+    [self.client setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        if (status == AFNetworkReachabilityStatusNotReachable) {
+                // Not reachable
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"NoInternet" object:nil];
+        }
+        else {
+                // Reachable
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"YesInternet" object:nil];
+        }
+        
+        if (status == AFNetworkReachabilityStatusReachableViaWiFi) {
+                // On wifi
+        }
+    }];
     return YES;
 }
 							

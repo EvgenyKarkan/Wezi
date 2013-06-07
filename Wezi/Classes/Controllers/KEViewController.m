@@ -69,6 +69,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self subscribeToReachabilityNotifications];
     [self setupViews];
     
     KEWeatherManager *weather = [KEWeatherManager sharedClient];
@@ -499,4 +500,21 @@
     return NO;
 }
 
+#pragma mark - Subscribing to reachability notifications and handling them on UI
+
+- (void)subscribeToReachabilityNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onYesInternet) name:@"YesInternet" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onNoInternet) name:@"NoInternet" object:nil];
+}
+
+- (void)onYesInternet
+{
+    [SVProgressHUD showSuccessWithStatus:@"Internet active"];
+}
+
+- (void)onNoInternet
+{
+    [SVProgressHUD showErrorWithStatus:@"Internet dropped"];
+}
 @end

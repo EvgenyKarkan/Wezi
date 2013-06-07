@@ -14,12 +14,7 @@
 
 static NSString * const kWeatherUndergroundAPIBaseURLString = @"http://api.wunderground.com/api/";
 
-//http://api.wunderground.com/api/71e3133693dea20a/forecast/q/CA/San_Francisco.json
-
 @implementation KEWeatherManager
-
-@synthesize delegate;
-@synthesize days;
 
 #pragma mark - Singleton
 
@@ -31,7 +26,6 @@ static NSString * const kWeatherUndergroundAPIBaseURLString = @"http://api.wunde
         NSString *baseURLString = [kWeatherUndergroundAPIBaseURLString stringByAppendingString:kWeatherUndergroundAPIKey];
         sharedClient = [[self alloc] initWithBaseURL:[NSURL URLWithString:baseURLString]];
     });
-    
     return sharedClient;
 }
 
@@ -55,7 +49,6 @@ static NSString * const kWeatherUndergroundAPIBaseURLString = @"http://api.wunde
     if (location) {
         NSString *getPath = [NSString stringWithFormat:@"conditions/q/%.6f,%.6f.json", location.coordinate.latitude,
                                                                                        location.coordinate.longitude];
-           
         KEWeatherManager *client = [KEWeatherManager sharedClient];
         
         [client getPath:getPath
@@ -82,8 +75,7 @@ static NSString * const kWeatherUndergroundAPIBaseURLString = @"http://api.wunde
 
 - (void)getForecastObservationForLocation:(CLLocation *)location completion:(void(^)(NSMutableDictionary *days, NSError *error))completion
 {
-    if(location)
-    {
+    if(location) {
         NSString *getPath = [NSString stringWithFormat:@"forecast/lang:EN/q/%.6f,%.6f.json", location.coordinate.latitude,
                                                                                               location.coordinate.longitude];
         KEWeatherManager *client = [KEWeatherManager sharedClient];
