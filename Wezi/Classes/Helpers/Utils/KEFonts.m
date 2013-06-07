@@ -19,4 +19,8 @@
     return [UIFont fontWithName:@"PlutoSansLight" size:fontSize];
 }
 
++ (UIFont *)plutoSansHeavyWithSize:(CGFloat)fontSize
+{
+    return [UIFont fontWithName:@"PlutoSansHeavy" size:fontSize];
+}
 @end
