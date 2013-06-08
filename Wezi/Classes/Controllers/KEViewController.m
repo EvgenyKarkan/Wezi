@@ -69,6 +69,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [GradientView randomColor];
     [self subscribeToReachabilityNotifications];
     [self setupViews];
     
