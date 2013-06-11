@@ -6,13 +6,12 @@
 //  Copyright (c) 2013 EvgenyKarkan. All rights reserved.
 //
 
-#import "KEWindowView.h"
-#import "KEFonts.h"
-
 #define GRADIENT_COLOR_1    [[UIColor colorWithRed:(arc4random() % 256/256.0) green:(arc4random()% 256/256.0) blue:(arc4random()% 256/256.0) alpha:1] CGColor]
 #define GRADIENT_COLOR_2    [[UIColor colorWithRed:(arc4random() % 256/256.0) green:(arc4random()% 256/256.0) blue:(arc4random()% 256/256.0) alpha:1] CGColor]
 #define GRADIENT_COLOR_3    [[UIColor colorWithRed:(arc4random() % 256/256.0) green:(arc4random()% 256/256.0) blue:(arc4random()% 256/256.0) alpha:1] CGColor]
 
+#import "KEWindowView.h"
+#import "KEFonts.h"
 
 @interface KEWindowView()
 
@@ -22,19 +21,6 @@
 
 @implementation KEWindowView
 
-@synthesize conditionIcon;
-@synthesize currentCondition;
-@synthesize currentTemperature;
-@synthesize wind;
-@synthesize humidity;
-@synthesize pressure;
-@synthesize tomorrowView;
-@synthesize tommorowTemp;
-@synthesize afterTommorowView;
-@synthesize afterTommorowTemp;
-@synthesize afterAfterTommorowView;
-@synthesize afrerAfterTommorowTemp;
-
 + (UIView *)loadViewFromNibWithName:(NSString *)nibName
 {
     NSArray *previews = [[NSBundle mainBundle] loadNibNamed:nibName
@@ -43,13 +29,12 @@
     UIView *tempView = [previews objectAtIndex:0];
     tempView.layer.cornerRadius = 20.0f;
     tempView.layer.borderColor = [[UIColor whiteColor] CGColor];
-    tempView.layer.borderWidth  = 6.0f;
+    tempView.layer.borderWidth  = 3.0f;
     tempView.layer.shadowColor = [[UIColor blackColor] CGColor];
     tempView.layer.shadowOffset = CGSizeZero;
     tempView.layer.shadowOpacity = 2.99f;
-    tempView.layer.shadowRadius = 15.0f;
+    tempView.layer.shadowRadius = 10.0f;
    
-    
     return tempView;
 }
 
@@ -71,13 +56,14 @@
 
 + (void)settingFontsToUIElements:(KEWindowView *)aView
 {
-    [aView.currentTemperature setFont:[KEFonts plutoSansHeavyWithSize:17.0f]];
-    [aView.timeStamp setFont:[KEFonts plutoSansHeavyWithSize:17.0f]];
-    [aView.wind setFont:[KEFonts plutoSansHeavyWithSize:17.0f]];
-    [aView.humidity setFont:[KEFonts plutoSansHeavyWithSize:17.0f]];
-    [aView.timeStamp setFont:[KEFonts plutoSansHeavyWithSize:17.0f]];
-    [aView.place setFont:[KEFonts plutoSansHeavyWithSize:17.0f]];
-    [aView.pressure setFont:[KEFonts plutoSansHeavyWithSize:17.0f]];
+    NSMutableArray *allLabelArray = [NSMutableArray arrayWithArray:@[aView.currentTemperature, aView.timeStamp, aView.wind,
+                                                                     aView.humidity, aView.place, aView.pressure]];
+    
+    for (UILabel *label in allLabelArray) {
+        [label setFont:[KEFonts plutoSansRegularWithSize:17.0f]];
+    }
 }
+
+
 @end
 

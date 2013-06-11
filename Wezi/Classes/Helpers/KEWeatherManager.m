@@ -54,7 +54,8 @@ static NSString * const kWeatherUndergroundAPIBaseURLString = @"http://api.wunde
         [client getPath:getPath
              parameters:nil
                 success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                    KEObservation *observation = [KEObservation observationWithDictionary:responseObject[@"current_observation"]]; // maybe to change it
+                    KEObservation *observation = [KEObservation observationWithDictionary:responseObject[@"current_observation"]];
+                    NSLog(@"Reaponce %@", responseObject);
                     completion(observation, nil);
                 }
                 failure:^(AFHTTPRequestOperation *operation, NSError *error) {

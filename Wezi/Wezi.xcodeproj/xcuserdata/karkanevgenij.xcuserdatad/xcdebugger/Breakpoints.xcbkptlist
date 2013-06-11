@@ -7,25 +7,12 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "Classes/KEAppDelegate.m"
-         timestampString = "392324469.53519"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "26"
-         endingLineNumber = "26"
-         landmarkName = "-application:didFinishLaunchingWithOptions:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
          filePath = "Classes/Helpers/KEWeatherManager.m"
-         timestampString = "392322948.539876"
+         timestampString = "392673279.418805"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "77"
-         endingLineNumber = "77"
+         startingLineNumber = "78"
+         endingLineNumber = "78"
          landmarkName = "-getForecastObservationForLocation:completion:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -34,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Classes/Controllers/KEViewController.m"
-         timestampString = "392378581.724406"
+         timestampString = "392675374.991604"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "462"
-         endingLineNumber = "462"
+         startingLineNumber = "468"
+         endingLineNumber = "468"
          landmarkName = "-deletePAge:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -47,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Classes/Controllers/KEViewController.m"
-         timestampString = "392378581.724406"
+         timestampString = "392675374.991604"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "185"
-         endingLineNumber = "185"
+         startingLineNumber = "186"
+         endingLineNumber = "186"
          landmarkName = "-updateUIForView:observetion:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -125,11 +112,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Classes/Controllers/KEViewController.m"
-         timestampString = "392378581.724406"
+         timestampString = "392675374.991604"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "211"
-         endingLineNumber = "211"
+         startingLineNumber = "212"
+         endingLineNumber = "212"
          landmarkName = "-updateTommorowWithForecast:withView:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -151,51 +138,38 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Classes/Controllers/KEViewController.m"
-         timestampString = "392378581.724406"
+         timestampString = "392675374.991604"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "514"
-         endingLineNumber = "514"
-         landmarkName = "-onYesInternet"
+         startingLineNumber = "520"
+         endingLineNumber = "520"
+         landmarkName = "-onNoInternet"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "Classes/KEAppDelegate.m"
-         timestampString = "392324469.53519"
+         filePath = "Classes/Helpers/Utils/KEFonts.m"
+         timestampString = "392672337.702257"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "28"
-         endingLineNumber = "28"
-         landmarkName = "-application:didFinishLaunchingWithOptions:"
+         startingLineNumber = "34"
+         endingLineNumber = "34"
+         landmarkName = "+plutoSansRegularWithSize:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "Classes/KEAppDelegate.m"
-         timestampString = "392324469.53519"
+         filePath = "Classes/Controllers/KEViewController.m"
+         timestampString = "392675538.660264"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "33"
-         endingLineNumber = "33"
-         landmarkName = "-application:didFinishLaunchingWithOptions:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Classes/KEAppDelegate.m"
-         timestampString = "392324469.53519"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "22"
-         endingLineNumber = "22"
-         landmarkName = "-application:didFinishLaunchingWithOptions:"
+         startingLineNumber = "334"
+         endingLineNumber = "334"
+         landmarkName = "-prepareForSegue:sender:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

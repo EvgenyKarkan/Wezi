@@ -19,18 +19,12 @@
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="-1" height="-1"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oJa-6j-7vi">
-                                <rect key="frame" x="-47" y="44" width="985" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="KV2-Lh-pVA">
-                                <rect key="frame" x="0.0" y="81" width="1024" height="540"/>
+                                <rect key="frame" x="0.0" y="44" width="1024" height="660"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="G0e-Gh-Fee" userLabel="shadowView">
-                                        <rect key="frame" x="598" y="60" width="406" height="409"/>
+                                        <rect key="frame" x="598" y="97" width="406" height="409"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" id="DzE-Wm-wWQ" customClass="GradientView">
                                                 <rect key="frame" x="-6" y="0.0" width="412" height="555"/>
@@ -112,6 +106,17 @@
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oJa-6j-7vi">
+                                        <rect key="frame" x="-44" y="57" width="985" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" id="kPA-z1-jgZ">
+                                        <rect key="frame" x="52" y="45" width="920" height="570"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.98584980867346939" green="0.95771647204586197" blue="0.72145332076854318" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -252,6 +257,8 @@
         <class className="KEMapViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/KEMapViewController.h"/>
             <relationships>
+                <relationship kind="action" name="chooseLocation:"/>
+                <relationship kind="action" name="dropPinPressed:"/>
                 <relationship kind="outlet" name="map" candidateClass="MKMapView"/>
             </relationships>
         </class>

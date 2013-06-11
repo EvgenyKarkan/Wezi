@@ -23,4 +23,19 @@
 {
     return [UIFont fontWithName:@"PlutoSansHeavy" size:fontSize];
 }
+
++ (UIFont *)plutoSansExtraLonghtWithSize:(CGFloat)fontSize
+{
+    return [UIFont fontWithName:@"PlutoSansExtraLight" size:fontSize];
+}
+
++ (UIFont *)plutoSansRegularWithSize:(CGFloat)fontSize
+{
+    return [UIFont fontWithName:@"PlutoSansRegular" size:fontSize];
+}
+
++ (UIFont *)plutoSansCondBoldWithSize:(CGFloat)fontSize
+{
+    return [UIFont fontWithName:@"PlutoSansCondBold" size:fontSize];
+}
 @end

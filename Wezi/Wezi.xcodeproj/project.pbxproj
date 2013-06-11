@@ -63,6 +63,12 @@
 		CE9C75CA173CED00008CFE31 /* WindowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9C75C9173CED00008CFE31 /* WindowView.xib */; };
 		CE9C75CD173CED5C008CFE31 /* KEWindowView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9C75CC173CED5C008CFE31 /* KEWindowView.m */; };
 		CE9D02C617437B2F0057968F /* KECityAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D02C517437B2F0057968F /* KECityAnnotation.m */; };
+		DE04BB621767CC2B00C3EE78 /* weezle_sun.png in Resources */ = {isa = PBXBuildFile; fileRef = DE04BB611767CC2B00C3EE78 /* weezle_sun.png */; };
+		DE04BB641767CCB900C3EE78 /* weezle_night_rain.png in Resources */ = {isa = PBXBuildFile; fileRef = DE04BB631767CCB900C3EE78 /* weezle_night_rain.png */; };
+		DE04BB691767D07600C3EE78 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DE04BB671767D07600C3EE78 /* icon.png */; };
+		DE04BB6A1767D07600C3EE78 /* icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = DE04BB681767D07600C3EE78 /* icon72.png */; };
+		DE04BB6C1767D08000C3EE78 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DE04BB6B1767D08000C3EE78 /* icon.png */; };
+		DE04BB6E1767D08E00C3EE78 /* icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = DE04BB6D1767D08D00C3EE78 /* icon72.png */; };
 		DE953F87174AD64500AC7915 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = DE953F86174AD64500AC7915 /* Place.m */; };
 		DEB51ED41759267400F04539 /* NSString+CommaSubString.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB51ED31759267400F04539 /* NSString+CommaSubString.m */; };
 		DEB51ED817592D7C00F04539 /* KEFonts.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB51ED717592D7C00F04539 /* KEFonts.m */; };
@@ -157,6 +163,12 @@
 		CE9C75CC173CED5C008CFE31 /* KEWindowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEWindowView.m; sourceTree = "<group>"; };
 		CE9D02C417437B2F0057968F /* KECityAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KECityAnnotation.h; sourceTree = "<group>"; };
 		CE9D02C517437B2F0057968F /* KECityAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KECityAnnotation.m; sourceTree = "<group>"; };
+		DE04BB611767CC2B00C3EE78 /* weezle_sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weezle_sun.png; sourceTree = "<group>"; };
+		DE04BB631767CCB900C3EE78 /* weezle_night_rain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weezle_night_rain.png; sourceTree = "<group>"; };
+		DE04BB671767D07600C3EE78 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		DE04BB681767D07600C3EE78 /* icon72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon72.png; sourceTree = "<group>"; };
+		DE04BB6B1767D08000C3EE78 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		DE04BB6D1767D08D00C3EE78 /* icon72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon72.png; sourceTree = "<group>"; };
 		DE953F85174AD64500AC7915 /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Place.h; sourceTree = "<group>"; };
 		DE953F86174AD64500AC7915 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
 		DEB51ED21759267400F04539 /* NSString+CommaSubString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CommaSubString.h"; sourceTree = "<group>"; };
@@ -220,6 +232,8 @@
 		CE7C0E96172FBE4B00E4A8AC = {
 			isa = PBXGroup;
 			children = (
+				DE04BB6D1767D08D00C3EE78 /* icon72.png */,
+				DE04BB6B1767D08000C3EE78 /* icon.png */,
 				CE7C0F10172FC2CC00E4A8AC /* Classes */,
 				CE7C0EA8172FBE4B00E4A8AC /* Supporting files */,
 				CE7C0EA1172FBE4B00E4A8AC /* Frameworks */,
@@ -406,6 +420,10 @@
 		CE7C0F28172FC36500E4A8AC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				DE04BB671767D07600C3EE78 /* icon.png */,
+				DE04BB681767D07600C3EE78 /* icon72.png */,
+				DE04BB631767CCB900C3EE78 /* weezle_night_rain.png */,
+				DE04BB611767CC2B00C3EE78 /* weezle_sun.png */,
 				CE7C0F29172FC36500E4A8AC /* Default-568h@2x.png */,
 				CE7C0F2A172FC36500E4A8AC /* Default.png */,
 				CE7C0F2B172FC36500E4A8AC /* Default@2x.png */,
@@ -502,6 +520,12 @@
 				CE3802AC1757B8840086510C /* PlutoSansMedium.otf in Resources */,
 				CE3802AD1757B8840086510C /* PlutoSansRegular.otf in Resources */,
 				CE3802AE1757B8840086510C /* PlutoSansThin.otf in Resources */,
+				DE04BB621767CC2B00C3EE78 /* weezle_sun.png in Resources */,
+				DE04BB641767CCB900C3EE78 /* weezle_night_rain.png in Resources */,
+				DE04BB691767D07600C3EE78 /* icon.png in Resources */,
+				DE04BB6A1767D07600C3EE78 /* icon72.png in Resources */,
+				DE04BB6C1767D08000C3EE78 /* icon.png in Resources */,
+				DE04BB6E1767D08E00C3EE78 /* icon72.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

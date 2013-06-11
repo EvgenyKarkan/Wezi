@@ -15,7 +15,7 @@
 {
     UIImage *icon = nil;
     if ([URLString rangeOfString:@"clear"].location != NSNotFound) {
-        icon = [UIImage imageNamed:@"images-2.jpeg"];
+        icon = [UIImage imageNamed:@"weezle_night_rain.png"];
     }
     return icon;
 }

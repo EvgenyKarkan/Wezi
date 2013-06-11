@@ -39,7 +39,7 @@
 					<object class="IBUIImageView" id="698914690">
 						<reference key="NSNextResponder" ref="271871499"/>
 						<int key="NSvFlags">274</int>
-						<string key="NSFrame">{{20, 20}, {100, 100}}</string>
+						<string key="NSFrame">{{20, 20}, {128, 128}}</string>
 						<reference key="NSSuperview" ref="271871499"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="21264906"/>
@@ -54,7 +54,7 @@
 					<object class="IBUILabel" id="21264906">
 						<reference key="NSNextResponder" ref="271871499"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{128, 20}, {116, 21}}</string>
+						<string key="NSFrame">{{156, 20}, {218, 21}}</string>
 						<reference key="NSSuperview" ref="271871499"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="290995183"/>
@@ -85,7 +85,7 @@
 					<object class="IBUILabel" id="81480216">
 						<reference key="NSNextResponder" ref="271871499"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 128}, {501, 21}}</string>
+						<string key="NSFrame">{{20, 147}, {501, 21}}</string>
 						<reference key="NSSuperview" ref="271871499"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="959470351"/>
@@ -204,7 +204,7 @@
 					<object class="IBUILabel" id="230341534">
 						<reference key="NSNextResponder" ref="271871499"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{128, 99}, {304, 21}}</string>
+						<string key="NSFrame">{{156, 127}, {351, 21}}</string>
 						<reference key="NSSuperview" ref="271871499"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="81480216"/>
@@ -318,7 +318,7 @@
 						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 					</object>
 				</array>
-				<string key="NSFrameSize">{800, 400}</string>
+				<string key="NSFrameSize">{920, 600}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="698914690"/>
@@ -469,19 +469,19 @@
 						<reference key="object" ref="271871499"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="698914690"/>
-							<reference ref="81480216"/>
 							<reference ref="290658761"/>
 							<reference ref="957631762"/>
 							<reference ref="959470351"/>
-							<reference ref="21264906"/>
 							<reference ref="140841044"/>
-							<reference ref="230341534"/>
 							<reference ref="290995183"/>
 							<reference ref="245272728"/>
 							<reference ref="885432489"/>
 							<reference ref="320820777"/>
 							<reference ref="827635503"/>
 							<reference ref="305962624"/>
+							<reference ref="81480216"/>
+							<reference ref="230341534"/>
+							<reference ref="21264906"/>
 						</array>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">WindowView</string>

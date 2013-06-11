@@ -12,5 +12,8 @@
 + (UIFont *)plutoSansMediumWithSize:(CGFloat)fontSize;
 + (UIFont *)plutoSansLightWithSize:(CGFloat)fontSize;
 + (UIFont *)plutoSansHeavyWithSize:(CGFloat)fontSize;
++ (UIFont *)plutoSansExtraLonghtWithSize:(CGFloat)fontSize;
++ (UIFont *)plutoSansRegularWithSize:(CGFloat)fontSize;
++ (UIFont *)plutoSansCondBoldWithSize:(CGFloat)fontSize;
 
 @end

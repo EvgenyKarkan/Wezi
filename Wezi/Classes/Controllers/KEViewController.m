@@ -51,7 +51,7 @@
         
     for (int i = 1; i <=[places count]; i++) {
         KEWindowView *aView = [KEWindowView returnWindowView];
-        aView.frame = CGRectMake((self.scrollView.contentOffset.x + 1024 *i) +50, 50, 800, 400);
+        aView.frame = CGRectMake((self.scrollView.contentOffset.x + 1024 *i) +60, 30, 905, 580);
         [self.scrollView addSubview:aView];
         [self.viewWithCoreData addObject:aView];
         
@@ -69,6 +69,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     self.view.backgroundColor = [GradientView randomColor];
     [self subscribeToReachabilityNotifications];
     [self setupViews];
@@ -121,7 +122,7 @@
                forControlEvents:UIControlEventValueChanged];
     
     self.templateView = [KEWindowView returnWindowView];
-    self.templateView.frame = CGRectMake(50, 50, 800, 400);
+    self.templateView.frame = CGRectMake(50, 30, 920, 600);
     
    
     
@@ -139,12 +140,12 @@
     self.observationContainerView.layer.borderColor = [[UIColor whiteColor] CGColor];
     self.observationContainerView.layer.borderWidth  = 3.0f;
     
-    self.shadowContainerView.backgroundColor = [UIColor clearColor];
-    self.shadowContainerView.layer.shadowColor = [[UIColor blackColor] CGColor];
-    self.shadowContainerView.layer.shadowOffset = CGSizeZero;
-    self.shadowContainerView.layer.shadowOpacity = 0.95f;
-    self.shadowContainerView.layer.shadowRadius = 10.0f;
-    //self.shadowContainerView.hidden = YES;
+//    self.shadowContainerView.backgroundColor = [UIColor clearColor];
+//    self.shadowContainerView.layer.shadowColor = [[UIColor blackColor] CGColor];
+//    self.shadowContainerView.layer.shadowOffset = CGSizeZero;
+//    self.shadowContainerView.layer.shadowOpacity = 0.95f;
+//    self.shadowContainerView.layer.shadowRadius = 10.0f;
+    self.shadowContainerView.hidden = YES;
     
 }
 
@@ -152,7 +153,7 @@
 {
     if (observation) {
         
-        self.shadowContainerView.hidden = NO;
+        self.shadowContainerView.hidden = YES;
     
 //    if (!([observation.iconUrl rangeOfString:@"nt_clear"].location == NSNotFound )) {          // think how to add it to util or helper
 //        [self.currentConditionImageView setImage:[UIImage imageNamed:@"images-2.jpeg"]];
@@ -205,7 +206,7 @@
 //
 - (void)updateTommorowWithForecast:(KETommorowForecast *)forecast withView:(KEWindowView *)viewToUpdate
 {
-    [viewToUpdate.tomorrowView setImageWithURL:[NSURL URLWithString:forecast.iconURL]];
+    [viewToUpdate.tomorrowView setImage:[KEUIImageFactoryUtil imageDependsOnURL:forecast.iconURL]/*setImageWithURL:[NSURL URLWithString:forecast.iconURL]*/];
     viewToUpdate.tommorowTemp.text = forecast.highTemperature;
     NSLog(@" viewToUpdate.tommorowTemp.text %@", viewToUpdate.tommorowTemp.text );
     
@@ -344,8 +345,6 @@
 
 - (IBAction)refresh:(id)sender {
 
-    [self reloadData];
-
     if (self.pageControl.currentPage != 0) {
         NSError *error = nil;
         NSArray *places = [self.managedObjectContext executeFetchRequest:[self.dataManager requestWithEntityName:@"Place"]
@@ -364,6 +363,9 @@
             [self reloadDataWithNewLocation:self.loc
                                    withView:[self.viewWithCoreData objectAtIndex:self.pageControl.currentPage - 1]];
         }
+    }
+    else {
+       [self reloadData]; 
     }
 }
 
@@ -385,7 +387,7 @@
     }    
     if (self.pageControl.numberOfPages == 2) {
         KEWindowView *foo = [KEWindowView returnWindowView];
-        foo.frame = CGRectMake(1074, 50, 800, 400);
+        foo.frame = CGRectMake(1074, 30, 920, 600);
         [self.scrollView addSubview:foo];
         [self.viewWithCoreData addObject:foo];
         
@@ -407,10 +409,10 @@
         KEWindowView *bar = [KEWindowView returnWindowView];
         
         if (self.pageControl.currentPage == self.pageControl.numberOfPages - 2) {
-            bar.frame = CGRectMake((self.scrollView.contentOffset.x + 1074), 50, 800, 400);
+            bar.frame = CGRectMake((self.scrollView.contentOffset.x + 1074), 30, 920, 600);
         }
         else {
-            bar.frame = CGRectMake((self.scrollView.contentOffset.x + 1024 * (self.pageControl.numberOfPages - self.pageControl.currentPage - 1) + 50), 50, 800, 400);
+            bar.frame = CGRectMake((self.scrollView.contentOffset.x + 1024 * (self.pageControl.numberOfPages - self.pageControl.currentPage - 1) + 50), 30, 920, 600);
         }
         
         [self.scrollView addSubview:bar];
@@ -438,7 +440,7 @@
         for (UIView *dummyObject in self.viewWithCoreData) {
             NSUInteger index = [self.viewWithCoreData indexOfObject:dummyObject];
             if ((index > self.pageControl.currentPage -1) && (self.pageControl.currentPage != 0)) {
-                CGRect fullScreenRect = CGRectMake(dummyObject.frame.origin.x - 1024, 50, 800, 400);
+                CGRect fullScreenRect = CGRectMake(dummyObject.frame.origin.x - 1024, 30, 920, 600);
                 [dummyObject setFrame:fullScreenRect];
             }
         }
