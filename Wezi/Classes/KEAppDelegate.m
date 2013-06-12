@@ -70,15 +70,13 @@
 - (void)reachabilityHandling
 {
     self.client = [AFHTTPClient clientWithBaseURL:[NSURL URLWithString:@"http://google.com"]];
-    
+   
     [self.client setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
         if (status == AFNetworkReachabilityStatusNotReachable) {
             [[NSNotificationCenter defaultCenter] postNotificationName:@"NoInternet" object:nil];
         }
         else {
             [[NSNotificationCenter defaultCenter] postNotificationName:@"YesInternet" object:nil];
-        }
-        if (status == AFNetworkReachabilityStatusReachableViaWiFi) {
         }
     }];
 }

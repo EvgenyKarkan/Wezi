@@ -21,6 +21,7 @@
 #import "KEDataManager.h"
 #import "NSString+CommaSubString.h"
 #import "KEUIImageFactoryUtil.h"
+#import "Reachability.h"
 
 @interface KEViewController () <UIScrollViewDelegate,KECoordinateFillProtocol>
 
@@ -35,6 +36,7 @@
 @property (nonatomic, strong)       NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong)       CLLocation *loc;
 @property (nonatomic, weak)         IBOutlet UINavigationItem *bar;
+@property (nonatomic, assign)       BOOL internetDroppedFirstly;
 
 @end
 
@@ -69,29 +71,38 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.view.backgroundColor = [GradientView randomColor];
     [self subscribeToReachabilityNotifications];
-    [self setupViews];
+  
+    Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
     
-    KEWeatherManager *weather = [KEWeatherManager sharedClient];
-    weather.delegate = self;
-    
-    __weak KEViewController *weakSelf = self;
-    
-    [[NSNotificationCenter defaultCenter] addObserverForName:kLocationDidChangeNotificationKey
-                                                      object:nil
-                                                       queue:[NSOperationQueue mainQueue]
-                                                  usingBlock:^(NSNotification *note) {
-                                                      NSLog(@"Note: %@", note);
-                                                      [weakSelf reloadData];
-                                                  }];
-    [[KELocationManager sharedManager] startMonitoringLocationChanges];
-    
-    [self configurateUIElements];
-    self.dataManager = [KEDataManager sharedDataManager];
-    self.managedObjectContext = [self.dataManager managedObjectContextFromAppDelegate];
-    [self prepareForLoading];
+    if (networkStatus == NotReachable) {
+        self.internetDroppedFirstly = YES;
+    }
+    else {
+        self.view.backgroundColor = [GradientView randomColor];
+        [self subscribeToReachabilityNotifications];
+        [self setupViews];
+        
+        KEWeatherManager *weather = [KEWeatherManager sharedClient];
+        weather.delegate = self;
+        
+        __weak KEViewController *weakSelf = self;
+        
+        [[NSNotificationCenter defaultCenter] addObserverForName:kLocationDidChangeNotificationKey
+                                                          object:nil
+                                                           queue:[NSOperationQueue mainQueue]
+                                                      usingBlock:^(NSNotification *note) {
+                                                          NSLog(@"Note: %@", note);
+                                                          [weakSelf reloadData];
+                                                      }];
+        [[KELocationManager sharedManager] startMonitoringLocationChanges];
+        
+        [self configurateUIElements];
+        self.dataManager = [KEDataManager sharedDataManager];
+        self.managedObjectContext = [self.dataManager managedObjectContextFromAppDelegate];
+        [self prepareForLoading];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -155,29 +166,28 @@
         
         self.shadowContainerView.hidden = YES;
     
-//    if (!([observation.iconUrl rangeOfString:@"nt_clear"].location == NSNotFound )) {          // think how to add it to util or helper
-//        [self.currentConditionImageView setImage:[UIImage imageNamed:@"images-2.jpeg"]];
-//    }
-//[self.currentConditionImageView setImageWithURL:[NSURL URLWithString:observation.iconUrl]];
+
         
-        [self.weatherUndegroundImageView setImageWithURL:[NSURL URLWithString:observation.weatherUndergroundImageInfo[@"url"]]];
-        
-        self.locationLabel.text = observation.location[@"full"];
-        self.currentTemperatureLabel.text = observation.temperatureDescription;
-        //self.feelsLikeTemperatureLabel.text = [@"Feels like " stringByAppendingString:observation.feelsLikeTemperatureDescription];
-        self.weatherDescriptionLabel.text = observation.weatherDescription;
-        self.windDescriptionLabel.text = observation.windDescription;
-        self.humidityLabel.text = observation.relativeHumidity;
-        
-        self.devointLabel.text = observation.dewpointDescription;
-        self.lastUpdateLAbel.text = observation.timeString;
+//        [self.weatherUndegroundImageView setImageWithURL:[NSURL URLWithString:observation.weatherUndergroundImageInfo[@"url"]]];
+//        
+//        self.locationLabel.text = observation.location[@"full"];
+//        self.currentTemperatureLabel.text = observation.feelsLikeTemperatureC;
+//        //self.feelsLikeTemperatureLabel.text = [@"Feels like " stringByAppendingString:observation.feelsLikeTemperatureDescription];
+//        self.weatherDescriptionLabel.text = observation.weatherDescription;
+//        self.windDescriptionLabel.text = observation.windDescription;
+//        self.humidityLabel.text = observation.relativeHumidity;
+//        
+//        self.devointLabel.text = observation.dewpointDescription;
+//        self.lastUpdateLAbel.text = observation.timeString;
         
         [self.templateView.conditionIcon setImageWithURL:[NSURL URLWithString:observation.iconUrl]];
-        self.templateView.currentTemperature.text = observation.temperatureDescription;
+        
+        NSString *string = [NSString stringWithFormat:@"%@ %@",(NSString *)observation.feelsLikeTemperatureC,@"C"];
+        self.templateView.currentTemperature.text = string;
+        self.templateView.currentCondition.text = observation.weatherDescription;
+        self.templateView.place.text = [NSString subStringBeforeFirstCommaInString:observation.location[@"full"]];
     }
-    else {
-        self.shadowContainerView.hidden = YES;
-    }
+    
 }
 
 - (void)updateUIForView:(KEWindowView *)viewtoUpdate observetion:(KEObservation *)observation
@@ -514,10 +524,16 @@
 - (void)onYesInternet
 {
     [SVProgressHUD showSuccessWithStatus:@"Internet active"];
+    if (self.internetDroppedFirstly) {
+        self.internetDroppedFirstly = NO;
+        [self viewDidLoad];
+    }
 }
 
 - (void)onNoInternet
 {
     [SVProgressHUD showErrorWithStatus:@"Internet dropped"];
+
 }
+
 @end

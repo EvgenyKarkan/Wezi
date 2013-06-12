@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol Protocol <NSObject>
+
+- (void)returnTrue;
+- (void)returnFalse;
+
+@end
+
 @class AFHTTPClient;
 @interface KEAppDelegate : UIResponder <UIApplicationDelegate>
 
