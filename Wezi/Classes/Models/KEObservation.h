@@ -10,9 +10,6 @@
 
 @interface KEObservation : NSObject
 
-/**
-	Property to store current weather data
- */
 @property (nonatomic, strong) NSDictionary  *location;
 @property (nonatomic, strong) NSDictionary  *observationLocation;
 @property (nonatomic, strong) NSDictionary  *weatherUndergroundImageInfo;

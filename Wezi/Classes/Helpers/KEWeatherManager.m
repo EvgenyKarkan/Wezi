@@ -34,8 +34,7 @@ static NSString * const kWeatherUndergroundAPIBaseURLString = @"http://api.wunde
 - (id)initWithBaseURL:(NSURL *)url
 {
     self = [super initWithBaseURL:url];
-    if (self)
-    {
+    if (self) {
         [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
         [self setDefaultHeader:@"Accept" value:@"application/json"];
     }

@@ -21,7 +21,7 @@
 #import "KEDataManager.h"
 #import "NSString+CommaSubString.h"
 #import "KEUIImageFactoryUtil.h"
-#import "Reachability.h"
+#import "KEReachabilityUtil.h"
 
 @interface KEViewController () <UIScrollViewDelegate,KECoordinateFillProtocol>
 
@@ -31,11 +31,11 @@
 @property (nonatomic, strong)       KEDataManager *dataManager;
 @property (nonatomic, strong)       NSMutableArray *entityArrayCoreData;
 @property (nonatomic, strong)       NSMutableArray *viewWithCoreData;
-@property (nonatomic, readwrite)    BOOL isShownMapPopover;
-@property (nonatomic, readwrite)    BOOL pageControlBeingUsed;
 @property (nonatomic, strong)       NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong)       CLLocation *loc;
 @property (nonatomic, weak)         IBOutlet UINavigationItem *bar;
+@property (nonatomic, readwrite)    BOOL isShownMapPopover;
+@property (nonatomic, readwrite)    BOOL pageControlBeingUsed;
 @property (nonatomic, assign)       BOOL internetDroppedFirstly;
 
 @end
@@ -47,13 +47,12 @@
     NSError *error = nil;
     NSArray *places = [self.managedObjectContext executeFetchRequest:[self.dataManager requestWithEntityName:@"Place"]
                                                                error:&error];
-    
     self.entityArrayCoreData = [NSMutableArray arrayWithArray:places];
-    self.viewWithCoreData = [[NSMutableArray alloc]init];
+    self.viewWithCoreData = [[NSMutableArray alloc] init];
         
     for (int i = 1; i <=[places count]; i++) {
         KEWindowView *aView = [KEWindowView returnWindowView];
-        aView.frame = CGRectMake((self.scrollView.contentOffset.x + 1024 *i) +60, 30, 905, 580);
+        aView.frame = CGRectMake((self.scrollView.contentOffset.x + 1024 *i) + 60, 30, 905, 580);
         [self.scrollView addSubview:aView];
         [self.viewWithCoreData addObject:aView];
         
@@ -73,10 +72,7 @@
     [super viewDidLoad];
     [self subscribeToReachabilityNotifications];
   
-    Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
-    NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
-    
-    if (networkStatus == NotReachable) {
+    if (![[KEReachabilityUtil sharedUtil] checkInternetConnection]) {
         self.internetDroppedFirstly = YES;
     }
     else {
@@ -88,7 +84,6 @@
         weather.delegate = self;
         
         __weak KEViewController *weakSelf = self;
-        
         [[NSNotificationCenter defaultCenter] addObserverForName:kLocationDidChangeNotificationKey
                                                           object:nil
                                                            queue:[NSOperationQueue mainQueue]
@@ -116,7 +111,8 @@
     [[KELocationManager sharedManager] stopMonitoringLocationChanges];
 }
 
-- (void)viewDidUnload {
+- (void)viewDidUnload
+{
     [self setBar:nil];
     [super viewDidUnload];
 }
@@ -333,14 +329,14 @@
 
 #pragma mark - Actions
 
-- (IBAction)changePage:(id)sender {    
-    
-    [self.scrollView setContentOffset:CGPointMake(1024*self.pageControl.currentPage, 0) animated:YES];
+- (IBAction)changePage:(id)sender
+{
+    [self.scrollView setContentOffset:CGPointMake(1024 * self.pageControl.currentPage, 0) animated:YES];
     self.pageControlBeingUsed = YES;
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
     if ([[segue identifier] isEqualToString:@"segPop"]) {
         self.currentPopoverSegue = (UIStoryboardPopoverSegue *)segue;
         self.mapViewController = [segue destinationViewController];
@@ -348,34 +344,40 @@
     }
 }
 
-- (IBAction)goToMap:(id)sender {
-    
+- (IBAction)goToMap:(id)sender
+{
     [self performSegueWithIdentifier:@"segPop" sender:self];
 }
 
-- (IBAction)refresh:(id)sender {
-
-    if (self.pageControl.currentPage != 0) {
-        NSError *error = nil;
-        NSArray *places = [self.managedObjectContext executeFetchRequest:[self.dataManager requestWithEntityName:@"Place"]
-                                                                   error:&error];
-        
-        self.entityArrayCoreData = [NSMutableArray arrayWithArray:places];
-        
-        self.loc = [[CLLocation alloc]initWithLatitude:[[self.entityArrayCoreData objectAtIndex:self.pageControl.currentPage - 1] latitude]
-                                             longitude:[[self.entityArrayCoreData objectAtIndex:self.pageControl.currentPage - 1] longitude]];
-         
-        if (self.pageControl.currentPage == [self.entityArrayCoreData count]) {
-            [self reloadDataWithNewLocation:self.loc
-                                   withView:[self.viewWithCoreData objectAtIndex:self.pageControl.currentPage - 1]];
+- (IBAction)refresh:(id)sender
+{
+    if ([[KEReachabilityUtil sharedUtil] checkInternetConnection]) {
+        if (self.pageControl.currentPage != 0) {
+            NSError *error = nil;
+            NSArray *places = [self.managedObjectContext executeFetchRequest:[self.dataManager requestWithEntityName:@"Place"]
+                                                                       error:&error];
+            
+            self.entityArrayCoreData = [NSMutableArray arrayWithArray:places];
+            
+            self.loc = [[CLLocation alloc]initWithLatitude:[[self.entityArrayCoreData objectAtIndex:self.pageControl.currentPage - 1] latitude]
+                                                 longitude:[[self.entityArrayCoreData objectAtIndex:self.pageControl.currentPage - 1] longitude]];
+            
+            if (self.pageControl.currentPage == [self.entityArrayCoreData count]) {
+                [self reloadDataWithNewLocation:self.loc
+                                       withView:[self.viewWithCoreData objectAtIndex:self.pageControl.currentPage - 1]];
+            }
+            else {
+                [self reloadDataWithNewLocation:self.loc
+                                       withView:[self.viewWithCoreData objectAtIndex:self.pageControl.currentPage - 1]];
+            }
         }
         else {
-            [self reloadDataWithNewLocation:self.loc
-                                   withView:[self.viewWithCoreData objectAtIndex:self.pageControl.currentPage - 1]];
+            [self reloadData]; 
         }
+
     }
     else {
-       [self reloadData]; 
+        [SVProgressHUD showErrorWithStatus:@"Internet dropped. Refresh unavailable."];
     }
 }
 
@@ -495,11 +497,13 @@
     }
 }
 
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
 	self.pageControlBeingUsed = NO;
 }
 
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
 	self.pageControlBeingUsed = NO;
 }
 
@@ -533,7 +537,6 @@
 - (void)onNoInternet
 {
     [SVProgressHUD showErrorWithStatus:@"Internet dropped"];
-
 }
 
 @end

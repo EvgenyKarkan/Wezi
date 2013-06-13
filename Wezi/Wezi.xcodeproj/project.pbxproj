@@ -71,11 +71,11 @@
 		DE04BB6E1767D08E00C3EE78 /* icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = DE04BB6D1767D08D00C3EE78 /* icon72.png */; };
 		DE228E4917692BDE002DADE3 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = DE228E4817692BDE002DADE3 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DE953F87174AD64500AC7915 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = DE953F86174AD64500AC7915 /* Place.m */; };
+		DEAFD03E176A5FF200BA3785 /* KEReachabilityUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DEAFD03D176A5FF200BA3785 /* KEReachabilityUtil.m */; };
 		DEB51ED41759267400F04539 /* NSString+CommaSubString.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB51ED31759267400F04539 /* NSString+CommaSubString.m */; };
 		DEB51ED817592D7C00F04539 /* KEFonts.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB51ED717592D7C00F04539 /* KEFonts.m */; };
 		DEB51EDB17592DAB00F04539 /* KEUIImageFactoryUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB51EDA17592DAB00F04539 /* KEUIImageFactoryUtil.m */; };
 		DEB839AD1748D7A0005D211F /* KEDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB839AC1748D7A0005D211F /* KEDataManager.m */; };
-		DECCC4C21756B043005466C3 /* KERequestor.m in Sources */ = {isa = PBXBuildFile; fileRef = DECCC4C11756B043005466C3 /* KERequestor.m */; };
 		DEDCDCE11748001100D957EC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDCDCE01748001100D957EC /* CoreData.framework */; };
 		DEDCDCE717480B2C00D957EC /* Wezi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DEDCDCE517480B2C00D957EC /* Wezi.xcdatamodeld */; };
 /* End PBXBuildFile section */
@@ -174,6 +174,8 @@
 		DE228E4817692BDE002DADE3 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		DE953F85174AD64500AC7915 /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Place.h; sourceTree = "<group>"; };
 		DE953F86174AD64500AC7915 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
+		DEAFD03C176A5FF200BA3785 /* KEReachabilityUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEReachabilityUtil.h; sourceTree = "<group>"; };
+		DEAFD03D176A5FF200BA3785 /* KEReachabilityUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEReachabilityUtil.m; sourceTree = "<group>"; };
 		DEB51ED21759267400F04539 /* NSString+CommaSubString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CommaSubString.h"; sourceTree = "<group>"; };
 		DEB51ED31759267400F04539 /* NSString+CommaSubString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CommaSubString.m"; sourceTree = "<group>"; };
 		DEB51ED617592D7C00F04539 /* KEFonts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEFonts.h; sourceTree = "<group>"; };
@@ -182,8 +184,6 @@
 		DEB51EDA17592DAB00F04539 /* KEUIImageFactoryUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEUIImageFactoryUtil.m; sourceTree = "<group>"; };
 		DEB839AB1748D7A0005D211F /* KEDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEDataManager.h; sourceTree = "<group>"; };
 		DEB839AC1748D7A0005D211F /* KEDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEDataManager.m; sourceTree = "<group>"; };
-		DECCC4C01756B043005466C3 /* KERequestor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KERequestor.h; sourceTree = "<group>"; };
-		DECCC4C11756B043005466C3 /* KERequestor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KERequestor.m; sourceTree = "<group>"; };
 		DEDCDCE01748001100D957EC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		DEDCDCE617480B2C00D957EC /* Wezi.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Wezi.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -385,10 +385,10 @@
 				CE9D02C517437B2F0057968F /* KECityAnnotation.m */,
 				DEB839AB1748D7A0005D211F /* KEDataManager.h */,
 				DEB839AC1748D7A0005D211F /* KEDataManager.m */,
-				DECCC4C01756B043005466C3 /* KERequestor.h */,
-				DECCC4C11756B043005466C3 /* KERequestor.m */,
 				DEB51ED21759267400F04539 /* NSString+CommaSubString.h */,
 				DEB51ED31759267400F04539 /* NSString+CommaSubString.m */,
+				DEAFD03C176A5FF200BA3785 /* KEReachabilityUtil.h */,
+				DEAFD03D176A5FF200BA3785 /* KEReachabilityUtil.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -567,11 +567,11 @@
 				DEDCDCE717480B2C00D957EC /* Wezi.xcdatamodeld in Sources */,
 				DEB839AD1748D7A0005D211F /* KEDataManager.m in Sources */,
 				DE953F87174AD64500AC7915 /* Place.m in Sources */,
-				DECCC4C21756B043005466C3 /* KERequestor.m in Sources */,
 				DEB51ED41759267400F04539 /* NSString+CommaSubString.m in Sources */,
 				DEB51ED817592D7C00F04539 /* KEFonts.m in Sources */,
 				DEB51EDB17592DAB00F04539 /* KEUIImageFactoryUtil.m in Sources */,
 				DE228E4917692BDE002DADE3 /* Reachability.m in Sources */,
+				DEAFD03E176A5FF200BA3785 /* KEReachabilityUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

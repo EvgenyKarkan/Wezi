@@ -8,6 +8,7 @@
 
 #import "KEAppDelegate.h"
 #import "Place.h"
+#import "KEReachabilityUtil.h"
 #import "AFHTTPClient.h"
 
 @implementation KEAppDelegate
@@ -19,8 +20,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
-    [self reachabilityHandling];
-     
+    [[KEReachabilityUtil sharedUtil] checkInternetConnectionWithNotification];
     return YES;
 }
 							
@@ -63,22 +63,6 @@
             abort();
         }
     }
-}
-
-#pragma mark - Reachability handling 
-
-- (void)reachabilityHandling
-{
-    self.client = [AFHTTPClient clientWithBaseURL:[NSURL URLWithString:@"http://google.com"]];
-   
-    [self.client setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
-        if (status == AFNetworkReachabilityStatusNotReachable) {
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"NoInternet" object:nil];
-        }
-        else {
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"YesInternet" object:nil];
-        }
-    }];
 }
 
 #pragma mark - Core Data stack
