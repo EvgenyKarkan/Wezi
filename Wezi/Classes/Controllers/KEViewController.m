@@ -182,6 +182,7 @@
         self.templateView.currentTemperature.text = string;
         self.templateView.currentCondition.text = observation.weatherDescription;
         self.templateView.place.text = [NSString subStringBeforeFirstCommaInString:observation.location[@"full"]];
+        self.templateView.windAbbreviation.text = observation.windShortAbbreviation;
     }
     
 }
@@ -389,7 +390,7 @@
  
     [[self.currentPopoverSegue popoverController] dismissPopoverAnimated: YES];
     self.isShownMapPopover = NO;
-        
+    
     if (self.pageControl.numberOfPages == 20) {
         [SVProgressHUD showErrorWithStatus:@"Oops.. Sorry Maximum 20 cities"];
         return;
@@ -435,11 +436,15 @@
             [self reloadDataWithNewLocation:location withView:bar];
         });
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC), dispatch_get_current_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.5f * NSEC_PER_SEC), dispatch_get_current_queue(), ^{
             [self.scrollView setContentOffset:CGPointMake(1024 * (self.pageControl.numberOfPages - 1),0) animated:YES];
-            self.pageControl.currentPage = self.pageControl.numberOfPages - 1;
+                //self.pageControl.currentPage = self.pageControl.numberOfPages - 1;
         });
     }
+    if (self.pageControlBeingUsed) {
+        self.pageControl.currentPage = self.pageControl.numberOfPages - 1;
+    }
+    
     self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width * self.pageControl.numberOfPages, self.scrollView.frame.size.height);
 }
 

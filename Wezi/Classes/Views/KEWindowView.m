@@ -57,7 +57,7 @@
 + (void)settingFontsToUIElements:(KEWindowView *)aView
 {
     NSMutableArray *allLabelArray = [NSMutableArray arrayWithArray:@[aView.timeStamp, aView.wind,
-                                                                     aView.humidity, aView.pressure]];
+                                                                     aView.humidity, aView.pressure, aView.windAbbreviation]];
     
     for (UILabel *label in allLabelArray) {
         [label setFont:[KEFonts plutoSansRegularWithSize:17.0f]];

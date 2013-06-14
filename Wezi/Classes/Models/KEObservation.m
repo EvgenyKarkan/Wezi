@@ -24,6 +24,7 @@
                        @"observation_time_rfc822"      : @"timeStringRFC822",
                        @"weather"                      : @"weatherDescription",
                        @"wind_string"                  : @"windDescription",
+                       @"wind_dir"                     : @"windShortAbbreviation",
                        @"temperature_string"           : @"temperatureDescription",
                        @"feelslike_string"             : @"feelsLikeTemperatureDescription",
                        @"relative_humidity"            : @"relativeHumidity",

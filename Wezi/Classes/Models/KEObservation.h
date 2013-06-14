@@ -18,6 +18,7 @@
 @property (nonatomic, strong) NSString      *timeStringRFC822;
 @property (nonatomic, strong) NSString      *weatherDescription;
 @property (nonatomic, strong) NSString      *windDescription;
+@property (nonatomic, strong) NSString      *windShortAbbreviation;
 @property (nonatomic, strong) NSString      *temperatureDescription;
 @property (nonatomic, strong) NSString      *feelsLikeTemperatureDescription;
 @property (nonatomic, strong) NSString      *relativeHumidity;
