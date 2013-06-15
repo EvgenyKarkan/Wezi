@@ -61,7 +61,6 @@ static NSString * const kWeatherUndergroundAPIBaseURLString = @"http://api.wunde
                     completion(nil, error);
                     if (error) {
                         [SVProgressHUD showErrorWithStatus:[error localizedDescription]];
-                        NSLog(@"Error occured%@", [error localizedDescription]);
                     }
                 }
          ];

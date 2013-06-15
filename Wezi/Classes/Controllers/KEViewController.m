@@ -88,9 +88,12 @@
                                                           object:nil
                                                            queue:[NSOperationQueue mainQueue]
                                                       usingBlock:^(NSNotification *note) {
-                                                          NSLog(@"Note: %@", note);
-                                                          [weakSelf reloadData];
-                                                      }];
+                                                          dispatch_queue_t dummyQueue = dispatch_queue_create("dummyQueue", nil);
+                                                          dispatch_async(dummyQueue, ^{
+                                                              [weakSelf reloadData];
+                                                          });
+        }];
+        
         [[KELocationManager sharedManager] startMonitoringLocationChanges];
         
         [self configurateUIElements];
