@@ -176,7 +176,8 @@
 //        self.devointLabel.text = observation.dewpointDescription;
 //        self.lastUpdateLAbel.text = observation.timeString;
         
-        [self.templateView.conditionIcon setImageWithURL:[NSURL URLWithString:observation.iconUrl]];
+            //[self.templateView.conditionIcon setImageWithURL:[NSURL URLWithString:observation.iconUrl]];
+        [self.templateView.conditionIcon setImage:[KEUIImageFactoryUtil imageDependsOnURL:observation.iconUrl]];
         
         NSString *string = [NSString stringWithFormat:@"%@ %@",(NSString *)observation.feelsLikeTemperatureC,@"C"];
         self.templateView.currentTemperature.text = string;
@@ -230,7 +231,7 @@
 
 - (void)updateAfterTomorrowWithForecast:(KEAfterTommorowForecast *)forecast withView:(KEWindowView *)viewToUpdate
 {
-    [viewToUpdate.afterTommorowView setImageWithURL:[NSURL URLWithString:forecast.iconURL]];
+    [viewToUpdate.afterTommorowView setImage:[KEUIImageFactoryUtil imageDependsOnURL:forecast.iconURL]]/*[NSURL URLWithString:forecast.iconURL]]*/;
     
     viewToUpdate.afterTommorowTemp.text = forecast.highTemperature;
 

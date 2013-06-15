@@ -68,6 +68,7 @@
 		DE04BB691767D07600C3EE78 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DE04BB671767D07600C3EE78 /* icon.png */; };
 		DE04BB6A1767D07600C3EE78 /* icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = DE04BB681767D07600C3EE78 /* icon72.png */; };
 		DE228E4917692BDE002DADE3 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = DE228E4817692BDE002DADE3 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DE6CC15D176CF73300E7C44C /* DayRetina.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE6CC15C176CF73300E7C44C /* DayRetina.bundle */; };
 		DE953F87174AD64500AC7915 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = DE953F86174AD64500AC7915 /* Place.m */; };
 		DEAFD03E176A5FF200BA3785 /* KEReachabilityUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DEAFD03D176A5FF200BA3785 /* KEReachabilityUtil.m */; };
 		DEB51ED41759267400F04539 /* NSString+CommaSubString.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB51ED31759267400F04539 /* NSString+CommaSubString.m */; };
@@ -168,6 +169,7 @@
 		DE04BB681767D07600C3EE78 /* icon72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon72.png; sourceTree = "<group>"; };
 		DE228E4717692BDE002DADE3 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = ../Reachability.h; sourceTree = "<group>"; };
 		DE228E4817692BDE002DADE3 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = ../Reachability.m; sourceTree = "<group>"; };
+		DE6CC15C176CF73300E7C44C /* DayRetina.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DayRetina.bundle; sourceTree = "<group>"; };
 		DE953F85174AD64500AC7915 /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Place.h; sourceTree = "<group>"; };
 		DE953F86174AD64500AC7915 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
 		DEAFD03C176A5FF200BA3785 /* KEReachabilityUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KEReachabilityUtil.h; path = ../KEReachabilityUtil.h; sourceTree = "<group>"; };
@@ -415,6 +417,7 @@
 		CE7C0F28172FC36500E4A8AC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				DE6CC15C176CF73300E7C44C /* DayRetina.bundle */,
 				DE04BB671767D07600C3EE78 /* icon.png */,
 				DE04BB681767D07600C3EE78 /* icon72.png */,
 				DE04BB631767CCB900C3EE78 /* weezle_night_rain.png */,
@@ -523,6 +526,7 @@
 				DE04BB641767CCB900C3EE78 /* weezle_night_rain.png in Resources */,
 				DE04BB691767D07600C3EE78 /* icon.png in Resources */,
 				DE04BB6A1767D07600C3EE78 /* icon72.png in Resources */,
+				DE6CC15D176CF73300E7C44C /* DayRetina.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
