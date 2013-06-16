@@ -10,70 +10,159 @@
 
 @implementation KEUIImageFactoryUtil
 
-
 + (UIImage *)imageDependsOnURL:(NSString *)URLString
 {
     UIImage *icon = nil;
-    //day icons
     if ([URLString rangeOfString:@"clear"].location != NSNotFound) {
-        icon = [UIImage imageNamed:@"DayRetina.bundle/weezle_sun.png"];
+        if ([URLString rangeOfString:@"nt"].location != NSNotFound) {
+            icon = [UIImage imageNamed:@"Icons.bundle/weezle_fullmoon.png"];
+        }
+        else {
+            icon = [UIImage imageNamed:@"Icons.bundle/weezle_sun.png"];
+        }
     }
     if ([URLString rangeOfString:@"chanceflurries"].location != NSNotFound) {
-        icon = [UIImage imageNamed:@"DayRetina.bundle/weezle_snow.png"];
+        if ([URLString rangeOfString:@"nt"].location != NSNotFound) {
+            icon = [UIImage imageNamed:@"Icons.bundle/weezle_night_flurry.png"];
+        }
+        else {
+            icon = [UIImage imageNamed:@"Icons.bundle/weezle_snow.png"];
+        }
     }
     if ([URLString rangeOfString:@"chancerain"].location != NSNotFound) {
-        icon = [UIImage imageNamed:@"DayRetina.bundle/weezle_rain.png"];
+        if ([URLString rangeOfString:@"nt"].location != NSNotFound) {
+            icon = [UIImage imageNamed:@"Icons.bundle/weezle_night_rain.png"];
+        }
+        else {
+            icon = [UIImage imageNamed:@"Icons.bundle/weezle_rain.png"];
+        }
     }
     if ([URLString rangeOfString:@"chancesleet"].location != NSNotFound) {
-        icon = [UIImage imageNamed:@"DayRetina.bundle/weezle_rain_and_snow.png"];
+        if ([URLString rangeOfString:@"nt"].location != NSNotFound) {
+            icon = [UIImage imageNamed:@"Icons.bundle/weezle_night_rain.png"];
+        }
+        else {
+            icon = [UIImage imageNamed:@"Icons.bundle/weezle_rain_and_snow.png"];
+        }
     }
     if ([URLString rangeOfString:@"chancesnow"].location != NSNotFound) {
-        icon = [UIImage imageNamed:@"DayRetina.bundle/weezle_snow.png"];
+        if ([URLString rangeOfString:@"nt"].location != NSNotFound) {
+            icon = [UIImage imageNamed:@"Icons.bundle/weezle_night_and_snow.png"];
+        }
+        else {
+            icon = [UIImage imageNamed:@"Icons.bundle/weezle_snow.png"];
+        }
     }
     if ([URLString rangeOfString:@"chancetstorms"].location != NSNotFound) {
-        icon = [UIImage imageNamed:@"DayRetina.bundle/weezle_cloud_thunder_rain.png"];
+        if ([URLString rangeOfString:@"nt"].location != NSNotFound) {
+            icon = [UIImage imageNamed:@"Icons.bundle/weezle_night_thunder_rain.png"];
+        }
+        else {
+            icon = [UIImage imageNamed:@"Icons.bundle/weezle_cloud_thunder_rain.png"];
+        }
     }
     if ([URLString rangeOfString:@"cloudy"].location != NSNotFound) {
-        icon = [UIImage imageNamed:@"DayRetina.bundle/weezle_max_cloud.png"];
+        if ([URLString rangeOfString:@"nt"].location != NSNotFound) {
+            icon = [UIImage imageNamed:@"Icons.bundle/weezle_moon_cloud.png"];
+        }
+        else {
+            icon = [UIImage imageNamed:@"Icons.bundle/weezle_max_cloud.png"];
+        }
     }
     if ([URLString rangeOfString:@"flurries"].location != NSNotFound) {
-        icon = [UIImage imageNamed:@"DayRetina.bundle/weezle_snow.png"];
+        if ([URLString rangeOfString:@"nt"].location != NSNotFound) {
+            icon = [UIImage imageNamed:@"Icons.bundle/weezle_night_flurry.png"];
+        }
+        else {
+            icon = [UIImage imageNamed:@"Icons.bundle/weezle_snow.png"];
+        }
     }
     if ([URLString rangeOfString:@"fog"].location != NSNotFound) {
-        icon = [UIImage imageNamed:@"DayRetina.bundle/weezle_fog.png"];
+        if ([URLString rangeOfString:@"nt"].location != NSNotFound) {
+            icon = [UIImage imageNamed:@"Icons.bundle/weezle_night_fog.png"];
+        }
+        else {
+            icon = [UIImage imageNamed:@"Icons.bundle/weezle_fog.png"];
+        }
     }
     if ([URLString rangeOfString:@"hazy"].location != NSNotFound) {
-        icon = [UIImage imageNamed:@"DayRetina.bundle/weezle_fog.png"];
+        if ([URLString rangeOfString:@"nt"].location != NSNotFound) {
+            icon = [UIImage imageNamed:@"Icons.bundle/weezle_night_fog.png"];
+        }
+        else {
+            icon = [UIImage imageNamed:@"Icons.bundle/weezle_fog.png"];
+        }
     }
     if ([URLString rangeOfString:@"mostlycloudy"].location != NSNotFound) {
-        icon = [UIImage imageNamed:@"DayRetina.bundle/weezle_sun_maximum_clouds.png"];
+        if ([URLString rangeOfString:@"nt"].location != NSNotFound) {
+            icon = [UIImage imageNamed:@"Icons.bundle/weezle_moon_cloud_medium.png"];
+        }
+        else {
+            icon = [UIImage imageNamed:@"Icons.bundle/weezle_sun_maximum_clouds.png"];
+        }
     }
     if ([URLString rangeOfString:@"mostlysunny"].location != NSNotFound) {
-        icon = [UIImage imageNamed:@"DayRetina.bundle/weezle_sun_minimal_clouds.png"];
+        icon = [UIImage imageNamed:@"Icons.bundle/weezle_sun_minimal_clouds.png"];
     }
     if ([URLString rangeOfString:@"partlycloudy"].location != NSNotFound) {
-        icon = [UIImage imageNamed:@"DayRetina.bundle/weezle_cloud_sun.png"];
+        if ([URLString rangeOfString:@"nt"].location != NSNotFound) {
+            icon = [UIImage imageNamed:@"Icons.bundle/weezle_moon_cloud.png"];
+        }
+        else {
+            icon = [UIImage imageNamed:@"Icons.bundle/weezle_cloud_sun.png"];
+        }
     }
     if ([URLString rangeOfString:@"partlysunny"].location != NSNotFound) {
-        icon = [UIImage imageNamed:@"DayRetina.bundle/weezle_cloud_sun.png"];
+        if ([URLString rangeOfString:@"nt"].location != NSNotFound) {
+            icon = [UIImage imageNamed:@"Icons.bundle/weezle_moon_cloud.png"];
+        }
+        else {
+            icon = [UIImage imageNamed:@"Icons.bundle/weezle_cloud_sun.png"];
+        }
     }
     if ([URLString rangeOfString:@"rain"].location != NSNotFound) {
-        icon = [UIImage imageNamed:@"DayRetina.bundle/weezle_rain.png"];
+        if ([URLString rangeOfString:@"nt"].location != NSNotFound) {
+            icon = [UIImage imageNamed:@"Icons.bundle/weezle_night_rain.png"];
+        }
+        else {
+            icon = [UIImage imageNamed:@"Icons.bundle/weezle_rain.png"];
+        }
     }
     if ([URLString rangeOfString:@"sleet"].location != NSNotFound) {
-        icon = [UIImage imageNamed:@"DayRetina.bundle/weezle_rain_and_snow.png"];
+        if ([URLString rangeOfString:@"nt"].location != NSNotFound) {
+            icon = [UIImage imageNamed:@"Icons.bundle/weezle_night_rain.png"];
+        }
+        else {
+            icon = [UIImage imageNamed:@"Icons.bundle/weezle_rain_and_snow.png"];
+        }
     }
     if ([URLString rangeOfString:@"snow"].location != NSNotFound) {
-        icon = [UIImage imageNamed:@"DayRetina.bundle/weezle_snow.png"];
+        if ([URLString rangeOfString:@"nt"].location != NSNotFound) {
+            icon = [UIImage imageNamed:@"Icons.bundle/weezle_night_and_snow.png"];
+        }
+        else {
+            icon = [UIImage imageNamed:@"Icons.bundle/weezle_snow.png"];
+        }
     }
     if ([URLString rangeOfString:@"sunny"].location != NSNotFound) {
-        icon = [UIImage imageNamed:@"DayRetina.bundle/weezle_sun.png"];
+        if ([URLString rangeOfString:@"nt"].location != NSNotFound) {
+            icon = [UIImage imageNamed:@"Icons.bundle/weezle_fullmoon.png"];
+        }
+        else {
+            icon = [UIImage imageNamed:@"Icons.bundle/weezle_sun.png"];
+        }
     }
     if ([URLString rangeOfString:@"tstorms"].location != NSNotFound) {
-        icon = [UIImage imageNamed:@"DayRetina.bundle/weezle_cloud_thunder_rain.png"];
+        if ([URLString rangeOfString:@"nt"].location != NSNotFound) {
+            icon = [UIImage imageNamed:@"Icons.bundle/weezle_night_thunder_rain.png"];
+        }
+        else {
+            icon = [UIImage imageNamed:@"Icons.bundle/weezle_cloud_thunder_rain.png"];
+        }
     }
-    //night icons
-    
+    if ([URLString rangeOfString:@"nt_mostlycloudy"].location != NSNotFound) {
+        icon = [UIImage imageNamed:@"Icons.bundle/weezle_moon_cloud_medium.png"];
+    }
     return icon;
 }
 
@@ -101,3 +190,21 @@
 //sunny > weezle_sun.png
 //tstorms > weezle_cloud_thunder_rain.png
 
+    //nt_chanceflurries > weezle_night_flurry.png
+    //nt_chancerain > weezle_night_rain.png
+    //nt_chancesleet > weezle_night_rain.png
+    //nt_chancesnow > weezle_night_and_snow.png
+    //nt_chancetstorms > weezle_night_thunder_rain.png
+    //nt_clear > weezle_fullmoon.png
+    //nt_cloudy > weezle_moon_cloud.png
+    //nt_flurries > weezle_night_flurry.png
+    //nt_fog > weezle_night_fog.png
+    //nt_hazy > weezle_night_fog.png
+    //nt_mostlycloudy > weezle_moon_cloud_medium.png
+    // nt_partlycloudy > weezle_moon_cloud.png
+    // nt_partlysunny > weezle_moon_cloud.png
+    //nt_rain  > weezle_night_rain.png
+    //nt_sleet > weezle_night_rain.png
+    //nt_snow > weezle_night_and_snow.png
+    //nt_sunny > weezle_fullmoon.png
+    //nt_tstorms > weezle_night_thunder_rain.png
