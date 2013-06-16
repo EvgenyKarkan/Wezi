@@ -50,7 +50,7 @@
     self.entityArrayCoreData = [NSMutableArray arrayWithArray:places];
     self.viewWithCoreData = [[NSMutableArray alloc] init];
         
-    for (int i = 1; i <=[places count]; i++) {
+    for (int i = 1; i <= [places count]; i++) {
         KEWindowView *aView = [KEWindowView returnWindowView];
         aView.frame = CGRectMake((self.scrollView.contentOffset.x + 1024 *i) + 60, 30, 905, 580);
         [self.scrollView addSubview:aView];
@@ -133,9 +133,6 @@
     
     self.templateView = [KEWindowView returnWindowView];
     self.templateView.frame = CGRectMake(50, 30, 920, 600);
-    
-   
-    
     [self.scrollView addSubview:self.templateView];
     
     self.mapViewController = [[KEMapViewController alloc]init];
@@ -213,7 +210,7 @@
 //
 - (void)updateTommorowWithForecast:(KETommorowForecast *)forecast withView:(KEWindowView *)viewToUpdate
 {
-    [viewToUpdate.tomorrowView setImage:[KEUIImageFactoryUtil imageDependsOnURL:forecast.iconURL]/*setImageWithURL:[NSURL URLWithString:forecast.iconURL]*/];
+    [viewToUpdate.tomorrowView setImage:[KEUIImageFactoryUtil imageDependsOnURL:forecast.iconURL]];
     viewToUpdate.tommorowTemp.text = forecast.highTemperature;
     NSLog(@" viewToUpdate.tommorowTemp.text %@", viewToUpdate.tommorowTemp.text );
     
@@ -230,8 +227,7 @@
 
 - (void)updateAfterTomorrowWithForecast:(KEAfterTommorowForecast *)forecast withView:(KEWindowView *)viewToUpdate
 {
-    [viewToUpdate.afterTommorowView setImage:[KEUIImageFactoryUtil imageDependsOnURL:forecast.iconURL]]/*[NSURL URLWithString:forecast.iconURL]]*/;
-    
+    [viewToUpdate.afterTommorowView setImage:[KEUIImageFactoryUtil imageDependsOnURL:forecast.iconURL]];
     viewToUpdate.afterTommorowTemp.text = forecast.highTemperature;
 
     
@@ -275,7 +271,6 @@
 
     [client getCurrentWeatherObservationForLocation:location completion:^(KEObservation *observation, NSError *error) {
         if (error) {
-            NSLog(@"Web Service Error: %@", [error description]);
             [SVProgressHUD showErrorWithStatus:[error localizedDescription]];
         }
         else {
@@ -305,7 +300,6 @@
     __weak KEViewController *weakSelf = self;
     
      [client getCurrentWeatherObservationForLocation:newLocation completion:^(KEObservation *observation, NSError *error) {
-
         if (error) {
             [SVProgressHUD showErrorWithStatus:[error localizedDescription]];
         }

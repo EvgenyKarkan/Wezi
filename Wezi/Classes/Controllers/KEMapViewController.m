@@ -33,7 +33,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     self.managedObjectContext = [[KEDataManager sharedDataManager] managedObjectContextFromAppDelegate];
     return self;
@@ -78,7 +77,7 @@
                  
                  geocodedAddress = placemark.thoroughfare;
                  geocodedHome = placemark.subThoroughfare;
-                 geoLocality = placemark.locality; //city
+                 geoLocality = placemark.locality; 
                  geoSublocality = placemark.name;
              }
             
