@@ -60,10 +60,10 @@
                                                                      aView.humidity, aView.pressure, aView.windAbbreviation, aView.currentCondition]];
     
     for (UILabel *label in allLabelArray) {
-        [label setFont:[KEFonts plutoSansRegularWithSize:17.0f]];
+        [label setFont:[KEFonts plutoSansRegularWithSize:20.0f]];
     }
     [aView.place setFont:[KEFonts plutoSansRegularWithSize:32.0f]];
-    [aView.currentTemperature setFont:[KEFonts plutoSansRegularWithSize:62.0f]];
+    [aView.currentTemperature setFont:[KEFonts plutoSansRegularWithSize:72.0f]];
 }
 
 

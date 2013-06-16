@@ -179,14 +179,16 @@
 //        self.devointLabel.text = observation.dewpointDescription;
 //        self.lastUpdateLAbel.text = observation.timeString;
         
-            //[self.templateView.conditionIcon setImageWithURL:[NSURL URLWithString:observation.iconUrl]];
+     
         [self.templateView.conditionIcon setImage:[KEUIImageFactoryUtil imageDependsOnURL:observation.iconUrl]];
-        
-        NSString *string = [NSString stringWithFormat:@"%@ %@",(NSString *)observation.feelsLikeTemperatureC,@"C"];
+        NSString *string = [NSString stringWithFormat:@"%@ %@",[observation.temperatureC stringValue],@"°C"];
         self.templateView.currentTemperature.text = string;
         self.templateView.currentCondition.text = observation.weatherDescription;
         self.templateView.place.text = [NSString subStringBeforeFirstCommaInString:observation.location[@"full"]];
         self.templateView.windAbbreviation.text = observation.windShortAbbreviation;
+        self.templateView.wind.text = [observation.windSpeed stringValue];
+        self.templateView.humidity.text = observation.relativeHumidity;
+        self.templateView.pressure.text = observation.pressure;
     }
     
 }
@@ -194,22 +196,16 @@
 - (void)updateUIForView:(KEWindowView *)viewtoUpdate observetion:(KEObservation *)observation
 {
     if (observation) {
-            
-            //[viewtoUpdate.conditionIcon setImageWithURL:[NSURL URLWithString:observation.iconUrl]];
         [viewtoUpdate.conditionIcon setImage:[KEUIImageFactoryUtil imageDependsOnURL:observation.iconUrl]];
-        
-            //[viewtoUpdate.bigImage setImageWithURL:[NSURL URLWithString:observation.iconUrl]];
-        viewtoUpdate.currentTemperature.text = observation.temperatureDescription;
-        viewtoUpdate.wind.text = observation.windDescription;
+        NSString *string = [NSString stringWithFormat:@"%@ %@",[observation.temperatureC stringValue],@"°C"];
+        viewtoUpdate.currentTemperature.text = string;
+        viewtoUpdate.currentCondition.text = observation.weatherDescription;
         viewtoUpdate.place.text = [NSString subStringBeforeFirstCommaInString:observation.location[@"full"]];
-        
-        
-        KEAppDelegate *appDelegate = (KEAppDelegate *)[[UIApplication sharedApplication]delegate];
-        self.managedObjectContext = [appDelegate managedObjectContext];
-        
-              
+        viewtoUpdate.windAbbreviation.text = observation.windShortAbbreviation;
+        viewtoUpdate.wind.text = [observation.windSpeed stringValue];
+        viewtoUpdate.humidity.text = observation.relativeHumidity;
+        viewtoUpdate.pressure.text = observation.pressure;
         viewtoUpdate.timeStamp.text = observation.timeString;
-        
     }
 }
 
