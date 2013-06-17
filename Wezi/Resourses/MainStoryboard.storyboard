@@ -245,6 +245,41 @@
             <point key="canvasLocation" x="212" y="1012"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="GradientView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GradientView.h"/>
+        </class>
+        <class className="KEMapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/KEMapViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="map" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="KEViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/KEViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="changePage:"/>
+                <relationship kind="action" name="deletePAge:"/>
+                <relationship kind="action" name="goToMap:"/>
+                <relationship kind="action" name="refresh:"/>
+                <relationship kind="outlet" name="bar" candidateClass="UINavigationItem"/>
+                <relationship kind="outlet" name="currentConditionImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="currentTemperatureLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="devointLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="feelsLikeTemperatureLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="humidityLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lastUpdateLAbel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="locationLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="observationContainerView" candidateClass="GradientView"/>
+                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="shadowContainerView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="weatherDescriptionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="weatherUndegroundImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="windDescriptionLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

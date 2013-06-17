@@ -30,10 +30,10 @@
     tempView.layer.cornerRadius = 20.0f;
     tempView.layer.borderColor = [[UIColor whiteColor] CGColor];
     tempView.layer.borderWidth  = 3.0f;
-    tempView.layer.shadowColor = [[UIColor blackColor] CGColor];
-    tempView.layer.shadowOffset = CGSizeZero;
-    tempView.layer.shadowOpacity = 2.99f;
-    tempView.layer.shadowRadius = 10.0f;
+//    tempView.layer.shadowColor = [[UIColor blackColor] CGColor];
+//    tempView.layer.shadowOffset = CGSizeZero;
+//    tempView.layer.shadowOpacity = 2.99f;
+//    tempView.layer.shadowRadius = 10.0f;
    
     return tempView;
 }

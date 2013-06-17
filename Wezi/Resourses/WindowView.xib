@@ -39,7 +39,7 @@
 					<object class="IBUIImageView" id="698914690">
 						<reference key="NSNextResponder" ref="271871499"/>
 						<int key="NSvFlags">274</int>
-						<string key="NSFrame">{{20, 178}, {80, 80}}</string>
+						<string key="NSFrame">{{20, 182}, {100, 100}}</string>
 						<reference key="NSSuperview" ref="271871499"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="81480216"/>
@@ -85,7 +85,7 @@
 					<object class="IBUILabel" id="81480216">
 						<reference key="NSNextResponder" ref="271871499"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{108, 206}, {299, 52}}</string>
+						<string key="NSFrame">{{128, 182}, {299, 52}}</string>
 						<reference key="NSSuperview" ref="271871499"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="30569796"/>
@@ -210,6 +210,7 @@
 						<string key="NSFrame">{{20, 557}, {460, 21}}</string>
 						<reference key="NSSuperview" ref="271871499"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -4792,7 +4793,7 @@ AAgAAAAIAAIACAACAAAAAgAAAAEAAQABAAE</bytes>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 					</object>
 				</array>
-				<string key="NSFrameSize">{920, 600}</string>
+				<string key="NSFrameSize">{920, 580}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="140841044"/>
@@ -4959,8 +4960,6 @@ AAgAAAAIAAIACAACAAAAAgAAAAEAAQABAAE</bytes>
 							<reference ref="305962624"/>
 							<reference ref="140841044"/>
 							<reference ref="21264906"/>
-							<reference ref="698914690"/>
-							<reference ref="81480216"/>
 							<reference ref="755171818"/>
 							<reference ref="357114147"/>
 							<reference ref="959470351"/>
@@ -4969,6 +4968,8 @@ AAgAAAAIAAIACAACAAAAAgAAAAEAAQABAAE</bytes>
 							<reference ref="290658761"/>
 							<reference ref="88977371"/>
 							<reference ref="957631762"/>
+							<reference ref="698914690"/>
+							<reference ref="81480216"/>
 						</array>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">WindowView</string>
