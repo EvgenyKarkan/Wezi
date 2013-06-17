@@ -9,16 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @protocol KECoordinateFillProtocol 
-
 @required
-
 - (void)addPressedWithCoordinate:(CLLocation *)location;
 
 @end
 
 @interface KEMapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
 
-@property (weak, nonatomic)                 IBOutlet MKMapView *map;
+@property (nonatomic, weak)                 IBOutlet MKMapView *map;
 @property (nonatomic, unsafe_unretained)    id <KECoordinateFillProtocol> objectToDelegate;
 
 @end

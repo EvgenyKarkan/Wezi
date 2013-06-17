@@ -31,6 +31,7 @@ static NSString* const kKEWindowViewNibName = @"WindowView";
 
 @property (weak, nonatomic) IBOutlet UIImageView *afterAfterTommorowView;
 @property (weak, nonatomic) IBOutlet UILabel *afrerAfterTommorowTemp;
+@property (weak, nonatomic) IBOutlet UILabel *windAbbreviation;
 
 + (KEWindowView *)returnWindowView;
 

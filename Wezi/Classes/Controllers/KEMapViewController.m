@@ -12,6 +12,8 @@
 #import "KEAppDelegate.h"
 #import "KEViewController.h"
 #import "KEDataManager.h"
+#import "KEReachabilityUtil.h"
+#import "SVProgressHUD.h"
 
 @interface KEMapViewController ()
 
@@ -31,7 +33,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     self.managedObjectContext = [[KEDataManager sharedDataManager] managedObjectContextFromAppDelegate];
     return self;
@@ -76,7 +77,7 @@
                  
                  geocodedAddress = placemark.thoroughfare;
                  geocodedHome = placemark.subThoroughfare;
-                 geoLocality = placemark.locality; //city
+                 geoLocality = placemark.locality; 
                  geoSublocality = placemark.name;
              }
             
@@ -141,8 +142,10 @@
 {
     CLLocation *item = [[CLLocation alloc]initWithLatitude:self.myAnnotation.coordinate.latitude longitude:self.myAnnotation.coordinate.longitude];
     
-    [self.objectToDelegate addPressedWithCoordinate:item];
-     
+    if ([[KEReachabilityUtil sharedUtil] checkInternetConnection]) {
+        [self.objectToDelegate addPressedWithCoordinate:item];
+    }
+    
     NSError *error = nil;
     NSArray *places = [self.managedObjectContext executeFetchRequest:[self.dataManager requestWithEntityName:@"Place"] error:&error];
     
@@ -158,12 +161,18 @@
         place.longitude = self.myAnnotation.coordinate.longitude;
         place.city = self.bufferCityName;
         NSError *savingError = nil;
-        if ([self.managedObjectContext save:&savingError]) {
-            NSLog(@"Successfully saving the context");
-            self.isContextActivated = YES;
+        
+        if ([[KEReachabilityUtil sharedUtil] checkInternetConnection]) {
+            if ([self.managedObjectContext save:&savingError]) {
+                NSLog(@"Successfully saving the context");
+                self.isContextActivated = YES;
+            }
+            else {
+                NSLog(@"Failed to save the context. Error = %@", [savingError localizedDescription]);
+            }
         }
         else {
-            NSLog(@"Failed to save the context. Error = %@", [savingError localizedDescription]);
+            [SVProgressHUD showErrorWithStatus:@"Internet dropped. Couldn't save the location"];
         }
     }
     else {

@@ -51,10 +51,8 @@
 		CE7C0F25172FC2CC00E4A8AC /* KEAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7C0F1A172FC2CC00E4A8AC /* KEAppDelegate.m */; };
 		CE7C0F26172FC2CC00E4A8AC /* KEObservation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7C0F1D172FC2CC00E4A8AC /* KEObservation.m */; };
 		CE7C0F27172FC2CC00E4A8AC /* GradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7C0F20172FC2CC00E4A8AC /* GradientView.m */; };
-		CE7C0F2D172FC36500E4A8AC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7C0F29172FC36500E4A8AC /* Default-568h@2x.png */; };
 		CE7C0F2E172FC36500E4A8AC /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7C0F2A172FC36500E4A8AC /* Default.png */; };
 		CE7C0F2F172FC36500E4A8AC /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7C0F2B172FC36500E4A8AC /* Default@2x.png */; };
-		CE7C0F30172FC36500E4A8AC /* images-2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CE7C0F2C172FC36500E4A8AC /* images-2.jpeg */; };
 		CE7C0F3317300F9E00E4A8AC /* KETommorowForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7C0F3217300F9E00E4A8AC /* KETommorowForecast.m */; };
 		CE7F06B21739176D00697A98 /* KEAfterTommorowForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7F06B11739176D00697A98 /* KEAfterTommorowForecast.m */; };
 		CE7F06B5173917AA00697A98 /* KEAfterAfterTommorowForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7F06B4173917AA00697A98 /* KEAfterAfterTommorowForecast.m */; };
@@ -63,19 +61,16 @@
 		CE9C75CA173CED00008CFE31 /* WindowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9C75C9173CED00008CFE31 /* WindowView.xib */; };
 		CE9C75CD173CED5C008CFE31 /* KEWindowView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9C75CC173CED5C008CFE31 /* KEWindowView.m */; };
 		CE9D02C617437B2F0057968F /* KECityAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D02C517437B2F0057968F /* KECityAnnotation.m */; };
-		DE04BB621767CC2B00C3EE78 /* weezle_sun.png in Resources */ = {isa = PBXBuildFile; fileRef = DE04BB611767CC2B00C3EE78 /* weezle_sun.png */; };
-		DE04BB641767CCB900C3EE78 /* weezle_night_rain.png in Resources */ = {isa = PBXBuildFile; fileRef = DE04BB631767CCB900C3EE78 /* weezle_night_rain.png */; };
 		DE04BB691767D07600C3EE78 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DE04BB671767D07600C3EE78 /* icon.png */; };
 		DE04BB6A1767D07600C3EE78 /* icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = DE04BB681767D07600C3EE78 /* icon72.png */; };
-		DE04BB6C1767D08000C3EE78 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DE04BB6B1767D08000C3EE78 /* icon.png */; };
-		DE04BB6E1767D08E00C3EE78 /* icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = DE04BB6D1767D08D00C3EE78 /* icon72.png */; };
+		DE144E82176E0ED7005698BC /* Icons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE144E81176E0ED7005698BC /* Icons.bundle */; };
 		DE228E4917692BDE002DADE3 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = DE228E4817692BDE002DADE3 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DE953F87174AD64500AC7915 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = DE953F86174AD64500AC7915 /* Place.m */; };
+		DEAFD03E176A5FF200BA3785 /* KEReachabilityUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DEAFD03D176A5FF200BA3785 /* KEReachabilityUtil.m */; };
 		DEB51ED41759267400F04539 /* NSString+CommaSubString.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB51ED31759267400F04539 /* NSString+CommaSubString.m */; };
 		DEB51ED817592D7C00F04539 /* KEFonts.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB51ED717592D7C00F04539 /* KEFonts.m */; };
 		DEB51EDB17592DAB00F04539 /* KEUIImageFactoryUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB51EDA17592DAB00F04539 /* KEUIImageFactoryUtil.m */; };
 		DEB839AD1748D7A0005D211F /* KEDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB839AC1748D7A0005D211F /* KEDataManager.m */; };
-		DECCC4C21756B043005466C3 /* KERequestor.m in Sources */ = {isa = PBXBuildFile; fileRef = DECCC4C11756B043005466C3 /* KERequestor.m */; };
 		DEDCDCE11748001100D957EC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDCDCE01748001100D957EC /* CoreData.framework */; };
 		DEDCDCE717480B2C00D957EC /* Wezi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DEDCDCE517480B2C00D957EC /* Wezi.xcdatamodeld */; };
 /* End PBXBuildFile section */
@@ -146,10 +141,8 @@
 		CE7C0F1F172FC2CC00E4A8AC /* GradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientView.h; sourceTree = "<group>"; };
 		CE7C0F20172FC2CC00E4A8AC /* GradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientView.m; sourceTree = "<group>"; };
 		CE7C0F21172FC2CC00E4A8AC /* WeatherAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherAPIKey.h; sourceTree = "<group>"; };
-		CE7C0F29172FC36500E4A8AC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		CE7C0F2A172FC36500E4A8AC /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		CE7C0F2B172FC36500E4A8AC /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		CE7C0F2C172FC36500E4A8AC /* images-2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "images-2.jpeg"; sourceTree = "<group>"; };
 		CE7C0F3117300F9E00E4A8AC /* KETommorowForecast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KETommorowForecast.h; sourceTree = "<group>"; };
 		CE7C0F3217300F9E00E4A8AC /* KETommorowForecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KETommorowForecast.m; sourceTree = "<group>"; };
 		CE7F06B01739176D00697A98 /* KEAfterTommorowForecast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEAfterTommorowForecast.h; sourceTree = "<group>"; };
@@ -164,16 +157,15 @@
 		CE9C75CC173CED5C008CFE31 /* KEWindowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEWindowView.m; sourceTree = "<group>"; };
 		CE9D02C417437B2F0057968F /* KECityAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KECityAnnotation.h; sourceTree = "<group>"; };
 		CE9D02C517437B2F0057968F /* KECityAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KECityAnnotation.m; sourceTree = "<group>"; };
-		DE04BB611767CC2B00C3EE78 /* weezle_sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weezle_sun.png; sourceTree = "<group>"; };
-		DE04BB631767CCB900C3EE78 /* weezle_night_rain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weezle_night_rain.png; sourceTree = "<group>"; };
 		DE04BB671767D07600C3EE78 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		DE04BB681767D07600C3EE78 /* icon72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon72.png; sourceTree = "<group>"; };
-		DE04BB6B1767D08000C3EE78 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		DE04BB6D1767D08D00C3EE78 /* icon72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon72.png; sourceTree = "<group>"; };
-		DE228E4717692BDE002DADE3 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		DE228E4817692BDE002DADE3 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		DE144E81176E0ED7005698BC /* Icons.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Icons.bundle; sourceTree = "<group>"; };
+		DE228E4717692BDE002DADE3 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = ../Reachability.h; sourceTree = "<group>"; };
+		DE228E4817692BDE002DADE3 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = ../Reachability.m; sourceTree = "<group>"; };
 		DE953F85174AD64500AC7915 /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Place.h; sourceTree = "<group>"; };
 		DE953F86174AD64500AC7915 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
+		DEAFD03C176A5FF200BA3785 /* KEReachabilityUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KEReachabilityUtil.h; path = ../KEReachabilityUtil.h; sourceTree = "<group>"; };
+		DEAFD03D176A5FF200BA3785 /* KEReachabilityUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KEReachabilityUtil.m; path = ../KEReachabilityUtil.m; sourceTree = "<group>"; };
 		DEB51ED21759267400F04539 /* NSString+CommaSubString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CommaSubString.h"; sourceTree = "<group>"; };
 		DEB51ED31759267400F04539 /* NSString+CommaSubString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CommaSubString.m"; sourceTree = "<group>"; };
 		DEB51ED617592D7C00F04539 /* KEFonts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEFonts.h; sourceTree = "<group>"; };
@@ -182,8 +174,6 @@
 		DEB51EDA17592DAB00F04539 /* KEUIImageFactoryUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEUIImageFactoryUtil.m; sourceTree = "<group>"; };
 		DEB839AB1748D7A0005D211F /* KEDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEDataManager.h; sourceTree = "<group>"; };
 		DEB839AC1748D7A0005D211F /* KEDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEDataManager.m; sourceTree = "<group>"; };
-		DECCC4C01756B043005466C3 /* KERequestor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KERequestor.h; sourceTree = "<group>"; };
-		DECCC4C11756B043005466C3 /* KERequestor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KERequestor.m; sourceTree = "<group>"; };
 		DEDCDCE01748001100D957EC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		DEDCDCE617480B2C00D957EC /* Wezi.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Wezi.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -235,8 +225,6 @@
 		CE7C0E96172FBE4B00E4A8AC = {
 			isa = PBXGroup;
 			children = (
-				DE04BB6D1767D08D00C3EE78 /* icon72.png */,
-				DE04BB6B1767D08000C3EE78 /* icon.png */,
 				CE7C0F10172FC2CC00E4A8AC /* Classes */,
 				CE7C0EA8172FBE4B00E4A8AC /* Supporting files */,
 				CE7C0EA1172FBE4B00E4A8AC /* Frameworks */,
@@ -375,8 +363,6 @@
 			isa = PBXGroup;
 			children = (
 				DEB51ED517592D7C00F04539 /* Utils */,
-				DE228E4717692BDE002DADE3 /* Reachability.h */,
-				DE228E4817692BDE002DADE3 /* Reachability.m */,
 				CE7C0F15172FC2CC00E4A8AC /* KELocationManager.h */,
 				CE7C0F16172FC2CC00E4A8AC /* KELocationManager.m */,
 				CE7C0F17172FC2CC00E4A8AC /* KEWeatherManager.h */,
@@ -385,8 +371,6 @@
 				CE9D02C517437B2F0057968F /* KECityAnnotation.m */,
 				DEB839AB1748D7A0005D211F /* KEDataManager.h */,
 				DEB839AC1748D7A0005D211F /* KEDataManager.m */,
-				DECCC4C01756B043005466C3 /* KERequestor.h */,
-				DECCC4C11756B043005466C3 /* KERequestor.m */,
 				DEB51ED21759267400F04539 /* NSString+CommaSubString.h */,
 				DEB51ED31759267400F04539 /* NSString+CommaSubString.m */,
 			);
@@ -425,14 +409,11 @@
 		CE7C0F28172FC36500E4A8AC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				DE144E81176E0ED7005698BC /* Icons.bundle */,
 				DE04BB671767D07600C3EE78 /* icon.png */,
 				DE04BB681767D07600C3EE78 /* icon72.png */,
-				DE04BB631767CCB900C3EE78 /* weezle_night_rain.png */,
-				DE04BB611767CC2B00C3EE78 /* weezle_sun.png */,
-				CE7C0F29172FC36500E4A8AC /* Default-568h@2x.png */,
 				CE7C0F2A172FC36500E4A8AC /* Default.png */,
 				CE7C0F2B172FC36500E4A8AC /* Default@2x.png */,
-				CE7C0F2C172FC36500E4A8AC /* images-2.jpeg */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -440,6 +421,10 @@
 		DEB51ED517592D7C00F04539 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				DEAFD03C176A5FF200BA3785 /* KEReachabilityUtil.h */,
+				DEAFD03D176A5FF200BA3785 /* KEReachabilityUtil.m */,
+				DE228E4717692BDE002DADE3 /* Reachability.h */,
+				DE228E4817692BDE002DADE3 /* Reachability.m */,
 				DEB51ED617592D7C00F04539 /* KEFonts.h */,
 				DEB51ED717592D7C00F04539 /* KEFonts.m */,
 				DEB51ED917592DAB00F04539 /* KEUIImageFactoryUtil.h */,
@@ -503,10 +488,8 @@
 				CE7C0EAD172FBE4B00E4A8AC /* InfoPlist.strings in Resources */,
 				CE7C0EFB172FBF1B00E4A8AC /* SVProgressHUD.bundle in Resources */,
 				CE7C0F01172FC00500E4A8AC /* MainStoryboard.storyboard in Resources */,
-				CE7C0F2D172FC36500E4A8AC /* Default-568h@2x.png in Resources */,
 				CE7C0F2E172FC36500E4A8AC /* Default.png in Resources */,
 				CE7C0F2F172FC36500E4A8AC /* Default@2x.png in Resources */,
-				CE7C0F30172FC36500E4A8AC /* images-2.jpeg in Resources */,
 				CE9C75CA173CED00008CFE31 /* WindowView.xib in Resources */,
 				CE38029E1757B8840086510C /* PlutoSansBlack.otf in Resources */,
 				CE38029F1757B8840086510C /* PlutoSansBold.otf in Resources */,
@@ -525,12 +508,9 @@
 				CE3802AC1757B8840086510C /* PlutoSansMedium.otf in Resources */,
 				CE3802AD1757B8840086510C /* PlutoSansRegular.otf in Resources */,
 				CE3802AE1757B8840086510C /* PlutoSansThin.otf in Resources */,
-				DE04BB621767CC2B00C3EE78 /* weezle_sun.png in Resources */,
-				DE04BB641767CCB900C3EE78 /* weezle_night_rain.png in Resources */,
 				DE04BB691767D07600C3EE78 /* icon.png in Resources */,
 				DE04BB6A1767D07600C3EE78 /* icon72.png in Resources */,
-				DE04BB6C1767D08000C3EE78 /* icon.png in Resources */,
-				DE04BB6E1767D08E00C3EE78 /* icon72.png in Resources */,
+				DE144E82176E0ED7005698BC /* Icons.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,11 +547,11 @@
 				DEDCDCE717480B2C00D957EC /* Wezi.xcdatamodeld in Sources */,
 				DEB839AD1748D7A0005D211F /* KEDataManager.m in Sources */,
 				DE953F87174AD64500AC7915 /* Place.m in Sources */,
-				DECCC4C21756B043005466C3 /* KERequestor.m in Sources */,
 				DEB51ED41759267400F04539 /* NSString+CommaSubString.m in Sources */,
 				DEB51ED817592D7C00F04539 /* KEFonts.m in Sources */,
 				DEB51EDB17592DAB00F04539 /* KEUIImageFactoryUtil.m in Sources */,
 				DE228E4917692BDE002DADE3 /* Reachability.m in Sources */,
+				DEAFD03E176A5FF200BA3785 /* KEReachabilityUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
