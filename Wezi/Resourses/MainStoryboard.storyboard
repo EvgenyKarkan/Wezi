@@ -121,7 +121,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Title" id="s7X-es-vlK">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="7nE-IB-y6q"/>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="7nE-IB-y6q"/>
                                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="Z1p-9a-yoi">
                                             <connections>
                                                 <action selector="refresh:" destination="2" id="qxS-w5-An1"/>
@@ -258,10 +258,6 @@
         <class className="KEViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/KEViewController.h"/>
             <relationships>
-                <relationship kind="action" name="changePage:"/>
-                <relationship kind="action" name="deletePAge:"/>
-                <relationship kind="action" name="goToMap:"/>
-                <relationship kind="action" name="refresh:"/>
                 <relationship kind="outlet" name="bar" candidateClass="UINavigationItem"/>
                 <relationship kind="outlet" name="currentConditionImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="currentTemperatureLabel" candidateClass="UILabel"/>
