@@ -70,8 +70,8 @@ NSString * const kLocationDidChangeNotificationKey = @"locationManagerlocationDi
 {
     if (!_locationManager) {
         _locationManager = [[CLLocationManager alloc] init];
-        //        [_locationManager setDistanceFilter:1000];
-        //        [_locationManager setDesiredAccuracy: kCLLocationAccuracyThreeKilometers];
+//            [_locationManager setDistanceFilter:1000];
+//            [_locationManager setDesiredAccuracy: kCLLocationAccuracyThreeKilometers];
     }
     
     return _locationManager;
@@ -111,4 +111,13 @@ NSString * const kLocationDidChangeNotificationKey = @"locationManagerlocationDi
     }
 }
 
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
+    
+    if (status == kCLAuthorizationStatusDenied) {
+            NSLog(@"permission denied"); 
+    }
+    else if (status == kCLAuthorizationStatusAuthorized) {
+            NSLog(@"permission granted");
+    }
+}
 @end
