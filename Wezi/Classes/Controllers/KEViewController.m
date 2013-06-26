@@ -76,7 +76,7 @@
         self.internetDroppedFirstly = YES;
     }
     else {
-        self.view.backgroundColor = [GradientView randomColor];
+        self.view.backgroundColor = [UIColor orangeColor]; /*[GradientView randomColor]*/;
         [self subscribeToReachabilityNotifications];
         [self setupViews];
         
@@ -112,12 +112,6 @@
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [[KELocationManager sharedManager] stopMonitoringLocationChanges];
-}
-
-- (void)viewDidUnload
-{
-    [self setBar:nil];
-    [super viewDidUnload];
 }
 
 #pragma mark - UI configuration and update

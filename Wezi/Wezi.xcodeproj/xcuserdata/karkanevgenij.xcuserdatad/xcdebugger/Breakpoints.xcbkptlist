@@ -21,13 +21,13 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Classes/Controllers/KEViewController.m"
-         timestampString = "393604881.075918"
+         timestampString = "393962221.687974"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "224"
-         endingLineNumber = "224"
-         landmarkName = "-updateTommorowWithForecast:withView:"
-         landmarkType = "5">
+         startingLineNumber = "221"
+         endingLineNumber = "221"
+         landmarkName = "@implementation KEViewController"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -47,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Classes/Controllers/KEViewController.m"
-         timestampString = "393604881.075918"
+         timestampString = "393962221.687974"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "249"
-         endingLineNumber = "249"
+         startingLineNumber = "246"
+         endingLineNumber = "246"
          landmarkName = "-updateAfterAfterTommorowWithForecast:withView:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -99,11 +99,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Classes/Controllers/KEViewController.m"
-         timestampString = "393604881.075918"
+         timestampString = "393962221.687974"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "86"
-         endingLineNumber = "86"
+         startingLineNumber = "89"
+         endingLineNumber = "89"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
@@ -118,19 +118,6 @@
          startingLineNumber = "13"
          endingLineNumber = "13"
          landmarkName = "+imageDependsOnURL:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Classes/Controllers/KEViewController.m"
-         timestampString = "393604881.075918"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "135"
-         endingLineNumber = "135"
-         landmarkName = "-configurateUIElements"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

@@ -61,11 +61,16 @@
 		CE9C75CA173CED00008CFE31 /* WindowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9C75C9173CED00008CFE31 /* WindowView.xib */; };
 		CE9C75CD173CED5C008CFE31 /* KEWindowView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9C75CC173CED5C008CFE31 /* KEWindowView.m */; };
 		CE9D02C617437B2F0057968F /* KECityAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D02C517437B2F0057968F /* KECityAnnotation.m */; };
-		DE04BB691767D07600C3EE78 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DE04BB671767D07600C3EE78 /* icon.png */; };
-		DE04BB6A1767D07600C3EE78 /* icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = DE04BB681767D07600C3EE78 /* icon72.png */; };
 		DE144E82176E0ED7005698BC /* Icons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE144E81176E0ED7005698BC /* Icons.bundle */; };
 		DE228E4917692BDE002DADE3 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = DE228E4817692BDE002DADE3 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DE953F87174AD64500AC7915 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = DE953F86174AD64500AC7915 /* Place.m */; };
+		DEA43AD2177B90C6009878AC /* KEBackingImageUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA43AD1177B90C6009878AC /* KEBackingImageUtil.m */; };
+		DEA43AD4177B912A009878AC /* yellow.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DEA43AD3177B912A009878AC /* yellow.jpeg */; };
+		DEA43AD6177B9152009878AC /* green.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DEA43AD5177B9152009878AC /* green.jpeg */; };
+		DEA43AD8177B91A6009878AC /* violet.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DEA43AD7177B91A6009878AC /* violet.jpeg */; };
+		DEA43ADC177B91EF009878AC /* lblue.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DEA43ADB177B91EF009878AC /* lblue.jpeg */; };
+		DEA43AE0177B921A009878AC /* blue.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DEA43ADF177B921A009878AC /* blue.jpeg */; };
+		DEA43AE4177B92F4009878AC /* red.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DEA43AE3177B92F4009878AC /* red.jpeg */; };
 		DEAFD03E176A5FF200BA3785 /* KEReachabilityUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DEAFD03D176A5FF200BA3785 /* KEReachabilityUtil.m */; };
 		DEB51ED41759267400F04539 /* NSString+CommaSubString.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB51ED31759267400F04539 /* NSString+CommaSubString.m */; };
 		DEB51ED817592D7C00F04539 /* KEFonts.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB51ED717592D7C00F04539 /* KEFonts.m */; };
@@ -73,6 +78,8 @@
 		DEB839AD1748D7A0005D211F /* KEDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB839AC1748D7A0005D211F /* KEDataManager.m */; };
 		DEDCDCE11748001100D957EC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDCDCE01748001100D957EC /* CoreData.framework */; };
 		DEDCDCE717480B2C00D957EC /* Wezi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DEDCDCE517480B2C00D957EC /* Wezi.xcdatamodeld */; };
+		DEF2AEC0177712B40068A058 /* app_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF2AEBF177712B40068A058 /* app_icon.png */; };
+		DEF2AEC21777131E0068A058 /* app_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF2AEC11777131E0068A058 /* app_icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -164,6 +171,14 @@
 		DE228E4817692BDE002DADE3 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = ../Reachability.m; sourceTree = "<group>"; };
 		DE953F85174AD64500AC7915 /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Place.h; sourceTree = "<group>"; };
 		DE953F86174AD64500AC7915 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
+		DEA43AD0177B90C6009878AC /* KEBackingImageUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEBackingImageUtil.h; sourceTree = "<group>"; };
+		DEA43AD1177B90C6009878AC /* KEBackingImageUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEBackingImageUtil.m; sourceTree = "<group>"; };
+		DEA43AD3177B912A009878AC /* yellow.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yellow.jpeg; sourceTree = "<group>"; };
+		DEA43AD5177B9152009878AC /* green.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = green.jpeg; sourceTree = "<group>"; };
+		DEA43AD7177B91A6009878AC /* violet.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = violet.jpeg; sourceTree = "<group>"; };
+		DEA43ADB177B91EF009878AC /* lblue.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lblue.jpeg; sourceTree = "<group>"; };
+		DEA43ADF177B921A009878AC /* blue.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blue.jpeg; sourceTree = "<group>"; };
+		DEA43AE3177B92F4009878AC /* red.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = red.jpeg; sourceTree = "<group>"; };
 		DEAFD03C176A5FF200BA3785 /* KEReachabilityUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KEReachabilityUtil.h; path = ../KEReachabilityUtil.h; sourceTree = "<group>"; };
 		DEAFD03D176A5FF200BA3785 /* KEReachabilityUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KEReachabilityUtil.m; path = ../KEReachabilityUtil.m; sourceTree = "<group>"; };
 		DEB51ED21759267400F04539 /* NSString+CommaSubString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CommaSubString.h"; sourceTree = "<group>"; };
@@ -176,6 +191,8 @@
 		DEB839AC1748D7A0005D211F /* KEDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEDataManager.m; sourceTree = "<group>"; };
 		DEDCDCE01748001100D957EC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		DEDCDCE617480B2C00D957EC /* Wezi.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Wezi.xcdatamodel; sourceTree = "<group>"; };
+		DEF2AEBF177712B40068A058 /* app_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon.png; sourceTree = "<group>"; };
+		DEF2AEC11777131E0068A058 /* app_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +242,8 @@
 		CE7C0E96172FBE4B00E4A8AC = {
 			isa = PBXGroup;
 			children = (
+				DEF2AEC11777131E0068A058 /* app_icon@2x.png */,
+				DEF2AEBF177712B40068A058 /* app_icon.png */,
 				CE7C0F10172FC2CC00E4A8AC /* Classes */,
 				CE7C0EA8172FBE4B00E4A8AC /* Supporting files */,
 				CE7C0EA1172FBE4B00E4A8AC /* Frameworks */,
@@ -398,6 +417,12 @@
 		CE7C0F1E172FC2CC00E4A8AC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DEA43AE3177B92F4009878AC /* red.jpeg */,
+				DEA43ADF177B921A009878AC /* blue.jpeg */,
+				DEA43ADB177B91EF009878AC /* lblue.jpeg */,
+				DEA43AD7177B91A6009878AC /* violet.jpeg */,
+				DEA43AD5177B9152009878AC /* green.jpeg */,
+				DEA43AD3177B912A009878AC /* yellow.jpeg */,
 				CE7C0F1F172FC2CC00E4A8AC /* GradientView.h */,
 				CE7C0F20172FC2CC00E4A8AC /* GradientView.m */,
 				CE9C75CB173CED5C008CFE31 /* KEWindowView.h */,
@@ -429,6 +454,8 @@
 				DEB51ED717592D7C00F04539 /* KEFonts.m */,
 				DEB51ED917592DAB00F04539 /* KEUIImageFactoryUtil.h */,
 				DEB51EDA17592DAB00F04539 /* KEUIImageFactoryUtil.m */,
+				DEA43AD0177B90C6009878AC /* KEBackingImageUtil.h */,
+				DEA43AD1177B90C6009878AC /* KEBackingImageUtil.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -508,9 +535,15 @@
 				CE3802AC1757B8840086510C /* PlutoSansMedium.otf in Resources */,
 				CE3802AD1757B8840086510C /* PlutoSansRegular.otf in Resources */,
 				CE3802AE1757B8840086510C /* PlutoSansThin.otf in Resources */,
-				DE04BB691767D07600C3EE78 /* icon.png in Resources */,
-				DE04BB6A1767D07600C3EE78 /* icon72.png in Resources */,
 				DE144E82176E0ED7005698BC /* Icons.bundle in Resources */,
+				DEF2AEC0177712B40068A058 /* app_icon.png in Resources */,
+				DEF2AEC21777131E0068A058 /* app_icon@2x.png in Resources */,
+				DEA43AD4177B912A009878AC /* yellow.jpeg in Resources */,
+				DEA43AD6177B9152009878AC /* green.jpeg in Resources */,
+				DEA43AD8177B91A6009878AC /* violet.jpeg in Resources */,
+				DEA43ADC177B91EF009878AC /* lblue.jpeg in Resources */,
+				DEA43AE0177B921A009878AC /* blue.jpeg in Resources */,
+				DEA43AE4177B92F4009878AC /* red.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,6 +585,7 @@
 				DEB51EDB17592DAB00F04539 /* KEUIImageFactoryUtil.m in Sources */,
 				DE228E4917692BDE002DADE3 /* Reachability.m in Sources */,
 				DEAFD03E176A5FF200BA3785 /* KEReachabilityUtil.m in Sources */,
+				DEA43AD2177B90C6009878AC /* KEBackingImageUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

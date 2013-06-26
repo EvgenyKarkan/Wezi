@@ -12,6 +12,7 @@
 
 #import "KEWindowView.h"
 #import "KEFonts.h"
+#import "KEBackingImageUtil.h"
 
 @interface KEWindowView()
 
@@ -42,8 +43,16 @@
 {
     KEWindowView *dummyView = (KEWindowView *)[self loadViewFromNibWithName:kKEWindowViewNibName];
     
-    CAGradientLayer *gradientLayer = (CAGradientLayer *)dummyView.layer;
-    gradientLayer.colors = @[(id)GRADIENT_COLOR_1,(id)GRADIENT_COLOR_2];
+//    CAGradientLayer *gradientLayer = (CAGradientLayer *)dummyView.layer;
+//    gradientLayer.colors = @[(id)GRADIENT_COLOR_1,(id)GRADIENT_COLOR_2];
+    
+    dummyView.backImageView.image = [UIImage imageNamed:[KEBackingImageUtil randomObjectFromArray]];
+//dummyView.backgroundColor = [UIColor greenColor];
+        //dummyView.backgroundColor = [UIColor redColor];
+        //dummyView.backgroundColor = [UIColor blueColor];
+        //dummyView.backgroundColor = [UIColor yellowColor];
+
+    
     [KEWindowView settingFontsToUIElements:dummyView];
 
     return dummyView;

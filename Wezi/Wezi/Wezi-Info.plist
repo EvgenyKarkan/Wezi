@@ -12,15 +12,19 @@
 	<dict>
 		<key>CFBundlePrimaryIcon</key>
 		<dict>
+			<key>UIPrerenderedIcon</key>
+			<true/>
 			<key>CFBundleIconFiles</key>
 			<array>
-				<string>icon.png</string>
-				<string>icon72.png</string>
+				<string>app_icon72*72.png</string>
+				<string>app_icon144*144.png</string>
 			</array>
 		</dict>
 	</dict>
 	<key>CFBundleIdentifier</key>
 	<string>evgenykarkan.${PRODUCT_NAME:rfc1034identifier}</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

@@ -36,6 +36,16 @@
 				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">292</int>
 				<array class="NSMutableArray" key="NSSubviews">
+					<object class="IBUIImageView" id="117929995">
+						<reference key="NSNextResponder" ref="271871499"/>
+						<int key="NSvFlags">292</int>
+						<string key="NSFrameSize">{920, 580}</string>
+						<reference key="NSSuperview" ref="271871499"/>
+						<reference key="NSWindow"/>
+						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<bool key="IBUIUserInteractionEnabled">NO</bool>
+						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+					</object>
 					<object class="IBUIImageView" id="698914690">
 						<reference key="NSNextResponder" ref="271871499"/>
 						<int key="NSvFlags">274</int>
@@ -210,7 +220,6 @@
 						<string key="NSFrame">{{20, 557}, {460, 21}}</string>
 						<reference key="NSSuperview" ref="271871499"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -4927,6 +4936,14 @@ AAgAAAAIAAIACAACAAAAAgAAAAEAAQABAAE</bytes>
 					</object>
 					<int key="connectionID">72</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">backImageView</string>
+						<reference key="source" ref="271871499"/>
+						<reference key="destination" ref="117929995"/>
+					</object>
+					<int key="connectionID">78</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -4970,6 +4987,7 @@ AAgAAAAIAAIACAACAAAAAgAAAAEAAQABAAE</bytes>
 							<reference ref="957631762"/>
 							<reference ref="698914690"/>
 							<reference ref="81480216"/>
+							<reference ref="117929995"/>
 						</array>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">WindowView</string>
@@ -5085,6 +5103,12 @@ AAgAAAAIAAIACAACAAAAAgAAAAEAAQABAAE</bytes>
 						<reference key="object" ref="88977371"/>
 						<reference key="parent" ref="271871499"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">77</int>
+						<reference key="object" ref="117929995"/>
+						<reference key="parent" ref="271871499"/>
+						<string key="objectName">back view</string>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -5112,12 +5136,13 @@ AAgAAAAIAAIACAACAAAAAgAAAAEAAQABAAE</bytes>
 				<string key="74.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="75.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="76.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="77.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">76</int>
+			<int key="maxID">78</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -5129,6 +5154,7 @@ AAgAAAAIAAIACAACAAAAAgAAAAEAAQABAAE</bytes>
 						<string key="afterAfterTommorowView">UIImageView</string>
 						<string key="afterTommorowTemp">UILabel</string>
 						<string key="afterTommorowView">UIImageView</string>
+						<string key="backImageView">UIImageView</string>
 						<string key="bigImage">UIImageView</string>
 						<string key="conditionIcon">UIImageView</string>
 						<string key="currentCondition">UILabel</string>
@@ -5157,6 +5183,10 @@ AAgAAAAIAAIACAACAAAAAgAAAAEAAQABAAE</bytes>
 						</object>
 						<object class="IBToOneOutletInfo" key="afterTommorowView">
 							<string key="name">afterTommorowView</string>
+							<string key="candidateClassName">UIImageView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="backImageView">
+							<string key="name">backImageView</string>
 							<string key="candidateClassName">UIImageView</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="bigImage">
