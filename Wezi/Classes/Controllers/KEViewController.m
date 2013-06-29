@@ -134,6 +134,7 @@
     
     UIImage *backgroundImage = [UIImage imageNamed:@"navbar.png"];
     [self.navBar setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
+    
     [KEDecoratorUtil decorateWithShadow:self.navBar withOffsetValue:4.0f];
     [KEDecoratorUtil decorateWithShadow:self.downBar withOffsetValue:-4.0f];
     self.weziImage.image = [UIImage imageNamed:@"wezi_logo.png"];

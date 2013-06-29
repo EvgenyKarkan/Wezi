@@ -51,6 +51,7 @@
     self.isContextActivated = NO;
     self.dataManager = [KEDataManager sharedDataManager];
     self.managedObjectContext = [self.dataManager managedObjectContextFromAppDelegate];
+    [self addCustomButtons];
 }
 
 - (void)didReceiveMemoryWarning
@@ -195,4 +196,29 @@
     [self.map selectAnnotation:self.myAnnotation animated:YES];
 }
 
+# pragma mark - Configurate UI 
+
+- (void)addCustomButtons
+{
+    UIImage *backgroundImage = [UIImage imageNamed:@"navbar.png"];
+    [self.mapNavBar setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
+    
+    UIButton *done = [[UIButton alloc] initWithFrame:CGRectMake(475, 5, 60, 30)];
+    [done setImage:[UIImage imageNamed:@"done_button.png"] forState:UIControlStateNormal];
+    [done setImage:[UIImage imageNamed:@"done_button_click.png"] forState:UIControlStateHighlighted];
+    [done addTarget:self action:@selector(chooseLocation:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIButton *plus = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 60, 30)];
+    [plus setImage:[UIImage imageNamed:@"plus_button.png"] forState:UIControlStateNormal];
+    [plus setImage:[UIImage imageNamed:@"plus_button_click.png"] forState:UIControlStateHighlighted];
+    [plus addTarget:self action:@selector(dropPinPressed:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.mapNavBar addSubview:done];
+    [self.mapNavBar addSubview:plus];
+}
+
+- (void)viewDidUnload {
+    [self setMapNavBar:nil];
+    [super viewDidUnload];
+}
 @end
