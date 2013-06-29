@@ -6,13 +6,10 @@
 //  Copyright (c) 2013 EvgenyKarkan. All rights reserved.
 //
 
-#define GRADIENT_COLOR_1    [[UIColor colorWithRed:(arc4random() % 256/256.0) green:(arc4random()% 256/256.0) blue:(arc4random()% 256/256.0) alpha:1] CGColor]
-#define GRADIENT_COLOR_2    [[UIColor colorWithRed:(arc4random() % 256/256.0) green:(arc4random()% 256/256.0) blue:(arc4random()% 256/256.0) alpha:1] CGColor]
-#define GRADIENT_COLOR_3    [[UIColor colorWithRed:(arc4random() % 256/256.0) green:(arc4random()% 256/256.0) blue:(arc4random()% 256/256.0) alpha:1] CGColor]
-
 #import "KEWindowView.h"
 #import "KEFonts.h"
 #import "KEBackingImageUtil.h"
+#import "UIView+Decorate.h"
 
 @interface KEWindowView()
 
@@ -28,31 +25,17 @@
                                                       owner:self
                                                     options:nil];
     UIView *tempView = [previews objectAtIndex:0];
-    tempView.layer.cornerRadius = 20.0f;
     tempView.layer.borderColor = [[UIColor whiteColor] CGColor];
-    tempView.layer.borderWidth  = 3.0f;
-//    tempView.layer.shadowColor = [[UIColor blackColor] CGColor];
-//    tempView.layer.shadowOffset = CGSizeZero;
-//    tempView.layer.shadowOpacity = 2.99f;
-//    tempView.layer.shadowRadius = 10.0f;
-   
+    tempView.layer.borderWidth  = 5.0f;
+    [tempView addRoundShadowWithOpacity:0.6f];
+    
     return tempView;
 }
 
 + (KEWindowView *)returnWindowView
 {
     KEWindowView *dummyView = (KEWindowView *)[self loadViewFromNibWithName:kKEWindowViewNibName];
-    
-//    CAGradientLayer *gradientLayer = (CAGradientLayer *)dummyView.layer;
-//    gradientLayer.colors = @[(id)GRADIENT_COLOR_1,(id)GRADIENT_COLOR_2];
-    
     dummyView.backImageView.image = [UIImage imageNamed:[KEBackingImageUtil randomObjectFromArray]];
-//dummyView.backgroundColor = [UIColor greenColor];
-        //dummyView.backgroundColor = [UIColor redColor];
-        //dummyView.backgroundColor = [UIColor blueColor];
-        //dummyView.backgroundColor = [UIColor yellowColor];
-
-    
     [KEWindowView settingFontsToUIElements:dummyView];
 
     return dummyView;
@@ -66,13 +49,16 @@
 + (void)settingFontsToUIElements:(KEWindowView *)aView
 {
     NSMutableArray *allLabelArray = [NSMutableArray arrayWithArray:@[aView.timeStamp, aView.wind,
-                                                                     aView.humidity, aView.pressure, aView.windAbbreviation, aView.currentCondition]];
+                                                                     aView.humidity, aView.pressure,
+                                                                     aView.windAbbreviation, aView.currentCondition]];
     
     for (UILabel *label in allLabelArray) {
         [label setFont:[KEFonts plutoSansRegularWithSize:20.0f]];
     }
+    
     [aView.place setFont:[KEFonts plutoSansRegularWithSize:32.0f]];
     [aView.currentTemperature setFont:[KEFonts plutoSansRegularWithSize:72.0f]];
+    
 }
 
 

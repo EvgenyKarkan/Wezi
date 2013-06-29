@@ -22,6 +22,7 @@
 #import "NSString+CommaSubString.h"
 #import "KEUIImageFactoryUtil.h"
 #import "KEReachabilityUtil.h"
+#import "KEDecoratorUtil.h"
 
 @interface KEViewController () <UIScrollViewDelegate,KECoordinateFillProtocol>
 
@@ -63,6 +64,15 @@
     }
     self.pageControl.numberOfPages = [places count] + 1 ;
     self.scrollView.contentSize = CGSizeMake(1024 * ([places count] + 1), self.scrollView.contentSize.height);
+    
+    UIImage *backgroundImage = [UIImage imageNamed:@"navbar.png"];
+    
+        // self.navBar.frame = CGRectMake(0, 0, 1024, 44);
+    
+    [self.navBar setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
+    [KEDecoratorUtil decorateWithShadow:self.navBar];
+    
+    self.weziImage.image = [UIImage imageNamed:@"wezi_logo.png"];
 }
 
 #pragma mark - UIViewController lice cycle
@@ -76,7 +86,6 @@
         self.internetDroppedFirstly = YES;
     }
     else {
-        self.view.backgroundColor = [UIColor orangeColor]; /*[GradientView randomColor]*/;
         [self subscribeToReachabilityNotifications];
         [self setupViews];
         
@@ -88,10 +97,7 @@
                                                           object:nil
                                                            queue:[NSOperationQueue mainQueue]
                                                       usingBlock:^(NSNotification *note) {
-                                                          dispatch_queue_t dummyQueue = dispatch_queue_create("dummyQueue", nil);
-                                                          dispatch_async(dummyQueue, ^{
-                                                              [weakSelf reloadData];
-                                                          });
+                                                                 [weakSelf reloadData];
         }];
         
         [[KELocationManager sharedManager] startMonitoringLocationChanges];
@@ -132,21 +138,45 @@
     self.mapViewController = [[KEMapViewController alloc]init];
     self.mapViewController.objectToDelegate = self;
     self.isShownMapPopover = NO;
+    
+        ///
+    [self.addButton setImage:[UIImage imageNamed:@"done_button.png"] forState: UIControlStateNormal];
+    [self.addButton setImage:[UIImage imageNamed:@"done_button_click.png"] forState: UIControlStateHighlighted];
+    
+    [self addCustomButtons];
+}
+
+- (void)addCustomButtons
+{
+    UIButton *refresh = [[UIButton alloc] initWithFrame:CGRectMake(960, 5, 60, 30)];
+    [refresh setImage:[UIImage imageNamed:@"refresh_button.png"] forState:UIControlStateNormal];
+    [refresh setImage:[UIImage imageNamed:@"refresh_button_click.png"] forState:UIControlStateHighlighted];
+    [refresh addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIButton *trash = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 60, 30)];
+    [trash setImage:[UIImage imageNamed:@"trash_button.png"] forState:UIControlStateNormal];
+    [trash setImage:[UIImage imageNamed:@"trash_button_click.png"] forState:UIControlStateHighlighted];
+    [trash addTarget:self action:@selector(deletePage:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.navBar addSubview:refresh];
+    [self.navBar addSubview:trash];
+    
+  
 }
 
 - (void)setupViews
 {
-    self.observationContainerView.clipsToBounds = YES;
-    self.observationContainerView.layer.cornerRadius = 6.0f;
-    self.observationContainerView.layer.borderColor = [[UIColor whiteColor] CGColor];
-    self.observationContainerView.layer.borderWidth  = 3.0f;
+//    self.observationContainerView.clipsToBounds = YES;
+//    self.observationContainerView.layer.cornerRadius = 6.0f;
+//    self.observationContainerView.layer.borderColor = [[UIColor whiteColor] CGColor];
+//    self.observationContainerView.layer.borderWidth  = 3.0f;
     
 //    self.shadowContainerView.backgroundColor = [UIColor clearColor];
 //    self.shadowContainerView.layer.shadowColor = [[UIColor blackColor] CGColor];
 //    self.shadowContainerView.layer.shadowOffset = CGSizeZero;
 //    self.shadowContainerView.layer.shadowOpacity = 0.95f;
 //    self.shadowContainerView.layer.shadowRadius = 10.0f;
-    self.shadowContainerView.hidden = YES;
+//    self.shadowContainerView.hidden = YES;
     
 }
 
@@ -154,7 +184,7 @@
 {
     if (observation) {
         
-        self.shadowContainerView.hidden = YES;
+            //self.shadowContainerView.hidden = YES;
     
 
         
@@ -436,7 +466,7 @@
     self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width * self.pageControl.numberOfPages, self.scrollView.frame.size.height);
 }
 
-- (IBAction)deletePAge:(id)sender
+- (IBAction)deletePage:(id)sender
 {
     if (self.pageControl.currentPage != 0) {
         [[self.viewWithCoreData objectAtIndex:self.pageControl.currentPage - 1 ] removeFromSuperview];
@@ -531,6 +561,14 @@
 - (void)onNoInternet
 {
     [SVProgressHUD showErrorWithStatus:@"Internet dropped"];
+}
+
+- (void)viewDidUnload
+{
+    [self setNavBar:nil];
+        //[self setWeziImage:nil];
+    [self setAddButton:nil];
+    [super viewDidUnload];
 }
 
 @end

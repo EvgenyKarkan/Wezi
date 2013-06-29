@@ -36,6 +36,7 @@
         self.lowTemperature = forecastLowTemperature;
         self.iconURL = forecastIconURL;
     }
+    
     return self;
 }
 

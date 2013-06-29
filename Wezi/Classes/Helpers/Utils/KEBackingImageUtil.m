@@ -12,14 +12,14 @@
 
 + (NSArray *)arrayWithRainbowImages
 {
-    NSString *red = @"red.jpeg";
-    NSString *blue = @"blue.jpeg";
-    NSString *lblue = @"lblue.jpeg";
-    NSString *violet = @"violet.jpeg";
-    NSString *green = @"green.jpeg";
-    NSString *yellow = @"yellow.jpeg";
+    NSString *blue = @"color_backg_blue.png";
+    NSString *blue2 = @"color_backg_blue2.png";
+    NSString *green = @"color_backg_green.png";
+    NSString *red = @"color_backg_red.png";
+    NSString *violet = @"color_backg_violet.png";
+    NSString *yellow = @"color_backg_yellow.png";
     
-    NSArray *colours = @[red,blue,lblue,violet,green,yellow];
+    NSArray *colours = @[blue,blue2,green,red,violet,yellow];
     
     return colours;
 }

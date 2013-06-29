@@ -14,26 +14,16 @@
 
 @interface KEViewController : UIViewController <UpdateUIWithForecast, UIScrollViewDelegate>
 
-@property (nonatomic, weak)         IBOutlet UIView *shadowContainerView;
-@property (nonatomic, weak)         IBOutlet GradientView *observationContainerView;
-
-@property (nonatomic, weak)         IBOutlet UILabel *locationLabel;
-@property (nonatomic, weak)         IBOutlet UILabel *currentTemperatureLabel;
-@property (nonatomic, weak)         IBOutlet UILabel *feelsLikeTemperatureLabel;
-@property (nonatomic, weak)         IBOutlet UILabel *weatherDescriptionLabel;
-@property (nonatomic, weak)         IBOutlet UILabel *windDescriptionLabel;
-@property (nonatomic, weak)         IBOutlet UILabel *humidityLabel;
-@property (nonatomic, weak)         IBOutlet UILabel *devointLabel;
-@property (nonatomic, weak)         IBOutlet UILabel *lastUpdateLAbel;
-
-@property (nonatomic, weak)         IBOutlet UIImageView *currentConditionImageView;
-@property (nonatomic, weak)         IBOutlet UIImageView *weatherUndegroundImageView;
-
 @property (nonatomic, weak)         IBOutlet UIPageControl *pageControl;
-
 @property (nonatomic, weak)         IBOutlet UIScrollView *scrollView;
+@property (nonatomic, strong)       IBOutlet UINavigationBar *navBar;
+@property (nonatomic, weak)         IBOutlet UIImageView *weziImage;
+@property (nonatomic, weak)         IBOutlet UIButton *addButton;
+
+
 
 @property (nonatomic, strong)       UIStoryboardPopoverSegue *currentPopoverSegue;
+
 
 @end
 
