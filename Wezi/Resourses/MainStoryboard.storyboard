@@ -32,9 +32,9 @@
                                 <rect key="frame" x="0.0" y="704" width="1024" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem style="plain" id="A2T-el-0bV">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="fan-jj-sYi">
-                                            <rect key="frame" x="12" y="7" width="60" height="30"/>
+                                    <barButtonItem style="plain" id="6aa-QF-C68">
+                                        <button key="customView" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lxb-Z4-DIU" userLabel="anchor button">
+                                            <rect key="frame" x="12" y="6" width="50" height="33"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" size="button"/>
                                             <state key="normal">
@@ -44,9 +44,6 @@
                                             <state key="highlighted">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
-                                            <connections>
-                                                <action selector="goToMap:" destination="2" eventType="touchUpInside" id="QHT-z5-RHR"/>
-                                            </connections>
                                         </button>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Doj-p3-HJO"/>
@@ -54,15 +51,14 @@
                                         <pageControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="OPF-lC-ko4">
                                             <rect key="frame" x="262" y="4" width="500" height="36"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="currentPageIndicatorTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="pageIndicatorTintColor" cocoaTouchSystemColor="lightTextColor"/>
+                                            <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
                                                 <action selector="changePage:" destination="2" eventType="valueChanged" id="HgR-jV-3Es"/>
                                             </connections>
                                         </pageControl>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="31b-Kn-mQo"/>
-                                    <barButtonItem systemItem="trash" id="YiO-UJ-fh7"/>
                                 </items>
                             </toolbar>
                             <navigationBar contentMode="scaleToFill" id="V6d-r4-4ab">
@@ -90,12 +86,12 @@
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
-                        <outlet property="addButton" destination="fan-jj-sYi" id="lfL-eB-8LZ"/>
+                        <outlet property="downBar" destination="iT0-q0-VeK" id="ysp-eq-QeQ"/>
                         <outlet property="navBar" destination="V6d-r4-4ab" id="6dT-aQ-gaa"/>
                         <outlet property="pageControl" destination="OPF-lC-ko4" id="Lrq-Wu-vQW"/>
                         <outlet property="scrollView" destination="KV2-Lh-pVA" id="nGY-cj-MsZ"/>
                         <outlet property="weziImage" destination="LY5-Ni-Rsp" id="80K-j1-Im7"/>
-                        <segue destination="gDD-F8-kmf" kind="popover" identifier="segPop" popoverAnchorView="fan-jj-sYi" id="cxH-jP-vs3">
+                        <segue destination="gDD-F8-kmf" kind="popover" identifier="segPop" popoverAnchorView="lxb-Z4-DIU" id="cxH-jP-vs3">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                         </segue>
                     </connections>
@@ -152,35 +148,6 @@
     <resources>
         <image name="background.png" width="1024" height="768"/>
     </resources>
-    <classes>
-        <class className="KEMapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/KEMapViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="map" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="KEViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/KEViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="addButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="bar" candidateClass="UINavigationItem"/>
-                <relationship kind="outlet" name="currentConditionImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="currentTemperatureLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="devointLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="feelsLikeTemperatureLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="humidityLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lastUpdateLAbel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="locationLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="navBar" candidateClass="UINavigationBar"/>
-                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="weatherDescriptionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="weatherUndegroundImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="weziImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="windDescriptionLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -34,7 +34,7 @@
 @property (nonatomic, strong)       NSMutableArray *viewWithCoreData;
 @property (nonatomic, strong)       NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong)       CLLocation *loc;
-@property (nonatomic, weak)         IBOutlet UINavigationItem *bar;
+
 @property (nonatomic, readwrite)    BOOL isShownMapPopover;
 @property (nonatomic, readwrite)    BOOL pageControlBeingUsed;
 @property (nonatomic, assign)       BOOL internetDroppedFirstly;
@@ -53,7 +53,7 @@
         
     for (int i = 1; i <= [places count]; i++) {
         KEWindowView *aView = [KEWindowView returnWindowView];
-        aView.frame = CGRectMake((self.scrollView.contentOffset.x + 1024 *i) + 52, 30, 920, 580);
+        aView.frame = CGRectMake((self.scrollView.contentOffset.x + 1024 *i) + 52, 40/*30*/, 920, 580);
         [self.scrollView addSubview:aView];
         [self.viewWithCoreData addObject:aView];
         
@@ -65,14 +65,7 @@
     self.pageControl.numberOfPages = [places count] + 1 ;
     self.scrollView.contentSize = CGSizeMake(1024 * ([places count] + 1), self.scrollView.contentSize.height);
     
-    UIImage *backgroundImage = [UIImage imageNamed:@"navbar.png"];
-    
-        // self.navBar.frame = CGRectMake(0, 0, 1024, 44);
-    
-    [self.navBar setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
-    [KEDecoratorUtil decorateWithShadow:self.navBar];
-    
-    self.weziImage.image = [UIImage imageNamed:@"wezi_logo.png"];
+   
 }
 
 #pragma mark - UIViewController lice cycle
@@ -132,23 +125,25 @@
                forControlEvents:UIControlEventValueChanged];
     
     self.templateView = [KEWindowView returnWindowView];
-    self.templateView.frame = CGRectMake(52, 30, 920, 580);
+    self.templateView.frame = CGRectMake(52, 40/*30*/, 920, 580);
     [self.scrollView addSubview:self.templateView];
     
     self.mapViewController = [[KEMapViewController alloc]init];
     self.mapViewController.objectToDelegate = self;
     self.isShownMapPopover = NO;
     
-        ///
-    [self.addButton setImage:[UIImage imageNamed:@"done_button.png"] forState: UIControlStateNormal];
-    [self.addButton setImage:[UIImage imageNamed:@"done_button_click.png"] forState: UIControlStateHighlighted];
+    UIImage *backgroundImage = [UIImage imageNamed:@"navbar.png"];
+    [self.navBar setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
+    [KEDecoratorUtil decorateWithShadow:self.navBar withOffsetValue:4.0f];
+    [KEDecoratorUtil decorateWithShadow:self.downBar withOffsetValue:-4.0f];
+    self.weziImage.image = [UIImage imageNamed:@"wezi_logo.png"];
     
     [self addCustomButtons];
 }
 
 - (void)addCustomButtons
 {
-    UIButton *refresh = [[UIButton alloc] initWithFrame:CGRectMake(960, 5, 60, 30)];
+    UIButton *refresh = [[UIButton alloc] initWithFrame:CGRectMake(959, 5, 60, 30)];
     [refresh setImage:[UIImage imageNamed:@"refresh_button.png"] forState:UIControlStateNormal];
     [refresh setImage:[UIImage imageNamed:@"refresh_button_click.png"] forState:UIControlStateHighlighted];
     [refresh addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventTouchUpInside];
@@ -161,7 +156,18 @@
     [self.navBar addSubview:refresh];
     [self.navBar addSubview:trash];
     
-  
+    UIButton *add = [[UIButton alloc] initWithFrame:CGRectMake(5, 10, 60, 30)];
+    [add setImage:[UIImage imageNamed:@"plus_button.png"] forState:UIControlStateNormal];
+    [add setImage:[UIImage imageNamed:@"plus_button_click.png"] forState:UIControlStateHighlighted];
+    [add addTarget:self action:@selector(goToMap:) forControlEvents:UIControlEventTouchUpInside];
+   
+    UIButton *share = [[UIButton alloc] initWithFrame:CGRectMake(959, 10, 60, 30)];
+    [share setImage:[UIImage imageNamed:@"share_button.png"] forState:UIControlStateNormal];
+    [share setImage:[UIImage imageNamed:@"share_button_click.png"] forState:UIControlStateHighlighted];
+        //[share addTarget:self action:@selector(goToMap:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.downBar addSubview:add];
+    [self.downBar addSubview:share];
 }
 
 - (void)setupViews
@@ -418,7 +424,7 @@
     }    
     if (self.pageControl.numberOfPages == 2) {
         KEWindowView *foo = [KEWindowView returnWindowView];
-        foo.frame = CGRectMake(1076, 30, 920, 580);
+        foo.frame = CGRectMake(1076, 40/*30*/, 920, 580);
         [self.scrollView addSubview:foo];
         [self.viewWithCoreData addObject:foo];
         
@@ -440,10 +446,10 @@
         KEWindowView *bar = [KEWindowView returnWindowView];
         
         if (self.pageControl.currentPage == self.pageControl.numberOfPages - 2) {
-            bar.frame = CGRectMake((self.scrollView.contentOffset.x + 1076), 30, 920, 580);
+            bar.frame = CGRectMake((self.scrollView.contentOffset.x + 1076), 40/*30*/, 920, 580);
         }
         else {
-            bar.frame = CGRectMake((self.scrollView.contentOffset.x + 1024 * (self.pageControl.numberOfPages - self.pageControl.currentPage - 1) + 52), 30, 920, 580);
+            bar.frame = CGRectMake((self.scrollView.contentOffset.x + 1024 * (self.pageControl.numberOfPages - self.pageControl.currentPage - 1) + 52), 40/*30*/, 920, 580);
         }
         
         [self.scrollView addSubview:bar];
@@ -475,8 +481,7 @@
         for (UIView *dummyObject in self.viewWithCoreData) {
             NSUInteger index = [self.viewWithCoreData indexOfObject:dummyObject];
             if ((index > self.pageControl.currentPage -1) && (self.pageControl.currentPage != 0)) {
-                CGRect fullScreenRect = CGRectMake(dummyObject.frame.origin.x - 1024, 30
-                                                   , 920, 580);
+                CGRect fullScreenRect = CGRectMake(dummyObject.frame.origin.x - 1024, 40/*30*/, 920, 580);
                 [dummyObject setFrame:fullScreenRect];
             }
         }
@@ -566,8 +571,8 @@
 - (void)viewDidUnload
 {
     [self setNavBar:nil];
-        //[self setWeziImage:nil];
-    [self setAddButton:nil];
+    
+    [self setDownBar:nil];
     [super viewDidUnload];
 }
 

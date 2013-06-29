@@ -10,6 +10,6 @@
 
 @interface KEDecoratorUtil : NSObject
 
-+ (void)decorateWithShadow:(UIView *)element;
++ (void)decorateWithShadow:(UIView *)view withOffsetValue:(float)offset;
 
 @end

@@ -12,4 +12,5 @@
 
 + (NSArray *)arrayWithRainbowImages;
 + (id)randomObjectFromArray;
+
 @end
