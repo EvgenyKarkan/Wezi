@@ -59,6 +59,7 @@
 		CE9C75CD173CED5C008CFE31 /* KEWindowView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9C75CC173CED5C008CFE31 /* KEWindowView.m */; };
 		CE9D02C617437B2F0057968F /* KECityAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D02C517437B2F0057968F /* KECityAnnotation.m */; };
 		DE144E82176E0ED7005698BC /* Icons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE144E81176E0ED7005698BC /* Icons.bundle */; };
+		DE1809C81780435C00251C1C /* KEShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1809C71780435C00251C1C /* KEShareViewController.m */; };
 		DE228E4917692BDE002DADE3 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = DE228E4817692BDE002DADE3 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DE40AD9E177EF50E0080C64E /* UIView+Decorate.m in Sources */ = {isa = PBXBuildFile; fileRef = DE40AD9D177EF50E0080C64E /* UIView+Decorate.m */; };
 		DE40ADA1177F1B790080C64E /* GradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE40ADA0177F1B790080C64E /* GradientView.m */; };
@@ -197,6 +198,8 @@
 		CE9D02C417437B2F0057968F /* KECityAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KECityAnnotation.h; sourceTree = "<group>"; };
 		CE9D02C517437B2F0057968F /* KECityAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KECityAnnotation.m; sourceTree = "<group>"; };
 		DE144E81176E0ED7005698BC /* Icons.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Icons.bundle; sourceTree = "<group>"; };
+		DE1809C61780435C00251C1C /* KEShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEShareViewController.h; sourceTree = "<group>"; };
+		DE1809C71780435C00251C1C /* KEShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEShareViewController.m; sourceTree = "<group>"; };
 		DE228E4717692BDE002DADE3 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = ../Reachability.h; sourceTree = "<group>"; };
 		DE228E4817692BDE002DADE3 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = ../Reachability.m; sourceTree = "<group>"; };
 		DE40AD9C177EF50E0080C64E /* UIView+Decorate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Decorate.h"; sourceTree = "<group>"; };
@@ -444,6 +447,8 @@
 				CE7C0F13172FC2CC00E4A8AC /* KEViewController.m */,
 				CE7F06BA173A7E7E00697A98 /* KEMapViewController.h */,
 				CE7F06BB173A7E7F00697A98 /* KEMapViewController.m */,
+				DE1809C61780435C00251C1C /* KEShareViewController.h */,
+				DE1809C71780435C00251C1C /* KEShareViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -762,6 +767,7 @@
 				DE40AD9E177EF50E0080C64E /* UIView+Decorate.m in Sources */,
 				DE40ADA1177F1B790080C64E /* GradientView.m in Sources */,
 				DE40ADC4177F29D30080C64E /* KEDecoratorUtil.m in Sources */,
+				DE1809C81780435C00251C1C /* KEShareViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

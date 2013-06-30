@@ -23,12 +23,14 @@
 #import "KEUIImageFactoryUtil.h"
 #import "KEReachabilityUtil.h"
 #import "KEDecoratorUtil.h"
+#import "KEShareViewController.h"
 
 @interface KEViewController () <UIScrollViewDelegate,KECoordinateFillProtocol>
 
 @property (nonatomic, strong)       KEWindowView *templateView;
 @property (nonatomic, strong)       KEObservation *geo;
 @property (nonatomic, strong)       KEMapViewController *mapViewController;
+@property (nonatomic, strong)       KEShareViewController *shareViewController;
 @property (nonatomic, strong)       KEDataManager *dataManager;
 @property (nonatomic, strong)       NSMutableArray *entityArrayCoreData;
 @property (nonatomic, strong)       NSMutableArray *viewWithCoreData;
@@ -165,7 +167,7 @@
     UIButton *share = [[UIButton alloc] initWithFrame:CGRectMake(959, 10, 60, 30)];
     [share setImage:[UIImage imageNamed:@"share_button.png"] forState:UIControlStateNormal];
     [share setImage:[UIImage imageNamed:@"share_button_click.png"] forState:UIControlStateHighlighted];
-        //[share addTarget:self action:@selector(goToMap:) forControlEvents:UIControlEventTouchUpInside];
+    [share addTarget:self action:@selector(showSharePopover) forControlEvents:UIControlEventTouchUpInside];
     
     [self.downBar addSubview:add];
     [self.downBar addSubview:share];
@@ -368,6 +370,12 @@
         self.mapViewController = [segue destinationViewController];
         [self.mapViewController setObjectToDelegate:self];
     }
+    if ([[segue identifier] isEqualToString:@"shareSegue"]) {
+        self.currentPopoverSegue = (UIStoryboardPopoverSegue *)segue;
+        self.shareViewController = [segue destinationViewController];
+            //[self.mapViewController setObjectToDelegate:self];
+    }
+    
 }
 
 - (IBAction)goToMap:(id)sender
@@ -514,6 +522,11 @@
         self.pageControl.numberOfPages = [self.viewWithCoreData count] + 1;
         self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width * self.pageControl.numberOfPages, self.scrollView.frame.size.height);
     }];
+}
+
+- (void)showSharePopover
+{
+    [self performSegueWithIdentifier:@"shareSegue" sender:self];
 }
 
 #pragma mark - ScrollView delegate
