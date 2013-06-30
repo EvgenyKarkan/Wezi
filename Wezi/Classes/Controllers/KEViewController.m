@@ -24,6 +24,7 @@
 #import "KEReachabilityUtil.h"
 #import "KEDecoratorUtil.h"
 #import "KEShareViewController.h"
+#import "KEMailProvider.h"
 
 @interface KEViewController () <UIScrollViewDelegate,KECoordinateFillProtocol>
 
@@ -70,7 +71,7 @@
    
 }
 
-#pragma mark - UIViewController lice cycle
+#pragma mark - UIViewController life cycle
 
 - (void)viewDidLoad
 {
@@ -535,7 +536,7 @@
 {
     if (!self.pageControlBeingUsed) {
         CGFloat pageWidth = self.scrollView.frame.size.width;
-        int page = floor((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
+        NSInteger page = floor((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
         self.pageControl.currentPage = page;
     }
 }
@@ -557,6 +558,7 @@
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         return YES;
     }
+    
     return NO;
 }
 
@@ -571,6 +573,7 @@
 - (void)onYesInternet
 {
     [SVProgressHUD showSuccessWithStatus:@"Internet active"];
+    
     if (self.internetDroppedFirstly) {
         self.internetDroppedFirstly = NO;
         [self viewDidLoad];
@@ -585,7 +588,6 @@
 - (void)viewDidUnload
 {
     [self setNavBar:nil];
-    
     [self setDownBar:nil];
     [super viewDidUnload];
 }

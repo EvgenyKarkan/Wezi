@@ -16,5 +16,6 @@
     #import <MobileCoreServices/MobileCoreServices.h>
     #import <QuartzCore/QuartzCore.h>
     #import <MapKit/MapKit.h>
-    #import <CoreData/CoreData.h>
+    #import <CoreData/CoreData.h> 
+    #import <MessageUI/MFMailComposeViewController.h>
 #endif

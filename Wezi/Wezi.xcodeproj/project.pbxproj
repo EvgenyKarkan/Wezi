@@ -114,6 +114,8 @@
 		DEB51ED41759267400F04539 /* NSString+CommaSubString.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB51ED31759267400F04539 /* NSString+CommaSubString.m */; };
 		DEB51ED817592D7C00F04539 /* KEFonts.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB51ED717592D7C00F04539 /* KEFonts.m */; };
 		DEB51EDB17592DAB00F04539 /* KEUIImageFactoryUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB51EDA17592DAB00F04539 /* KEUIImageFactoryUtil.m */; };
+		DEB833461780925700DD9500 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB833451780925700DD9500 /* MessageUI.framework */; };
+		DEB833491780A1E300DD9500 /* KEMailProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB833481780A1E300DD9500 /* KEMailProvider.m */; };
 		DEB839AD1748D7A0005D211F /* KEDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB839AC1748D7A0005D211F /* KEDataManager.m */; };
 		DEDCDCE11748001100D957EC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDCDCE01748001100D957EC /* CoreData.framework */; };
 		DEDCDCE717480B2C00D957EC /* Wezi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DEDCDCE517480B2C00D957EC /* Wezi.xcdatamodeld */; };
@@ -264,6 +266,9 @@
 		DEB51ED717592D7C00F04539 /* KEFonts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEFonts.m; sourceTree = "<group>"; };
 		DEB51ED917592DAB00F04539 /* KEUIImageFactoryUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEUIImageFactoryUtil.h; sourceTree = "<group>"; usesTabs = 1; };
 		DEB51EDA17592DAB00F04539 /* KEUIImageFactoryUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEUIImageFactoryUtil.m; sourceTree = "<group>"; };
+		DEB833451780925700DD9500 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		DEB833471780A1E300DD9500 /* KEMailProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEMailProvider.h; sourceTree = "<group>"; };
+		DEB833481780A1E300DD9500 /* KEMailProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEMailProvider.m; sourceTree = "<group>"; };
 		DEB839AB1748D7A0005D211F /* KEDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEDataManager.h; sourceTree = "<group>"; };
 		DEB839AC1748D7A0005D211F /* KEDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEDataManager.m; sourceTree = "<group>"; };
 		DEDCDCE01748001100D957EC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -275,6 +280,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEB833461780925700DD9500 /* MessageUI.framework in Frameworks */,
 				DEDCDCE11748001100D957EC /* CoreData.framework in Frameworks */,
 				CE7F06BE173A7F5000697A98 /* MapKit.framework in Frameworks */,
 				CE7C0F0F172FC08600E4A8AC /* SystemConfiguration.framework in Frameworks */,
@@ -337,6 +343,7 @@
 		CE7C0EA1172FBE4B00E4A8AC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DEB833451780925700DD9500 /* MessageUI.framework */,
 				DEDCDCE01748001100D957EC /* CoreData.framework */,
 				CE7F06BD173A7F5000697A98 /* MapKit.framework */,
 				CE7C0F0E172FC08600E4A8AC /* SystemConfiguration.framework */,
@@ -467,6 +474,8 @@
 				DEB839AC1748D7A0005D211F /* KEDataManager.m */,
 				DEB51ED21759267400F04539 /* NSString+CommaSubString.h */,
 				DEB51ED31759267400F04539 /* NSString+CommaSubString.m */,
+				DEB833471780A1E300DD9500 /* KEMailProvider.h */,
+				DEB833481780A1E300DD9500 /* KEMailProvider.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -768,6 +777,7 @@
 				DE40ADA1177F1B790080C64E /* GradientView.m in Sources */,
 				DE40ADC4177F29D30080C64E /* KEDecoratorUtil.m in Sources */,
 				DE1809C81780435C00251C1C /* KEShareViewController.m in Sources */,
+				DEB833491780A1E300DD9500 /* KEMailProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
