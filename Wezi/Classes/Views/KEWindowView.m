@@ -48,17 +48,17 @@
 
 + (void)settingFontsToUIElements:(KEWindowView *)aView
 {
-    NSMutableArray *allLabelArray = [NSMutableArray arrayWithArray:@[aView.timeStamp, aView.wind,
-                                                                     aView.humidity, aView.pressure,
-                                                                     aView.windAbbreviation, aView.currentCondition]];
+    NSMutableArray *allLabelArray = [NSMutableArray arrayWithArray:@[aView.wind,aView.humidity, aView.pressure,
+                                                                     aView.windAbbreviation, aView.currentCondition,
+                                                                     aView.tommorowTemp, aView.afterTommorowTemp, aView.afrerAfterTommorowTemp]];
     
     for (UILabel *label in allLabelArray) {
-        [label setFont:[KEFonts plutoSansRegularWithSize:20.0f]];
+        [label setFont:[KEFonts plutoSansRegularWithSize:25.0f]];
     }
     
-    [aView.place setFont:[KEFonts plutoSansRegularWithSize:32.0f]];
+    [aView.place setFont:[KEFonts plutoSansRegularWithSize:35.0f]];
     [aView.currentTemperature setFont:[KEFonts plutoSansRegularWithSize:72.0f]];
-    
+    [aView.timeStamp setFont:[KEFonts plutoSansRegularWithSize:15.0f]];
 }
 
 

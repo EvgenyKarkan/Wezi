@@ -176,41 +176,13 @@
 
 - (void)setupViews
 {
-//    self.observationContainerView.clipsToBounds = YES;
-//    self.observationContainerView.layer.cornerRadius = 6.0f;
-//    self.observationContainerView.layer.borderColor = [[UIColor whiteColor] CGColor];
-//    self.observationContainerView.layer.borderWidth  = 3.0f;
-    
-//    self.shadowContainerView.backgroundColor = [UIColor clearColor];
-//    self.shadowContainerView.layer.shadowColor = [[UIColor blackColor] CGColor];
-//    self.shadowContainerView.layer.shadowOffset = CGSizeZero;
-//    self.shadowContainerView.layer.shadowOpacity = 0.95f;
-//    self.shadowContainerView.layer.shadowRadius = 10.0f;
-//    self.shadowContainerView.hidden = YES;
+
     
 }
 
 - (void)updateUIWithObservationForCurrentLocation:(KEObservation *)observation
 {
     if (observation) {
-        
-            //self.shadowContainerView.hidden = YES;
-    
-
-        
-//        [self.weatherUndegroundImageView setImageWithURL:[NSURL URLWithString:observation.weatherUndergroundImageInfo[@"url"]]];
-//        
-//        self.locationLabel.text = observation.location[@"full"];
-//        self.currentTemperatureLabel.text = observation.feelsLikeTemperatureC;
-//        //self.feelsLikeTemperatureLabel.text = [@"Feels like " stringByAppendingString:observation.feelsLikeTemperatureDescription];
-//        self.weatherDescriptionLabel.text = observation.weatherDescription;
-//        self.windDescriptionLabel.text = observation.windDescription;
-//        self.humidityLabel.text = observation.relativeHumidity;
-//        
-//        self.devointLabel.text = observation.dewpointDescription;
-//        self.lastUpdateLAbel.text = observation.timeString;
-        
-     
         [self.templateView.conditionIcon setImage:[KEUIImageFactoryUtil imageDependsOnURL:observation.iconUrl]];
         NSString *string = [NSString stringWithFormat:@"%@ %@",[observation.temperatureC stringValue],@"°C"];
         self.templateView.currentTemperature.text = string;
@@ -220,6 +192,7 @@
         self.templateView.wind.text = [observation.windSpeed stringValue];
         self.templateView.humidity.text = observation.relativeHumidity;
         self.templateView.pressure.text = observation.pressure;
+        self.templateView.timeStamp.text = observation.timeString;
     }
     
 }
@@ -241,17 +214,17 @@
 }
 
 #pragma -  i add it
-//
+
 - (void)updateTommorowWithForecast:(KETommorowForecast *)forecast withView:(KEWindowView *)viewToUpdate
 {
     [viewToUpdate.tomorrowView setImage:[KEUIImageFactoryUtil imageDependsOnURL:forecast.iconURL]];
     viewToUpdate.tommorowTemp.text = forecast.highTemperature;
-    NSLog(@" viewToUpdate.tommorowTemp.text %@", viewToUpdate.tommorowTemp.text );
+
     
 //    NSLog(@"AfTom %@", forecast.conditionOnForecast  );
-//    NSLog(@" %@", forecast.month  );
-//    NSLog(@" %@", forecast.weekDay  );
-//    NSLog(@" %@", forecast.dayNumber  );
+    NSLog(@" %@", forecast.month  );
+    NSLog(@" %@", forecast.weekDay  );
+    NSLog(@" %@", forecast.dayNumber  );
 //    NSLog(@" %@", forecast.yearNumber  );
 //    NSLog(@" %@", forecast.humidity  );
 //    NSLog(@" %@", forecast.wind  );
@@ -266,9 +239,9 @@
 
     
 //    NSLog(@"AfTom %@", forecast.conditionOnForecast  );
-//    NSLog(@" %@", forecast.month  );
-//    NSLog(@" %@", forecast.weekDay  );
-//    NSLog(@" %@", forecast.dayNumber  );
+    NSLog(@" %@", forecast.month  );
+    NSLog(@" %@", forecast.weekDay  );
+    NSLog(@" %@", forecast.dayNumber  );
 //    NSLog(@" %@", forecast.yearNumber  );
 //    NSLog(@" %@", forecast.humidity  );
 //    NSLog(@" %@", forecast.wind  );
@@ -278,14 +251,14 @@
 
 - (void)updateAfterAfterTommorowWithForecast:(KEAfterAfterTommorowForecast *)forecast withView:(KEWindowView *)viewToUpdate
 {
-    [viewToUpdate.afterAfterTommorowView setImageWithURL:[NSURL URLWithString:forecast.iconURL]];
+    [viewToUpdate.afterAfterTommorowView setImage:[KEUIImageFactoryUtil imageDependsOnURL:forecast.iconURL]];
     viewToUpdate.afrerAfterTommorowTemp.text = forecast.highTemperature;
 
     
 //    NSLog(@"AfAfTom %@", forecast.conditionOnForecast  );
-//    NSLog(@" %@", forecast.month  );
-//    NSLog(@" %@", forecast.weekDay  );
-//    NSLog(@" %@", forecast.dayNumber  );
+    NSLog(@" %@", forecast.month  );
+    NSLog(@" %@", forecast.weekDay  );
+    NSLog(@" %@", forecast.dayNumber  );
 //    NSLog(@" %@", forecast.yearNumber  );
 //    NSLog(@" %@", forecast.humidity  );
 //    NSLog(@" %@", forecast.wind  );
