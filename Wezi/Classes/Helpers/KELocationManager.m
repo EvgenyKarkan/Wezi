@@ -18,19 +18,19 @@ NSString * const kLocationDidChangeNotificationKey = @"locationManagerlocationDi
 @end
 
 @implementation KELocationManager
-@synthesize currentLocation;
+	//@synthesize currentLocation;
 
 @synthesize isMonitoringLocation;
 
 + (instancetype)sharedManager
 {
-    static KELocationManager *_sharedLocationManager = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        _sharedLocationManager = [[KELocationManager alloc] init];
-    });
-    
-    return _sharedLocationManager;
+	static KELocationManager *_sharedLocationManager = nil;
+	static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^{
+	    _sharedLocationManager = [[KELocationManager alloc] init];
+	});
+	
+	return _sharedLocationManager;
 }
 
 #pragma mark - Public API
@@ -70,8 +70,8 @@ NSString * const kLocationDidChangeNotificationKey = @"locationManagerlocationDi
 {
     if (!_locationManager) {
         _locationManager = [[CLLocationManager alloc] init];
-//            [_locationManager setDistanceFilter:1000];
-//            [_locationManager setDesiredAccuracy: kCLLocationAccuracyThreeKilometers];
+            [_locationManager setDistanceFilter:1000];
+            [_locationManager setDesiredAccuracy: kCLLocationAccuracyThreeKilometers];
     }
     
     return _locationManager;
@@ -99,25 +99,26 @@ NSString * const kLocationDidChangeNotificationKey = @"locationManagerlocationDi
                                                       userInfo:userInfo];
 }
 
-- (void)locationManager:(CLLocationManager*)manager didFailWithError:(NSError*)error
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
-    if ([error code]== kCLErrorDenied) {
-        UIAlertView *servicesDisabledAlert = [[UIAlertView alloc] initWithTitle:@"Location Services Denied"
-                                                                        message:@"This app requires location services to be allowed"
-                                                                       delegate:nil
-                                                              cancelButtonTitle:@"OK"
-                                                              otherButtonTitles:nil];
-        [servicesDisabledAlert show];
-    }
+	if ([error code] == kCLErrorDenied) {
+		UIAlertView *servicesDisabledAlert = [[UIAlertView alloc] initWithTitle:@"Location Services Denied"
+		                                                                message:@"This app requires location services to be allowed"
+		                                                               delegate:nil
+		                                                      cancelButtonTitle:@"OK"
+		                                                      otherButtonTitles:nil];
+		[servicesDisabledAlert show];
+	}
 }
 
-- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
-    
-    if (status == kCLAuthorizationStatusDenied) {
-            NSLog(@"permission denied"); 
-    }
-    else if (status == kCLAuthorizationStatusAuthorized) {
-            NSLog(@"permission granted");
-    }
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
+{
+	if (status == kCLAuthorizationStatusDenied) {
+		NSLog(@"permission denied");
+	}
+	else if (status == kCLAuthorizationStatusAuthorized) {
+		NSLog(@"permission granted");
+	}
 }
+
 @end
