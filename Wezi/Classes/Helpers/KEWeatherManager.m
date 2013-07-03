@@ -132,7 +132,6 @@ static NSString * const kWeatherUndergroundAPIBaseURLString = @"http://api.wunde
                                                  withHighTemperature:[[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"] objectAtIndex:2] valueForKeyPath:@"high.celsius"]
                                                   withLowTemperature:[[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"] objectAtIndex:2] valueForKeyPath:@"low.celsius"]
                                                          withIconURL:[[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"] objectAtIndex:2] valueForKey:@"icon_url"]];
-
     return afterTommorow;
 }
 

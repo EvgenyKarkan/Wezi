@@ -23,7 +23,6 @@
 @property (nonatomic, strong) NSNumber      *windSpeed;
 @property (nonatomic, strong) NSString      *pressure;
 
-    //@property (nonatomic, strong) NSString      *temperatureDescription;
 @property (nonatomic, strong) NSString      *feelsLikeTemperatureDescription;
 @property (nonatomic, strong) NSString      *relativeHumidity;
 @property (nonatomic, strong) NSString      *dewpointDescription;

@@ -25,10 +25,9 @@ static KEDataManager *sharedDataManager = nil;
 
 - (NSManagedObjectContext *)managedObjectContextFromAppDelegate
 {
-    KEAppDelegate *appDelegate = (KEAppDelegate *)[[UIApplication sharedApplication]delegate];
+    KEAppDelegate *appDelegate = (KEAppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    NSManagedObjectContext * managedObjectContext = [[NSManagedObjectContext alloc]init];
-    managedObjectContext = [appDelegate managedObjectContext];
+    id managedObjectContext = [appDelegate managedObjectContext];
     
     return managedObjectContext;
 }

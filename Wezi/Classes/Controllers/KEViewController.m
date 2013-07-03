@@ -10,7 +10,6 @@
 #import "SVProgressHUD.h"
 #import "KEWeatherManager.h"
 #import "KELocationManager.h"
-#import "GradientView.h"
 #import "KEObservation.h"
 #import "KEWindowView.h"
 #import "KEAfterAfterTommorowForecast.h"
@@ -218,7 +217,7 @@
 - (void)updateTommorowWithForecast:(KETommorowForecast *)forecast withView:(KEWindowView *)viewToUpdate
 {
     [viewToUpdate.tomorrowView setImage:[KEUIImageFactoryUtil imageDependsOnURL:forecast.iconURL]];
-    viewToUpdate.tommorowTemp.text = forecast.highTemperature;
+    viewToUpdate.tommorowTemp.text = [NSString stringWithFormat:@"%@ %@",forecast.highTemperature,@"°C"];
 
     
 //    NSLog(@"AfTom %@", forecast.conditionOnForecast  );
@@ -235,8 +234,7 @@
 - (void)updateAfterTomorrowWithForecast:(KEAfterTommorowForecast *)forecast withView:(KEWindowView *)viewToUpdate
 {
     [viewToUpdate.afterTommorowView setImage:[KEUIImageFactoryUtil imageDependsOnURL:forecast.iconURL]];
-    viewToUpdate.afterTommorowTemp.text = forecast.highTemperature;
-
+    viewToUpdate.afterTommorowTemp.text = [NSString stringWithFormat:@"%@ %@",forecast.highTemperature,@"°C"];
     
 //    NSLog(@"AfTom %@", forecast.conditionOnForecast  );
     NSLog(@" %@", forecast.month  );
@@ -252,7 +250,7 @@
 - (void)updateAfterAfterTommorowWithForecast:(KEAfterAfterTommorowForecast *)forecast withView:(KEWindowView *)viewToUpdate
 {
     [viewToUpdate.afterAfterTommorowView setImage:[KEUIImageFactoryUtil imageDependsOnURL:forecast.iconURL]];
-    viewToUpdate.afrerAfterTommorowTemp.text = forecast.highTemperature;
+    viewToUpdate.afrerAfterTommorowTemp.text = [NSString stringWithFormat:@"%@ %@",forecast.highTemperature,@"°C"];
 
     
 //    NSLog(@"AfAfTom %@", forecast.conditionOnForecast  );
