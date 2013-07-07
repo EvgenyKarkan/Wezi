@@ -34,7 +34,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
     }
-    self.managedObjectContext = [[KEDataManager sharedDataManager] managedObjectContextFromAppDelegate];
+		//self.managedObjectContext = [[KEDataManager sharedDataManager] managedObjectContextFromAppDelegate];
     return self;
 }
 
@@ -50,7 +50,7 @@
     self.viewController = [[KEViewController alloc]init];
     self.isContextActivated = NO;
     self.dataManager = [KEDataManager sharedDataManager];
-    self.managedObjectContext = [self.dataManager managedObjectContextFromAppDelegate];
+	self.managedObjectContext = [self.dataManager managedObjectContextFromAppDelegate];
     [self addCustomButtons];
 }
 
