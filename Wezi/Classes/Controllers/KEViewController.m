@@ -125,7 +125,7 @@
 	           forControlEvents:UIControlEventValueChanged];
     
     self.templateView = [KEWindowView returnWindowView];
-    self.templateView.frame = CGRectMake(52, 40/*30*/, 920, 580);
+    self.templateView.frame = CGRectMake(52, 40, 920, 580);
     [self.scrollView addSubview:self.templateView];
     
     self.mapViewController = [[KEMapViewController alloc]init];
