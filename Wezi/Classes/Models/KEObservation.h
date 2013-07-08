@@ -36,5 +36,4 @@
 
 + (instancetype)observationWithDictionary:(NSDictionary *)dictionary;
 
-
 @end

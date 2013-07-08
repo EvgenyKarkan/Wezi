@@ -36,7 +36,6 @@
 @property (nonatomic, strong)       NSMutableArray *viewWithCoreData;
 @property (nonatomic, strong)       NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong)       CLLocation *loc;
-
 @property (nonatomic, readwrite)    BOOL isShownMapPopover;
 @property (nonatomic, readwrite)    BOOL pageControlBeingUsed;
 @property (nonatomic, assign)       BOOL internetDroppedFirstly;
@@ -53,9 +52,9 @@
     self.entityArrayCoreData = [NSMutableArray arrayWithArray:places];
     self.viewWithCoreData = [[NSMutableArray alloc] init];
         
-	for (int i = 1; i <= [places count]; i++) {
+	for (NSUInteger i = 1; i <= [places count]; i++) {
 		KEWindowView *aView = [KEWindowView returnWindowView];
-		aView.frame = CGRectMake((self.scrollView.contentOffset.x + 1024 * i) + 52, 40 /*30*/, 920, 580);
+		aView.frame = CGRectMake((self.scrollView.contentOffset.x + 1024 * i) + 52, 40, 920, 580);
 		[self.scrollView addSubview:aView];
 		[self.viewWithCoreData addObject:aView];
 		
@@ -80,7 +79,6 @@
 	}
 	else {
 		[self subscribeToReachabilityNotifications];
-		[self setupViews];
 		
 		KEWeatherManager *weather = [KEWeatherManager sharedClient];
 		weather.delegate = self;
@@ -91,7 +89,7 @@
 		                                                   queue:[NSOperationQueue mainQueue]
 		                                              usingBlock: ^(NSNotification *note) {
 														  [weakSelf reloadData];
-													  }];
+		}];
 		
 		[[KELocationManager sharedManager] startMonitoringLocationChanges];
 		
@@ -169,10 +167,6 @@
     
 	[self.downBar addSubview:add];
 	[self.downBar addSubview:share];
-}
-
-- (void)setupViews
-{
 }
 
 - (void)updateUIWithObservationForCurrentLocation:(KEObservation *)observation
@@ -398,7 +392,7 @@
     }    
     if (self.pageControl.numberOfPages == 2) {
         KEWindowView *foo = [KEWindowView returnWindowView];
-        foo.frame = CGRectMake(1076, 40/*30*/, 920, 580);
+        foo.frame = CGRectMake(1076, 40, 920, 580);
         [self.scrollView addSubview:foo];
         [self.viewWithCoreData addObject:foo];
         
@@ -420,10 +414,10 @@
         KEWindowView *bar = [KEWindowView returnWindowView];
         
         if (self.pageControl.currentPage == self.pageControl.numberOfPages - 2) {
-            bar.frame = CGRectMake((self.scrollView.contentOffset.x + 1076), 40/*30*/, 920, 580);
+            bar.frame = CGRectMake((self.scrollView.contentOffset.x + 1076), 40, 920, 580);
         }
         else {
-            bar.frame = CGRectMake((self.scrollView.contentOffset.x + 1024 * (self.pageControl.numberOfPages - self.pageControl.currentPage - 1) + 52), 40/*30*/, 920, 580);
+            bar.frame = CGRectMake((self.scrollView.contentOffset.x + 1024 * (self.pageControl.numberOfPages - self.pageControl.currentPage - 1) + 52), 40, 920, 580);
         }
         
         [self.scrollView addSubview:bar];
@@ -455,7 +449,7 @@
 	    for (UIView * dummyObject in self.viewWithCoreData) {
 	        NSUInteger index = [self.viewWithCoreData indexOfObject:dummyObject];
 	        if ((index > self.pageControl.currentPage - 1) && (self.pageControl.currentPage != 0)) {
-	            CGRect fullScreenRect = CGRectMake(dummyObject.frame.origin.x - 1024, 40 /*30*/, 920, 580);
+	            CGRect fullScreenRect = CGRectMake(dummyObject.frame.origin.x - 1024, 40, 920, 580);
 	            [dummyObject setFrame:fullScreenRect];
 			}
 		}
@@ -548,13 +542,6 @@
 - (void)onNoInternet
 {
     [SVProgressHUD showErrorWithStatus:@"Internet dropped"];
-}
-
-- (void)viewDidUnload
-{
-    [self setNavBar:nil];
-    [self setDownBar:nil];
-    [super viewDidUnload];
 }
 
 @end

@@ -219,10 +219,6 @@
     [self.mapNavBar addSubview:plus];
 }
 
-- (void)viewDidUnload
-{
-	[self setMapNavBar:nil];
-	[super viewDidUnload];
-}
+
 
 @end
