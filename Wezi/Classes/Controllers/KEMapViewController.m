@@ -34,7 +34,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
     }
-		//self.managedObjectContext = [[KEDataManager sharedDataManager] managedObjectContextFromAppDelegate];
+
     return self;
 }
 
@@ -131,6 +131,7 @@
 			pinView.animatesDrop = YES;
 			pinView.canShowCallout = YES;
 			pinView.draggable = YES;
+			[pinView setSelected:YES animated:YES];
 		}
 		return pinView;
 	}
