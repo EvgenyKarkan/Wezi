@@ -44,8 +44,8 @@
 {
     [super viewDidLoad];
     
-    self.map.delegate = self;
-    self.geocoder = [[CLGeocoder alloc]init];
+	self.map.delegate = self;
+	self.geocoder = [[CLGeocoder alloc]init];
     self.map.showsUserLocation = YES;
     self.viewController = [[KEViewController alloc]init];
     self.isContextActivated = NO;

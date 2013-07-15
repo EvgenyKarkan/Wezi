@@ -6,10 +6,13 @@
 //  Copyright (c) 2013 Sigma Ukraine. All rights reserved.
 //
 
+#define SPLASH_SCREEN_DELAY 1.5
+
 #import "KEAppDelegate.h"
 #import "Place.h"
 #import "KEReachabilityUtil.h"
 #import "AFHTTPClient.h"
+#import "KEEntryViewController.h"
 
 @implementation KEAppDelegate
 
@@ -43,6 +46,21 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
   
+	static dispatch_once_t onceToken;
+    
+    dispatch_once(&onceToken, ^{
+        UIImage *imageDefault = [UIImage imageNamed:@"2.jpeg"];
+        UIImage *imageFading = [UIImage imageNamed:@"1.jpeg"];
+        
+        KEEntryViewController *entryView = [[KEEntryViewController alloc] initWithSplashImage:imageDefault
+																			  withFadingImage:imageFading
+																					  withRect:self.window.frame]; // rename withRect
+//        [entryView setNextAction:@selector(hideSearchBar) forObject:self];
+        [self.window addSubview:entryView.view];
+        [entryView presentSelfFotTime:SPLASH_SCREEN_DELAY];
+        
+    });
+	
 }
 
 
