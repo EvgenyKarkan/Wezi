@@ -24,6 +24,7 @@
 #import "KEDecoratorUtil.h"
 #import "KEShareViewController.h"
 #import "KEMailProvider.h"
+#import "KESplashScreenUtil.h"
 
 @interface KEViewController () <UIScrollViewDelegate, KECoordinateFillProtocol>
 
@@ -74,6 +75,8 @@
 	[super viewDidLoad];
 	[self subscribeToReachabilityNotifications];
 	
+	[KESplashScreenUtil showSplashScreenOnView:self.view];
+		
 	if (![[KEReachabilityUtil sharedUtil] checkInternetConnection]) {
 		self.internetDroppedFirstly = YES;
 	}
