@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Classes/Helpers/KEWeatherManager.m"
-         timestampString = "392848823.928436"
+         timestampString = "395703531.847888"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "77"
-         endingLineNumber = "77"
+         startingLineNumber = "94"
+         endingLineNumber = "94"
          landmarkName = "-getForecastObservationForLocation:completion:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Classes/Controllers/KEViewController.m"
-         timestampString = "395701433.852892"
+         timestampString = "395702119.248673"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "237"
-         endingLineNumber = "237"
+         startingLineNumber = "234"
+         endingLineNumber = "234"
          landmarkName = "-updateAfterTomorrowWithForecast:withView:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -60,11 +60,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Classes/Controllers/KEViewController.m"
-         timestampString = "395701433.852892"
+         timestampString = "395702119.248673"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "150"
-         endingLineNumber = "150"
+         startingLineNumber = "147"
+         endingLineNumber = "147"
          landmarkName = "-addCustomButtons"
          landmarkType = "5">
       </FileBreakpoint>

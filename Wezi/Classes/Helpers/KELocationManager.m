@@ -18,19 +18,35 @@ NSString * const kLocationDidChangeNotificationKey = @"locationManagerlocationDi
 @end
 
 @implementation KELocationManager
-	//@synthesize currentLocation;
 
-@synthesize isMonitoringLocation;
+#pragma mark - Singleton stuff
+
+static id __sharedLocationManager = nil;
 
 + (instancetype)sharedManager
 {
-	static KELocationManager *_sharedLocationManager = nil;
-	static dispatch_once_t onceToken;
-	dispatch_once(&onceToken, ^{
-	    _sharedLocationManager = [[KELocationManager alloc] init];
-	});
-	
-	return _sharedLocationManager;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        __sharedLocationManager = [[KELocationManager alloc] init];
+    });
+    
+    return __sharedLocationManager;
+}
+
++ (id)allocWithZone:(NSZone *)zone
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        __sharedLocationManager = nil;
+        __sharedLocationManager = [super allocWithZone:zone];
+    });
+    
+    return __sharedLocationManager;
+}
+
+- (id)copyWithZone:(NSZone *)zone
+{
+    return self;
 }
 
 #pragma mark - Public API

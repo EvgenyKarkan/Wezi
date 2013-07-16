@@ -14,6 +14,8 @@
 @property (nonatomic, assign) id delegateObject;
 
 - (id)initWithDelegate:(id)delegate;
-- (void)showMailComposerWithSubject:(NSString *)subject withRecepient:(NSArray *)recepient withMessageBody:(NSString *)message;
+- (void)showMailComposerWithSubject:(NSString *)subject
+					  withRecepient:(NSArray *)recepient
+					withMessageBody:(NSString *)message;
 
 @end

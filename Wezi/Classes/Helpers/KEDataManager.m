@@ -9,19 +9,39 @@
 #import "KEDataManager.h"
 #import "KEAppDelegate.h"
 
-static KEDataManager *sharedDataManager = nil;
-
 @implementation KEDataManager
 
-+ (KEDataManager *)sharedDataManager
+#pragma mark - Singleton stuff
+
+static id __sharedInstance = nil;
+
++ (instancetype)sharedDataManager
 {
-    return sharedDataManager;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        __sharedInstance = [[KEDataManager alloc] init];
+    });
+    
+    return __sharedInstance;
 }
 
-+ (void)initialize
++ (id)allocWithZone:(NSZone *)zone
 {
-    sharedDataManager = [[KEDataManager alloc] init];
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        __sharedInstance = nil;
+        __sharedInstance = [super allocWithZone:zone];
+    });
+    
+    return __sharedInstance;
 }
+
+- (id)copyWithZone:(NSZone *)zone
+{
+    return self;
+}
+
+#pragma mark - Core Data stuff
 
 - (NSManagedObjectContext *)managedObjectContextFromAppDelegate
 {

@@ -27,7 +27,6 @@
 	                    animations: ^(void) {
 							imageView.alpha = 0.0f;
 						}
-		 
 	                    completion: ^(BOOL finished) {
 							[imageView removeFromSuperview];
 						}];

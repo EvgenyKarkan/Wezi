@@ -21,10 +21,8 @@
 @property (nonatomic, strong) NSMutableDictionary *days;
 
 + (instancetype)sharedClient;
-
 - (void)getCurrentWeatherObservationForLocation:(CLLocation *)location
                                      completion:(void(^)(KEObservation *observation, NSError *error))completion;
-
 - (void)getForecastObservationForLocation:(CLLocation *)location
                                completion:(void(^)(NSMutableDictionary *threeDays, NSError *error))completion;
 

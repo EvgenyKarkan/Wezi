@@ -16,19 +16,36 @@ static NSString * const kWeatherUndergroundAPIBaseURLString = @"http://api.wunde
 
 @implementation KEWeatherManager
 
-#pragma mark - Singleton
+#pragma mark - Singleton stuff
+
+static id __sharedClient = nil;
 
 + (instancetype)sharedClient
 {
-    static KEWeatherManager *sharedClient = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        NSString *baseURLString = [kWeatherUndergroundAPIBaseURLString stringByAppendingString:kWeatherUndergroundAPIKey];
-        sharedClient = [[self alloc] initWithBaseURL:[NSURL URLWithString:baseURLString]];
+		NSString *baseURLString = [kWeatherUndergroundAPIBaseURLString stringByAppendingString:kWeatherUndergroundAPIKey];
+		__sharedClient = [[self alloc] initWithBaseURL:[NSURL URLWithString:baseURLString]];
     });
-    return sharedClient;
+    
+    return __sharedClient;
 }
 
++ (id)allocWithZone:(NSZone *)zone
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        __sharedClient = nil;
+        __sharedClient = [super allocWithZone:zone];
+    });
+    
+    return __sharedClient;
+}
+
+- (id)copyWithZone:(NSZone *)zone
+{
+    return self;
+}
 #pragma mark - Initialization
 
 - (id)initWithBaseURL:(NSURL *)url

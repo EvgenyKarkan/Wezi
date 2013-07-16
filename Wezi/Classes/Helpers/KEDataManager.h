@@ -10,8 +10,7 @@
 
 @interface KEDataManager : NSObject
 
-+ (KEDataManager *)sharedDataManager;
-
++ (instancetype)sharedDataManager;
 - (NSManagedObjectContext *)managedObjectContextFromAppDelegate;
 - (NSFetchRequest *)requestWithEntityName:(NSString *)entity;
 
