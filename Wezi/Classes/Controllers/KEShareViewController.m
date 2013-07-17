@@ -29,47 +29,52 @@
 
 #pragma mark - Actions
 
-- (IBAction)emailPressed:(id)sender
+- (IBAction)buttonPressed:(id)sender
 {
 	[self.objectToDelegate hideSharePopover];
-	NSArray *arr = @[@"wezi@gmail.com"];
-	KEMailProvider *mail = [[KEMailProvider alloc] initWithDelegate:self];
 	
-	[mail showMailComposerWithSubject:@"E-mail"
-	                    withRecepient:arr
-	                  withMessageBody:@"Hello world"];
-}
-
-- (IBAction)twitterPessed:(id)sender
-{
-	[self.objectToDelegate hideSharePopover];
-	if([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
-		SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-        
-        [controller setInitialText:@"First post from my iPhone app"];
-        [self presentViewController:controller animated:YES completion:Nil];
-    }
-}
-
-- (IBAction)facebookPressed:(id)sender
-{
-	[self.objectToDelegate hideSharePopover];
-	if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
-		SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-        
-        [controller setInitialText:@"First post from my iPhone app"];
-        [self presentViewController:controller animated:YES completion:Nil];
-    }
-}
-
-- (IBAction)bugReportPressed:(id)sender
-{
-	NSArray *arr = @[@"wezi@gmail.com"];
-	KEMailProvider *mail = [[KEMailProvider alloc] initWithDelegate:self];
-	
-	[mail showMailComposerWithSubject:@"E-mail"
-	                    withRecepient:arr
-	                  withMessageBody:@"Hello world"];
+	switch ([sender tag]) {
+		case 100:
+			if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
+				SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+				
+				[controller setInitialText:@"First post from my iPhone app"];
+				[self presentViewController:controller animated:YES completion:Nil];
+			}
+			break;
+			
+		case 101:
+			if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+				SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+				
+				[controller setInitialText:@"First post from my iPhone app"];
+				[self presentViewController:controller animated:YES completion:Nil];
+			}
+			break;
+			
+		case 102: {
+			NSArray *arr = @[@"wezi@gmail.com"];
+			KEMailProvider *mail = [[KEMailProvider alloc] initWithDelegate:self];
+			
+			[mail showMailComposerWithSubject:@"E-mail"
+			                    withRecepient:arr
+			                  withMessageBody:@"Hello world"];
+		}
+			break;
+			
+		case 103: {
+			NSArray *arr = @[@"wezi@gmail.com"];
+			KEMailProvider *mail = [[KEMailProvider alloc] initWithDelegate:self];
+			
+			[mail showMailComposerWithSubject:@"E-mail"
+			                    withRecepient:arr
+			                  withMessageBody:@"Bug bug bug..."];
+		}
+			break;
+			
+		default:
+			break;
+	}
 }
 
 #pragma mark - Mail composer delegate method
