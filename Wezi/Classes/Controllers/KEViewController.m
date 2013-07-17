@@ -408,7 +408,7 @@
             [self reloadDataWithNewLocation:location withView:foo];
 		});
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1.0f * NSEC_PER_SEC), dispatch_get_current_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1.0f * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
             [self.scrollView setContentOffset:CGPointMake(1024, 0) animated:YES];
         });
     }    
@@ -431,7 +431,7 @@
             [self reloadDataWithNewLocation:location withView:bar];
         });
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1.0f * NSEC_PER_SEC), dispatch_get_current_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1.0f * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
             [self.scrollView setContentOffset:CGPointMake(1024 * (self.pageControl.numberOfPages - 1),0) animated:YES];
                 //self.pageControl.currentPage = self.pageControl.numberOfPages - 1;
         });
