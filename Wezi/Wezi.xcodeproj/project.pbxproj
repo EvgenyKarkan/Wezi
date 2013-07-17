@@ -68,10 +68,6 @@
 		DE40AD9E177EF50E0080C64E /* UIView+Decorate.m in Sources */ = {isa = PBXBuildFile; fileRef = DE40AD9D177EF50E0080C64E /* UIView+Decorate.m */; };
 		DE40ADA1177F1B790080C64E /* GradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE40ADA0177F1B790080C64E /* GradientView.m */; };
 		DE40ADC4177F29D30080C64E /* KEDecoratorUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DE40ADC3177F29D30080C64E /* KEDecoratorUtil.m */; };
-		DE40AE01177F463E0080C64E /* app_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DE40ADD2177F463E0080C64E /* app_icon.png */; };
-		DE40AE02177F463E0080C64E /* app_icon1024.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DE40ADD3177F463E0080C64E /* app_icon1024.jpg */; };
-		DE40AE03177F463E0080C64E /* app_icon512.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DE40ADD4177F463E0080C64E /* app_icon512.jpg */; };
-		DE40AE04177F463E0080C64E /* app_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE40ADD5177F463E0080C64E /* app_icon@2x.png */; };
 		DE40AE05177F463E0080C64E /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = DE40ADD7177F463E0080C64E /* background.png */; };
 		DE40AE06177F463E0080C64E /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE40ADD8177F463E0080C64E /* background@2x.png */; };
 		DE40AE07177F463E0080C64E /* color_backg_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = DE40ADD9177F463E0080C64E /* color_backg_blue.png */; };
@@ -221,10 +217,6 @@
 		DE40ADA0177F1B790080C64E /* GradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientView.m; sourceTree = "<group>"; };
 		DE40ADC2177F29D30080C64E /* KEDecoratorUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEDecoratorUtil.h; sourceTree = "<group>"; };
 		DE40ADC3177F29D30080C64E /* KEDecoratorUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEDecoratorUtil.m; sourceTree = "<group>"; };
-		DE40ADD2177F463E0080C64E /* app_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon.png; sourceTree = "<group>"; };
-		DE40ADD3177F463E0080C64E /* app_icon1024.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = app_icon1024.jpg; sourceTree = "<group>"; };
-		DE40ADD4177F463E0080C64E /* app_icon512.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = app_icon512.jpg; sourceTree = "<group>"; };
-		DE40ADD5177F463E0080C64E /* app_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_icon@2x.png"; sourceTree = "<group>"; };
 		DE40ADD7177F463E0080C64E /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		DE40ADD8177F463E0080C64E /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
 		DE40ADD9177F463E0080C64E /* color_backg_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_backg_blue.png; sourceTree = "<group>"; };
@@ -553,10 +545,6 @@
 		DE40ADD1177F463E0080C64E /* app_icons */ = {
 			isa = PBXGroup;
 			children = (
-				DE40ADD2177F463E0080C64E /* app_icon.png */,
-				DE40ADD3177F463E0080C64E /* app_icon1024.jpg */,
-				DE40ADD4177F463E0080C64E /* app_icon512.jpg */,
-				DE40ADD5177F463E0080C64E /* app_icon@2x.png */,
 			);
 			path = app_icons;
 			sourceTree = "<group>";
@@ -718,10 +706,6 @@
 				CE3802AC1757B8840086510C /* PlutoSansMedium.otf in Resources */,
 				CE3802AD1757B8840086510C /* PlutoSansRegular.otf in Resources */,
 				CE3802AE1757B8840086510C /* PlutoSansThin.otf in Resources */,
-				DE40AE01177F463E0080C64E /* app_icon.png in Resources */,
-				DE40AE02177F463E0080C64E /* app_icon1024.jpg in Resources */,
-				DE40AE03177F463E0080C64E /* app_icon512.jpg in Resources */,
-				DE40AE04177F463E0080C64E /* app_icon@2x.png in Resources */,
 				DE40AE05177F463E0080C64E /* background.png in Resources */,
 				DE40AE06177F463E0080C64E /* background@2x.png in Resources */,
 				DE40AE07177F463E0080C64E /* color_backg_blue.png in Resources */,
