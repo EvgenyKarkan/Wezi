@@ -113,6 +113,7 @@
 		DE9D441B1797227D0017A6D5 /* app_icon1024.png in Resources */ = {isa = PBXBuildFile; fileRef = DE9D44171797227D0017A6D5 /* app_icon1024.png */; };
 		DE9D441C1797227D0017A6D5 /* app_icon512.png in Resources */ = {isa = PBXBuildFile; fileRef = DE9D44181797227D0017A6D5 /* app_icon512.png */; };
 		DE9D441D1797227D0017A6D5 /* app_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE9D44191797227D0017A6D5 /* app_icon@2x.png */; };
+		DE9D441F179728700017A6D5 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9D441E179728700017A6D5 /* Social.framework */; };
 		DEA43AD2177B90C6009878AC /* KEBackingImageUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA43AD1177B90C6009878AC /* KEBackingImageUtil.m */; };
 		DEAFD03E176A5FF200BA3785 /* KEReachabilityUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DEAFD03D176A5FF200BA3785 /* KEReachabilityUtil.m */; };
 		DEB51ED41759267400F04539 /* NSString+CommaSubString.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB51ED31759267400F04539 /* NSString+CommaSubString.m */; };
@@ -124,7 +125,6 @@
 		DEDCDCE11748001100D957EC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDCDCE01748001100D957EC /* CoreData.framework */; };
 		DEDCDCE717480B2C00D957EC /* Wezi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DEDCDCE517480B2C00D957EC /* Wezi.xcdatamodeld */; };
 		DEEFE4CC1795E0B00021B3E7 /* 6.png in Resources */ = {isa = PBXBuildFile; fileRef = DEEFE4CB1795E0B00021B3E7 /* 6.png */; };
-		DEEFE4CE1795E8050021B3E7 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = DEEFE4CD1795E8050021B3E7 /* Default-Landscape~ipad.png */; };
 		DEEFE4D11795EB7E0021B3E7 /* KESplashScreenUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEFE4D01795EB7E0021B3E7 /* KESplashScreenUtil.m */; };
 /* End PBXBuildFile section */
 
@@ -267,6 +267,7 @@
 		DE9D44171797227D0017A6D5 /* app_icon1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon1024.png; sourceTree = "<group>"; };
 		DE9D44181797227D0017A6D5 /* app_icon512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon512.png; sourceTree = "<group>"; };
 		DE9D44191797227D0017A6D5 /* app_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_icon@2x.png"; sourceTree = "<group>"; };
+		DE9D441E179728700017A6D5 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		DEA43AD0177B90C6009878AC /* KEBackingImageUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEBackingImageUtil.h; sourceTree = "<group>"; };
 		DEA43AD1177B90C6009878AC /* KEBackingImageUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEBackingImageUtil.m; sourceTree = "<group>"; };
 		DEAFD03C176A5FF200BA3785 /* KEReachabilityUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KEReachabilityUtil.h; path = ../KEReachabilityUtil.h; sourceTree = "<group>"; };
@@ -285,7 +286,6 @@
 		DEDCDCE01748001100D957EC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		DEDCDCE617480B2C00D957EC /* Wezi.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Wezi.xcdatamodel; sourceTree = "<group>"; };
 		DEEFE4CB1795E0B00021B3E7 /* 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6.png; sourceTree = "<group>"; };
-		DEEFE4CD1795E8050021B3E7 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		DEEFE4CF1795EB7E0021B3E7 /* KESplashScreenUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KESplashScreenUtil.h; sourceTree = "<group>"; };
 		DEEFE4D01795EB7E0021B3E7 /* KESplashScreenUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KESplashScreenUtil.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -295,6 +295,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE9D441F179728700017A6D5 /* Social.framework in Frameworks */,
 				DEB833461780925700DD9500 /* MessageUI.framework in Frameworks */,
 				DEDCDCE11748001100D957EC /* CoreData.framework in Frameworks */,
 				CE7F06BE173A7F5000697A98 /* MapKit.framework in Frameworks */,
@@ -338,7 +339,6 @@
 		CE7C0E96172FBE4B00E4A8AC = {
 			isa = PBXGroup;
 			children = (
-				DEEFE4CD1795E8050021B3E7 /* Default-Landscape~ipad.png */,
 				CE7C0F10172FC2CC00E4A8AC /* Classes */,
 				CE7C0EA8172FBE4B00E4A8AC /* Supporting files */,
 				CE7C0EA1172FBE4B00E4A8AC /* Frameworks */,
@@ -359,6 +359,7 @@
 		CE7C0EA1172FBE4B00E4A8AC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DE9D441E179728700017A6D5 /* Social.framework */,
 				DEB833451780925700DD9500 /* MessageUI.framework */,
 				DEDCDCE01748001100D957EC /* CoreData.framework */,
 				CE7F06BD173A7F5000697A98 /* MapKit.framework */,
@@ -764,7 +765,6 @@
 				DE286B371781CC3E00F00DA2 /* rain_icon.png in Resources */,
 				DE286B381781CC3E00F00DA2 /* wind_icon.png in Resources */,
 				DEEFE4CC1795E0B00021B3E7 /* 6.png in Resources */,
-				DEEFE4CE1795E8050021B3E7 /* Default-Landscape~ipad.png in Resources */,
 				DE9D441A1797227D0017A6D5 /* app_icon.png in Resources */,
 				DE9D441B1797227D0017A6D5 /* app_icon1024.png in Resources */,
 				DE9D441C1797227D0017A6D5 /* app_icon512.png in Resources */,

@@ -11,6 +11,8 @@
 
 @interface KEShareViewController ()
 
+@property (nonatomic, strong)       UIStoryboardPopoverSegue *currentPopoverSegue;
+
 @end
 
 @implementation KEShareViewController
@@ -29,12 +31,40 @@
 
 - (IBAction)emailPressed:(id)sender
 {
+	[self.objectToDelegate hideSharePopover];
 	NSArray *arr = @[@"wezi@gmail.com"];
 	KEMailProvider *mail = [[KEMailProvider alloc] initWithDelegate:self];
 	
 	[mail showMailComposerWithSubject:@"E-mail"
 	                    withRecepient:arr
 	                  withMessageBody:@"Hello world"];
+}
+
+- (IBAction)twitterPessed:(id)sender
+{
+	[self.objectToDelegate hideSharePopover];
+	if([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
+		SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+        
+        [controller setInitialText:@"First post from my iPhone app"];
+        [self presentViewController:controller animated:YES completion:Nil];
+    }
+}
+
+- (IBAction)facebookPressed:(id)sender
+{
+	[self.objectToDelegate hideSharePopover];
+	if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+		SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+        
+        [controller setInitialText:@"First post from my iPhone app"];
+        [self presentViewController:controller animated:YES completion:Nil];
+    }
+}
+
+- (IBAction)bugReportPressed:(id)sender
+{
+	
 }
 
 #pragma mark - Mail composer delegate method

@@ -11,6 +11,7 @@
 @protocol KECoordinateFillProtocol
 
 @required
+
 - (void)addPressedWithCoordinate:(CLLocation *)location;
 
 @end
@@ -19,6 +20,6 @@
 
 @property (nonatomic, weak)                 IBOutlet MKMapView *map;
 @property (nonatomic, weak)					IBOutlet UINavigationBar *mapNavBar;
-@property (nonatomic, unsafe_unretained)    id <KECoordinateFillProtocol> objectToDelegate;
+@property (nonatomic, assign)    id <KECoordinateFillProtocol> objectToDelegate;
 
 @end

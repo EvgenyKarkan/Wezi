@@ -26,7 +26,7 @@
 #import "KEMailProvider.h"
 #import "KESplashScreenUtil.h"
 
-@interface KEViewController () <UIScrollViewDelegate, KECoordinateFillProtocol>
+@interface KEViewController () <UIScrollViewDelegate, KECoordinateFillProtocol, KESocialProtocol>
 
 @property (nonatomic, strong)       KEWindowView *templateView;
 @property (nonatomic, strong)       KEObservation *geo;
@@ -337,7 +337,7 @@
 	if ([[segue identifier] isEqualToString:@"shareSegue"]) {
 		self.currentPopoverSegue = (UIStoryboardPopoverSegue *)segue;
 		self.shareViewController = [segue destinationViewController];
-			//[self.mapViewController setObjectToDelegate:self];
+	   [self.shareViewController setObjectToDelegate:self];
 	}
 }
 
@@ -490,6 +490,11 @@
 - (void)showSharePopover
 {
     [self performSegueWithIdentifier:@"shareSegue" sender:self];
+}
+
+- (void)hideSharePopover
+{
+	[[self.currentPopoverSegue popoverController] dismissPopoverAnimated:YES];
 }
 
 #pragma mark - ScrollView delegate

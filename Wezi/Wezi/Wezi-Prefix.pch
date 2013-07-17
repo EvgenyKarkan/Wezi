@@ -18,4 +18,5 @@
     #import <MapKit/MapKit.h>
     #import <CoreData/CoreData.h> 
     #import <MessageUI/MFMailComposeViewController.h>
+	#import <Social/Social.h>
 #endif
