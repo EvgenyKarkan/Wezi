@@ -64,7 +64,12 @@
 
 - (IBAction)bugReportPressed:(id)sender
 {
+	NSArray *arr = @[@"wezi@gmail.com"];
+	KEMailProvider *mail = [[KEMailProvider alloc] initWithDelegate:self];
 	
+	[mail showMailComposerWithSubject:@"E-mail"
+	                    withRecepient:arr
+	                  withMessageBody:@"Hello world"];
 }
 
 #pragma mark - Mail composer delegate method
