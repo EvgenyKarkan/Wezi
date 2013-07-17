@@ -109,6 +109,10 @@
 		DE40AE2B177F463E0080C64E /* wezi_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = DE40ADFF177F463E0080C64E /* wezi_logo.png */; };
 		DE40AE2C177F463E0080C64E /* wezi_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE40AE00177F463E0080C64E /* wezi_logo@2x.png */; };
 		DE953F87174AD64500AC7915 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = DE953F86174AD64500AC7915 /* Place.m */; };
+		DE9D441A1797227D0017A6D5 /* app_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DE9D44161797227D0017A6D5 /* app_icon.png */; };
+		DE9D441B1797227D0017A6D5 /* app_icon1024.png in Resources */ = {isa = PBXBuildFile; fileRef = DE9D44171797227D0017A6D5 /* app_icon1024.png */; };
+		DE9D441C1797227D0017A6D5 /* app_icon512.png in Resources */ = {isa = PBXBuildFile; fileRef = DE9D44181797227D0017A6D5 /* app_icon512.png */; };
+		DE9D441D1797227D0017A6D5 /* app_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE9D44191797227D0017A6D5 /* app_icon@2x.png */; };
 		DEA43AD2177B90C6009878AC /* KEBackingImageUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA43AD1177B90C6009878AC /* KEBackingImageUtil.m */; };
 		DEAFD03E176A5FF200BA3785 /* KEReachabilityUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DEAFD03D176A5FF200BA3785 /* KEReachabilityUtil.m */; };
 		DEB51ED41759267400F04539 /* NSString+CommaSubString.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB51ED31759267400F04539 /* NSString+CommaSubString.m */; };
@@ -259,6 +263,10 @@
 		DE40AE00177F463E0080C64E /* wezi_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wezi_logo@2x.png"; sourceTree = "<group>"; };
 		DE953F85174AD64500AC7915 /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Place.h; sourceTree = "<group>"; };
 		DE953F86174AD64500AC7915 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
+		DE9D44161797227D0017A6D5 /* app_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon.png; sourceTree = "<group>"; };
+		DE9D44171797227D0017A6D5 /* app_icon1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon1024.png; sourceTree = "<group>"; };
+		DE9D44181797227D0017A6D5 /* app_icon512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon512.png; sourceTree = "<group>"; };
+		DE9D44191797227D0017A6D5 /* app_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_icon@2x.png"; sourceTree = "<group>"; };
 		DEA43AD0177B90C6009878AC /* KEBackingImageUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEBackingImageUtil.h; sourceTree = "<group>"; };
 		DEA43AD1177B90C6009878AC /* KEBackingImageUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEBackingImageUtil.m; sourceTree = "<group>"; };
 		DEAFD03C176A5FF200BA3785 /* KEReachabilityUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KEReachabilityUtil.h; path = ../KEReachabilityUtil.h; sourceTree = "<group>"; };
@@ -521,9 +529,9 @@
 		CE7C0F28172FC36500E4A8AC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				DE9D44151797227D0017A6D5 /* app_icons */,
 				DE286B301781CC3E00F00DA2 /* additional_icons */,
 				DE286B2E1781C96300F00DA2 /* Icons.bundle */,
-				DE40ADD1177F463E0080C64E /* app_icons */,
 				DE40ADD6177F463E0080C64E /* backgrounds */,
 				DE40ADE5177F463E0080C64E /* buttons_bars */,
 				DE40ADFE177F463E0080C64E /* logos */,
@@ -540,13 +548,6 @@
 				DE286B341781CC3E00F00DA2 /* wind_icon.png */,
 			);
 			path = additional_icons;
-			sourceTree = "<group>";
-		};
-		DE40ADD1177F463E0080C64E /* app_icons */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = app_icons;
 			sourceTree = "<group>";
 		};
 		DE40ADD6177F463E0080C64E /* backgrounds */ = {
@@ -608,6 +609,17 @@
 				DE40AE00177F463E0080C64E /* wezi_logo@2x.png */,
 			);
 			path = logos;
+			sourceTree = "<group>";
+		};
+		DE9D44151797227D0017A6D5 /* app_icons */ = {
+			isa = PBXGroup;
+			children = (
+				DE9D44161797227D0017A6D5 /* app_icon.png */,
+				DE9D44171797227D0017A6D5 /* app_icon1024.png */,
+				DE9D44181797227D0017A6D5 /* app_icon512.png */,
+				DE9D44191797227D0017A6D5 /* app_icon@2x.png */,
+			);
+			path = app_icons;
 			sourceTree = "<group>";
 		};
 		DEB51ED517592D7C00F04539 /* Utils */ = {
@@ -753,6 +765,10 @@
 				DE286B381781CC3E00F00DA2 /* wind_icon.png in Resources */,
 				DEEFE4CC1795E0B00021B3E7 /* 6.png in Resources */,
 				DEEFE4CE1795E8050021B3E7 /* Default-Landscape~ipad.png in Resources */,
+				DE9D441A1797227D0017A6D5 /* app_icon.png in Resources */,
+				DE9D441B1797227D0017A6D5 /* app_icon1024.png in Resources */,
+				DE9D441C1797227D0017A6D5 /* app_icon512.png in Resources */,
+				DE9D441D1797227D0017A6D5 /* app_icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
