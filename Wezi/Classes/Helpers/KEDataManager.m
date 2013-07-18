@@ -13,27 +13,27 @@
 
 #pragma mark - Singleton stuff
 
-static id __sharedInstance = nil;
+static id _sharedInstance = nil;
 
 + (instancetype)sharedDataManager
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        __sharedInstance = [[KEDataManager alloc] init];
+        _sharedInstance = [[KEDataManager alloc] init];
     });
     
-    return __sharedInstance;
+    return _sharedInstance;
 }
 
 + (id)allocWithZone:(NSZone *)zone
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        __sharedInstance = nil;
-        __sharedInstance = [super allocWithZone:zone];
+        _sharedInstance = nil;
+        _sharedInstance = [super allocWithZone:zone];
     });
     
-    return __sharedInstance;
+    return _sharedInstance;
 }
 
 - (id)copyWithZone:(NSZone *)zone

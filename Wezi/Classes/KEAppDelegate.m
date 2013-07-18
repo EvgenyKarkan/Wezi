@@ -3,7 +3,7 @@
 //  Wezi
 //
 //  Created by Evgeniy Karkan on 4/26/13.
-//  Copyright (c) 2013 Sigma Ukraine. All rights reserved.
+//  Copyright (c) 2013 EvgenyKarkan. All rights reserved.
 //
 
 #define SPLASH_SCREEN_DELAY 1.5

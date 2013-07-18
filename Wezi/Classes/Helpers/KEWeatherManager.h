@@ -3,7 +3,7 @@
 //  Wezi
 //
 //  Created by Evgeniy Karkan on 4/29/13.
-//  Copyright (c) 2013 Sigma Ukraine. All rights reserved.
+//  Copyright (c) 2013 EvgenyKarkan. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -11,13 +11,9 @@
 #import "KEObservation.h"
 #import "KETommorowForecast.h"
 
-@protocol UpdateUIWithForecast <NSObject>
-
-@end
-
 @interface KEWeatherManager : AFHTTPClient
 
-@property (nonatomic,assign) id <UpdateUIWithForecast> delegate;
+	//@property (nonatomic,assign) id <UpdateUIWithForecast> delegate;
 @property (nonatomic, strong) NSMutableDictionary *days;
 
 + (instancetype)sharedClient;

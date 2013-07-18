@@ -20,7 +20,6 @@
 @property (nonatomic, strong)       CLGeocoder *geocoder;
 @property (nonatomic, strong)       NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong)       KECityAnnotation *myAnnotation;
-	//@property (nonatomic, strong)       KEViewController *viewController;
 @property (nonatomic, strong)       KEDataManager *dataManager;
 @property (nonatomic, readwrite)    BOOL isContextActivated;
 @property (nonatomic, strong)       NSString *bufferCityName;
@@ -47,7 +46,6 @@
 	self.map.delegate = self;
 	self.geocoder = [[CLGeocoder alloc]init];
     self.map.showsUserLocation = YES;
-		//self.viewController = [[KEViewController alloc]init];
     self.isContextActivated = NO;
     self.dataManager = [KEDataManager sharedDataManager];
 	self.managedObjectContext = [self.dataManager managedObjectContextFromAppDelegate];

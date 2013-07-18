@@ -11,5 +11,4 @@
 
 @interface KEAfterAfterTommorowForecast : KETommorowForecast
 
-
 @end

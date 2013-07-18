@@ -14,6 +14,7 @@
 {
     NSRange range = [longString rangeOfString:@","];
     NSString *newShortString = [longString substringToIndex:range.location];
+	
     return newShortString;
 }
 

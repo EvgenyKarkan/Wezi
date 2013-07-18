@@ -47,6 +47,7 @@
 + (instancetype)observationWithDictionary:(NSDictionary *)dictionary
 {
 	KEObservation *observation = nil;
+	
 	if (dictionary) {
 		observation = [[KEObservation alloc] init];
 		NSDictionary *keyMapping = [self keyMapping];

@@ -8,6 +8,14 @@
 
 #import "KEMailProvider.h"
 
+@interface KEMailProvider ()
+
+@property (nonatomic, strong) MFMailComposeViewController *mailForm;
+@property (nonatomic, assign) id delegateObject;
+
+@end
+
+
 @implementation KEMailProvider
 
 - (id)initWithDelegate:(id)delegate
@@ -26,6 +34,7 @@
 - (void)showMailComposerWithSubject:(NSString *)subject withRecepient:(NSArray *)recepient withMessageBody:(NSString *)message
 {
     Class mailClass = (NSClassFromString(@"MFMailComposeViewController"));
+	
     if (mailClass != nil) {
         if ([mailClass canSendMail]) {
             if (self.mailForm) {
@@ -44,7 +53,5 @@
         //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"mailto:krish@krish.codeworth.com"]];
     }
 }
-
-
 
 @end

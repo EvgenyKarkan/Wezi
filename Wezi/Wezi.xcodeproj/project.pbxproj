@@ -126,6 +126,7 @@
 		DEDCDCE717480B2C00D957EC /* Wezi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DEDCDCE517480B2C00D957EC /* Wezi.xcdatamodeld */; };
 		DEEFE4CC1795E0B00021B3E7 /* 6.png in Resources */ = {isa = PBXBuildFile; fileRef = DEEFE4CB1795E0B00021B3E7 /* 6.png */; };
 		DEEFE4D11795EB7E0021B3E7 /* KESplashScreenUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEFE4D01795EB7E0021B3E7 /* KESplashScreenUtil.m */; };
+		DEF1A58817986F900043CDA8 /* KESocialProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF1A58717986F900043CDA8 /* KESocialProvider.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -288,6 +289,8 @@
 		DEEFE4CB1795E0B00021B3E7 /* 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6.png; sourceTree = "<group>"; };
 		DEEFE4CF1795EB7E0021B3E7 /* KESplashScreenUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KESplashScreenUtil.h; sourceTree = "<group>"; };
 		DEEFE4D01795EB7E0021B3E7 /* KESplashScreenUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KESplashScreenUtil.m; sourceTree = "<group>"; };
+		DEF1A58617986F900043CDA8 /* KESocialProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KESocialProvider.h; sourceTree = "<group>"; };
+		DEF1A58717986F900043CDA8 /* KESocialProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KESocialProvider.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -494,6 +497,8 @@
 				DEB51ED31759267400F04539 /* NSString+CommaSubString.m */,
 				DEB833471780A1E300DD9500 /* KEMailProvider.h */,
 				DEB833481780A1E300DD9500 /* KEMailProvider.m */,
+				DEF1A58617986F900043CDA8 /* KESocialProvider.h */,
+				DEF1A58717986F900043CDA8 /* KESocialProvider.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -816,6 +821,7 @@
 				DE1809C81780435C00251C1C /* KEShareViewController.m in Sources */,
 				DEB833491780A1E300DD9500 /* KEMailProvider.m in Sources */,
 				DEEFE4D11795EB7E0021B3E7 /* KESplashScreenUtil.m in Sources */,
+				DEF1A58817986F900043CDA8 /* KESocialProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

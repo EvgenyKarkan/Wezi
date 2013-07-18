@@ -11,7 +11,7 @@
 #import "KEBackingImageUtil.h"
 #import "UIView+Decorate.h"
 
-@interface KEWindowView()
+@interface KEWindowView ()
 
 + (UIView *)loadViewFromNibWithName:(NSString *)nibName;
 

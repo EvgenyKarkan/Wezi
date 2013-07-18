@@ -3,7 +3,7 @@
 //  Wezi
 //
 //  Created by Evgeniy Karkan on 4/29/13.
-//  Copyright (c) 2013 Sigma Ukraine. All rights reserved.
+//  Copyright (c) 2013 EvgenyKarkan. All rights reserved.
 //
 
 #import "KEWeatherManager.h"
@@ -18,28 +18,28 @@ static NSString * const kWeatherUndergroundAPIBaseURLString = @"http://api.wunde
 
 #pragma mark - Singleton stuff
 
-static id __sharedClient = nil;
+static id _sharedClient = nil;
 
 + (instancetype)sharedClient
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
 		NSString *baseURLString = [kWeatherUndergroundAPIBaseURLString stringByAppendingString:kWeatherUndergroundAPIKey];
-		__sharedClient = [[self alloc] initWithBaseURL:[NSURL URLWithString:baseURLString]];
+		_sharedClient = [[self alloc] initWithBaseURL:[NSURL URLWithString:baseURLString]];
     });
     
-    return __sharedClient;
+    return _sharedClient;
 }
 
 + (id)allocWithZone:(NSZone *)zone
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        __sharedClient = nil;
-        __sharedClient = [super allocWithZone:zone];
+        _sharedClient = nil;
+        _sharedClient = [super allocWithZone:zone];
     });
     
-    return __sharedClient;
+    return _sharedClient;
 }
 
 - (id)copyWithZone:(NSZone *)zone

@@ -3,7 +3,7 @@
 //  Wezi
 //
 //  Created by Evgeniy Karkan on 4/29/13.
-//  Copyright (c) 2013 Sigma Ukraine. All rights reserved.
+//  Copyright (c) 2013 EvgenyKarkan. All rights reserved.
 
 
 #ifndef Weather_WeatherAPIKey_h

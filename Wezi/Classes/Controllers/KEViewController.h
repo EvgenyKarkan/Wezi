@@ -3,16 +3,13 @@
 //  Wezi
 //
 //  Created by Evgeniy Karkan on 4/26/13.
-//  Copyright (c) 2013 Sigma Ukraine. All rights reserved.
+//  Copyright (c) 2013 EvgenyKarkan. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "KEWeatherManager.h"
 
-@class GradientView;
-@class KEMapViewController;
-
-@interface KEViewController : UIViewController <UpdateUIWithForecast, UIScrollViewDelegate>
+@interface KEViewController : UIViewController < /*UpdateUIWithForecast,*/ UIScrollViewDelegate>
 
 @property (nonatomic, weak)         IBOutlet UIPageControl *pageControl;
 @property (nonatomic, weak)         IBOutlet UIScrollView *scrollView;

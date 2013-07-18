@@ -3,7 +3,7 @@
 //  Wezi
 //
 //  Created by Evgeniy Karkan on 4/26/13.
-//  Copyright (c) 2013 Sigma Ukraine. All rights reserved.
+//  Copyright (c) 2013 EvgenyKarkan. All rights reserved.
 //
 
 #import "KEViewController.h"
@@ -25,8 +25,9 @@
 #import "KEShareViewController.h"
 #import "KEMailProvider.h"
 #import "KESplashScreenUtil.h"
+#import "KESocialProvider.h"
 
-@interface KEViewController () <UIScrollViewDelegate, KECoordinateFillProtocol, KESocialProtocol>
+@interface KEViewController () <UIScrollViewDelegate, KECoordinateFillProtocol, KEPopoverHideProtocol, KESocialProvideProtocol>
 
 @property (nonatomic, strong)       KEWindowView *templateView;
 @property (nonatomic, strong)       KEObservation *geo;
@@ -83,8 +84,8 @@
 	else {
 		[self subscribeToReachabilityNotifications];
 		
-		KEWeatherManager *weather = [KEWeatherManager sharedClient];
-		weather.delegate = self;
+//		KEWeatherManager *weather = [KEWeatherManager sharedClient];
+//		weather.delegate = self;
 		
 		__weak KEViewController *weakSelf = self;
 		[[NSNotificationCenter defaultCenter] addObserverForName:kLocationDidChangeNotificationKey
@@ -337,7 +338,8 @@
 	if ([[segue identifier] isEqualToString:@"shareSegue"]) {
 		self.currentPopoverSegue = (UIStoryboardPopoverSegue *)segue;
 		self.shareViewController = [segue destinationViewController];
-	   [self.shareViewController setObjectToDelegate:self];
+		[self.shareViewController setFirstDelegate:self];
+		[self.shareViewController setSecondDelegate:self];
 	}
 }
 
@@ -517,6 +519,42 @@
 {
 	self.pageControlBeingUsed = NO;
 }
+
+#pragma mark - Social delegate
+
+- (void)provideSocialMediaWithSender:(id)sender
+{
+	[KESocialProvider provideSocialMediaWithSender:sender withObject:self];
+}
+
+#pragma mark - Mail composer delegate method
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+	switch (result) {
+		case MFMailComposeResultCancelled:
+			
+			break;
+			
+		case MFMailComposeResultSaved:
+			
+			break;
+			
+		case MFMailComposeResultSent:
+			
+			break;
+			
+		case MFMailComposeResultFailed:
+			
+			break;
+			
+		default:
+			break;
+	}
+	
+	[self dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 #pragma mark - iOS 5.1 support 
 

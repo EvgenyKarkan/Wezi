@@ -10,16 +10,13 @@
 
 @implementation KECityAnnotation
 
-@synthesize coordinate;
-@synthesize title;
-@synthesize subtitle;
-
 - (id)initWithTitle:(NSString *)newTitle subtitle:(NSString *)newSubtitle
 {
 	if (self = [super init]) {
-		title = newTitle;
-		subtitle = newSubtitle;
+		self.title = newTitle;
+		self.subtitle = newSubtitle;
 	}
+	
 	return self;
 }
 

@@ -3,7 +3,7 @@
 //  Wezi
 //
 //  Created by Evgeniy Karkan on 4/29/13.
-//  Copyright (c) 2013 Sigma Ukraine. All rights reserved.
+//  Copyright (c) 2013 EvgenyKarkan. All rights reserved.
 //
 
 #import "KELocationManager.h"
@@ -21,27 +21,27 @@ NSString * const kLocationDidChangeNotificationKey = @"locationManagerlocationDi
 
 #pragma mark - Singleton stuff
 
-static id __sharedLocationManager = nil;
+static id _sharedLocationManager = nil;
 
 + (instancetype)sharedManager
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        __sharedLocationManager = [[KELocationManager alloc] init];
+        _sharedLocationManager = [[KELocationManager alloc] init];
     });
     
-    return __sharedLocationManager;
+    return _sharedLocationManager;
 }
 
 + (id)allocWithZone:(NSZone *)zone
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        __sharedLocationManager = nil;
-        __sharedLocationManager = [super allocWithZone:zone];
+        _sharedLocationManager = nil;
+        _sharedLocationManager = [super allocWithZone:zone];
     });
     
-    return __sharedLocationManager;
+    return _sharedLocationManager;
 }
 
 - (id)copyWithZone:(NSZone *)zone
