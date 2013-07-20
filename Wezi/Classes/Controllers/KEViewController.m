@@ -15,7 +15,6 @@
 #import "KEAfterAfterTommorowForecast.h"
 #import "KEAfterTommorowForecast.h"
 #import "KEMapViewController.h"
-#import "KEAppDelegate.h"
 #import "Place.h"
 #import "KEDataManager.h"
 #import "NSString+CommaSubString.h"
@@ -26,6 +25,25 @@
 #import "KEMailProvider.h"
 #import "KESplashScreenUtil.h"
 #import "KESocialProvider.h"
+
+static NSUInteger const kKESelfWidth = 1024;
+static NSUInteger const kKEDeltaX	 = 52;
+static NSUInteger const kKEDeltaY    = 40;
+static NSUInteger const kKEWindowW   = 920;
+static NSUInteger const kKEWindowH   = 580;
+static CGFloat	  const kKEShadowOffset = 4.0f;
+static NSString * const kKERefreshButton      = @"refresh_button.png";
+static NSString * const kKERefreshButtonClick = @"refresh_button_click.png";
+static NSString * const kKETrashButton        = @"trash_button.png";
+static NSString * const kKETrashButtonClick   = @"trash_button_click.png";
+static NSString * const kKEPlusButton		  = @"plus_button.png";
+static NSString * const kKEPlusButtonClick    = @"plus_button_click.png";
+static NSString * const kKEShareButton        = @"share_button.png";
+static NSString * const kKEShareButtonClick   = @"share_button_click.png";
+static NSString * const kKENavBar			  = @"navbar.png";
+static NSString * const kKEWeziLogo			  = @"wezi_logo.png";
+static NSString * const kKEMapPopoverSegue    = @"segPop";
+static NSString * const kKESharePopoverSegue  = @"shareSegue";
 
 @interface KEViewController () <UIScrollViewDelegate, KECoordinateFillProtocol, KEPopoverHideProtocol, KESocialProvideProtocol>
 
@@ -56,7 +74,7 @@
         
 	for (NSUInteger i = 1; i <= [places count]; i++) {
 		KEWindowView *aView = [KEWindowView returnWindowView];
-		aView.frame = CGRectMake((self.scrollView.contentOffset.x + 1024 * i) + 52, 40, 920, 580);
+		aView.frame = CGRectMake((self.scrollView.contentOffset.x + kKESelfWidth * i) + kKEDeltaX, kKEDeltaY, kKEWindowW, kKEWindowH);
 		[self.scrollView addSubview:aView];
 		[self.viewWithCoreData addObject:aView];
 		
@@ -66,7 +84,7 @@
 		[self reloadDataWithNewLocation:location withView:aView];
 	}
 	self.pageControl.numberOfPages = [places count] + 1;
-	self.scrollView.contentSize = CGSizeMake(1024 * ([places count] + 1), self.scrollView.contentSize.height);
+	self.scrollView.contentSize = CGSizeMake(kKESelfWidth * ([places count] + 1), self.scrollView.contentSize.height);
 }
 
 #pragma mark - UIViewController life cycle
@@ -80,13 +98,11 @@
 		
 	if (![[KEReachabilityUtil sharedUtil] checkInternetConnection]) {
 		self.internetDroppedFirstly = YES;
+			//TODO: Handle first issue here !!!
 	}
 	else {
 		[self subscribeToReachabilityNotifications];
-		
-//		KEWeatherManager *weather = [KEWeatherManager sharedClient];
-//		weather.delegate = self;
-		
+
 		__weak KEViewController *weakSelf = self;
 		[[NSNotificationCenter defaultCenter] addObserverForName:kLocationDidChangeNotificationKey
 		                                                  object:nil
@@ -120,53 +136,54 @@
 - (void)configurateUIElements
 {
     self.scrollView.delegate = self;
-    
 	self.pageControl.currentPage = 0;
+	
 	[self.pageControl addTarget:self
 	                     action:@selector(changePage:)
 	           forControlEvents:UIControlEventValueChanged];
     
     self.templateView = [KEWindowView returnWindowView];
-    self.templateView.frame = CGRectMake(52, 40, 920, 580);
+    self.templateView.frame = CGRectMake(kKEDeltaX, kKEDeltaY, kKEWindowW, kKEWindowH);
     [self.scrollView addSubview:self.templateView];
     
     self.mapViewController = [[KEMapViewController alloc]init];
     self.mapViewController.objectToDelegate = self;
     self.isShownMapPopover = NO;
     
-    UIImage *backgroundImage = [UIImage imageNamed:@"navbar.png"];
+    UIImage *backgroundImage = [UIImage imageNamed:kKENavBar];
     [self.navBar setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
     
-    [KEDecoratorUtil decorateWithShadow:self.navBar withOffsetValue:4.0f];
-    [KEDecoratorUtil decorateWithShadow:self.downBar withOffsetValue:-4.0f];
-    self.weziImage.image = [UIImage imageNamed:@"wezi_logo.png"];
+    [KEDecoratorUtil decorateWithShadow:self.navBar withOffsetValue: kKEShadowOffset];
+    [KEDecoratorUtil decorateWithShadow:self.downBar withOffsetValue: -kKEShadowOffset];
+    self.weziImage.image = [UIImage imageNamed:kKEWeziLogo];
     
     [self addCustomButtons];
 }
 
 - (void)addCustomButtons
 {
+		//TODO: add pixel perfect stuff below !!!
 	UIButton *refresh = [[UIButton alloc] initWithFrame:CGRectMake(959, 5, 60, 30)];
-	[refresh setImage:[UIImage imageNamed:@"refresh_button.png"] forState:UIControlStateNormal];
-	[refresh setImage:[UIImage imageNamed:@"refresh_button_click.png"] forState:UIControlStateHighlighted];
+	[refresh setImage:[UIImage imageNamed:kKERefreshButton] forState:UIControlStateNormal];
+	[refresh setImage:[UIImage imageNamed:kKERefreshButtonClick] forState:UIControlStateHighlighted];
 	[refresh addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventTouchUpInside];
     
 	UIButton *trash = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 60, 30)];
-	[trash setImage:[UIImage imageNamed:@"trash_button.png"] forState:UIControlStateNormal];
-	[trash setImage:[UIImage imageNamed:@"trash_button_click.png"] forState:UIControlStateHighlighted];
+	[trash setImage:[UIImage imageNamed:kKETrashButton] forState:UIControlStateNormal];
+	[trash setImage:[UIImage imageNamed:kKETrashButtonClick] forState:UIControlStateHighlighted];
 	[trash addTarget:self action:@selector(deletePage:) forControlEvents:UIControlEventTouchUpInside];
     
 	[self.navBar addSubview:refresh];
 	[self.navBar addSubview:trash];
     
 	UIButton *add = [[UIButton alloc] initWithFrame:CGRectMake(5, 10, 60, 30)];
-	[add setImage:[UIImage imageNamed:@"plus_button.png"] forState:UIControlStateNormal];
-	[add setImage:[UIImage imageNamed:@"plus_button_click.png"] forState:UIControlStateHighlighted];
+	[add setImage:[UIImage imageNamed:kKEPlusButton] forState:UIControlStateNormal];
+	[add setImage:[UIImage imageNamed:kKEPlusButtonClick] forState:UIControlStateHighlighted];
 	[add addTarget:self action:@selector(goToMap:) forControlEvents:UIControlEventTouchUpInside];
     
 	UIButton *share = [[UIButton alloc] initWithFrame:CGRectMake(959, 10, 60, 30)];
-	[share setImage:[UIImage imageNamed:@"share_button.png"] forState:UIControlStateNormal];
-	[share setImage:[UIImage imageNamed:@"share_button_click.png"] forState:UIControlStateHighlighted];
+	[share setImage:[UIImage imageNamed:kKEShareButton] forState:UIControlStateNormal];
+	[share setImage:[UIImage imageNamed:kKEShareButtonClick] forState:UIControlStateHighlighted];
 	[share addTarget:self action:@selector(showSharePopover) forControlEvents:UIControlEventTouchUpInside];
     
 	[self.downBar addSubview:add];
@@ -324,18 +341,18 @@
 
 - (IBAction)changePage:(id)sender
 {
-	[self.scrollView setContentOffset:CGPointMake(1024 * self.pageControl.currentPage, 0) animated:YES];
+	[self.scrollView setContentOffset:CGPointMake(kKESelfWidth * self.pageControl.currentPage, 0) animated:YES];
 	self.pageControlBeingUsed = YES;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-	if ([[segue identifier] isEqualToString:@"segPop"]) {
+	if ([[segue identifier] isEqualToString:kKEMapPopoverSegue]) {
 		self.currentPopoverSegue = (UIStoryboardPopoverSegue *)segue;
 		self.mapViewController = [segue destinationViewController];
 		[self.mapViewController setObjectToDelegate:self];
 	}
-	if ([[segue identifier] isEqualToString:@"shareSegue"]) {
+	if ([[segue identifier] isEqualToString:kKESharePopoverSegue]) {
 		self.currentPopoverSegue = (UIStoryboardPopoverSegue *)segue;
 		self.shareViewController = [segue destinationViewController];
 		[self.shareViewController setFirstDelegate:self];
@@ -345,7 +362,7 @@
 
 - (IBAction)goToMap:(id)sender
 {
-    [self performSegueWithIdentifier:@"segPop" sender:self];
+    [self performSegueWithIdentifier:kKEMapPopoverSegue sender:self];
 }
 
 - (IBAction)refresh:(id)sender
@@ -379,6 +396,8 @@
 	}
 }
 
+static NSUInteger const kKESelfWidthWithDelta = 1076;
+
 - (void)addPressedWithCoordinate:(CLLocation *)location 
 {
     if ([self.entityArrayCoreData count] == 0) {
@@ -397,7 +416,7 @@
     }    
     if (self.pageControl.numberOfPages == 2) {
         KEWindowView *foo = [KEWindowView returnWindowView];
-        foo.frame = CGRectMake(1076, 40, 920, 580);
+        foo.frame = CGRectMake(kKESelfWidthWithDelta, kKEDeltaY, kKEWindowW, kKEWindowH);
         [self.scrollView addSubview:foo];
         [self.viewWithCoreData addObject:foo];
         
@@ -411,7 +430,7 @@
 		});
         
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1.0f * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-            [self.scrollView setContentOffset:CGPointMake(1024, 0) animated:YES];
+            [self.scrollView setContentOffset:CGPointMake(kKESelfWidth, 0) animated:YES];
         });
     }    
     else if (self.pageControl.numberOfPages > 2) {
@@ -419,10 +438,10 @@
         KEWindowView *bar = [KEWindowView returnWindowView];
         
         if (self.pageControl.currentPage == self.pageControl.numberOfPages - 2) {
-            bar.frame = CGRectMake((self.scrollView.contentOffset.x + 1076), 40, 920, 580);
+            bar.frame = CGRectMake((self.scrollView.contentOffset.x + kKESelfWidthWithDelta), kKEDeltaY, kKEWindowW, kKEWindowH);
         }
         else {
-            bar.frame = CGRectMake((self.scrollView.contentOffset.x + 1024 * (self.pageControl.numberOfPages - self.pageControl.currentPage - 1) + 52), 40, 920, 580);
+            bar.frame = CGRectMake((self.scrollView.contentOffset.x + kKESelfWidth * (self.pageControl.numberOfPages - self.pageControl.currentPage - 1) + kKEDeltaX), kKEDeltaY, kKEWindowW, kKEWindowH);
         }
         
         [self.scrollView addSubview:bar];
@@ -434,7 +453,7 @@
         });
         
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1.0f * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-            [self.scrollView setContentOffset:CGPointMake(1024 * (self.pageControl.numberOfPages - 1),0) animated:YES];
+            [self.scrollView setContentOffset:CGPointMake(kKESelfWidth * (self.pageControl.numberOfPages - 1),0) animated:YES];
                 //self.pageControl.currentPage = self.pageControl.numberOfPages - 1;
         });
     }
@@ -450,11 +469,11 @@
 	if (self.pageControl.currentPage != 0) {
 		[[self.viewWithCoreData objectAtIndex:self.pageControl.currentPage - 1] removeFromSuperview];
 	}
-	[UIView animateWithDuration:0.3 animations: ^{
+	[UIView animateWithDuration:0.3f animations: ^{
 	    for (UIView * dummyObject in self.viewWithCoreData) {
 	        NSUInteger index = [self.viewWithCoreData indexOfObject:dummyObject];
 	        if ((index > self.pageControl.currentPage - 1) && (self.pageControl.currentPage != 0)) {
-	            CGRect fullScreenRect = CGRectMake(dummyObject.frame.origin.x - 1024, 40, 920, 580);
+	            CGRect fullScreenRect = CGRectMake(dummyObject.frame.origin.x - kKESelfWidth, kKEDeltaY, kKEWindowW, kKEWindowH);
 	            [dummyObject setFrame:fullScreenRect];
 			}
 		}
@@ -491,7 +510,7 @@
 
 - (void)showSharePopover
 {
-    [self performSegueWithIdentifier:@"shareSegue" sender:self];
+    [self performSegueWithIdentifier:kKESharePopoverSegue sender:self];
 }
 
 - (void)hideSharePopover
@@ -554,7 +573,6 @@
 	
 	[self dismissViewControllerAnimated:YES completion:nil];
 }
-
 
 #pragma mark - iOS 5.1 support 
 

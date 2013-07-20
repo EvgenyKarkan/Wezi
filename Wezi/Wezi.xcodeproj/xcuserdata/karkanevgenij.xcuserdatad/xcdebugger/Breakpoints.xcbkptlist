@@ -20,19 +20,6 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "Classes/Controllers/KEViewController.m"
-         timestampString = "395867912.78745"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "235"
-         endingLineNumber = "235"
-         landmarkName = "-updateAfterTomorrowWithForecast:withView:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
          filePath = "Classes/Helpers/Utils/KEFonts.m"
          timestampString = "392672337.702257"
          startingColumnNumber = "9223372036854775807"
@@ -40,19 +27,6 @@
          startingLineNumber = "34"
          endingLineNumber = "34"
          landmarkName = "+plutoSansRegularWithSize:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Classes/Controllers/KEViewController.m"
-         timestampString = "395867912.78745"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "148"
-         endingLineNumber = "148"
-         landmarkName = "-addCustomButtons"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "KEWeatherManager.h"
 
-@interface KEViewController : UIViewController < /*UpdateUIWithForecast,*/ UIScrollViewDelegate>
+@interface KEViewController : UIViewController <UIScrollViewDelegate>
 
 @property (nonatomic, weak)         IBOutlet UIPageControl *pageControl;
 @property (nonatomic, weak)         IBOutlet UIScrollView *scrollView;

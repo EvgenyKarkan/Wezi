@@ -8,18 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol KECoordinateFillProtocol
+@protocol KECoordinateFillProtocol <NSObject>
 
 @required
-
 - (void)addPressedWithCoordinate:(CLLocation *)location;
 
 @end
 
+
 @interface KEMapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
 
-@property (nonatomic, weak)                 IBOutlet MKMapView *map;
-@property (nonatomic, weak)					IBOutlet UINavigationBar *mapNavBar;
-@property (nonatomic, assign)    id <KECoordinateFillProtocol> objectToDelegate;
+@property (nonatomic, weak)			IBOutlet MKMapView *map;
+@property (nonatomic, weak)			IBOutlet UINavigationBar *mapNavBar;
+@property (nonatomic, assign)		id <KECoordinateFillProtocol> objectToDelegate;
 
 @end

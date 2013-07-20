@@ -6,13 +6,12 @@
 //  Copyright (c) 2013 EvgenyKarkan. All rights reserved.
 //
 
-#define SPLASH_SCREEN_DELAY 1.5
-
 #import "KEAppDelegate.h"
 #import "Place.h"
 #import "KEReachabilityUtil.h"
 #import "AFHTTPClient.h"
 
+static NSString * const kKEToolBar = @"toolbar.png";
 
 @implementation KEAppDelegate
 
@@ -22,7 +21,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-	[[UIToolbar appearance] setBackgroundImage:[UIImage imageNamed:@"toolbar.png"] forToolbarPosition:UIToolbarPositionAny barMetrics:UIBarMetricsDefault];
+	[[UIToolbar appearance] setBackgroundImage:[UIImage imageNamed:kKEToolBar]
+							forToolbarPosition:UIToolbarPositionAny
+									barMetrics:UIBarMetricsDefault];
+	
 	[[KEReachabilityUtil sharedUtil] checkInternetConnectionWithNotification];
 	
 	return YES;

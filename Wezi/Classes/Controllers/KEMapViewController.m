@@ -28,15 +28,6 @@
 
 @implementation KEMapViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-    }
-
-    return self;
-}
-
 #pragma mark - Viewcontroller live cycle
 
 - (void)viewDidLoad
@@ -197,7 +188,7 @@
     [self.map selectAnnotation:self.myAnnotation animated:YES];
 }
 
-# pragma mark - Configurate UI 
+#pragma mark - Configurate UI 
 
 - (void)addCustomButtons
 {
