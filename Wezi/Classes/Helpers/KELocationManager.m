@@ -8,7 +8,8 @@
 
 #import "KELocationManager.h"
 
-NSString * const kLocationDidChangeNotificationKey = @"locationManagerlocationDidChange";
+NSString * const kKELocationDidChangeNotificationKey = @"locationManagerlocationDidChange";
+static NSUInteger const kKEFilter = 1000;
 
 @interface KELocationManager () <CLLocationManagerDelegate>
 
@@ -86,7 +87,7 @@ static id _sharedLocationManager = nil;
 {
     if (!_locationManager) {
         _locationManager = [[CLLocationManager alloc] init];
-            [_locationManager setDistanceFilter:1000];
+            [_locationManager setDistanceFilter:kKEFilter];
             [_locationManager setDesiredAccuracy: kCLLocationAccuracyThreeKilometers];
     }
     
@@ -110,7 +111,7 @@ static id _sharedLocationManager = nil;
         userInfo[@"oldLocation"] = oldLocation;
     }
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:kLocationDidChangeNotificationKey
+    [[NSNotificationCenter defaultCenter] postNotificationName:kKELocationDidChangeNotificationKey
                                                         object:self
                                                       userInfo:userInfo];
 }

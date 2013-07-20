@@ -104,7 +104,7 @@ static NSString * const kKESharePopoverSegue  = @"shareSegue";
 		[self subscribeToReachabilityNotifications];
 
 		__weak KEViewController *weakSelf = self;
-		[[NSNotificationCenter defaultCenter] addObserverForName:kLocationDidChangeNotificationKey
+		[[NSNotificationCenter defaultCenter] addObserverForName:kKELocationDidChangeNotificationKey
 		                                                  object:nil
 		                                                   queue:[NSOperationQueue mainQueue]
 		                                              usingBlock: ^(NSNotification *note) {

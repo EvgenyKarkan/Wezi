@@ -7,35 +7,42 @@
 
 #import "KEFonts.h"
 
+static NSString * const kKEPlutoSansMediumItalic = @"PlutoSansMedium-Italic";
+static NSString * const kKEPlutoSansLight		 = @"PlutoSansLight";
+static NSString * const kKEPlutoSansHeavy		 = @"PlutoSansHeavy";
+static NSString * const kKEPlutoSansExtraLight	 = @"PlutoSansExtraLight";
+static NSString * const kKEPlutoSansRegular		 = @"PlutoSansRegular";
+static NSString * const kKEPlutoSansCondBold	 = @"PlutoSansCondBold";
+
 @implementation KEFonts
 
 + (UIFont *)plutoSansMediumWithSize:(CGFloat)fontSize
 {
-    return [UIFont fontWithName:@"PlutoSansMedium-Italic" size:fontSize];
+    return [UIFont fontWithName:kKEPlutoSansMediumItalic size:fontSize];
 }
 
 + (UIFont *)plutoSansLightWithSize:(CGFloat)fontSize
 {
-    return [UIFont fontWithName:@"PlutoSansLight" size:fontSize];
+    return [UIFont fontWithName:kKEPlutoSansLight size:fontSize];
 }
 
 + (UIFont *)plutoSansHeavyWithSize:(CGFloat)fontSize
 {
-    return [UIFont fontWithName:@"PlutoSansHeavy" size:fontSize];
+    return [UIFont fontWithName:kKEPlutoSansHeavy size:fontSize];
 }
 
 + (UIFont *)plutoSansExtraLonghtWithSize:(CGFloat)fontSize
 {
-    return [UIFont fontWithName:@"PlutoSansExtraLight" size:fontSize];
+    return [UIFont fontWithName:kKEPlutoSansExtraLight size:fontSize];
 }
 
 + (UIFont *)plutoSansRegularWithSize:(CGFloat)fontSize
 {
-    return [UIFont fontWithName:@"PlutoSansRegular" size:fontSize];
+    return [UIFont fontWithName:kKEPlutoSansRegular size:fontSize];
 }
 
 + (UIFont *)plutoSansCondBoldWithSize:(CGFloat)fontSize
 {
-    return [UIFont fontWithName:@"PlutoSansCondBold" size:fontSize];
+    return [UIFont fontWithName:kKEPlutoSansCondBold size:fontSize];
 }
 @end

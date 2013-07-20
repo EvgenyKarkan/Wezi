@@ -8,6 +8,9 @@
 
 #import "UIView+Decorate.h"
 
+static NSUInteger const kKEHorizontalShadowOffset = 4;
+static NSUInteger const kKEVerticalShadowOffsett = 13;
+
 @implementation UIView (Decorate)
 
 - (void)addRoundShadowWithOpacity:(double)opacity
@@ -17,8 +20,8 @@
     layer.shadowOpacity = opacity;
     
     CGRect newRect = layer.frame;
-    NSInteger horizontalShadowOffset = 4;
-    NSInteger verticalShadowOffset = 13;
+    NSInteger horizontalShadowOffset = kKEHorizontalShadowOffset;
+    NSInteger verticalShadowOffset = kKEVerticalShadowOffsett;
     
     CGMutablePathRef path = CGPathCreateMutable();
     CGPathMoveToPoint(path, nil, horizontalShadowOffset, verticalShadowOffset);

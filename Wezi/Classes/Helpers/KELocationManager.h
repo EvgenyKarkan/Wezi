@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSString * const kLocationDidChangeNotificationKey;
+extern NSString * const kKELocationDidChangeNotificationKey;
 
 @interface KELocationManager : NSObject
 

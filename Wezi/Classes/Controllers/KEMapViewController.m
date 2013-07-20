@@ -15,6 +15,12 @@
 #import "KEReachabilityUtil.h"
 #import "SVProgressHUD.h"
 
+static NSString * const kKENavBar			  = @"navbar.png";
+static NSString * const kKEPlusButton		  = @"plus_button.png";
+static NSString * const kKEPlusButtonClick    = @"plus_button_click.png";
+static NSString * const kKEDoneButton		  = @"done_button.png";
+static NSString * const kKEDoneButtonClick    = @"done_button_click.png";
+
 @interface KEMapViewController ()
 
 @property (nonatomic, strong)       CLGeocoder *geocoder;
@@ -192,17 +198,17 @@
 
 - (void)addCustomButtons
 {
-    UIImage *backgroundImage = [UIImage imageNamed:@"navbar.png"];
+    UIImage *backgroundImage = [UIImage imageNamed:kKENavBar];
     [self.mapNavBar setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
     
     UIButton *done = [[UIButton alloc] initWithFrame:CGRectMake(475, 5, 60, 30)];
-    [done setImage:[UIImage imageNamed:@"done_button.png"] forState:UIControlStateNormal];
-    [done setImage:[UIImage imageNamed:@"done_button_click.png"] forState:UIControlStateHighlighted];
+    [done setImage:[UIImage imageNamed:kKEDoneButton] forState:UIControlStateNormal];
+    [done setImage:[UIImage imageNamed:kKEDoneButtonClick] forState:UIControlStateHighlighted];
     [done addTarget:self action:@selector(chooseLocation:) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton *plus = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 60, 30)];
-    [plus setImage:[UIImage imageNamed:@"plus_button.png"] forState:UIControlStateNormal];
-    [plus setImage:[UIImage imageNamed:@"plus_button_click.png"] forState:UIControlStateHighlighted];
+    [plus setImage:[UIImage imageNamed:kKEPlusButton] forState:UIControlStateNormal];
+    [plus setImage:[UIImage imageNamed:kKEPlusButtonClick] forState:UIControlStateHighlighted];
     [plus addTarget:self action:@selector(dropPinPressed:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.mapNavBar addSubview:done];

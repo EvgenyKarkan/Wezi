@@ -13,7 +13,6 @@
 
 @interface KEWeatherManager : AFHTTPClient
 
-	//@property (nonatomic,assign) id <UpdateUIWithForecast> delegate;
 @property (nonatomic, strong) NSMutableDictionary *days;
 
 + (instancetype)sharedClient;

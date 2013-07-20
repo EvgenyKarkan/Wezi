@@ -106,7 +106,6 @@ static id _sharedClient = nil;
                                                       [self fillAfterAfterTommorowWithResponse:responseObject], @"AfterAfterTommorow", nil];
                     
                     self.days = threeDays;
-                    
                     completion(self.days, nil);
                 }
                 failure:^(AFHTTPRequestOperation *operation, NSError *error) {

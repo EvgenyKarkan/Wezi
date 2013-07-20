@@ -2,7 +2,7 @@
 //  KEReachabilityWrapper.m
 //  Wezi
 //
-//  Created by Каркан Евгений on 13.06.13.
+//  Created by Evgeniy Karkan on 13.06.13.
 //  Copyright (c) 2013 EvgenyKarkan. All rights reserved.
 //
 
@@ -10,11 +10,14 @@
 #import "Reachability.h"
 #import "AFHTTPClient.h"
 
+static NSString * const kKEURL = @"http://google.com";
+
 @interface KEReachabilityUtil ()
 
 @property (nonatomic, strong) AFHTTPClient *client;
 
 @end
+
 
 @implementation KEReachabilityUtil
 
@@ -43,7 +46,7 @@
 
 - (void)checkInternetConnectionWithNotification
 {
-    self.client = [AFHTTPClient clientWithBaseURL:[NSURL URLWithString:@"http://google.com"]];
+    self.client = [AFHTTPClient clientWithBaseURL:[NSURL URLWithString:kKEURL]];
     
     [self.client setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
         if (status == AFNetworkReachabilityStatusNotReachable) {
