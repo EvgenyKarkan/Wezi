@@ -194,8 +194,15 @@ static NSString * const kKESharePopoverSegue  = @"shareSegue";
 {
 	if (observation) {
 		[self.templateView.conditionIcon setImage:[KEUIImageFactoryUtil imageDependsOnURL:observation.iconUrl]];
-		NSString *string = [NSString stringWithFormat:@"%.1f %@", [observation.temperatureC floatValue], @"°C"];
-		self.templateView.currentTemperature.text = string;
+		
+		if (([observation.temperatureC floatValue] < -100) || ([observation.temperatureC floatValue] > 100)) {
+			self.templateView.currentTemperature.text = @"N/A";
+		}
+		else {
+			NSString *string = [NSString stringWithFormat:@"%.1f %@", [observation.temperatureC floatValue], @"°C"];
+			self.templateView.currentTemperature.text = string;
+		}
+		
 		self.templateView.currentCondition.text = observation.weatherDescription;
 		self.templateView.place.text = [NSString subStringBeforeFirstCommaInString:observation.location[@"full"]];
 		self.templateView.windAbbreviation.text = observation.windShortAbbreviation;
@@ -207,33 +214,64 @@ static NSString * const kKESharePopoverSegue  = @"shareSegue";
 			self.templateView.wind.text = [NSString stringWithFormat:@"%.1f %@", [observation.windSpeed floatValue], @"kph"];
 		}
 		
-		self.templateView.humidity.text = observation.relativeHumidity;
-		self.templateView.pressure.text = [NSString stringWithFormat:@"%@ %@", observation.pressure, @"inHg"];
+		if (([observation.relativeHumidity integerValue] < 0) || ([observation.relativeHumidity integerValue] > 100)) {
+			self.templateView.humidity.text = @"N/A";
+		}
+		else {
+			self.templateView.humidity.text = observation.relativeHumidity;
+		}
+		
+		if (([observation.pressure floatValue] < 0) || ([observation.pressure floatValue] > 50)) {
+			self.templateView.pressure.text = @"N/A";
+		}
+		else {
+			self.templateView.pressure.text = [NSString stringWithFormat:@"%@ %@", observation.pressure, @"inHg"];
+		}
+		
 		self.templateView.timeStamp.text = observation.timeString;
 	}
 }
 
 - (void)updateUIForView:(KEWindowView *)viewtoUpdate observation:(KEObservation *)observation
 {
-    if (observation) {
-        [viewtoUpdate.conditionIcon setImage:[KEUIImageFactoryUtil imageDependsOnURL:observation.iconUrl]];
-        NSString *string = [NSString stringWithFormat:@"%@ %@",[observation.temperatureC stringValue],@"°C"];
-        viewtoUpdate.currentTemperature.text = string;
-        viewtoUpdate.currentCondition.text = observation.weatherDescription;
-        viewtoUpdate.place.text = [NSString subStringBeforeFirstCommaInString:observation.location[@"full"]];
-        viewtoUpdate.windAbbreviation.text = observation.windShortAbbreviation;
+	if (observation) {
+		[viewtoUpdate.conditionIcon setImage:[KEUIImageFactoryUtil imageDependsOnURL:observation.iconUrl]];
+		
+		if (([observation.temperatureC floatValue] < -100) || ([observation.temperatureC floatValue] > 100)) {
+			viewtoUpdate.currentTemperature.text = @"N/A";
+		}
+		else {
+			NSString *string = [NSString stringWithFormat:@"%.1f %@", [observation.temperatureC floatValue], @"°C"];
+			viewtoUpdate.currentTemperature.text = string;
+		}
+		
+		viewtoUpdate.currentCondition.text = observation.weatherDescription;
+		viewtoUpdate.place.text = [NSString subStringBeforeFirstCommaInString:observation.location[@"full"]];
+		viewtoUpdate.windAbbreviation.text = observation.windShortAbbreviation;
 		
 		if ([observation.windSpeed floatValue] < 0) {
 			viewtoUpdate.wind.text = @"N/A";
 		}
 		else {
-			viewtoUpdate.wind.text = [NSString stringWithFormat:@"%.1f %@",[observation.windSpeed floatValue], @"kph"];
+			viewtoUpdate.wind.text = [NSString stringWithFormat:@"%.1f %@", [observation.windSpeed floatValue], @"kph"];
 		}
 		
-        viewtoUpdate.humidity.text = observation.relativeHumidity;
-		viewtoUpdate.pressure.text = [NSString stringWithFormat:@"%@ %@", observation.pressure, @"inHg"];
-        viewtoUpdate.timeStamp.text = observation.timeString;
-    }
+		if (([observation.relativeHumidity integerValue] < 0) || ([observation.relativeHumidity integerValue] > 100)) {
+			viewtoUpdate.humidity.text = @"N/A";
+		}
+		else {
+			viewtoUpdate.humidity.text = observation.relativeHumidity;
+		}
+		
+		if (([observation.pressure floatValue] < 0) || ([observation.pressure floatValue] > 50)) {
+			viewtoUpdate.pressure.text = @"N/A";
+		}
+		else {
+			viewtoUpdate.pressure.text = [NSString stringWithFormat:@"%@ %@", observation.pressure, @"inHg"];
+		}
+		
+		viewtoUpdate.timeStamp.text = observation.timeString;
+	}
 }
 
 #pragma -  i add it
