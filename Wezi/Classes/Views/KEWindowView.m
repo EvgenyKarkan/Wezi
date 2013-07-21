@@ -11,6 +11,14 @@
 #import "KEBackingImageUtil.h"
 #import "UIView+Decorate.h"
 
+static CGFloat const kKEBorderWidth			   = 5.0f;
+static CGFloat const kKEOpacity                = 0.6f;
+static CGFloat const kKEBunchOfLabelFontSize   = 25.0f;
+static CGFloat const kKEPlaceFontSize          = 35.0f;
+static CGFloat const kKECurrentTempFontSize    = 72.0f;
+static CGFloat const kKETimeStampFontSize	   = 15.0f;
+static CGFloat const kKEForecastLabelsFontSize = 18.0f;
+
 @interface KEWindowView ()
 
 + (UIView *)loadViewFromNibWithName:(NSString *)nibName;
@@ -26,8 +34,8 @@
                                                     options:nil];
     UIView *tempView = [previews objectAtIndex:0];
     tempView.layer.borderColor = [[UIColor whiteColor] CGColor];
-    tempView.layer.borderWidth  = 5.0f;
-    [tempView addRoundShadowWithOpacity:0.6f];
+    tempView.layer.borderWidth  = kKEBorderWidth;
+    [tempView addRoundShadowWithOpacity:kKEOpacity];
     
     return tempView;
 }
@@ -48,19 +56,31 @@
 
 + (void)settingFontsToUIElements:(KEWindowView *)aView
 {
-    NSMutableArray *allLabelArray = [NSMutableArray arrayWithArray:@[aView.wind,aView.humidity, aView.pressure,
-                                                                     aView.windAbbreviation, aView.currentCondition,
-                                                                     aView.tommorowTemp, aView.afterTommorowTemp, aView.afrerAfterTommorowTemp]];
+    NSMutableArray *allLabelArray = [NSMutableArray arrayWithArray:@[aView.wind,
+																	 aView.humidity,
+																	 aView.pressure,
+                                                                     aView.windAbbreviation,
+																	 aView.currentCondition,
+                                                                     aView.tommorowTemp,
+																	 aView.afterTommorowTemp,
+																	 aView.afrerAfterTommorowTemp]];
     
     for (UILabel *label in allLabelArray) {
-        [label setFont:[KEFonts plutoSansRegularWithSize:25.0f]];
+        [label setFont:[KEFonts plutoSansRegularWithSize:kKEBunchOfLabelFontSize]];
     }
     
-    [aView.place setFont:[KEFonts plutoSansRegularWithSize:35.0f]];
-    [aView.currentTemperature setFont:[KEFonts plutoSansRegularWithSize:72.0f]];
-    [aView.timeStamp setFont:[KEFonts plutoSansRegularWithSize:15.0f]];
+    [aView.place setFont:[KEFonts plutoSansRegularWithSize:kKEPlaceFontSize]];
+    [aView.currentTemperature setFont:[KEFonts plutoSansRegularWithSize:kKECurrentTempFontSize]];
+	[aView.timeStamp setFont:[KEFonts plutoSansRegularWithSize:kKETimeStampFontSize]];
+	
+	NSMutableArray *forecastLabelsArray = [NSMutableArray arrayWithArray:@[aView.dateT,
+																		   aView.dateAT,
+																		   aView.dateAAT,]];
+	
+    for (UILabel *label in forecastLabelsArray) {
+		[label setFont:[KEFonts plutoSansRegularWithSize:kKEForecastLabelsFontSize]];
+	}
 }
-
 
 @end
 

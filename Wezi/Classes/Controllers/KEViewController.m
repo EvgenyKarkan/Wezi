@@ -44,6 +44,7 @@ static NSString * const kKENavBar			  = @"navbar.png";
 static NSString * const kKEWeziLogo			  = @"wezi_logo.png";
 static NSString * const kKEMapPopoverSegue    = @"segPop";
 static NSString * const kKESharePopoverSegue  = @"shareSegue";
+static NSString * const kKENoData			  = @"N/A";
 
 @interface KEViewController () <UIScrollViewDelegate, KECoordinateFillProtocol, KEPopoverHideProtocol, KESocialProvideProtocol>
 
@@ -196,7 +197,7 @@ static NSString * const kKESharePopoverSegue  = @"shareSegue";
 		[self.templateView.conditionIcon setImage:[KEUIImageFactoryUtil imageDependsOnURL:observation.iconUrl]];
 		
 		if (([observation.temperatureC floatValue] < -100) || ([observation.temperatureC floatValue] > 100)) {
-			self.templateView.currentTemperature.text = @"N/A";
+			self.templateView.currentTemperature.text = kKENoData;
 		}
 		else {
 			NSString *string = [NSString stringWithFormat:@"%.1f %@", [observation.temperatureC floatValue], @"°C"];
@@ -208,21 +209,21 @@ static NSString * const kKESharePopoverSegue  = @"shareSegue";
 		self.templateView.windAbbreviation.text = observation.windShortAbbreviation;
 		
 		if ([observation.windSpeed floatValue] < 0) {
-			self.templateView.wind.text = @"N/A";
+			self.templateView.wind.text = kKENoData;
 		}
 		else {
 			self.templateView.wind.text = [NSString stringWithFormat:@"%.1f %@", [observation.windSpeed floatValue], @"kph"];
 		}
 		
 		if (([observation.relativeHumidity integerValue] < 0) || ([observation.relativeHumidity integerValue] > 100)) {
-			self.templateView.humidity.text = @"N/A";
+			self.templateView.humidity.text = kKENoData;
 		}
 		else {
 			self.templateView.humidity.text = observation.relativeHumidity;
 		}
 		
 		if (([observation.pressure floatValue] < 0) || ([observation.pressure floatValue] > 50)) {
-			self.templateView.pressure.text = @"N/A";
+			self.templateView.pressure.text = kKENoData;
 		}
 		else {
 			self.templateView.pressure.text = [NSString stringWithFormat:@"%.2f %@", [observation.pressure floatValue], @"inHg"];
@@ -238,7 +239,7 @@ static NSString * const kKESharePopoverSegue  = @"shareSegue";
 		[viewtoUpdate.conditionIcon setImage:[KEUIImageFactoryUtil imageDependsOnURL:observation.iconUrl]];
 		
 		if (([observation.temperatureC floatValue] < -100) || ([observation.temperatureC floatValue] > 100)) {
-			viewtoUpdate.currentTemperature.text = @"N/A";
+			viewtoUpdate.currentTemperature.text = kKENoData;
 		}
 		else {
 			NSString *string = [NSString stringWithFormat:@"%.1f %@", [observation.temperatureC floatValue], @"°C"];
@@ -250,21 +251,21 @@ static NSString * const kKESharePopoverSegue  = @"shareSegue";
 		viewtoUpdate.windAbbreviation.text = observation.windShortAbbreviation;
 		
 		if ([observation.windSpeed floatValue] < 0) {
-			viewtoUpdate.wind.text = @"N/A";
+			viewtoUpdate.wind.text = kKENoData;
 		}
 		else {
 			viewtoUpdate.wind.text = [NSString stringWithFormat:@"%.1f %@", [observation.windSpeed floatValue], @"kph"];
 		}
 		
 		if (([observation.relativeHumidity integerValue] < 0) || ([observation.relativeHumidity integerValue] > 100)) {
-			viewtoUpdate.humidity.text = @"N/A";
+			viewtoUpdate.humidity.text = kKENoData;
 		}
 		else {
 			viewtoUpdate.humidity.text = observation.relativeHumidity;
 		}
 		
 		if (([observation.pressure floatValue] < 0) || ([observation.pressure floatValue] > 50)) {
-			viewtoUpdate.pressure.text = @"N/A";
+			viewtoUpdate.pressure.text = kKENoData;
 		}
 		else {
 			viewtoUpdate.pressure.text = [NSString stringWithFormat:@"%.2f %@", [observation.pressure floatValue], @"inHg"];
@@ -280,50 +281,21 @@ static NSString * const kKESharePopoverSegue  = @"shareSegue";
 {
 	[viewToUpdate.tomorrowView setImage:[KEUIImageFactoryUtil imageDependsOnURL:forecast.iconURL]];
 	viewToUpdate.tommorowTemp.text = [NSString stringWithFormat:@"%@ %@", forecast.highTemperature, @"°C"];
-	
-	
-		//    NSLog(@"AfTom %@", forecast.conditionOnForecast  );
-	NSLog(@" %@", forecast.month);
-	NSLog(@" %@", forecast.weekDay);
-	NSLog(@" %@", forecast.dayNumber);
-		//    NSLog(@" %@", forecast.yearNumber  );
-		//    NSLog(@" %@", forecast.humidity  );
-		//    NSLog(@" %@", forecast.wind  );
-		//    NSLog(@" %@", forecast.highTemperature  );
-		//    NSLog(@" %@", forecast.lowTemperature  );
+	viewToUpdate.dateT.text = [NSString stringWithFormat:@"%@, %@ of %@", forecast.weekDay, [forecast.dayNumber stringValue], forecast.month];
 }
 
 - (void)updateAfterTomorrowWithForecast:(KEAfterTommorowForecast *)forecast withView:(KEWindowView *)viewToUpdate
 {
     [viewToUpdate.afterTommorowView setImage:[KEUIImageFactoryUtil imageDependsOnURL:forecast.iconURL]];
     viewToUpdate.afterTommorowTemp.text = [NSString stringWithFormat:@"%@ %@",forecast.highTemperature,@"°C"];
-    
-//    NSLog(@"AfTom %@", forecast.conditionOnForecast  );
-    NSLog(@" %@", forecast.month  );
-    NSLog(@" %@", forecast.weekDay  );
-    NSLog(@" %@", forecast.dayNumber  );
-//    NSLog(@" %@", forecast.yearNumber  );
-//    NSLog(@" %@", forecast.humidity  );
-//    NSLog(@" %@", forecast.wind  );
-//    NSLog(@" %@", forecast.highTemperature  );
-//    NSLog(@" %@", forecast.lowTemperature  );
+    viewToUpdate.dateAT.text = [NSString stringWithFormat:@"%@, %@ of %@", forecast.weekDay, [forecast.dayNumber stringValue], forecast.month];
 }
 
 - (void)updateAfterAfterTommorowWithForecast:(KEAfterAfterTommorowForecast *)forecast withView:(KEWindowView *)viewToUpdate
 {
 	[viewToUpdate.afterAfterTommorowView setImage:[KEUIImageFactoryUtil imageDependsOnURL:forecast.iconURL]];
 	viewToUpdate.afrerAfterTommorowTemp.text = [NSString stringWithFormat:@"%@ %@", forecast.highTemperature, @"°C"];
-	
-	
-		//    NSLog(@"AfAfTom %@", forecast.conditionOnForecast  );
-	NSLog(@" %@", forecast.month);
-	NSLog(@" %@", forecast.weekDay);
-	NSLog(@" %@", forecast.dayNumber);
-		//    NSLog(@" %@", forecast.yearNumber  );
-		//    NSLog(@" %@", forecast.humidity  );
-		//    NSLog(@" %@", forecast.wind  );
-		//    NSLog(@" %@", forecast.highTemperature  );
-		//    NSLog(@" %@", forecast.lowTemperature  );
+	viewToUpdate.dateAAT.text = [NSString stringWithFormat:@"%@, %@ of %@", forecast.weekDay, [forecast.dayNumber stringValue], forecast.month];
 }
 
 #pragma mark - Requests

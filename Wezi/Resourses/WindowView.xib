@@ -427,6 +427,69 @@
 							<string key="NSResourceName">barometr_icon.png</string>
 						</object>
 					</object>
+					<object class="IBUILabel" id="372468795">
+						<reference key="NSNextResponder" ref="271871499"/>
+						<int key="NSvFlags">292</int>
+						<string key="NSFrame">{{61, 399}, {185, 21}}</string>
+						<reference key="NSSuperview" ref="271871499"/>
+						<reference key="NSWindow"/>
+						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<bool key="IBUIOpaque">NO</bool>
+						<bool key="IBUIClipsSubviews">YES</bool>
+						<int key="IBUIContentMode">7</int>
+						<bool key="IBUIUserInteractionEnabled">NO</bool>
+						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+						<string key="IBUIText">Label</string>
+						<reference key="IBUITextColor" ref="452938791"/>
+						<reference key="IBUIHighlightedColor" ref="452938791"/>
+						<int key="IBUIBaselineAdjustment">0</int>
+						<int key="IBUITextAlignment">1</int>
+						<reference key="IBUIFontDescription" ref="62085690"/>
+						<reference key="IBUIFont" ref="248192285"/>
+						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
+					</object>
+					<object class="IBUILabel" id="532172312">
+						<reference key="NSNextResponder" ref="271871499"/>
+						<int key="NSvFlags">292</int>
+						<string key="NSFrame">{{378, 399}, {185, 21}}</string>
+						<reference key="NSSuperview" ref="271871499"/>
+						<reference key="NSWindow"/>
+						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<bool key="IBUIOpaque">NO</bool>
+						<bool key="IBUIClipsSubviews">YES</bool>
+						<int key="IBUIContentMode">7</int>
+						<bool key="IBUIUserInteractionEnabled">NO</bool>
+						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+						<string key="IBUIText">Label</string>
+						<reference key="IBUITextColor" ref="452938791"/>
+						<nil key="IBUIHighlightedColor"/>
+						<int key="IBUIBaselineAdjustment">0</int>
+						<int key="IBUITextAlignment">1</int>
+						<reference key="IBUIFontDescription" ref="62085690"/>
+						<reference key="IBUIFont" ref="248192285"/>
+						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
+					</object>
+					<object class="IBUILabel" id="879657624">
+						<reference key="NSNextResponder" ref="271871499"/>
+						<int key="NSvFlags">292</int>
+						<string key="NSFrame">{{673, 399}, {185, 21}}</string>
+						<reference key="NSSuperview" ref="271871499"/>
+						<reference key="NSWindow"/>
+						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<bool key="IBUIOpaque">NO</bool>
+						<bool key="IBUIClipsSubviews">YES</bool>
+						<int key="IBUIContentMode">7</int>
+						<bool key="IBUIUserInteractionEnabled">NO</bool>
+						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+						<string key="IBUIText">Label</string>
+						<reference key="IBUITextColor" ref="452938791"/>
+						<nil key="IBUIHighlightedColor"/>
+						<int key="IBUIBaselineAdjustment">0</int>
+						<int key="IBUITextAlignment">1</int>
+						<reference key="IBUIFontDescription" ref="62085690"/>
+						<reference key="IBUIFont" ref="248192285"/>
+						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
+					</object>
 				</array>
 				<string key="NSFrameSize">{920, 580}</string>
 				<reference key="NSSuperview"/>
@@ -570,6 +633,30 @@
 					</object>
 					<int key="connectionID">78</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">dateT</string>
+						<reference key="source" ref="271871499"/>
+						<reference key="destination" ref="372468795"/>
+					</object>
+					<int key="connectionID">98</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">dateAT</string>
+						<reference key="source" ref="271871499"/>
+						<reference key="destination" ref="532172312"/>
+					</object>
+					<int key="connectionID">99</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">dateAAT</string>
+						<reference key="source" ref="271871499"/>
+						<reference key="destination" ref="879657624"/>
+					</object>
+					<int key="connectionID">100</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -596,7 +683,6 @@
 						<array class="NSMutableArray" key="children">
 							<reference ref="140841044"/>
 							<reference ref="21264906"/>
-							<reference ref="117929995"/>
 							<reference ref="698914690"/>
 							<reference ref="88977371"/>
 							<reference ref="612860556"/>
@@ -614,6 +700,10 @@
 							<reference ref="305962624"/>
 							<reference ref="827635503"/>
 							<reference ref="81480216"/>
+							<reference ref="372468795"/>
+							<reference ref="532172312"/>
+							<reference ref="117929995"/>
+							<reference ref="879657624"/>
 						</array>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">WindowView</string>
@@ -735,6 +825,21 @@
 						<reference key="parent" ref="271871499"/>
 						<string key="objectName">back view</string>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">79</int>
+						<reference key="object" ref="372468795"/>
+						<reference key="parent" ref="271871499"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">82</int>
+						<reference key="object" ref="532172312"/>
+						<reference key="parent" ref="271871499"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">87</int>
+						<reference key="object" ref="879657624"/>
+						<reference key="parent" ref="271871499"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -763,12 +868,15 @@
 				<string key="75.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="76.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="77.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="79.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="82.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="87.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">78</int>
+			<int key="maxID">100</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -781,10 +889,12 @@
 						<string key="afterTommorowTemp">UILabel</string>
 						<string key="afterTommorowView">UIImageView</string>
 						<string key="backImageView">UIImageView</string>
-						<string key="bigImage">UIImageView</string>
 						<string key="conditionIcon">UIImageView</string>
 						<string key="currentCondition">UILabel</string>
 						<string key="currentTemperature">UILabel</string>
+						<string key="dateAAT">UILabel</string>
+						<string key="dateAT">UILabel</string>
+						<string key="dateT">UILabel</string>
 						<string key="humidity">UILabel</string>
 						<string key="place">UILabel</string>
 						<string key="pressure">UILabel</string>
@@ -815,10 +925,6 @@
 							<string key="name">backImageView</string>
 							<string key="candidateClassName">UIImageView</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="bigImage">
-							<string key="name">bigImage</string>
-							<string key="candidateClassName">UIImageView</string>
-						</object>
 						<object class="IBToOneOutletInfo" key="conditionIcon">
 							<string key="name">conditionIcon</string>
 							<string key="candidateClassName">UIImageView</string>
@@ -829,6 +935,18 @@
 						</object>
 						<object class="IBToOneOutletInfo" key="currentTemperature">
 							<string key="name">currentTemperature</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="dateAAT">
+							<string key="name">dateAAT</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="dateAT">
+							<string key="name">dateAT</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="dateT">
+							<string key="name">dateT</string>
 							<string key="candidateClassName">UILabel</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="humidity">

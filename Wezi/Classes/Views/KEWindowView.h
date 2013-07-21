@@ -7,12 +7,11 @@
 //
 #import <UIKit/UIKit.h>
 
-static NSString* const kKEWindowViewNibName = @"WindowView";
+static NSString *const kKEWindowViewNibName = @ "WindowView";
 
 @interface KEWindowView : UIView
 
 @property (weak, nonatomic) IBOutlet UIImageView *conditionIcon;
-@property (weak, nonatomic) IBOutlet UIImageView *bigImage;
 
 @property (weak, nonatomic) IBOutlet UILabel *currentTemperature;
 @property (weak, nonatomic) IBOutlet UILabel *currentCondition;
@@ -33,6 +32,10 @@ static NSString* const kKEWindowViewNibName = @"WindowView";
 @property (weak, nonatomic) IBOutlet UILabel *afrerAfterTommorowTemp;
 @property (weak, nonatomic) IBOutlet UILabel *windAbbreviation;
 @property (weak, nonatomic) IBOutlet UIImageView *backImageView;
+
+@property (weak, nonatomic) IBOutlet UILabel *dateT;
+@property (weak, nonatomic) IBOutlet UILabel *dateAT;
+@property (weak, nonatomic) IBOutlet UILabel *dateAAT;
 
 + (KEWindowView *)returnWindowView;
 

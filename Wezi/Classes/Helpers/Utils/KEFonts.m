@@ -45,4 +45,5 @@ static NSString * const kKEPlutoSansCondBold	 = @"PlutoSansCondBold";
 {
     return [UIFont fontWithName:kKEPlutoSansCondBold size:fontSize];
 }
+
 @end
