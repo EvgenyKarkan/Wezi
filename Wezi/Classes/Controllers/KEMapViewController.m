@@ -28,6 +28,7 @@ static NSString * const kKEDoneButtonClick    = @"done_button_click.png";
 @property (nonatomic, strong)       KECityAnnotation *myAnnotation;
 @property (nonatomic, strong)       KEDataManager *dataManager;
 @property (nonatomic, readwrite)    BOOL isContextActivated;
+@property (nonatomic, assign)		BOOL isPinAlreadyDropped;
 @property (nonatomic, strong)       NSString *bufferCityName;
 
 @end
@@ -44,6 +45,7 @@ static NSString * const kKEDoneButtonClick    = @"done_button_click.png";
 	self.geocoder = [[CLGeocoder alloc]init];
     self.map.showsUserLocation = YES;
     self.isContextActivated = NO;
+	self.isPinAlreadyDropped = NO;
     self.dataManager = [KEDataManager sharedDataManager];
 	self.managedObjectContext = [self.dataManager managedObjectContextFromAppDelegate];
     [self addCustomButtons];
@@ -72,7 +74,6 @@ static NSString * const kKEDoneButtonClick    = @"done_button_click.png";
 			
 		    if (placemarks && placemarks.count > 0) {
 		        CLPlacemark *placemark = [placemarks objectAtIndex:0];
-				
 		        geocodedAddress = placemark.thoroughfare;
 		        geocodedHome = placemark.subThoroughfare;
 		        geoLocality = placemark.locality;
@@ -126,6 +127,10 @@ static NSString * const kKEDoneButtonClick    = @"done_button_click.png";
 			pinView.animatesDrop = YES;
 			pinView.canShowCallout = YES;
 			pinView.draggable = YES;
+			UIImageView *myImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"app_icon.png"]];
+			myImageView.frame = CGRectMake (0,0,31,31);
+			pinView.leftCalloutAccessoryView = myImageView;
+			pinView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeContactAdd];
 			[pinView setSelected:YES animated:YES];
 		}
 		return pinView;
@@ -186,13 +191,21 @@ static NSString * const kKEDoneButtonClick    = @"done_button_click.png";
 
 - (void)performPinDrop
 {
-    self.myAnnotation = [[KECityAnnotation alloc] init];
-    self.myAnnotation.coordinate = self.map.centerCoordinate;
-    self.myAnnotation.title = @"Chosen location";
-    self.myAnnotation.subtitle = @"Drag to change location";
-    [self.map addAnnotation:self.myAnnotation];
-    [self.map selectAnnotation:self.myAnnotation animated:YES];
+	if (self.isPinAlreadyDropped) {
+		[SVProgressHUD showErrorWithStatus:@"Pin is already dropped"];
+	}
+	
+	if (!self.isPinAlreadyDropped) {
+		self.myAnnotation = [[KECityAnnotation alloc] init];
+		self.myAnnotation.coordinate = self.map.centerCoordinate;
+		self.myAnnotation.title = @"Chosen location";
+		self.myAnnotation.subtitle = @"Drag to change location";
+		[self.map addAnnotation:self.myAnnotation];
+		[self.map selectAnnotation:self.myAnnotation animated:YES];
+	}
+	self.isPinAlreadyDropped = YES;
 }
+
 
 #pragma mark - Configurate UI 
 
