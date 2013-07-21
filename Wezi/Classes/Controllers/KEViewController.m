@@ -225,7 +225,7 @@ static NSString * const kKESharePopoverSegue  = @"shareSegue";
 			self.templateView.pressure.text = @"N/A";
 		}
 		else {
-			self.templateView.pressure.text = [NSString stringWithFormat:@"%@ %@", observation.pressure, @"inHg"];
+			self.templateView.pressure.text = [NSString stringWithFormat:@"%.2f %@", [observation.pressure floatValue], @"inHg"];
 		}
 		
 		self.templateView.timeStamp.text = observation.timeString;
@@ -267,7 +267,7 @@ static NSString * const kKESharePopoverSegue  = @"shareSegue";
 			viewtoUpdate.pressure.text = @"N/A";
 		}
 		else {
-			viewtoUpdate.pressure.text = [NSString stringWithFormat:@"%@ %@", observation.pressure, @"inHg"];
+			viewtoUpdate.pressure.text = [NSString stringWithFormat:@"%.2f %@", [observation.pressure floatValue], @"inHg"];
 		}
 		
 		viewtoUpdate.timeStamp.text = observation.timeString;
