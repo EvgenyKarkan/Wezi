@@ -194,19 +194,26 @@ static NSString * const kKESharePopoverSegue  = @"shareSegue";
 {
 	if (observation) {
 		[self.templateView.conditionIcon setImage:[KEUIImageFactoryUtil imageDependsOnURL:observation.iconUrl]];
-		NSString *string = [NSString stringWithFormat:@"%@ %@", [observation.temperatureC stringValue], @"°C"];
+		NSString *string = [NSString stringWithFormat:@"%.1f %@", [observation.temperatureC floatValue], @"°C"];
 		self.templateView.currentTemperature.text = string;
 		self.templateView.currentCondition.text = observation.weatherDescription;
 		self.templateView.place.text = [NSString subStringBeforeFirstCommaInString:observation.location[@"full"]];
 		self.templateView.windAbbreviation.text = observation.windShortAbbreviation;
-		self.templateView.wind.text = [observation.windSpeed stringValue];
+		
+		if ([observation.windSpeed floatValue] < 0) {
+			self.templateView.wind.text = @"N/A";
+		}
+		else {
+			self.templateView.wind.text = [NSString stringWithFormat:@"%.1f %@", [observation.windSpeed floatValue], @"kph"];
+		}
+		
 		self.templateView.humidity.text = observation.relativeHumidity;
-		self.templateView.pressure.text = observation.pressure;
+		self.templateView.pressure.text = [NSString stringWithFormat:@"%@ %@", observation.pressure, @"inHg"];
 		self.templateView.timeStamp.text = observation.timeString;
 	}
 }
 
-- (void)updateUIForView:(KEWindowView *)viewtoUpdate observetion:(KEObservation *)observation
+- (void)updateUIForView:(KEWindowView *)viewtoUpdate observation:(KEObservation *)observation
 {
     if (observation) {
         [viewtoUpdate.conditionIcon setImage:[KEUIImageFactoryUtil imageDependsOnURL:observation.iconUrl]];
@@ -215,9 +222,16 @@ static NSString * const kKESharePopoverSegue  = @"shareSegue";
         viewtoUpdate.currentCondition.text = observation.weatherDescription;
         viewtoUpdate.place.text = [NSString subStringBeforeFirstCommaInString:observation.location[@"full"]];
         viewtoUpdate.windAbbreviation.text = observation.windShortAbbreviation;
-        viewtoUpdate.wind.text = [observation.windSpeed stringValue];
+		
+		if ([observation.windSpeed floatValue] < 0) {
+			viewtoUpdate.wind.text = @"N/A";
+		}
+		else {
+			viewtoUpdate.wind.text = [NSString stringWithFormat:@"%.1f %@",[observation.windSpeed floatValue], @"kph"];
+		}
+		
         viewtoUpdate.humidity.text = observation.relativeHumidity;
-        viewtoUpdate.pressure.text = observation.pressure;
+		viewtoUpdate.pressure.text = [NSString stringWithFormat:@"%@ %@", observation.pressure, @"inHg"];
         viewtoUpdate.timeStamp.text = observation.timeString;
     }
 }
@@ -319,7 +333,7 @@ static NSString * const kKESharePopoverSegue  = @"shareSegue";
 	        [SVProgressHUD showErrorWithStatus:[error localizedDescription]];
 		}
 	    else {
-	        [weakSelf updateUIForView:viewToUpdate observetion:observation];
+	        [weakSelf updateUIForView:viewToUpdate observation:observation];
 	        [SVProgressHUD showSuccessWithStatus:@"Ok!"];
 		}
 	}];

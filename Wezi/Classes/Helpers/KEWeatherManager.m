@@ -71,7 +71,7 @@ static id _sharedClient = nil;
              parameters:nil
                 success:^(AFHTTPRequestOperation *operation, id responseObject) {
                     KEObservation *observation = [KEObservation observationWithDictionary:responseObject[@"current_observation"]];
-						//NSLog(@"Reaponce %@", responseObject);
+						NSLog(@"Reaponce %@", responseObject);
                     completion(observation, nil);
                 }
                 failure:^(AFHTTPRequestOperation *operation, NSError *error) {
