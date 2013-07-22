@@ -18,8 +18,8 @@
 
 @interface KEMapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
 
-@property (nonatomic, weak)			IBOutlet MKMapView *map;
-@property (nonatomic, weak)			IBOutlet UINavigationBar *mapNavBar;
-@property (nonatomic, assign)		id <KECoordinateFillProtocol> objectToDelegate;
+@property (nonatomic, weak)						IBOutlet MKMapView *map;
+@property (nonatomic, weak)						IBOutlet UINavigationBar *mapNavBar;
+@property (nonatomic, unsafe_unretained)		id <KECoordinateFillProtocol> objectToDelegate;
 
 @end

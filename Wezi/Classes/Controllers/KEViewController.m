@@ -57,8 +57,8 @@ static NSString * const kKENoData			  = @"N/A";
 @property (nonatomic, strong)       NSMutableArray *viewWithCoreData;
 @property (nonatomic, strong)       NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong)       CLLocation *loc;
-@property (nonatomic, readwrite)    BOOL isShownMapPopover;
-@property (nonatomic, readwrite)    BOOL pageControlBeingUsed;
+@property (nonatomic, assign)       BOOL isShownMapPopover;
+@property (nonatomic, assign)       BOOL pageControlBeingUsed;
 @property (nonatomic, assign)       BOOL internetDroppedFirstly;
 
 @end

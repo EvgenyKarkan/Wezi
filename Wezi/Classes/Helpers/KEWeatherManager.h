@@ -13,7 +13,7 @@
 
 @interface KEWeatherManager : AFHTTPClient
 
-@property (nonatomic, strong) NSMutableDictionary *days;
+@property (nonatomic, copy) NSMutableDictionary *days;
 
 + (instancetype)sharedClient;
 - (void)getCurrentWeatherObservationForLocation:(CLLocation *)location

@@ -27,7 +27,7 @@ static NSString * const kKEDoneButtonClick    = @"done_button_click.png";
 @property (nonatomic, strong)       NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong)       KECityAnnotation *myAnnotation;
 @property (nonatomic, strong)       KEDataManager *dataManager;
-@property (nonatomic, readwrite)    BOOL isContextActivated;
+@property (nonatomic, assign)		BOOL isContextActivated;
 @property (nonatomic, assign)		BOOL isPinAlreadyDropped;
 @property (nonatomic, strong)       NSString *bufferCityName;
 

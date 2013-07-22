@@ -15,7 +15,7 @@
 @property (nonatomic, weak)         IBOutlet UIScrollView *scrollView;
 @property (nonatomic, strong)       IBOutlet UINavigationBar *navBar;
 @property (nonatomic, weak)         IBOutlet UIImageView *weziImage;
-@property (weak, nonatomic)         IBOutlet UIToolbar *downBar;
+@property (nonatomic, weak)         IBOutlet UIToolbar *downBar;
 @property (nonatomic, strong)       UIStoryboardPopoverSegue *currentPopoverSegue;
 
 

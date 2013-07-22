@@ -24,7 +24,7 @@
 
 @interface KEShareViewController : UIViewController
 
-@property (nonatomic, assign)    id <KEPopoverHideProtocol> firstDelegate;
-@property (nonatomic, assign)	 id <KESocialProvideProtocol> secondDelegate;
+@property (nonatomic, unsafe_unretained)    id <KEPopoverHideProtocol> firstDelegate;
+@property (nonatomic, unsafe_unretained)	id <KESocialProvideProtocol> secondDelegate;
 
 @end

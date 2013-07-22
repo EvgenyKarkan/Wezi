@@ -14,7 +14,7 @@ static NSUInteger const kKEFilter = 1000;
 @interface KELocationManager () <CLLocationManagerDelegate>
 
 @property (nonatomic, strong)       CLLocationManager *locationManager;
-@property (nonatomic, readwrite)    BOOL isMonitoringLocation;
+@property (nonatomic, assign)    BOOL isMonitoringLocation;
 
 @end
 

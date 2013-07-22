@@ -10,8 +10,8 @@
 
 @interface KEMailProvider ()
 
-@property (nonatomic, strong) MFMailComposeViewController *mailForm;
-@property (nonatomic, assign) id delegateObject;
+@property (nonatomic, strong)			 MFMailComposeViewController *mailForm;
+@property (nonatomic, unsafe_unretained) id delegateObject;
 
 @end
 
