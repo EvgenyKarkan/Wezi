@@ -130,7 +130,6 @@ static NSString * const kKEDoneButtonClick    = @"done_button_click.png";
 			UIImageView *myImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"app_icon.png"]];
 			myImageView.frame = CGRectMake (0,0,31,31);
 			pinView.leftCalloutAccessoryView = myImageView;
-			pinView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeContactAdd];
 			[pinView setSelected:YES animated:YES];
 		}
 		return pinView;

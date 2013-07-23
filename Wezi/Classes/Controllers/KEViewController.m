@@ -493,6 +493,9 @@ static NSUInteger const kKESelfWidthWithDelta = 1076;
 	if (self.pageControl.currentPage != 0) {
 		[[self.viewWithCoreData objectAtIndex:self.pageControl.currentPage - 1] removeFromSuperview];
 	}
+	else if (self.pageControl.currentPage == 0) {
+		[SVProgressHUD showErrorWithStatus:@"You can not delete the first page"];
+	}
 	[UIView animateWithDuration:0.3f animations: ^{
 	    for (UIView * dummyObject in self.viewWithCoreData) {
 	        NSUInteger index = [self.viewWithCoreData indexOfObject:dummyObject];
