@@ -143,43 +143,48 @@ static NSString * const kKEDoneButtonClick    = @"done_button_click.png";
 
 - (IBAction)chooseLocation:(id)sender
 {
-	CLLocation *item = [[CLLocation alloc]initWithLatitude:self.myAnnotation.coordinate.latitude longitude:self.myAnnotation.coordinate.longitude];
-	
-	if ([[KEReachabilityUtil sharedUtil] checkInternetConnection]) {
-		[self.objectToDelegate addPressedWithCoordinate:item];
-	}
-	
-	NSError *error = nil;
-	NSArray *places = [self.managedObjectContext executeFetchRequest:[self.dataManager requestWithEntityName:@"Place"] error:&error];
-	
-	if ([places count] == 19) {
-		NSLog(@"COUNT IS %i", [places count]);
-		return;
-	}
-	
-	Place *place = [NSEntityDescription insertNewObjectForEntityForName:@"Place" inManagedObjectContext:self.managedObjectContext];
-	
-	if (place != nil) {
-		place.latitude = self.myAnnotation.coordinate.latitude;
-		place.longitude = self.myAnnotation.coordinate.longitude;
-		place.city = self.bufferCityName;
-		NSError *savingError = nil;
+	if (self.isPinAlreadyDropped) {
+		CLLocation *item = [[CLLocation alloc]initWithLatitude:self.myAnnotation.coordinate.latitude longitude:self.myAnnotation.coordinate.longitude];
 		
 		if ([[KEReachabilityUtil sharedUtil] checkInternetConnection]) {
-			if ([self.managedObjectContext save:&savingError]) {
-				NSLog(@"Successfully saving the context");
-				self.isContextActivated = YES;
+			[self.objectToDelegate addPressedWithCoordinate:item];
+		}
+		
+		NSError *error = nil;
+		NSArray *places = [self.managedObjectContext executeFetchRequest:[self.dataManager requestWithEntityName:@"Place"] error:&error];
+		
+		if ([places count] == 19) {
+			NSLog(@"COUNT IS %i", [places count]);
+			return;
+		}
+		
+		Place *place = [NSEntityDescription insertNewObjectForEntityForName:@"Place" inManagedObjectContext:self.managedObjectContext];
+		
+		if (place != nil) {
+			place.latitude = self.myAnnotation.coordinate.latitude;
+			place.longitude = self.myAnnotation.coordinate.longitude;
+			place.city = self.bufferCityName;
+			NSError *savingError = nil;
+			
+			if ([[KEReachabilityUtil sharedUtil] checkInternetConnection]) {
+				if ([self.managedObjectContext save:&savingError]) {
+					NSLog(@"Successfully saving the context");
+					self.isContextActivated = YES;
+				}
+				else {
+					NSLog(@"Failed to save the context. Error = %@", [savingError localizedDescription]);
+				}
 			}
 			else {
-				NSLog(@"Failed to save the context. Error = %@", [savingError localizedDescription]);
+				[SVProgressHUD showErrorWithStatus:@"Internet dropped. Couldn't save the location"];
 			}
 		}
 		else {
-			[SVProgressHUD showErrorWithStatus:@"Internet dropped. Couldn't save the location"];
+			NSLog(@"Failed to create new place");
 		}
 	}
 	else {
-		NSLog(@"Failed to create new place");
+		[SVProgressHUD showErrorWithStatus:@"You must choose location first"];
 	}
 }
 
