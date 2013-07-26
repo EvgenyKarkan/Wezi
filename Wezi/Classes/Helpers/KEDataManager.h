@@ -10,8 +10,14 @@
 
 @interface KEDataManager : NSObject
 
+@property (nonatomic, readonly, strong) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, readonly, strong) NSManagedObjectModel *managedObjectModel;
+@property (nonatomic, readonly, strong) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
 + (instancetype)sharedDataManager;
 - (NSManagedObjectContext *)managedObjectContextFromAppDelegate;
 - (NSFetchRequest *)requestWithEntityName:(NSString *)entity;
+- (void)saveContext;
+- (NSURL *)applicationDocumentsDirectory;
 
 @end
