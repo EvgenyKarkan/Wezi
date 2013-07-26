@@ -15,7 +15,7 @@
 @property (nonatomic, readonly, strong) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 + (instancetype)sharedDataManager;
-- (NSManagedObjectContext *)managedObjectContextFromAppDelegate;
+- (NSManagedObjectContext *)managedObjectContextFromDataManager;
 - (NSFetchRequest *)requestWithEntityName:(NSString *)entity;
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;

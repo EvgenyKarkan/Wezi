@@ -116,7 +116,7 @@ static NSString * const kKENoData			  = @"N/A";
 		
 		[self configurateUIElements];
 		self.dataManager = [KEDataManager sharedDataManager];
-		self.managedObjectContext = [self.dataManager managedObjectContextFromAppDelegate];
+		self.managedObjectContext = [self.dataManager managedObjectContextFromDataManager];
 		[self prepareForLoading];
 	}
 }

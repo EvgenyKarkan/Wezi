@@ -72,6 +72,8 @@ static CGFloat const kKEForecastLabelsFontSize = 18.0f;
     [aView.place setFont:[KEFonts plutoSansRegularWithSize:kKEPlaceFontSize]];
     [aView.currentTemperature setFont:[KEFonts plutoSansRegularWithSize:kKECurrentTempFontSize]];
 	[aView.timeStamp setFont:[KEFonts plutoSansRegularWithSize:kKETimeStampFontSize]];
+	[aView.today setFont:[KEFonts plutoSansRegularWithSize:kKEBunchOfLabelFontSize]];
+	[aView.today setText:@"Today"];
 	
 	NSMutableArray *forecastLabelsArray = [NSMutableArray arrayWithArray:@[aView.dateT,
 																		   aView.dateAT,

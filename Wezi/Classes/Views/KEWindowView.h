@@ -37,6 +37,8 @@ static NSString *const kKEWindowViewNibName = @ "WindowView";
 @property (weak, nonatomic) IBOutlet UILabel *dateAT;
 @property (weak, nonatomic) IBOutlet UILabel *dateAAT;
 
+@property (weak, nonatomic) IBOutlet UILabel *today;
+
 + (KEWindowView *)returnWindowView;
 
 @end

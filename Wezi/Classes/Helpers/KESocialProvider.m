@@ -10,6 +10,7 @@
 #import "KEShareViewController.h"
 #import "KEMailProvider.h"
 #import "SVProgressHUD.h"
+#import "KEScreenShotUtil.h"
 
 static NSUInteger const kKETwitterButtonTag     = 100;
 static NSUInteger const kKEFacebookButtonTag    = 101;
@@ -27,6 +28,7 @@ static NSUInteger const kKEBugButtonTag         = 103;
 			if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
 				SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
 				[controller setInitialText:@""];
+				[controller addImage:[KEScreenShotUtil cropImage]];
 				[object presentViewController:controller animated:YES completion:Nil];
 			}
             else {
@@ -38,6 +40,7 @@ static NSUInteger const kKEBugButtonTag         = 103;
 			if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
 				SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
 				[controller setInitialText:@""];
+				[controller addImage:[KEScreenShotUtil cropImage]];
 				[object presentViewController:controller animated:YES completion:Nil];
 			}
             else {

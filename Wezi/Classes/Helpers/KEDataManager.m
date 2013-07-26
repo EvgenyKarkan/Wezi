@@ -47,7 +47,7 @@ static id _sharedInstance = nil;
 
 #pragma mark - Core Data stuff
 
-- (NSManagedObjectContext *)managedObjectContextFromAppDelegate
+- (NSManagedObjectContext *)managedObjectContextFromDataManager
 {
 	return self.managedObjectContext;
 }
@@ -56,7 +56,7 @@ static id _sharedInstance = nil;
 {
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc]init];
 	NSEntityDescription *entity = [NSEntityDescription entityForName:entityName
-	                                          inManagedObjectContext:[self managedObjectContextFromAppDelegate]];
+	                                          inManagedObjectContext:[self managedObjectContextFromDataManager]];
 	[fetchRequest setEntity:entity];
 	
 	return fetchRequest;

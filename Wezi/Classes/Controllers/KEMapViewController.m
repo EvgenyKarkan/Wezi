@@ -47,7 +47,7 @@ static NSString * const kKEDoneButtonClick    = @"done_button_click.png";
     self.isContextActivated = NO;
 	self.isPinAlreadyDropped = NO;
     self.dataManager = [KEDataManager sharedDataManager];
-	self.managedObjectContext = [self.dataManager managedObjectContextFromAppDelegate];
+	self.managedObjectContext = [self.dataManager managedObjectContextFromDataManager];
     [self addCustomButtons];
 }
 

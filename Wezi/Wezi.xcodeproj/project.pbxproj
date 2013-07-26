@@ -114,6 +114,7 @@
 		DE9D441C1797227D0017A6D5 /* app_icon512.png in Resources */ = {isa = PBXBuildFile; fileRef = DE9D44181797227D0017A6D5 /* app_icon512.png */; };
 		DE9D441D1797227D0017A6D5 /* app_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE9D44191797227D0017A6D5 /* app_icon@2x.png */; };
 		DE9D441F179728700017A6D5 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9D441E179728700017A6D5 /* Social.framework */; };
+		DEA2694217A308A000C6ED12 /* KEScreenShotUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA2694117A308A000C6ED12 /* KEScreenShotUtil.m */; };
 		DEA43AD2177B90C6009878AC /* KEBackingImageUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA43AD1177B90C6009878AC /* KEBackingImageUtil.m */; };
 		DEAFD03E176A5FF200BA3785 /* KEReachabilityUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DEAFD03D176A5FF200BA3785 /* KEReachabilityUtil.m */; };
 		DEB51ED41759267400F04539 /* NSString+CommaSubString.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB51ED31759267400F04539 /* NSString+CommaSubString.m */; };
@@ -269,6 +270,8 @@
 		DE9D44181797227D0017A6D5 /* app_icon512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon512.png; sourceTree = "<group>"; };
 		DE9D44191797227D0017A6D5 /* app_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_icon@2x.png"; sourceTree = "<group>"; };
 		DE9D441E179728700017A6D5 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		DEA2694017A308A000C6ED12 /* KEScreenShotUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEScreenShotUtil.h; sourceTree = "<group>"; };
+		DEA2694117A308A000C6ED12 /* KEScreenShotUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEScreenShotUtil.m; sourceTree = "<group>"; };
 		DEA43AD0177B90C6009878AC /* KEBackingImageUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEBackingImageUtil.h; sourceTree = "<group>"; };
 		DEA43AD1177B90C6009878AC /* KEBackingImageUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEBackingImageUtil.m; sourceTree = "<group>"; };
 		DEAFD03C176A5FF200BA3785 /* KEReachabilityUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KEReachabilityUtil.h; path = ../KEReachabilityUtil.h; sourceTree = "<group>"; };
@@ -647,6 +650,8 @@
 				DE40ADC3177F29D30080C64E /* KEDecoratorUtil.m */,
 				DEEFE4CF1795EB7E0021B3E7 /* KESplashScreenUtil.h */,
 				DEEFE4D01795EB7E0021B3E7 /* KESplashScreenUtil.m */,
+				DEA2694017A308A000C6ED12 /* KEScreenShotUtil.h */,
+				DEA2694117A308A000C6ED12 /* KEScreenShotUtil.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -822,6 +827,7 @@
 				DEB833491780A1E300DD9500 /* KEMailProvider.m in Sources */,
 				DEEFE4D11795EB7E0021B3E7 /* KESplashScreenUtil.m in Sources */,
 				DEF1A58817986F900043CDA8 /* KESocialProvider.m in Sources */,
+				DEA2694217A308A000C6ED12 /* KEScreenShotUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
