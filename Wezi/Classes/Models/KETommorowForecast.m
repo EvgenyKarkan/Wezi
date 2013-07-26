@@ -11,7 +11,7 @@
 
 @implementation KETommorowForecast
 
-- (id)initWithCondition:(NSString *)forecastCondition
+- (instancetype)initWithCondition:(NSString *)forecastCondition
               withMonth:(NSString *)forecastMonth
             withWeekDay:(NSString *)forecastWeekDay
           withDayNumber:(NSNumber *)forecastDayNumber

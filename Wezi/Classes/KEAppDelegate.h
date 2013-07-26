@@ -12,7 +12,7 @@
 
 @interface KEAppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (nonatomic, strong)           UIWindow *window;
-@property (nonatomic, strong)           AFHTTPClient *client;
+@property (nonatomic, strong)   UIWindow *window;
+@property (nonatomic, strong)   AFHTTPClient *client;
 
 @end

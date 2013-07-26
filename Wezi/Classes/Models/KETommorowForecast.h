@@ -21,7 +21,7 @@
 @property (nonatomic, strong) NSNumber *lowTemperature;
 @property (nonatomic, strong) NSString *iconURL;
 
-- (id)initWithCondition:(NSString *)forecastCondition
+- (instancetype)initWithCondition:(NSString *)forecastCondition
               withMonth:(NSString *)forecastMonth
             withWeekDay:(NSString *)forecastWeekDay
           withDayNumber:(NSNumber *)forecastDayNumber
