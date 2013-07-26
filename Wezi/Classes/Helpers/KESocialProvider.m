@@ -9,6 +9,12 @@
 #import "KESocialProvider.h"
 #import "KEShareViewController.h"
 #import "KEMailProvider.h"
+#import "SVProgressHUD.h"
+
+static NSUInteger const kKETwitterButtonTag     = 100;
+static NSUInteger const kKEFacebookButtonTag    = 101;
+static NSUInteger const kKEMailButtonTag        = 102;
+static NSUInteger const kKEBugButtonTag         = 103;
 
 @implementation KESocialProvider
 
@@ -17,23 +23,29 @@
 	KEMailProvider *mail = [[KEMailProvider alloc] initWithDelegate:object];
 	
 	switch ([sender tag]) {
-		case 100:
+		case kKETwitterButtonTag:
 			if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
 				SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
 				[controller setInitialText:@""];
 				[object presentViewController:controller animated:YES completion:Nil];
 			}
+            else {
+                [SVProgressHUD showErrorWithStatus:@"Please setup Twitter account"];
+            }
 			break;
 			
-		case 101:
+		case kKEFacebookButtonTag:
 			if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
 				SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
 				[controller setInitialText:@""];
 				[object presentViewController:controller animated:YES completion:Nil];
 			}
+            else {
+                [SVProgressHUD showErrorWithStatus:@"Please setup Facebook account"];
+            }
 			break;
 			
-		case 102: {
+		case kKEMailButtonTag: {
 			NSArray *arr = @[@"wezi@gmail.com"];
 			[mail showMailComposerWithSubject:@"E-mail"
 			                    withRecepient:arr
@@ -41,7 +53,7 @@
 		}
 			break;
 			
-		case 103: {
+		case kKEBugButtonTag: {
 			NSArray *arr = @[@"wezi@gmail.com"];
 			[mail showMailComposerWithSubject:@"E-mail"
 			                    withRecepient:arr

@@ -2,7 +2,7 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1552</int>
-		<string key="IBDocument.SystemVersion">11G63</string>
+		<string key="IBDocument.SystemVersion">11G63b</string>
 		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
 		<string key="IBDocument.AppKitVersion">1138.51</string>
 		<string key="IBDocument.HIToolboxVersion">569.00</string>
@@ -44,6 +44,10 @@
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="140841044"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<object class="NSColor" key="IBUIBackgroundColor">
+							<int key="NSColorSpace">1</int>
+							<bytes key="NSRGB">MSAxIDEAA</bytes>
+						</object>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 					</object>
@@ -170,7 +174,7 @@
 						<string key="NSFrame">{{743, 319}, {157, 31}}</string>
 						<reference key="NSSuperview" ref="271871499"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="290995183"/>
+						<reference key="NSNextKeyView" ref="372468795"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -222,6 +226,7 @@
 						<string key="NSFrame">{{11, 552}, {404, 21}}</string>
 						<reference key="NSSuperview" ref="271871499"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -242,7 +247,7 @@
 						<string key="NSFrame">{{93, 410}, {120, 120}}</string>
 						<reference key="NSSuperview" ref="271871499"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="320820777"/>
+						<reference key="NSNextKeyView" ref="532172312"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -253,7 +258,7 @@
 						<string key="NSFrame">{{410, 410}, {120, 120}}</string>
 						<reference key="NSSuperview" ref="271871499"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="827635503"/>
+						<reference key="NSNextKeyView" ref="879657624"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -275,7 +280,7 @@
 						<string key="NSFrame">{{93, 523}, {120, 21}}</string>
 						<reference key="NSSuperview" ref="271871499"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="245272728"/>
+						<reference key="NSNextKeyView" ref="827635503"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -433,6 +438,7 @@
 						<string key="NSFrame">{{61, 399}, {185, 21}}</string>
 						<reference key="NSSuperview" ref="271871499"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="290995183"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -454,6 +460,7 @@
 						<string key="NSFrame">{{378, 399}, {185, 21}}</string>
 						<reference key="NSSuperview" ref="271871499"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="245272728"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -475,6 +482,7 @@
 						<string key="NSFrame">{{673, 399}, {185, 21}}</string>
 						<reference key="NSSuperview" ref="271871499"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="320820777"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
