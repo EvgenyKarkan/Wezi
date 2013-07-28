@@ -536,7 +536,7 @@ static NSUInteger const kKESelfWidthWithDelta = 1076;
 }
 
 - (void)showSharePopover
-{
+{	
     [self performSegueWithIdentifier:kKESharePopoverSegue sender:self];
 }
 
