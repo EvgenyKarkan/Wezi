@@ -26,12 +26,13 @@
 #import "KESplashScreenUtil.h"
 #import "KESocialProvider.h"
 
-static NSUInteger const kKESelfWidth = 1024;
-static NSUInteger const kKEDeltaX	 = 52;
-static NSUInteger const kKEDeltaY    = 40;
-static NSUInteger const kKEWindowW   = 920;
-static NSUInteger const kKEWindowH   = 580;
-static CGFloat	  const kKEShadowOffset = 4.0f;
+static NSUInteger const kKESelfWidth		  = 1024;
+static NSUInteger const kKESelfWidthWithDelta = 1076;
+static NSUInteger const kKEDeltaX			  = 52;
+static NSUInteger const kKEDeltaY			  = 40;
+static NSUInteger const kKEWindowW			  = 920;
+static NSUInteger const kKEWindowH			  = 580;
+static CGFloat	  const kKEShadowOffset		  = 4.0f;
 static NSString * const kKERefreshButton      = @"refresh_button.png";
 static NSString * const kKERefreshButtonClick = @"refresh_button_click.png";
 static NSString * const kKETrashButton        = @"trash_button.png";
@@ -299,6 +300,16 @@ static NSString * const kKENoData			  = @"N/A";
 	viewToUpdate.dateAAT.text = [NSString stringWithFormat:@"%@, %@ of %@", forecast.weekDay, [forecast.dayNumber stringValue], forecast.month];
 }
 
+- (void)show
+{
+	
+}
+
+- (void)hide
+{
+	
+}
+
 #pragma mark - Requests
 
 - (void)reloadData
@@ -420,8 +431,6 @@ static NSString * const kKENoData			  = @"N/A";
 		[SVProgressHUD showErrorWithStatus:@"Internet dropped. Refresh unavailable."];
 	}
 }
-
-static NSUInteger const kKESelfWidthWithDelta = 1076;
 
 - (void)addPressedWithCoordinate:(CLLocation *)location 
 {
