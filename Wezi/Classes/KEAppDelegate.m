@@ -34,7 +34,7 @@ static NSString * const kKEToolBar = @"toolbar.png";
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    
+    self.isBeingBackgrounded = YES;
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application

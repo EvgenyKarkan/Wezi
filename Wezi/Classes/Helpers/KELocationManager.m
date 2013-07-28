@@ -132,9 +132,11 @@ static id _sharedLocationManager = nil;
 {
 	if (status == kCLAuthorizationStatusDenied) {
 		NSLog(@"permission denied");
+		[[NSNotificationCenter defaultCenter] postNotificationName:@"HideCurrentLocationPage" object:nil];
 	}
 	else if (status == kCLAuthorizationStatusAuthorized) {
 		NSLog(@"permission granted");
+		[[NSNotificationCenter defaultCenter] postNotificationName:@"HandlePermissions" object:nil];
 	}
 }
 
