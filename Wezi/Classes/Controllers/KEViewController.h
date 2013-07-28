@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "KEWeatherManager.h"
 
 @interface KEViewController : UIViewController <UIScrollViewDelegate>
 
