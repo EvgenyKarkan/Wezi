@@ -8,6 +8,8 @@
 
 #import "KEMailProvider.h"
 
+static NSString * const kKEMailComposer = @"MFMailComposeViewController";
+
 @interface KEMailProvider ()
 
 @property (nonatomic, strong)			 MFMailComposeViewController *mailForm;
@@ -33,7 +35,7 @@
 
 - (void)showMailComposerWithSubject:(NSString *)subject withRecepient:(NSArray *)recepient withMessageBody:(NSString *)message
 {
-    Class mailClass = (NSClassFromString(@"MFMailComposeViewController"));
+    Class mailClass = (NSClassFromString(kKEMailComposer));
 	
     if (mailClass != nil) {
         if ([mailClass canSendMail]) {

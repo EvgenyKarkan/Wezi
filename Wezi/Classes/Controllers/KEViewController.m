@@ -587,11 +587,11 @@ static NSUInteger const kKESelfWidthWithDelta = 1076;
 			break;
 			
 		case MFMailComposeResultSent:
-			
+			[SVProgressHUD showSuccessWithStatus:@"Mail sent"];
 			break;
 			
 		case MFMailComposeResultFailed:
-			
+			[SVProgressHUD showErrorWithStatus:@"Mail failed"];
 			break;
 			
 		default:
