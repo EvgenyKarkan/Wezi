@@ -13,6 +13,8 @@
 #import "KEDataManager.h"
 
 static NSString * const kKEToolBar = @"toolbar.png";
+static NSString * const kKERefresh = @"RefreshCurrentLocation";
+
 
 @implementation KEAppDelegate
 
@@ -34,12 +36,12 @@ static NSString * const kKEToolBar = @"toolbar.png";
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    self.isBeingBackgrounded = YES;
+
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
-   
+	[[NSNotificationCenter defaultCenter] postNotificationName:kKERefresh object:self];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application

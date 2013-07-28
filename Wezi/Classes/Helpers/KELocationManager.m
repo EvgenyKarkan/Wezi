@@ -85,13 +85,13 @@ static id _sharedLocationManager = nil;
 
 - (CLLocationManager *)locationManager
 {
-    if (!_locationManager) {
-        _locationManager = [[CLLocationManager alloc] init];
-            [_locationManager setDistanceFilter:kKEFilter];
-            [_locationManager setDesiredAccuracy: kCLLocationAccuracyThreeKilometers];
-    }
-    
-    return _locationManager;
+	if (!_locationManager) {
+		_locationManager = [[CLLocationManager alloc] init];
+		[_locationManager setDistanceFilter:kKEFilter];
+		[_locationManager setDesiredAccuracy:kCLLocationAccuracyThreeKilometers];
+	}
+	
+	return _locationManager;
 }
 
 - (CLLocation *)currentLocation
@@ -130,13 +130,22 @@ static id _sharedLocationManager = nil;
 
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
 {
+	NSString *value = nil;
+	
 	if (status == kCLAuthorizationStatusDenied) {
 		NSLog(@"permission denied");
-		[[NSNotificationCenter defaultCenter] postNotificationName:@"HideCurrentLocationPage" object:nil];
+		value = @"NoCurrentLocation";
 	}
 	else if (status == kCLAuthorizationStatusAuthorized) {
 		NSLog(@"permission granted");
-		[[NSNotificationCenter defaultCenter] postNotificationName:@"HandlePermissions" object:nil];
+		value = @"CurrentLocation";
+	}
+	
+	if (status) {
+		NSDictionary *dictionary = @{@"Access": value};
+		[[NSNotificationCenter defaultCenter] postNotificationName:@"HandlePermissions"
+															object:self
+														  userInfo:dictionary];
 	}
 }
 

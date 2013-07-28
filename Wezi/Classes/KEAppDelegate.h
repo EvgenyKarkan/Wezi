@@ -14,6 +14,5 @@
 
 @property (nonatomic, strong)   UIWindow *window;
 @property (nonatomic, strong)   AFHTTPClient *client;
-@property (nonatomic, assign)	BOOL isBeingBackgrounded;
 
 @end

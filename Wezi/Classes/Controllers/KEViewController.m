@@ -33,6 +33,7 @@ static NSUInteger const kKEDeltaY			  = 40;
 static NSUInteger const kKEWindowW			  = 920;
 static NSUInteger const kKEWindowH			  = 580;
 static CGFloat	  const kKEShadowOffset		  = 4.0f;
+static NSUInteger const kKELegitimateValue	  = 100;
 static NSString * const kKERefreshButton      = @"refresh_button.png";
 static NSString * const kKERefreshButtonClick = @"refresh_button_click.png";
 static NSString * const kKETrashButton        = @"trash_button.png";
@@ -57,7 +58,7 @@ static NSString * const kKENoData			  = @"N/A";
 @property (nonatomic, strong)       NSMutableArray *entityArrayCoreData;
 @property (nonatomic, strong)       NSMutableArray *viewWithCoreData;
 @property (nonatomic, strong)       NSManagedObjectContext *managedObjectContext;
-@property (nonatomic, strong)       CLLocation *loc;
+@property (nonatomic, strong)       CLLocation *location;
 @property (nonatomic, assign)       BOOL isShownMapPopover;
 @property (nonatomic, assign)       BOOL pageControlBeingUsed;
 @property (nonatomic, assign)       BOOL internetDroppedFirstly;
@@ -98,21 +99,23 @@ static NSString * const kKENoData			  = @"N/A";
 	[self subscribeToCurrentLocationTrackingWithPemissionsNotification];
 	
 	[KESplashScreenUtil showSplashScreenOnView:self.view];
-		
+	
 	if (![[KEReachabilityUtil sharedUtil] checkInternetConnection]) {
 		self.internetDroppedFirstly = YES;
-			//TODO: Handle first issue here !!!
+			//TODO: add GRUMPY - NO INTERNET !!!
+		[self configurateUIElements];
+		self.pageControl.numberOfPages = 1;
 	}
 	else {
 		[self subscribeToReachabilityNotifications];
-
+		
 		__weak KEViewController *weakSelf = self;
 		[[NSNotificationCenter defaultCenter] addObserverForName:kKELocationDidChangeNotificationKey
 		                                                  object:nil
 		                                                   queue:[NSOperationQueue mainQueue]
 		                                              usingBlock: ^(NSNotification *note) {
 														  [weakSelf reloadData];
-		}];
+													  }];
 		
 		[[KELocationManager sharedManager] startMonitoringLocationChanges];
 		
@@ -198,7 +201,7 @@ static NSString * const kKENoData			  = @"N/A";
 	if (observation) {
 		[self.templateView.conditionIcon setImage:[KEUIImageFactoryUtil imageDependsOnURL:observation.iconUrl]];
 		
-		if (([observation.temperatureC floatValue] < -100) || ([observation.temperatureC floatValue] > 100)) {
+		if (([observation.temperatureC floatValue] < -kKELegitimateValue) || ([observation.temperatureC floatValue] > kKELegitimateValue)) {
 			self.templateView.currentTemperature.text = kKENoData;
 		}
 		else {
@@ -217,7 +220,7 @@ static NSString * const kKENoData			  = @"N/A";
 			self.templateView.wind.text = [NSString stringWithFormat:@"%.1f %@", [observation.windSpeed floatValue], @"kph"];
 		}
 		
-		if (([observation.relativeHumidity integerValue] < 0) || ([observation.relativeHumidity integerValue] > 100)) {
+		if (([observation.relativeHumidity integerValue] < 0) || ([observation.relativeHumidity integerValue] > kKELegitimateValue)) {
 			self.templateView.humidity.text = kKENoData;
 		}
 		else {
@@ -240,7 +243,7 @@ static NSString * const kKENoData			  = @"N/A";
 	if (observation) {
 		[viewtoUpdate.conditionIcon setImage:[KEUIImageFactoryUtil imageDependsOnURL:observation.iconUrl]];
 		
-		if (([observation.temperatureC floatValue] < -100) || ([observation.temperatureC floatValue] > 100)) {
+		if (([observation.temperatureC floatValue] < -kKELegitimateValue) || ([observation.temperatureC floatValue] > kKELegitimateValue)) {
 			viewtoUpdate.currentTemperature.text = kKENoData;
 		}
 		else {
@@ -259,7 +262,7 @@ static NSString * const kKENoData			  = @"N/A";
 			viewtoUpdate.wind.text = [NSString stringWithFormat:@"%.1f %@", [observation.windSpeed floatValue], @"kph"];
 		}
 		
-		if (([observation.relativeHumidity integerValue] < 0) || ([observation.relativeHumidity integerValue] > 100)) {
+		if (([observation.relativeHumidity integerValue] < 0) || ([observation.relativeHumidity integerValue] > kKELegitimateValue)) {
 			viewtoUpdate.humidity.text = kKENoData;
 		}
 		else {
@@ -300,14 +303,25 @@ static NSString * const kKENoData			  = @"N/A";
 	viewToUpdate.dateAAT.text = [NSString stringWithFormat:@"%@, %@ of %@", forecast.weekDay, [forecast.dayNumber stringValue], forecast.month];
 }
 
-- (void)show
+#pragma mark - Current location permissions handling
+
+- (void)handleCurrentLocationPermission:(NSNotification *)notification
 {
-	
+	if ([[notification.userInfo objectForKey:@"Access"] isEqualToString:@"CurrentLocation"]) {
+		NSLog(@" YES CURR");
+			//TODO: hide GRUMPY and show all UI elements
+	}
+	else {
+		NSLog(@" NO CURR");
+			//TODO: add GRUMPY CurrentLocation Disabled and hide all UI elements
+	}
 }
 
-- (void)hide
+- (void)refreshCurrentLocation
 {
-	
+	if ([KELocationManager sharedManager].currentLocation) {
+		[[KELocationManager sharedManager] startMonitoringLocationChanges];
+	}
 }
 
 #pragma mark - Requests
@@ -411,15 +425,15 @@ static NSString * const kKENoData			  = @"N/A";
 			
 			self.entityArrayCoreData = [NSMutableArray arrayWithArray:places];
 			
-			self.loc = [[CLLocation alloc]initWithLatitude:[[self.entityArrayCoreData objectAtIndex:self.pageControl.currentPage - 1] latitude]
+			self.location = [[CLLocation alloc]initWithLatitude:[[self.entityArrayCoreData objectAtIndex:self.pageControl.currentPage - 1] latitude]
 			                                     longitude:[[self.entityArrayCoreData objectAtIndex:self.pageControl.currentPage - 1] longitude]];
 			
 			if (self.pageControl.currentPage == [self.entityArrayCoreData count]) {
-				[self reloadDataWithNewLocation:self.loc
+				[self reloadDataWithNewLocation:self.location
 				                       withView:[self.viewWithCoreData objectAtIndex:self.pageControl.currentPage - 1]];
 			}
 			else {
-				[self reloadDataWithNewLocation:self.loc
+				[self reloadDataWithNewLocation:self.location
 				                       withView:[self.viewWithCoreData objectAtIndex:self.pageControl.currentPage - 1]];
 			}
 		}
@@ -488,7 +502,6 @@ static NSString * const kKENoData			  = @"N/A";
         
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1.0f * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
             [self.scrollView setContentOffset:CGPointMake(kKESelfWidth * (self.pageControl.numberOfPages - 1),0) animated:YES];
-                //self.pageControl.currentPage = self.pageControl.numberOfPages - 1;
         });
     }
     if (self.pageControlBeingUsed) {
@@ -589,11 +602,9 @@ static NSString * const kKENoData			  = @"N/A";
 {
 	switch (result) {
 		case MFMailComposeResultCancelled:
-			
 			break;
 			
 		case MFMailComposeResultSaved:
-			
 			break;
 			
 		case MFMailComposeResultSent:
@@ -650,15 +661,14 @@ static NSString * const kKENoData			  = @"N/A";
 - (void)subscribeToCurrentLocationTrackingWithPemissionsNotification
 {
 	[[NSNotificationCenter defaultCenter] addObserver:self
-											 selector:@selector(hide)
-												 name:@"HideCurrentLocationPage"
-											   object:nil];
-	
+	                                         selector:@selector(handleCurrentLocationPermission:)
+	                                             name:@"HandlePermissions"
+	                                           object:nil];
 	
 	[[NSNotificationCenter defaultCenter] addObserver:self
-											 selector:@selector(show)
-												 name:@"HandlePermissions"
-											   object:nil];
+	                                         selector:@selector(refreshCurrentLocation)
+	                                             name:@"RefreshCurrentLocation"
+	                                           object:nil];
 }
 
 @end
