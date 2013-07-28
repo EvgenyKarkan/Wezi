@@ -94,6 +94,7 @@ static NSString * const kKENoData			  = @"N/A";
 {
 	[super viewDidLoad];
 	[self subscribeToReachabilityNotifications];
+	[self subscribeToCurrentLocationTrackingWithPemissionsNotification];
 	
 	[KESplashScreenUtil showSplashScreenOnView:self.view];
 		
@@ -633,6 +634,22 @@ static NSUInteger const kKESelfWidthWithDelta = 1076;
 - (void)onNoInternet
 {
     [SVProgressHUD showErrorWithStatus:@"Internet dropped"];
+}
+
+#pragma mark - Subscribing to location permissions notifications
+
+- (void)subscribeToCurrentLocationTrackingWithPemissionsNotification
+{
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(hide)
+												 name:@"HideCurrentLocationPage"
+											   object:nil];
+	
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(show)
+												 name:@"HandlePermissions"
+											   object:nil];
 }
 
 @end
