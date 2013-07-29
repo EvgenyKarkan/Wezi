@@ -151,7 +151,17 @@ static NSString * const kKENoData			  = @"N/A";
     self.templateView = [KEWindowView returnWindowView];
     self.templateView.frame = CGRectMake(kKEDeltaX, kKEDeltaY, kKEWindowW, kKEWindowH);
     [self.scrollView addSubview:self.templateView];
-    
+	
+	if (![KELocationManager sharedManager].currentLocation) {
+		for (UIView *subview in[self.templateView subviews]) {
+			if (!subview.hidden) {
+				subview.hidden = YES;
+			}
+		}
+		self.templateView.sadView.hidden = NO;
+		self.templateView.backImageView.hidden = NO;
+	}
+	
     self.mapViewController = [[KEMapViewController alloc]init];
     self.mapViewController.objectToDelegate = self;
     self.isShownMapPopover = NO;
@@ -306,13 +316,31 @@ static NSString * const kKENoData			  = @"N/A";
 #pragma mark - Current location permissions handling
 
 - (void)handleCurrentLocationPermission:(NSNotification *)notification
-{
+{	
 	if ([[notification.userInfo objectForKey:@"Access"] isEqualToString:@"CurrentLocation"]) {
 		NSLog(@" YES CURR");
+		for (UIView *subview in [self.templateView subviews]) {
+			if (subview.hidden) {
+				subview.hidden = NO;
+			}
+		}
+		if (!self.templateView.sadView.hidden) {
+			self.templateView.sadView.hidden = YES;
+		}
 			//TODO: hide GRUMPY and show all UI elements
 	}
 	else {
 		NSLog(@" NO CURR");
+		for (UIView *subview in [self.templateView subviews]) {
+			if (!subview.hidden) {
+				subview.hidden = YES;
+				NSLog(@"HIDE");
+			}
+		}
+		self.templateView.backImageView.hidden = NO;
+		if (self.templateView.sadView.hidden) {
+			self.templateView.sadView.hidden = NO;
+		}
 			//TODO: add GRUMPY CurrentLocation Disabled and hide all UI elements
 	}
 }
@@ -320,6 +348,15 @@ static NSString * const kKENoData			  = @"N/A";
 - (void)refreshCurrentLocation
 {
 	if ([KELocationManager sharedManager].currentLocation) {
+		[[KELocationManager sharedManager] startMonitoringLocationChanges];
+		for (UIView *subview in[self.templateView subviews]) {
+			if (subview.hidden) {
+				subview.hidden = NO;
+			}
+			self.templateView.sadView.hidden = YES;
+		}
+	}
+	else {
 		[[KELocationManager sharedManager] startMonitoringLocationChanges];
 	}
 }

@@ -13,8 +13,9 @@ static NSUInteger const kKEFilter = 1000;
 
 @interface KELocationManager () <CLLocationManagerDelegate>
 
-@property (nonatomic, strong)       CLLocationManager *locationManager;
+@property (nonatomic, strong)    CLLocationManager *locationManager;
 @property (nonatomic, assign)    BOOL isMonitoringLocation;
+@property (nonatomic, assign)    BOOL isPermitted;
 
 @end
 
@@ -61,14 +62,14 @@ static id _sharedLocationManager = nil;
             [self.locationManager startMonitoringSignificantLocationChanges];
         }
     }
-    else {
-        UIAlertView *servicesDisabledAlert = [[UIAlertView alloc] initWithTitle:@"Location Services Disabled"
-                                                                        message:@"This app requires location services to be enabled"
-                                                                       delegate:nil
-                                                              cancelButtonTitle:@"OK"
-                                                              otherButtonTitles:nil];
-        [servicesDisabledAlert show];
-    }
+	else {
+		UIAlertView *servicesDisabledAlert = [[UIAlertView alloc] initWithTitle:@"Location Services Disabled"
+		                                                                message:@"This app requires location services to be enabled"
+		                                                               delegate:nil
+		                                                      cancelButtonTitle:@"OK"
+		                                                      otherButtonTitles:nil];
+		[servicesDisabledAlert show];
+	}
 }
 
 - (void)stopMonitoringLocationChanges
@@ -111,16 +112,18 @@ static id _sharedLocationManager = nil;
         userInfo[@"oldLocation"] = oldLocation;
     }
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:kKELocationDidChangeNotificationKey
-                                                        object:self
-                                                      userInfo:userInfo];
+	if (self.isPermitted) {
+		[[NSNotificationCenter defaultCenter] postNotificationName:kKELocationDidChangeNotificationKey
+															object:self
+														  userInfo:userInfo];
+	}
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
 	if ([error code] == kCLErrorDenied) {
 		UIAlertView *servicesDisabledAlert = [[UIAlertView alloc] initWithTitle:@"Location Services Denied"
-		                                                                message:@"This app requires location services to be allowed"
+		                                                                message:@"This app requires current location services to be allowed"
 		                                                               delegate:nil
 		                                                      cancelButtonTitle:@"OK"
 		                                                      otherButtonTitles:nil];
@@ -133,12 +136,11 @@ static id _sharedLocationManager = nil;
 	NSString *value = nil;
 	
 	if (status == kCLAuthorizationStatusDenied) {
-		NSLog(@"permission denied");
 		value = @"NoCurrentLocation";
 	}
 	else if (status == kCLAuthorizationStatusAuthorized) {
-		NSLog(@"permission granted");
 		value = @"CurrentLocation";
+		self.isPermitted = YES;
 	}
 	
 	if (status) {

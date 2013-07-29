@@ -49,10 +49,10 @@ static NSString * const kKERefresh = @"RefreshCurrentLocation";
 	
 }
 
-
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     [[KEDataManager sharedDataManager] saveContext];
 }
+
 
 @end

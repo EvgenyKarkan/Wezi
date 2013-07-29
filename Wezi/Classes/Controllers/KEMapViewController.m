@@ -15,11 +15,14 @@
 #import "KEReachabilityUtil.h"
 #import "SVProgressHUD.h"
 
+#import "KELocationManager.h"
+
 static NSString * const kKENavBar			  = @"navbar.png";
 static NSString * const kKEPlusButton		  = @"plus_button.png";
 static NSString * const kKEPlusButtonClick    = @"plus_button_click.png";
 static NSString * const kKEDoneButton		  = @"done_button.png";
 static NSString * const kKEDoneButtonClick    = @"done_button_click.png";
+
 
 @interface KEMapViewController ()
 
@@ -32,6 +35,7 @@ static NSString * const kKEDoneButtonClick    = @"done_button_click.png";
 @property (nonatomic, strong)       NSString *bufferCityName;
 
 @end
+
 
 @implementation KEMapViewController
 

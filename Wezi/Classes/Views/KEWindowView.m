@@ -18,6 +18,7 @@ static CGFloat const kKEPlaceFontSize          = 35.0f;
 static CGFloat const kKECurrentTempFontSize    = 72.0f;
 static CGFloat const kKETimeStampFontSize	   = 15.0f;
 static CGFloat const kKEForecastLabelsFontSize = 18.0f;
+static CGRect const kKERectSad = {100, 100, 300, 300};
 
 @interface KEWindowView ()
 
@@ -36,7 +37,7 @@ static CGFloat const kKEForecastLabelsFontSize = 18.0f;
     tempView.layer.borderColor = [[UIColor whiteColor] CGColor];
     tempView.layer.borderWidth  = kKEBorderWidth;
     [tempView addRoundShadowWithOpacity:kKEOpacity];
-    
+	
     return tempView;
 }
 
@@ -44,7 +45,7 @@ static CGFloat const kKEForecastLabelsFontSize = 18.0f;
 {
     KEWindowView *dummyView = (KEWindowView *)[self loadViewFromNibWithName:kKEWindowViewNibName];
     dummyView.backImageView.image = [UIImage imageNamed:[KEBackingImageUtil randomObjectFromArray]];
-    [KEWindowView settingFontsToUIElements:dummyView];
+    [KEWindowView settingUIElements:dummyView];
 
     return dummyView;
 }
@@ -54,7 +55,7 @@ static CGFloat const kKEForecastLabelsFontSize = 18.0f;
     return [CAGradientLayer class];
 }
 
-+ (void)settingFontsToUIElements:(KEWindowView *)aView
++ (void)settingUIElements:(KEWindowView *)aView
 {
     NSMutableArray *allLabelArray = [NSMutableArray arrayWithArray:@[aView.wind,
 																	 aView.humidity,
@@ -82,6 +83,11 @@ static CGFloat const kKEForecastLabelsFontSize = 18.0f;
     for (UILabel *label in forecastLabelsArray) {
 		[label setFont:[KEFonts plutoSansRegularWithSize:kKEForecastLabelsFontSize]];
 	}
+	
+	aView.sadView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sad"]];
+	aView.sadView.frame = kKERectSad;
+	[aView addSubview:aView.sadView];
+	aView.sadView.hidden = YES;
 }
 
 @end

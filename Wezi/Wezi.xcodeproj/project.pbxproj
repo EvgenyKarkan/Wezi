@@ -123,6 +123,7 @@
 		DEB833461780925700DD9500 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB833451780925700DD9500 /* MessageUI.framework */; };
 		DEB833491780A1E300DD9500 /* KEMailProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB833481780A1E300DD9500 /* KEMailProvider.m */; };
 		DEB839AD1748D7A0005D211F /* KEDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB839AC1748D7A0005D211F /* KEDataManager.m */; };
+		DED7B71017A6D46600C4CF78 /* sad.png in Resources */ = {isa = PBXBuildFile; fileRef = DED7B70F17A6D46600C4CF78 /* sad.png */; };
 		DEDCDCE11748001100D957EC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDCDCE01748001100D957EC /* CoreData.framework */; };
 		DEDCDCE717480B2C00D957EC /* Wezi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DEDCDCE517480B2C00D957EC /* Wezi.xcdatamodeld */; };
 		DEEFE4CC1795E0B00021B3E7 /* 6.png in Resources */ = {isa = PBXBuildFile; fileRef = DEEFE4CB1795E0B00021B3E7 /* 6.png */; };
@@ -287,6 +288,7 @@
 		DEB833481780A1E300DD9500 /* KEMailProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEMailProvider.m; sourceTree = "<group>"; };
 		DEB839AB1748D7A0005D211F /* KEDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEDataManager.h; sourceTree = "<group>"; };
 		DEB839AC1748D7A0005D211F /* KEDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEDataManager.m; sourceTree = "<group>"; };
+		DED7B70F17A6D46600C4CF78 /* sad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sad.png; sourceTree = "<group>"; };
 		DEDCDCE01748001100D957EC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		DEDCDCE617480B2C00D957EC /* Wezi.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Wezi.xcdatamodel; sourceTree = "<group>"; };
 		DEEFE4CB1795E0B00021B3E7 /* 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6.png; sourceTree = "<group>"; };
@@ -452,6 +454,7 @@
 				CE7C0F28172FC36500E4A8AC /* Images */,
 				CE7C0F00172FC00500E4A8AC /* MainStoryboard.storyboard */,
 				CE9C75C9173CED00008CFE31 /* WindowView.xib */,
+				DED7B70F17A6D46600C4CF78 /* sad.png */,
 			);
 			path = Resourses;
 			sourceTree = "<group>";
@@ -779,6 +782,7 @@
 				DE9D441B1797227D0017A6D5 /* app_icon1024.png in Resources */,
 				DE9D441C1797227D0017A6D5 /* app_icon512.png in Resources */,
 				DE9D441D1797227D0017A6D5 /* app_icon@2x.png in Resources */,
+				DED7B71017A6D46600C4CF78 /* sad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface KEViewController : UIViewController <UIScrollViewDelegate>
 
 @property (nonatomic, weak)         IBOutlet UIPageControl *pageControl;
@@ -16,6 +17,7 @@
 @property (nonatomic, weak)         IBOutlet UIImageView *weziImage;
 @property (nonatomic, weak)         IBOutlet UIToolbar *downBar;
 @property (nonatomic, strong)       UIStoryboardPopoverSegue *currentPopoverSegue;
+
 
 @end
 
