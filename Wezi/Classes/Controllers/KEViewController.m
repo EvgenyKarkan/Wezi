@@ -102,7 +102,6 @@ static NSString * const kKENoData			  = @"N/A";
 	
 	if (![[KEReachabilityUtil sharedUtil] checkInternetConnection]) {
 		self.internetDroppedFirstly = YES;
-			//TODO: add GRUMPY - NO INTERNET !!!
 		[self configurateUIElements];
 		self.pageControl.numberOfPages = 1;
 	}
@@ -152,7 +151,7 @@ static NSString * const kKENoData			  = @"N/A";
     self.templateView.frame = CGRectMake(kKEDeltaX, kKEDeltaY, kKEWindowW, kKEWindowH);
     [self.scrollView addSubview:self.templateView];
 	
-	if (![KELocationManager sharedManager].currentLocation) {
+	if ((![KELocationManager sharedManager].currentLocation) || (![[KEReachabilityUtil sharedUtil] checkInternetConnection])) {
 		for (UIView *subview in[self.templateView subviews]) {
 			if (!subview.hidden) {
 				subview.hidden = YES;
