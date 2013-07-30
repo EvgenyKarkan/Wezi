@@ -327,6 +327,7 @@ static NSString * const kKENoData			  = @"N/A";
 		if (!self.templateView.sadView.hidden) {
 			self.templateView.sadView.hidden = YES;
 		}
+		[self refreshCurrentLocation];
 			//TODO: hide GRUMPY and show all UI elements
 	}
 	else {
@@ -334,7 +335,6 @@ static NSString * const kKENoData			  = @"N/A";
 		for (UIView *subview in [self.templateView subviews]) {
 			if (!subview.hidden) {
 				subview.hidden = YES;
-				NSLog(@"HIDE");
 			}
 		}
 		self.templateView.backImageView.hidden = NO;
@@ -347,6 +347,8 @@ static NSString * const kKENoData			  = @"N/A";
 
 - (void)refreshCurrentLocation
 {
+	NSLog(@"%d %s",__LINE__, __PRETTY_FUNCTION__);
+	
 	if ([KELocationManager sharedManager].currentLocation) {
 		[[KELocationManager sharedManager] startMonitoringLocationChanges];
 		for (UIView *subview in[self.templateView subviews]) {
@@ -361,7 +363,7 @@ static NSString * const kKENoData			  = @"N/A";
 	}
 }
 
-#pragma mark - Requests
+#pragma mark - Requests stuff
 
 - (void)reloadData
 {
@@ -424,7 +426,7 @@ static NSString * const kKENoData			  = @"N/A";
 	}];
 }
 
-#pragma mark - Actions
+#pragma mark - Actions stuff
 
 - (IBAction)changePage:(id)sender
 {
@@ -605,7 +607,7 @@ static NSString * const kKENoData			  = @"N/A";
 	[[self.currentPopoverSegue popoverController] dismissPopoverAnimated:YES];
 }
 
-#pragma mark - ScrollView delegate
+#pragma mark - ScrollView delegate stuff
 
 - (void)scrollViewDidScroll:(UIScrollView *)sender
 {

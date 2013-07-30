@@ -112,11 +112,11 @@ static id _sharedLocationManager = nil;
         userInfo[@"oldLocation"] = oldLocation;
     }
     
-	if (self.isPermitted) {
+		//if (self.isPermitted) {
 		[[NSNotificationCenter defaultCenter] postNotificationName:kKELocationDidChangeNotificationKey
 															object:self
 														  userInfo:userInfo];
-	}
+		//}
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
