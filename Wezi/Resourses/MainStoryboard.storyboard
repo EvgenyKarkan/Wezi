@@ -231,16 +231,25 @@
         <class className="KEMapViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/KEMapViewController.h"/>
             <relationships>
+                <relationship kind="action" name="chooseLocation:"/>
+                <relationship kind="action" name="dropPinPressed:"/>
                 <relationship kind="outlet" name="map" candidateClass="MKMapView"/>
                 <relationship kind="outlet" name="mapNavBar" candidateClass="UINavigationBar"/>
             </relationships>
         </class>
         <class className="KEShareViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/KEShareViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="buttonPressed:"/>
+            </relationships>
         </class>
         <class className="KEViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/KEViewController.h"/>
             <relationships>
+                <relationship kind="action" name="changePage:"/>
+                <relationship kind="action" name="deletePage:"/>
+                <relationship kind="action" name="goToMap:"/>
+                <relationship kind="action" name="refresh:"/>
                 <relationship kind="outlet" name="downBar" candidateClass="UIToolbar"/>
                 <relationship kind="outlet" name="navBar" candidateClass="UINavigationBar"/>
                 <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>

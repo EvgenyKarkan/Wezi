@@ -10,7 +10,7 @@
 
 @implementation KECityAnnotation
 
-- (id)initWithTitle:(NSString *)newTitle subtitle:(NSString *)newSubtitle
+- (instancetype)initWithTitle:(NSString *)newTitle subtitle:(NSString *)newSubtitle
 {
 	if (self = [super init]) {
 		self.title = newTitle;

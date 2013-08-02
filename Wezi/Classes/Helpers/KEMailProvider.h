@@ -10,7 +10,7 @@
 
 @interface KEMailProvider : NSObject 
 
-- (id)initWithDelegate:(id)delegate;
+- (instancetype)initWithDelegate:(id)delegate;
 - (void)showMailComposerWithSubject:(NSString *)subject
 					  withRecepient:(NSArray *)recepient
 					withMessageBody:(NSString *)message;

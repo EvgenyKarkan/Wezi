@@ -20,7 +20,7 @@ static NSString * const kKEMailComposer = @"MFMailComposeViewController";
 
 @implementation KEMailProvider
 
-- (id)initWithDelegate:(id)delegate
+- (instancetype)initWithDelegate:(id)delegate
 {
     self = [super init];
     

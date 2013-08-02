@@ -326,14 +326,13 @@ static NSString * const kKENoData			  = @"N/A";
 		if (!self.templateView.sadView.hidden) {
 			self.templateView.sadView.hidden = YES;
 		}
-		[self refreshCurrentLocation];
+			[self refreshCurrentLocation];
 			//TODO: hide GRUMPY and show all UI elements
 	}
 	else {
 		NSLog(@" NO CURR");
 		for (UIView *subview in [self.templateView subviews]) {
 			if (!subview.hidden) {
-				
 				subview.hidden = YES;
 			}
 		}
@@ -360,6 +359,7 @@ static NSString * const kKENoData			  = @"N/A";
 	}
 	else {
 		[[KELocationManager sharedManager] startMonitoringLocationChanges];
+		NSLog(@" FAIL");
 	}
 }
 
