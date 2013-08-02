@@ -333,6 +333,7 @@ static NSString * const kKENoData			  = @"N/A";
 		NSLog(@" NO CURR");
 		for (UIView *subview in [self.templateView subviews]) {
 			if (!subview.hidden) {
+				
 				subview.hidden = YES;
 			}
 		}
@@ -354,8 +355,8 @@ static NSString * const kKENoData			  = @"N/A";
 			if (subview.hidden) {
 				subview.hidden = NO;
 			}
-			self.templateView.sadView.hidden = YES;
 		}
+		self.templateView.sadView.hidden = YES;
 	}
 	else {
 		[[KELocationManager sharedManager] startMonitoringLocationChanges];
