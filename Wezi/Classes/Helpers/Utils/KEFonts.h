@@ -1,6 +1,6 @@
 //
-//  SUFonts.h
-//  VeloLink
+//  KEFonts.h
+//  Wezi
 //
 //  Created by Evgeniy Karkan on 4/29/13.
 //  Copyright (c) 2013 EvgenyKarkan. All rights reserved.
