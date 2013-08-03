@@ -152,7 +152,7 @@ static NSString * const kKENoData			  = @"N/A";
     [self.scrollView addSubview:self.templateView];
 	
 	if ((![KELocationManager sharedManager].currentLocation) || (![[KEReachabilityUtil sharedUtil] checkInternetConnection])) {
-		for (UIView *subview in[self.templateView subviews]) {
+		for (UIView *subview in [self.templateView subviews]) {
 			if (!subview.hidden) {
 				subview.hidden = YES;
 			}
@@ -350,7 +350,7 @@ static NSString * const kKENoData			  = @"N/A";
 	
 	if ([KELocationManager sharedManager].currentLocation) {
 		[[KELocationManager sharedManager] startMonitoringLocationChanges];
-		for (UIView *subview in[self.templateView subviews]) {
+		for (UIView *subview in [self.templateView subviews]) {
 			if (subview.hidden) {
 				subview.hidden = NO;
 			}
@@ -367,33 +367,33 @@ static NSString * const kKENoData			  = @"N/A";
 
 - (void)reloadData
 {
-    KEWeatherManager *client = [KEWeatherManager sharedClient];
-    CLLocation *location = [[KELocationManager sharedManager] currentLocation];
-    [SVProgressHUD show];
-    
-    __weak KEViewController *weakSelf = self;
-
-    [client getCurrentWeatherObservationForLocation:location completion:^(KEObservation *observation, NSError *error) {
-		if (error) {
-			[SVProgressHUD showErrorWithStatus:[error localizedDescription]];
+	KEWeatherManager *client = [KEWeatherManager sharedClient];
+	CLLocation *location = [[KELocationManager sharedManager] currentLocation];
+	[SVProgressHUD show];
+	
+	__weak KEViewController *weakSelf = self;
+	
+	[client getCurrentWeatherObservationForLocation:location completion: ^(KEObservation *observation, NSError *error) {
+	    if (error) {
+	        [SVProgressHUD showErrorWithStatus:[error localizedDescription]];
 		}
-		else {
-			[weakSelf updateUIWithObservationForCurrentLocation:observation];
-			[SVProgressHUD showSuccessWithStatus:@"Ok!"];
+	    else {
+	        [weakSelf updateUIWithObservationForCurrentLocation:observation];
+	        [SVProgressHUD showSuccessWithStatus:@"Ok!"];
 		}
-    }];
-    
-    [client getForecastObservationForLocation:location completion:^(NSMutableDictionary *days, NSError *error) {
-		if (error) {
-			[SVProgressHUD showErrorWithStatus:[error localizedDescription]];
+	}];
+	
+	[client getForecastObservationForLocation:location completion: ^(NSMutableDictionary *days, NSError *error) {
+	    if (error) {
+	        [SVProgressHUD showErrorWithStatus:[error localizedDescription]];
 		}
-		else {
-			[weakSelf updateTommorowWithForecast:[days valueForKey:@"Tommorow"] withView:self.templateView];
-			[weakSelf updateAfterTomorrowWithForecast:[days valueForKey:@"AfterTommorow"] withView:self.templateView];
-			[weakSelf updateAfterAfterTommorowWithForecast:[days valueForKey:@"AfterAfterTommorow"] withView:self.templateView];
-			[SVProgressHUD showSuccessWithStatus:@"Ok!"];
+	    else {
+	        [weakSelf updateTommorowWithForecast:[days valueForKey:@"Tommorow"] withView:self.templateView];
+	        [weakSelf updateAfterTomorrowWithForecast:[days valueForKey:@"AfterTommorow"] withView:self.templateView];
+	        [weakSelf updateAfterAfterTommorowWithForecast:[days valueForKey:@"AfterAfterTommorow"] withView:self.templateView];
+	        [SVProgressHUD showSuccessWithStatus:@"Ok!"];
 		}
-    }];
+	}];
 }
 
 - (void)reloadDataWithNewLocation:(CLLocation *)newLocation withView:(KEWindowView *)viewToUpdate
@@ -585,11 +585,11 @@ static NSString * const kKENoData			  = @"N/A";
 	                self.entityArrayCoreData = [NSMutableArray arrayWithArray:places];
 				}
 	            else {
-	                NSLog(@"Fail to delete ");
+	                NSLog(@"Fail to delete");
 				}
 			}
 	        else {
-	            NSLog(@"Could not find entiyt in context");
+	            NSLog(@"Could not find entity in context");
 			}
 		}
 	    self.pageControl.numberOfPages = [self.viewWithCoreData count] + 1;

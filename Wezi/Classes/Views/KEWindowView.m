@@ -18,7 +18,7 @@ static CGFloat const kKEPlaceFontSize          = 35.0f;
 static CGFloat const kKECurrentTempFontSize    = 72.0f;
 static CGFloat const kKETimeStampFontSize	   = 15.0f;
 static CGFloat const kKEForecastLabelsFontSize = 18.0f;
-static CGRect const kKERectSad = {100, 100, 300, 300};
+static CGRect  const kKERectSad = {100, 100, 300, 300};
 
 @interface KEWindowView ()
 
