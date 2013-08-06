@@ -8,7 +8,7 @@
 
 #import "KESplashScreenUtil.h"
 
-static NSString * const kKESplashImage = @"6.png";
+static NSString * const kKESplashImage = @"splash.png";
 
 @implementation KESplashScreenUtil
 
@@ -19,7 +19,7 @@ static NSString * const kKESplashImage = @"6.png";
 	dispatch_once(&onceToken, ^{
 	    UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:kKESplashImage]];
 			//TODO: add below constant as in VLK 
-	    imageView.frame = CGRectMake(0, -20, 1024, 768);
+	    imageView.frame = CGRectMake(0.0f, 0.0f, 1024, 748);
 		
 	    [view addSubview:imageView];
 	    [view bringSubviewToFront:imageView];

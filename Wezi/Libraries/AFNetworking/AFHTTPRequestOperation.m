@@ -148,6 +148,9 @@ static void AFSwizzleClassMethodWithClassAndSelectorUsingBlock(Class klass, SEL 
             } else if (![self hasAcceptableContentType]) {
                 // Don't invalidate content type if there is no content
                 if ([self.responseData length] > 0) {
+					
+#warning - post notificatin from here to ADD grumpy face on UI - reason very low internet traffic
+					
                     [userInfo setValue:[NSString stringWithFormat:NSLocalizedStringFromTable(@"Expected content type %@, got %@", @"AFNetworking", nil), [[self class] acceptableContentTypes], [self.response MIMEType]] forKey:NSLocalizedDescriptionKey];
                     self.HTTPError = [[NSError alloc] initWithDomain:AFNetworkingErrorDomain code:NSURLErrorCannotDecodeContentData userInfo:userInfo];
                 }
