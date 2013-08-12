@@ -147,7 +147,6 @@
 		DEB839AD1748D7A0005D211F /* KEDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB839AC1748D7A0005D211F /* KEDataManager.m */; };
 		DEDCDCE11748001100D957EC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDCDCE01748001100D957EC /* CoreData.framework */; };
 		DEDCDCE717480B2C00D957EC /* Wezi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DEDCDCE517480B2C00D957EC /* Wezi.xcdatamodeld */; };
-		DEEFE4CC1795E0B00021B3E7 /* 6.png in Resources */ = {isa = PBXBuildFile; fileRef = DEEFE4CB1795E0B00021B3E7 /* 6.png */; };
 		DEEFE4D11795EB7E0021B3E7 /* KESplashScreenUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEFE4D01795EB7E0021B3E7 /* KESplashScreenUtil.m */; };
 		DEF1A58817986F900043CDA8 /* KESocialProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF1A58717986F900043CDA8 /* KESocialProvider.m */; };
 /* End PBXBuildFile section */
@@ -333,7 +332,6 @@
 		DEB839AC1748D7A0005D211F /* KEDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEDataManager.m; sourceTree = "<group>"; };
 		DEDCDCE01748001100D957EC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		DEDCDCE617480B2C00D957EC /* Wezi.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Wezi.xcdatamodel; sourceTree = "<group>"; };
-		DEEFE4CB1795E0B00021B3E7 /* 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6.png; sourceTree = "<group>"; };
 		DEEFE4CF1795EB7E0021B3E7 /* KESplashScreenUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KESplashScreenUtil.h; sourceTree = "<group>"; };
 		DEEFE4D01795EB7E0021B3E7 /* KESplashScreenUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KESplashScreenUtil.m; sourceTree = "<group>"; };
 		DEF1A58617986F900043CDA8 /* KESocialProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KESocialProvider.h; sourceTree = "<group>"; };
@@ -503,7 +501,6 @@
 		CE7C0F10172FC2CC00E4A8AC /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				DEEFE4CB1795E0B00021B3E7 /* 6.png */,
 				CE7C0F21172FC2CC00E4A8AC /* WeatherAPIKey.h */,
 				CE7C0F19172FC2CC00E4A8AC /* KEAppDelegate.h */,
 				CE7C0F1A172FC2CC00E4A8AC /* KEAppDelegate.m */,
@@ -864,7 +861,6 @@
 				DE286B361781CC3E00F00DA2 /* compas_icon.png in Resources */,
 				DE286B371781CC3E00F00DA2 /* rain_icon.png in Resources */,
 				DE286B381781CC3E00F00DA2 /* wind_icon.png in Resources */,
-				DEEFE4CC1795E0B00021B3E7 /* 6.png in Resources */,
 				DE9D441A1797227D0017A6D5 /* app_icon.png in Resources */,
 				DE9D441B1797227D0017A6D5 /* app_icon1024.png in Resources */,
 				DE9D441C1797227D0017A6D5 /* app_icon512.png in Resources */,
