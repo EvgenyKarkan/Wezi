@@ -18,7 +18,7 @@ static CGFloat const kKEPlaceFontSize          = 35.0f;
 static CGFloat const kKECurrentTempFontSize    = 72.0f;
 static CGFloat const kKETimeStampFontSize	   = 15.0f;
 static CGFloat const kKEForecastLabelsFontSize = 18.0f;
-static CGRect  const kKERectSad = {100, 100, 300, 300};
+static CGRect  const kKERectSad = {0.0f, 0.0f, 920, 580};
 
 @interface KEWindowView ()
 
@@ -84,7 +84,7 @@ static CGRect  const kKERectSad = {100, 100, 300, 300};
 		[label setFont:[KEFonts plutoSansRegularWithSize:kKEForecastLabelsFontSize]];
 	}
 	
-	aView.sadView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sad"]];
+	aView.sadView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sad_sun"]];
 	aView.sadView.frame = kKERectSad;
 	[aView addSubview:aView.sadView];
 	aView.sadView.hidden = YES;
