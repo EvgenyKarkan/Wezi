@@ -11,9 +11,11 @@
 #import "KEReachabilityUtil.h"
 #import "AFHTTPClient.h"
 #import "KEDataManager.h"
+#import "Flurry.h"
 
 static NSString * const kKEToolBar = @"toolbar.png";
 static NSString * const kKERefresh = @"RefreshCurrentLocation";
+static NSString * const kKEFlurryKey = @"28XKXSWTNJN2YTQS2KPX";
 
 
 @implementation KEAppDelegate
@@ -25,6 +27,8 @@ static NSString * const kKERefresh = @"RefreshCurrentLocation";
 									barMetrics:UIBarMetricsDefault];
 	
 	[[KEReachabilityUtil sharedUtil] checkInternetConnectionWithNotification];
+	
+	[Flurry startSession:kKEFlurryKey];
 	
 	return YES;
 }
