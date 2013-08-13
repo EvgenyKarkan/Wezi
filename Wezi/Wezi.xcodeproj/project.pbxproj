@@ -130,8 +130,8 @@
 		DE52E3BF17B964C0009E7E1B /* twitter_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE52E3AC17B964C0009E7E1B /* twitter_pressed@2x.png */; };
 		DE52E3C617BA4D95009E7E1B /* Share_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = DE52E3C417BA4D95009E7E1B /* Share_bg.png */; };
 		DE52E3C717BA4D95009E7E1B /* Share_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE52E3C517BA4D95009E7E1B /* Share_bg@2x.png */; };
-		DE52E46417BA5381009E7E1B /* libFlurry_4.2.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE52E3CC17BA5380009E7E1B /* libFlurry_4.2.3.a */; };
-		DE52E4F517BA5381009E7E1B /* ProjectApiKey.txt in Resources */ = {isa = PBXBuildFile; fileRef = DE52E46317BA5381009E7E1B /* ProjectApiKey.txt */; };
+		DE52E4FC17BA5A40009E7E1B /* libFlurry_4.2.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE52E4FB17BA5A40009E7E1B /* libFlurry_4.2.3.a */; };
+		DE52E4FE17BA5B3F009E7E1B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE52E4FD17BA5B3F009E7E1B /* Security.framework */; };
 		DE953F87174AD64500AC7915 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = DE953F86174AD64500AC7915 /* Place.m */; };
 		DE9D441A1797227D0017A6D5 /* app_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DE9D44161797227D0017A6D5 /* app_icon.png */; };
 		DE9D441B1797227D0017A6D5 /* app_icon1024.png in Resources */ = {isa = PBXBuildFile; fileRef = DE9D44171797227D0017A6D5 /* app_icon1024.png */; };
@@ -308,9 +308,9 @@
 		DE52E3AC17B964C0009E7E1B /* twitter_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter_pressed@2x.png"; sourceTree = "<group>"; };
 		DE52E3C417BA4D95009E7E1B /* Share_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Share_bg.png; sourceTree = "<group>"; };
 		DE52E3C517BA4D95009E7E1B /* Share_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Share_bg@2x.png"; sourceTree = "<group>"; };
-		DE52E3CB17BA5380009E7E1B /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
-		DE52E3CC17BA5380009E7E1B /* libFlurry_4.2.3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_4.2.3.a; sourceTree = "<group>"; };
-		DE52E46317BA5381009E7E1B /* ProjectApiKey.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ProjectApiKey.txt; sourceTree = "<group>"; };
+		DE52E4FA17BA5A40009E7E1B /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
+		DE52E4FB17BA5A40009E7E1B /* libFlurry_4.2.3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_4.2.3.a; sourceTree = "<group>"; };
+		DE52E4FD17BA5B3F009E7E1B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		DE953F85174AD64500AC7915 /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Place.h; sourceTree = "<group>"; };
 		DE953F86174AD64500AC7915 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
 		DE9D44161797227D0017A6D5 /* app_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon.png; sourceTree = "<group>"; };
@@ -348,18 +348,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE52E4FE17BA5B3F009E7E1B /* Security.framework in Frameworks */,
+				CE7C0F0F172FC08600E4A8AC /* SystemConfiguration.framework in Frameworks */,
 				DE9D441F179728700017A6D5 /* Social.framework in Frameworks */,
 				DEB833461780925700DD9500 /* MessageUI.framework in Frameworks */,
 				DEDCDCE11748001100D957EC /* CoreData.framework in Frameworks */,
 				CE7F06BE173A7F5000697A98 /* MapKit.framework in Frameworks */,
-				CE7C0F0F172FC08600E4A8AC /* SystemConfiguration.framework in Frameworks */,
 				CE7C0F0D172FC07600E4A8AC /* MobileCoreServices.framework in Frameworks */,
 				CE7C0F0B172FC05300E4A8AC /* CoreLocation.framework in Frameworks */,
 				CE7C0F09172FC04B00E4A8AC /* QuartzCore.framework in Frameworks */,
 				CE7C0EA3172FBE4B00E4A8AC /* UIKit.framework in Frameworks */,
 				CE7C0EA5172FBE4B00E4A8AC /* Foundation.framework in Frameworks */,
 				CE7C0EA7172FBE4B00E4A8AC /* CoreGraphics.framework in Frameworks */,
-				DE52E46417BA5381009E7E1B /* libFlurry_4.2.3.a in Frameworks */,
+				DE52E4FC17BA5A40009E7E1B /* libFlurry_4.2.3.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +394,7 @@
 		CE7C0E96172FBE4B00E4A8AC = {
 			isa = PBXGroup;
 			children = (
+				DE52E4FD17BA5B3F009E7E1B /* Security.framework */,
 				CE7C0F10172FC2CC00E4A8AC /* Classes */,
 				CE7C0EA8172FBE4B00E4A8AC /* Supporting files */,
 				CE7C0EA1172FBE4B00E4A8AC /* Frameworks */,
@@ -451,7 +453,7 @@
 		CE7C0ED9172FBF1B00E4A8AC /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				DE52E3C817BA5380009E7E1B /* Flurry iPad SDK viPad 4.2.3 */,
+				DE52E4F917BA5A40009E7E1B /* Flurry */,
 				CE7C0EDA172FBF1B00E4A8AC /* AFNetworking */,
 				CE7C0EEE172FBF1B00E4A8AC /* SVProgressHUD */,
 			);
@@ -714,28 +716,11 @@
 			path = splash;
 			sourceTree = "<group>";
 		};
-		DE52E3C817BA5380009E7E1B /* Flurry iPad SDK viPad 4.2.3 */ = {
+		DE52E4F917BA5A40009E7E1B /* Flurry */ = {
 			isa = PBXGroup;
 			children = (
-				DE52E3C917BA5380009E7E1B /* Flurry-iOS-4.2.3 */,
-				DE52E46317BA5381009E7E1B /* ProjectApiKey.txt */,
-			);
-			path = "Flurry iPad SDK viPad 4.2.3";
-			sourceTree = "<group>";
-		};
-		DE52E3C917BA5380009E7E1B /* Flurry-iOS-4.2.3 */ = {
-			isa = PBXGroup;
-			children = (
-				DE52E3CA17BA5380009E7E1B /* Flurry */,
-			);
-			path = "Flurry-iOS-4.2.3";
-			sourceTree = "<group>";
-		};
-		DE52E3CA17BA5380009E7E1B /* Flurry */ = {
-			isa = PBXGroup;
-			children = (
-				DE52E3CB17BA5380009E7E1B /* Flurry.h */,
-				DE52E3CC17BA5380009E7E1B /* libFlurry_4.2.3.a */,
+				DE52E4FA17BA5A40009E7E1B /* Flurry.h */,
+				DE52E4FB17BA5A40009E7E1B /* libFlurry_4.2.3.a */,
 			);
 			path = Flurry;
 			sourceTree = "<group>";
@@ -920,7 +905,6 @@
 				DE52E3BF17B964C0009E7E1B /* twitter_pressed@2x.png in Resources */,
 				DE52E3C617BA4D95009E7E1B /* Share_bg.png in Resources */,
 				DE52E3C717BA4D95009E7E1B /* Share_bg@2x.png in Resources */,
-				DE52E4F517BA5381009E7E1B /* ProjectApiKey.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1062,6 +1046,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Libraries/Flurry iPad SDK viPad 4.2.3/Flurry-iOS-4.2.3/Flurry\"",
 					"\"$(SRCROOT)/Libraries/Flurry iPad SDK viPad 4.2.3/Flurry-iOS-4.2.3/FlurryAds\"",
+					"\"$(SRCROOT)/Libraries/Flurry\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -1079,6 +1064,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Libraries/Flurry iPad SDK viPad 4.2.3/Flurry-iOS-4.2.3/Flurry\"",
 					"\"$(SRCROOT)/Libraries/Flurry iPad SDK viPad 4.2.3/Flurry-iOS-4.2.3/FlurryAds\"",
+					"\"$(SRCROOT)/Libraries/Flurry\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
