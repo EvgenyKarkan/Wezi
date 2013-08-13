@@ -10,6 +10,7 @@
 
 static NSString * const kKESplashImage = @"Default-Landscape~ipad.png";
 
+
 @implementation KESplashScreenUtil
 
 + (void)showSplashScreenOnView:(UIView *)view
@@ -25,7 +26,7 @@ static NSString * const kKESplashImage = @"Default-Landscape~ipad.png";
 	    [view bringSubviewToFront:imageView];
 		
 	    [UIView transitionWithView:view
-	                      duration:4.0f
+	                      duration:6.0f
 	                       options:UIViewAnimationOptionTransitionNone
 	                    animations: ^(void) {
 							imageView.alpha = 0.0f;
