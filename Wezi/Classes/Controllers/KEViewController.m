@@ -65,6 +65,7 @@ static NSString * const kKENoData			  = @"N/A";
 
 @end
 
+
 @implementation KEViewController
 
 - (void)prepareForLoading

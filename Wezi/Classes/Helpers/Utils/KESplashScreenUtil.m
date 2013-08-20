@@ -9,7 +9,7 @@
 #import "KESplashScreenUtil.h"
 
 static NSString * const kKESplashImage = @"Default-Landscape~ipad.png";
-
+static NSString * const kKESpalshEnd = @"SplashEnd";
 
 @implementation KESplashScreenUtil
 
@@ -25,15 +25,15 @@ static NSString * const kKESplashImage = @"Default-Landscape~ipad.png";
 	    [view addSubview:imageView];
 	    [view bringSubviewToFront:imageView];
 		
-	    [UIView transitionWithView:view
-	                      duration:6.0f
-	                       options:UIViewAnimationOptionTransitionNone
-	                    animations: ^(void) {
-							imageView.alpha = 0.0f;
-						}
-	                    completion: ^(BOOL finished) {
-							[imageView removeFromSuperview];
-						}];
+		[UIView animateWithDuration:2.0f
+		                      delay:2.0f
+		                    options:UIViewAnimationOptionCurveEaseInOut
+		                 animations: ^{
+							 imageView.alpha = 0.0f;
+						 }
+						 completion: ^(BOOL finished) {
+							 [imageView removeFromSuperview];
+						 }];
 	});
 }
 
