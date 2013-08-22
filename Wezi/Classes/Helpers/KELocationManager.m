@@ -91,7 +91,7 @@ static id _sharedLocationManager = nil;
 	if (!_locationManager) {
 		_locationManager = [[CLLocationManager alloc] init];
 		[_locationManager setDistanceFilter:kKEFilter];
-		[_locationManager setDesiredAccuracy:kCLLocationAccuracyThreeKilometers];
+		[_locationManager setDesiredAccuracy:kCLLocationAccuracyBestForNavigation];
 	}
 	
 	return _locationManager;
