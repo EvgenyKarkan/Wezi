@@ -34,7 +34,7 @@ static NSUInteger const kKEBugButtonTag         = 103;
 					[object presentViewController:controller animated:YES completion:Nil];
 				}
 				else {
-					[SVProgressHUD showErrorWithStatus:@"Please setup Twitter account"];
+					[SVProgressHUD showErrorWithStatus:@"Please setup Twitter account first"];
 				}
 				break;
 				
@@ -46,7 +46,7 @@ static NSUInteger const kKEBugButtonTag         = 103;
 					[object presentViewController:controller animated:YES completion:Nil];
 				}
 				else {
-					[SVProgressHUD showErrorWithStatus:@"Please setup Facebook account"];
+					[SVProgressHUD showErrorWithStatus:@"Please setup Facebook account first"];
 				}
 				break;
 				
@@ -60,9 +60,9 @@ static NSUInteger const kKEBugButtonTag         = 103;
 				
 			case kKEBugButtonTag: {
 				NSArray *arr = @[@"wezi@gmail.com"];
-				[mail showMailComposerWithSubject:@"E-mail"
+				[mail showMailComposerWithSubject:@"Bug report to Wezi Team"
 				                    withRecepient:arr
-				                  withMessageBody:@"Bug bug bug..."];
+				                  withMessageBody:@"Hi Wezi Team! I "];
 			}
 				break;
 				
@@ -71,7 +71,7 @@ static NSUInteger const kKEBugButtonTag         = 103;
 		}
 	}
 	else {
-		[SVProgressHUD showErrorWithStatus:@"Internet connection is lost, try later."];
+		[SVProgressHUD showErrorWithStatus:@"Internet connection is lost, try later"];
 	}
 }
 

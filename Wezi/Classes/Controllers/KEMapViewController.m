@@ -132,7 +132,7 @@ static NSString * const kKEDoneButtonClick    = @"done_button_click.png";
 			pinView.canShowCallout = YES;
 			pinView.draggable = YES;
 			UIImageView *myImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"app_icon.png"]];
-			myImageView.frame = CGRectMake (0,0,31,31);
+			myImageView.frame = CGRectMake(0.0f, 0.0f, 31.0f, 31.0f);
 			pinView.leftCalloutAccessoryView = myImageView;
 			[pinView setSelected:YES animated:YES];
 		}
@@ -157,8 +157,7 @@ static NSString * const kKEDoneButtonClick    = @"done_button_click.png";
 		NSError *error = nil;
 		NSArray *places = [self.managedObjectContext executeFetchRequest:[self.dataManager requestWithEntityName:@"Place"] error:&error];
 		
-		if ([places count] == 19) {
-			NSLog(@"COUNT IS %i", [places count]);
+		if ([places count] == 2/*19*/) {
 			return;
 		}
 		
@@ -172,11 +171,12 @@ static NSString * const kKEDoneButtonClick    = @"done_button_click.png";
 			
 			if ([[KEReachabilityUtil sharedUtil] checkInternetConnection]) {
 				if ([self.managedObjectContext save:&savingError]) {
-					NSLog(@"Successfully saving the context");
+						//NSLog(@"Successfully saving the context");
 					self.isContextActivated = YES;
 				}
 				else {
-					NSLog(@"Failed to save the context. Error = %@", [savingError localizedDescription]);
+						//NSLog(@"Failed to save the context. Error = %@", [savingError localizedDescription]);
+					[SVProgressHUD showErrorWithStatus:@"Failed to save the context"];
 				}
 			}
 			else {
@@ -184,7 +184,7 @@ static NSString * const kKEDoneButtonClick    = @"done_button_click.png";
 			}
 		}
 		else {
-			NSLog(@"Failed to create new place");
+			[SVProgressHUD showErrorWithStatus:@"Failed to create new place"];
 		}
 	}
 	else {
@@ -219,21 +219,21 @@ static NSString * const kKEDoneButtonClick    = @"done_button_click.png";
 
 - (void)addCustomButtons
 {
-    UIImage *backgroundImage = [UIImage imageNamed:kKENavBar];
-    [self.mapNavBar setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
-    
-    UIButton *done = [[UIButton alloc] initWithFrame:CGRectMake(475, 5, 60, 30)];
-    [done setImage:[UIImage imageNamed:kKEDoneButton] forState:UIControlStateNormal];
-    [done setImage:[UIImage imageNamed:kKEDoneButtonClick] forState:UIControlStateHighlighted];
-    [done addTarget:self action:@selector(chooseLocation:) forControlEvents:UIControlEventTouchUpInside];
-    
-    UIButton *plus = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 60, 30)];
-    [plus setImage:[UIImage imageNamed:kKEPlusButton] forState:UIControlStateNormal];
-    [plus setImage:[UIImage imageNamed:kKEPlusButtonClick] forState:UIControlStateHighlighted];
-    [plus addTarget:self action:@selector(dropPinPressed:) forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.mapNavBar addSubview:done];
-    [self.mapNavBar addSubview:plus];
+	UIImage *backgroundImage = [UIImage imageNamed:kKENavBar];
+	[self.mapNavBar setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
+	
+	UIButton *done = [[UIButton alloc] initWithFrame:CGRectMake(475.0f, 5.0f, 60.0f, 30.0f)];
+	[done setImage:[UIImage imageNamed:kKEDoneButton] forState:UIControlStateNormal];
+	[done setImage:[UIImage imageNamed:kKEDoneButtonClick] forState:UIControlStateHighlighted];
+	[done addTarget:self action:@selector(chooseLocation:) forControlEvents:UIControlEventTouchUpInside];
+	
+	UIButton *plus = [[UIButton alloc] initWithFrame:CGRectMake(5.0f, 5.0f, 60.0f, 30.0f)];
+	[plus setImage:[UIImage imageNamed:kKEPlusButton] forState:UIControlStateNormal];
+	[plus setImage:[UIImage imageNamed:kKEPlusButtonClick] forState:UIControlStateHighlighted];
+	[plus addTarget:self action:@selector(dropPinPressed:) forControlEvents:UIControlEventTouchUpInside];
+	
+	[self.mapNavBar addSubview:done];
+	[self.mapNavBar addSubview:plus];
 }
 
 @end

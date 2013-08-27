@@ -265,7 +265,7 @@ static NSString * const kKENoData			  = @"N/A";
 		viewtoUpdate.place.text = [NSString subStringBeforeFirstCommaInString:observation.location[@"full"]];
 		viewtoUpdate.windAbbreviation.text = observation.windShortAbbreviation;
 		
-		if ([observation.windSpeed floatValue] < 0) {
+		if ([observation.windSpeed floatValue] < 0.0f) {
 			viewtoUpdate.wind.text = kKENoData;
 		}
 		else {
@@ -279,7 +279,7 @@ static NSString * const kKENoData			  = @"N/A";
 			viewtoUpdate.humidity.text = observation.relativeHumidity;
 		}
 		
-		if (([observation.pressure floatValue] < 0) || ([observation.pressure floatValue] > 50)) {
+		if (([observation.pressure floatValue] < 0.0f) || ([observation.pressure floatValue] > 50.0f)) {
 			viewtoUpdate.pressure.text = kKENoData;
 		}
 		else {
@@ -318,7 +318,6 @@ static NSString * const kKENoData			  = @"N/A";
 - (void)handleCurrentLocationPermission:(NSNotification *)notification
 {	
 	if ([[notification.userInfo objectForKey:@"Access"] isEqualToString:@"CurrentLocation"]) {
-		NSLog(@" YES CURR");
 		for (UIView *subview in [self.templateView subviews]) {
 			if (subview.hidden) {
 				subview.hidden = NO;
@@ -331,7 +330,6 @@ static NSString * const kKENoData			  = @"N/A";
 			//TODO: hide GRUMPY and show all UI elements
 	}
 	else {
-		NSLog(@" NO CURR");
 		for (UIView *subview in [self.templateView subviews]) {
 			if (!subview.hidden) {
 				subview.hidden = YES;
@@ -347,7 +345,7 @@ static NSString * const kKENoData			  = @"N/A";
 
 - (void)refreshCurrentLocation
 {
-	NSLog(@"%d %s",__LINE__, __PRETTY_FUNCTION__);
+//	NSLog(@"%d %s",__LINE__, __PRETTY_FUNCTION__);
 	
 	if ([KELocationManager sharedManager].currentLocation) {
 		[[KELocationManager sharedManager] startMonitoringLocationChanges];
@@ -360,7 +358,6 @@ static NSString * const kKENoData			  = @"N/A";
 	}
 	else {
 		[[KELocationManager sharedManager] startMonitoringLocationChanges];
-		NSLog(@" FAIL");
 	}
 }
 
@@ -482,7 +479,7 @@ static NSString * const kKENoData			  = @"N/A";
 		}
 	}
 	else {
-		[SVProgressHUD showErrorWithStatus:@"Internet dropped. Refresh unavailable."];
+		[SVProgressHUD showErrorWithStatus:@"Internet dropped. Refresh unavailable"];
 	}
 }
 
@@ -495,11 +492,11 @@ static NSString * const kKENoData			  = @"N/A";
     [[self.currentPopoverSegue popoverController] dismissPopoverAnimated: YES];
     self.isShownMapPopover = NO;
     
-    if (self.pageControl.numberOfPages == 20) {
-        [SVProgressHUD showErrorWithStatus:@"Oops.. Sorry Maximum 20 cities"];
+    if (self.pageControl.numberOfPages == 3/*20*/) {
+        [SVProgressHUD showErrorWithStatus:@"Sorry maximum 3 cities for this version of Wezi"];
         return;
     }
-    if (self.pageControl.numberOfPages < 20) {
+    if (self.pageControl.numberOfPages < 3/*20*/) {
         self.pageControl.numberOfPages += 1;
     }    
     if (self.pageControl.numberOfPages == 2) {
@@ -581,16 +578,16 @@ static NSString * const kKENoData			  = @"N/A";
 				
 	            NSError *savingError = nil;
 	            if ([self.managedObjectContext save:&savingError]) {
-	                NSLog(@"Successfully delete object");
-	                NSLog(@"Array of entity is %@", [places description]);
+//	                NSLog(@"Successfully delete object");
+//	                NSLog(@"Array of entity is %@", [places description]);
 	                self.entityArrayCoreData = [NSMutableArray arrayWithArray:places];
 				}
 	            else {
-	                NSLog(@"Fail to delete");
+					[SVProgressHUD showErrorWithStatus:@"Fail to delete"];
 				}
 			}
 	        else {
-	            NSLog(@"Could not find entity in context");
+				[SVProgressHUD showErrorWithStatus:@"Could not find entity in context"];
 			}
 		}
 	    self.pageControl.numberOfPages = [self.viewWithCoreData count] + 1;
