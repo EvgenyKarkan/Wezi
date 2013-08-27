@@ -226,7 +226,7 @@ static NSString * const kKENoData			  = @"N/A";
 		self.templateView.place.text = [NSString subStringBeforeFirstCommaInString:observation.location[@"full"]];
 		self.templateView.windAbbreviation.text = observation.windShortAbbreviation;
 		
-		if ([observation.windSpeed floatValue] < 0) {
+		if ([observation.windSpeed floatValue] < 0.0f) {
 			self.templateView.wind.text = kKENoData;
 		}
 		else {
@@ -240,7 +240,7 @@ static NSString * const kKENoData			  = @"N/A";
 			self.templateView.humidity.text = observation.relativeHumidity;
 		}
 		
-		if (([observation.pressure floatValue] < 0) || ([observation.pressure floatValue] > 50)) {
+		if (([observation.pressure floatValue] < 0.0f) || ([observation.pressure floatValue] > 50.0f)) {
 			self.templateView.pressure.text = kKENoData;
 		}
 		else {
@@ -319,7 +319,7 @@ static NSString * const kKENoData			  = @"N/A";
 #pragma mark - Current location permissions handling
 
 - (void)handleCurrentLocationPermission:(NSNotification *)notification
-{	
+{
 	if ([[notification.userInfo objectForKey:@"Access"] isEqualToString:@"CurrentLocation"]) {
 		for (UIView *subview in [self.templateView subviews]) {
 			if (subview.hidden) {
@@ -329,8 +329,7 @@ static NSString * const kKENoData			  = @"N/A";
 		if (!self.templateView.sadView.hidden) {
 			self.templateView.sadView.hidden = YES;
 		}
-			[self refreshCurrentLocation];
-			//TODO: hide GRUMPY and show all UI elements
+		[self refreshCurrentLocation];
 	}
 	else {
 		for (UIView *subview in [self.templateView subviews]) {
@@ -342,7 +341,6 @@ static NSString * const kKENoData			  = @"N/A";
 		if (self.templateView.sadView.hidden) {
 			self.templateView.sadView.hidden = NO;
 		}
-			//TODO: add GRUMPY CurrentLocation Disabled and hide all UI elements
 	}
 }
 
