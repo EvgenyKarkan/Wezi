@@ -48,11 +48,11 @@ static NSString * const kKEMailComposer = @"MFMailComposeViewController";
             }
         }
         else {
-                //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"mailto:krish@krish.codeworth.com"]];
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"mailto:wezi@gmail.com"]];
         }
     }
     else {
-        //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"mailto:krish@krish.codeworth.com"]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"mailto:wezi@gmail.com"]];
     }
 }
 

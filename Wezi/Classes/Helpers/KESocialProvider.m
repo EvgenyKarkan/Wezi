@@ -22,6 +22,7 @@ static NSUInteger const kKEBugButtonTag         = 103;
 
 + (void)provideSocialMediaWithSender:(id)sender withObject:(id)object
 {
+#warning - Provide link to App Store with Wezi
 	if ([[KEReachabilityUtil sharedUtil] checkInternetConnection]) {
 		KEMailProvider *mail = [[KEMailProvider alloc] initWithDelegate:object];
 		
@@ -51,10 +52,9 @@ static NSUInteger const kKEBugButtonTag         = 103;
 				break;
 				
 			case kKEMailButtonTag: {
-				NSArray *arr = @[@"wezi@gmail.com"];
-				[mail showMailComposerWithSubject:@"E-mail"
-				                    withRecepient:arr
-				                  withMessageBody:@"Hello world"];
+				[mail showMailComposerWithSubject:@"Wezi app"
+				                    withRecepient:nil
+				                  withMessageBody:@"Hi! Look what i've found - nice weather app"];
 			}
 				break;
 				
@@ -62,7 +62,7 @@ static NSUInteger const kKEBugButtonTag         = 103;
 				NSArray *arr = @[@"wezi@gmail.com"];
 				[mail showMailComposerWithSubject:@"Bug report to Wezi Team"
 				                    withRecepient:arr
-				                  withMessageBody:@"Hi Wezi Team! I "];
+				                  withMessageBody:@"Hi Wezi Team!"];
 			}
 				break;
 				
