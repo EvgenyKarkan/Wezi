@@ -99,7 +99,10 @@ static NSString * const kKENoData			  = @"N/A";
 	[self subscribeToReachabilityNotifications];
 	[self subscribeToCurrentLocationTrackingWithPemissionsNotification];
 	
-	[KESplashScreenUtil showSplashScreenOnView:self.view];
+	static dispatch_once_t splash;
+	dispatch_once(&splash, ^{
+	    [KESplashScreenUtil showSplashScreenOnView:self.view];
+	});
 	
 	if (![[KEReachabilityUtil sharedUtil] checkInternetConnection]) {
 		self.internetDroppedFirstly = YES;

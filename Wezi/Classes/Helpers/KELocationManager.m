@@ -56,7 +56,7 @@ static id _sharedLocationManager = nil;
 
 - (void)startMonitoringLocationChanges
 {
-	NSLog(@"%d %s",__LINE__, __PRETTY_FUNCTION__);
+		//NSLog(@"%d %s",__LINE__, __PRETTY_FUNCTION__);
     if ([CLLocationManager locationServicesEnabled]) {
         if (!self.isMonitoringLocation) {
             self.isMonitoringLocation = YES;
