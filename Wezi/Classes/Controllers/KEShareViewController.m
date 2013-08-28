@@ -38,6 +38,8 @@
 
 - (void)createSubViews
 {
+#warning MAgic
+	
 	self.twitter = [UIButton buttonWithType:UIButtonTypeCustom];
 	[self.twitter setImage:[UIImage imageNamed:@"twitter"] forState:UIControlStateNormal];
 	[self.twitter setImage:[UIImage imageNamed:@"twitter_pressed"] forState:UIControlStateHighlighted];

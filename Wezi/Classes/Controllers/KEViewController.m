@@ -181,6 +181,7 @@ static NSString * const kKENoData			  = @"N/A";
 
 - (void)addCustomButtons
 {
+#warning Magic
 		//TODO: add pixel perfect stuff below !!!
 	UIButton *refresh = [[UIButton alloc] initWithFrame:CGRectMake(959, 5, 60, 30)];
 	[refresh setImage:[UIImage imageNamed:kKERefreshButton] forState:UIControlStateNormal];
@@ -385,14 +386,14 @@ static NSString * const kKENoData			  = @"N/A";
 	        [SVProgressHUD showErrorWithStatus:[error localizedDescription]];
 		}
 	    else {
-	        [weakSelf updateTommorowWithForecast:[days valueForKey:@"Tommorow"] withView:self.templateView];
+	        [weakSelf updateTommorowWithForecast:[days valueForKey:@"Tommorow"] withView:self.templateView]; 
 	        [weakSelf updateAfterTomorrowWithForecast:[days valueForKey:@"AfterTommorow"] withView:self.templateView];
 	        [weakSelf updateAfterAfterTommorowWithForecast:[days valueForKey:@"AfterAfterTommorow"] withView:self.templateView];
 	        [SVProgressHUD showSuccessWithStatus:@"Ok!"];
 		}
 	}];
 }
-
+#warning MAgic strings
 - (void)reloadDataWithNewLocation:(CLLocation *)newLocation withView:(KEWindowView *)viewToUpdate
 {
 	KEWeatherManager *client = [KEWeatherManager sharedClient];
@@ -670,7 +671,7 @@ static NSString * const kKENoData			  = @"N/A";
 }
 
 #pragma mark - Subscribing to reachability notifications and handling them on UI
-
+#warning Magic strings
 - (void)subscribeToReachabilityNotifications
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onYesInternet) name:@"YesInternet" object:nil];
