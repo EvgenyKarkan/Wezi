@@ -9,6 +9,7 @@
 #import "KEMailProvider.h"
 
 static NSString * const kKEMailComposer = @"MFMailComposeViewController";
+static NSString * const kKEMailTo = @"mailto:wezi@gmail.com";
 
 @interface KEMailProvider ()
 
@@ -48,11 +49,11 @@ static NSString * const kKEMailComposer = @"MFMailComposeViewController";
             }
         }
         else {
-                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"mailto:wezi@gmail.com"]];
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kKEMailTo]];
         }
     }
     else {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"mailto:wezi@gmail.com"]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kKEMailTo]];
     }
 }
 

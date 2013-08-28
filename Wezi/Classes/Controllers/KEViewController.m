@@ -345,9 +345,7 @@ static NSString * const kKENoData			  = @"N/A";
 }
 
 - (void)refreshCurrentLocation
-{
-//	NSLog(@"%d %s",__LINE__, __PRETTY_FUNCTION__);
-	
+{	
 	if ([KELocationManager sharedManager].currentLocation) {
 		[[KELocationManager sharedManager] startMonitoringLocationChanges];
 		for (UIView *subview in [self.templateView subviews]) {

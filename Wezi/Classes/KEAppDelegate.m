@@ -33,24 +33,9 @@ static NSString * const kKEFlurryKey = @"28XKXSWTNJN2YTQS2KPX";
 	return YES;
 }
 
-- (void)applicationWillResignActive:(UIApplication *)application
-{
- 
-}
-
-- (void)applicationDidEnterBackground:(UIApplication *)application
-{
-
-}
-
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
 	[[NSNotificationCenter defaultCenter] postNotificationName:kKERefresh object:self];
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
-	
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

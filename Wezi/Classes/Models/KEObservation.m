@@ -19,25 +19,14 @@
         
         keyMapping = @{
                        @"display_location"             : @"location",
-                       @"observation_location"         : @"observationLocation",
-                       @"image"                        : @"weatherUndergroundImageInfo",
                        @"observation_time"             : @"timeString",
-                       @"observation_time_rfc822"      : @"timeStringRFC822",
                        @"weather"                      : @"weatherDescription",
-//                       @"wind_string"                  : @"windDescription",
                        @"wind_dir"                     : @"windShortAbbreviation",
                        @"wind_kph"                     : @"windSpeed",
-                       //@"temperature_string"           : @"temperatureDescription",
-                       @"feelslike_string"             : @"feelsLikeTemperatureDescription",
                        @"relative_humidity"            : @"relativeHumidity",
                        @"pressure_in"                  : @"pressure",
-                       @"dewpoint_string"              : @"dewpointDescription",
-                       @"icon"                         : @"iconName",
                        @"icon_url"                     : @"iconUrl",
-                       @"temp_f"                       : @"temperatureF",
-                       @"temp_c"                       : @"temperatureC",
-                       @"feelslike_f"                  : @"feelsLikeTemperatureF",
-                       @"feelslike_c"                  : @"feelsLikeTemperatureC"
+                       @"temp_c"                       : @"temperatureC"
                        };
     });
     
@@ -61,6 +50,5 @@
 	
 	return observation;
 }
-
 
 @end

@@ -8,6 +8,9 @@
 
 #import "KEScreenShotUtil.h"
 
+static CGRect const kKECropRect = {101.0f, 49.0f, 585.0f, 925.0f};
+
+
 @implementation KEScreenShotUtil
 
 + (UIImage *)makeScreenShot
@@ -30,7 +33,7 @@
 
 + (UIImage *)cropImage
 {
-	CGRect croprect = CGRectMake(101.0f, 49.0f, 585.0f, 925.0f);
+	CGRect croprect = kKECropRect;
 	CGImageRef imageRef = CGImageCreateWithImageInRect([[self makeScreenShot] CGImage], croprect);
 	UIImage *croppedImage = [UIImage imageWithCGImage:imageRef];
 	CGImageRef foo = [croppedImage CGImage];

@@ -10,6 +10,7 @@
 
 static NSString * const kKESplashImage = @"Default-Landscape~ipad.png";
 static NSString * const kKESpalshEnd = @"SplashEnd";
+static CGRect const kKEImageViewRect = {0.0f, 0.0f, 1024.0f, 748.0f};
 
 @implementation KESplashScreenUtil
 
@@ -19,8 +20,7 @@ static NSString * const kKESpalshEnd = @"SplashEnd";
 	
 	dispatch_once(&onceToken, ^{
 	    UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:kKESplashImage]];
-			//TODO: add below constant as in VLK 
-	    imageView.frame = CGRectMake(0.0f, 0.0f, 1024.0f, 748.0f);
+	    imageView.frame = kKEImageViewRect;
 		
 	    [view addSubview:imageView];
 	    [view bringSubviewToFront:imageView];
