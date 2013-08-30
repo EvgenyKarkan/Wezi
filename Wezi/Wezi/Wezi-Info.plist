@@ -14,8 +14,14 @@
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
-				<string>app_icon.png</string>
-				<string>app_icon@2x.png</string>
+				<string>Icon-72.png</string>
+				<string>Icon-72@2x.png</string>
+				<string>Icon-Small.png</string>
+				<string>Icon-Small@2x.png</string>
+				<string>Icon-Small-50.png</string>
+				<string>Icon-Small-50@2x.png</string>
+				<string>ITunesArtwork</string>
+				<string>ITunesArtwork@2x</string>
 			</array>
 			<key>UIPrerenderedIcon</key>
 			<true/>
@@ -35,10 +41,8 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
-	<key>UIInterfaceOrientation</key>
-	<string>UIInterfaceOrientationLandscapeLeft</string>
 	<key>LSApplicationCategoryType</key>
-	<string></string>
+	<string>public.app-category.weather</string>
 	<key>LSRequiresIPhoneOS</key>
 	<false/>
 	<key>UIAppFonts</key>
@@ -49,6 +53,8 @@
 		<string>PlutoSansCondBold.otf</string>
 		<string>PlutoSansRegular.otf</string>
 	</array>
+	<key>UIInterfaceOrientation</key>
+	<string>UIInterfaceOrientationLandscapeLeft</string>
 	<key>UIMainStoryboardFile</key>
 	<string>MainStoryboard</string>
 	<key>UIRequiredDeviceCapabilities</key>
