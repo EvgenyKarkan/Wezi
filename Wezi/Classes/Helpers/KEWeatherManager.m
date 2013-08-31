@@ -14,6 +14,7 @@
 
 static NSString * const kWeatherUndergroundAPIBaseURLString = @"http://api.wunderground.com/api/";
 
+
 @implementation KEWeatherManager
 
 #pragma mark - Singleton stuff
@@ -60,10 +61,10 @@ static id _sharedClient = nil;
 
 #pragma mark - Public API
 
-- (void)getCurrentWeatherObservationForLocation:(CLLocation *)location completion:(void(^)(KEObservation *observation, NSError *error))completion
+- (void)getCurrentWeatherObservationForLocation:(CLLocation *)location completion:(void(^)(KEObservation *observation, NSMutableDictionary *days, NSError *error))completion
 {
     if (location) {
-        NSString *getPath = [NSString stringWithFormat:@"conditions/q/%.6f,%.6f.json", location.coordinate.latitude,
+        NSString *getPath = [NSString stringWithFormat:@"geolookup/conditions/forecast/q/%.6f,%.6f.json", location.coordinate.latitude,
                                                                                        location.coordinate.longitude];
         KEWeatherManager *client = [KEWeatherManager sharedClient];
         
@@ -71,11 +72,18 @@ static id _sharedClient = nil;
              parameters:nil
                 success:^(AFHTTPRequestOperation *operation, id responseObject) {
                     KEObservation *observation = [KEObservation observationWithDictionary:responseObject[@"current_observation"]];
-						//NSLog(@"Reaponce %@", responseObject);
-                    completion(observation, nil);
+					NSLog(@"Reaponce %@", responseObject);
+					
+					NSMutableDictionary *threeDays = [[NSMutableDictionary alloc]initWithObjectsAndKeys:
+                                                      [self fillTommorowWithResponse:responseObject], @"Tommorow",
+                                                      [self fillAfterTommorowWithResponse:responseObject], @"AfterTommorow",
+                                                      [self fillAfterAfterTommorowWithResponse:responseObject], @"AfterAfterTommorow", nil];
+                    
+                    self.days = threeDays;
+                    completion(observation, self.days, nil);
                 }
                 failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                    completion(nil, error);
+                    completion(nil, nil, error);
                     if (error) {
                         [SVProgressHUD showErrorWithStatus:[error localizedDescription]];
                     }
@@ -83,42 +91,12 @@ static id _sharedClient = nil;
          ];
     }
     else {
-        completion(nil, [NSError errorWithDomain:@"Invalid Location as argument" code: - 1 userInfo:nil]);
+        completion(nil, nil, [NSError errorWithDomain:@"Invalid Location as argument" code: - 1 userInfo:nil]);
         [SVProgressHUD showErrorWithStatus:@"Error: invalid location"];
     }
 }
-#pragma mark - I Add it
 
-- (void)getForecastObservationForLocation:(CLLocation *)location completion:(void(^)(NSMutableDictionary *days, NSError *error))completion
-{
-    if(location) {
-        NSString *getPath = [NSString stringWithFormat:@"forecast/lang:EN/q/%.6f,%.6f.json", location.coordinate.latitude,
-                                                                                              location.coordinate.longitude];
-        KEWeatherManager *client = [KEWeatherManager sharedClient];
-        
-        [client getPath:getPath
-             parameters:nil
-                success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                        //NSLog(@" Response   %@", responseObject  );
-                    NSMutableDictionary *threeDays = [[NSMutableDictionary alloc]initWithObjectsAndKeys:
-                                                      [self fillTommorowWithResponse:responseObject], @"Tommorow",
-                                                      [self fillAfterTommorowWithResponse:responseObject], @"AfterTommorow",
-                                                      [self fillAfterAfterTommorowWithResponse:responseObject], @"AfterAfterTommorow", nil];
-                    
-                    self.days = threeDays;
-                    completion(self.days, nil);
-                }
-                failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                    completion(nil, error);
-                    if (error) {
-                        [SVProgressHUD showErrorWithStatus:[error localizedDescription]];
-                    }
-                }
-        ];
-    }
-}
-
-#pragma mark - init forecast models 
+#pragma mark - Populate forecast models 
 
 - (KETommorowForecast *)fillTommorowWithResponse:(id)response
 {

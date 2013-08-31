@@ -17,8 +17,6 @@
 
 + (instancetype)sharedClient;
 - (void)getCurrentWeatherObservationForLocation:(CLLocation *)location
-                                     completion:(void(^)(KEObservation *observation, NSError *error))completion;
-- (void)getForecastObservationForLocation:(CLLocation *)location
-                               completion:(void(^)(NSMutableDictionary *threeDays, NSError *error))completion;
+									 completion:(void(^)(KEObservation *observation, NSMutableDictionary *days, NSError *error))completion;
 
 @end

@@ -132,7 +132,7 @@ static NSString * const kKEDoneButtonClick    = @"done_button_click.png";
 			pinView.canShowCallout = YES;
 			pinView.draggable = YES;
 #warning MAgic
-			UIImageView *myImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"app_icon.png"]];
+			UIImageView *myImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Icon-Small.png"]];
 			myImageView.frame = CGRectMake(0.0f, 0.0f, 31.0f, 31.0f);
 			pinView.leftCalloutAccessoryView = myImageView;
 			[pinView setSelected:YES animated:YES];
