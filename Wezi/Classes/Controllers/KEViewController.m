@@ -62,6 +62,7 @@ static NSString * const kKENoData			  = @"N/A";
 @property (nonatomic, assign)       BOOL isShownMapPopover;
 @property (nonatomic, assign)       BOOL pageControlBeingUsed;
 @property (nonatomic, assign)       BOOL internetDroppedFirstly;
+@property (nonatomic, assign)       BOOL internetDropped;
 
 @end
 
@@ -85,7 +86,7 @@ static NSString * const kKENoData			  = @"N/A";
 		CLLocation *location = [[CLLocation alloc]initWithLatitude:[[places objectAtIndex:i - 1] latitude]
 		                                                 longitude:[[places objectAtIndex:i - 1] longitude]];
 		
-		[self reloadDataWithNewLocation:location withView:aView];
+		[self reloadDataWithNewLocation:location withView:aView withHUD:NO];
 	}
 	self.pageControl.numberOfPages = [places count] + 1;
 	self.scrollView.contentSize = CGSizeMake(kKESelfWidth * ([places count] + 1), self.scrollView.contentSize.height);
@@ -96,6 +97,7 @@ static NSString * const kKENoData			  = @"N/A";
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
+	
 	[self subscribeToReachabilityNotifications];
 	[self subscribeToCurrentLocationTrackingWithPemissionsNotification];
 	
@@ -110,14 +112,14 @@ static NSString * const kKENoData			  = @"N/A";
 		self.pageControl.numberOfPages = 1;
 	}
 	else {
-		[self subscribeToReachabilityNotifications];
+			//[self subscribeToReachabilityNotifications];
 		
 		__weak KEViewController *weakSelf = self;
 		[[NSNotificationCenter defaultCenter] addObserverForName:kKELocationDidChangeNotificationKey
 		                                                  object:nil
 		                                                   queue:[NSOperationQueue mainQueue]
 		                                              usingBlock: ^(NSNotification *note) {
-														  [weakSelf reloadData];
+														  [weakSelf reloadDataWithHUD:NO];
 													  }];
 		
 		[[KELocationManager sharedManager] startMonitoringLocationChanges];
@@ -126,6 +128,10 @@ static NSString * const kKENoData			  = @"N/A";
 		self.dataManager = [KEDataManager sharedDataManager];
 		self.managedObjectContext = [self.dataManager managedObjectContextFromDataManager];
 		[self prepareForLoading];
+		
+		NSUserDefaults *myDefaults = [NSUserDefaults standardUserDefaults];
+		[myDefaults setBool:YES forKey:@"ViewDidLoad"];
+		[myDefaults synchronize];
 	}
 }
 
@@ -387,12 +393,15 @@ static NSString * const kKENoData			  = @"N/A";
 
 #pragma mark - Requests stuff
 
-- (void)reloadData
+- (void)reloadDataWithHUD:(BOOL)isHUD
 {
 	KEWeatherManager *client = [KEWeatherManager sharedClient];
 	CLLocation *location = [[KELocationManager sharedManager] currentLocation];
-	[SVProgressHUD show];
 	
+	if (isHUD) {
+			[SVProgressHUD show];
+	}
+
 	__weak KEViewController *weakSelf = self;
 	
 	[client getCurrentWeatherObservationForLocation:location completion: ^(KEObservation *observation, NSMutableDictionary *days, NSError *error) {
@@ -401,16 +410,22 @@ static NSString * const kKENoData			  = @"N/A";
 		}
 	    else {
 	        [weakSelf updateUIWithObservationForCurrentLocation:observation forecastDays:days];
-	        [SVProgressHUD showSuccessWithStatus:@"Ok!"];
+			
+			if (isHUD) {
+				[SVProgressHUD showSuccessWithStatus:@"Ok!"];
+			}
 		}
 	}];
 }
 
 #warning MAgic strings
-- (void)reloadDataWithNewLocation:(CLLocation *)newLocation withView:(KEWindowView *)viewToUpdate
+- (void)reloadDataWithNewLocation:(CLLocation *)newLocation withView:(KEWindowView *)viewToUpdate withHUD:(BOOL)isHUD
 {
 	KEWeatherManager *client = [KEWeatherManager sharedClient];
-	[SVProgressHUD show];
+	
+	if (isHUD) {
+		[SVProgressHUD show];
+	}
 	
 	__weak KEViewController *weakSelf = self;
 	
@@ -424,7 +439,9 @@ static NSString * const kKENoData			  = @"N/A";
 	        [weakSelf updateAfterTomorrowWithForecast:[days valueForKey:@"AfterTommorow"] withView:viewToUpdate];
 	        [weakSelf updateAfterAfterTommorowWithForecast:[days valueForKey:@"AfterAfterTommorow"] withView:viewToUpdate];
 			
-	        [SVProgressHUD showSuccessWithStatus:@"Ok!"];
+	        if (isHUD) {
+				[SVProgressHUD showSuccessWithStatus:@"Ok!"];
+			}
 		}
 	}];	
 }
@@ -472,15 +489,17 @@ static NSString * const kKENoData			  = @"N/A";
 			
 			if (self.pageControl.currentPage == [self.entityArrayCoreData count]) {
 				[self reloadDataWithNewLocation:self.location
-				                       withView:[self.viewWithCoreData objectAtIndex:self.pageControl.currentPage - 1]];
+				                       withView:[self.viewWithCoreData objectAtIndex:self.pageControl.currentPage - 1]
+										withHUD:YES];
 			}
 			else {
 				[self reloadDataWithNewLocation:self.location
-				                       withView:[self.viewWithCoreData objectAtIndex:self.pageControl.currentPage - 1]];
+				                       withView:[self.viewWithCoreData objectAtIndex:self.pageControl.currentPage - 1]
+										withHUD:YES];
 			}
 		}
 		else {
-			[self reloadData];
+			[self reloadDataWithHUD:YES];
 		}
 	}
 	else {
@@ -497,11 +516,11 @@ static NSString * const kKENoData			  = @"N/A";
     [[self.currentPopoverSegue popoverController] dismissPopoverAnimated: YES];
     self.isShownMapPopover = NO;
     
-    if (self.pageControl.numberOfPages == 3/*20*/) {
+    if (self.pageControl.numberOfPages == 7/*20*/) {
         [SVProgressHUD showErrorWithStatus:@"Sorry maximum 3 cities for this version of Wezi"];
         return;
     }
-    if (self.pageControl.numberOfPages < 3/*20*/) {
+    if (self.pageControl.numberOfPages < 7/*20*/) {
         self.pageControl.numberOfPages += 1;
     }    
     if (self.pageControl.numberOfPages == 2) {
@@ -516,7 +535,7 @@ static NSString * const kKENoData			  = @"N/A";
      
         dispatch_queue_t dummyQueue = dispatch_queue_create("dummyQueue", nil);
         dispatch_async(dummyQueue, ^{
-            [self reloadDataWithNewLocation:location withView:foo];
+            [self reloadDataWithNewLocation:location withView:foo withHUD:NO];
 		});
         
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1.0f * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
@@ -539,7 +558,7 @@ static NSString * const kKENoData			  = @"N/A";
         
         dispatch_queue_t dummyQueue = dispatch_queue_create("dummyQueue", nil);
         dispatch_async(dummyQueue, ^{
-            [self reloadDataWithNewLocation:location withView:bar];
+            [self reloadDataWithNewLocation:location withView:bar withHUD:NO];
         });
         
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1.0f * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
@@ -685,7 +704,9 @@ static NSString * const kKENoData			  = @"N/A";
 
 - (void)onYesInternet
 {
-	[SVProgressHUD showSuccessWithStatus:@"Internet active"];
+	if (self.internetDropped) {
+		[SVProgressHUD showSuccessWithStatus:@"Internet active"];
+	}
 	
 	if (self.internetDroppedFirstly) {
 		self.internetDroppedFirstly = NO;
@@ -696,6 +717,7 @@ static NSString * const kKENoData			  = @"N/A";
 - (void)onNoInternet
 {
     [SVProgressHUD showErrorWithStatus:@"Internet dropped"];
+	self.internetDropped = YES;
 }
 
 #pragma mark - Subscribing to location permissions notifications

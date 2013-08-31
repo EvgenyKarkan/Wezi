@@ -67,13 +67,12 @@ static id _sharedClient = nil;
         NSString *getPath = [NSString stringWithFormat:@"geolookup/conditions/forecast/q/%.6f,%.6f.json", location.coordinate.latitude,
                                                                                        location.coordinate.longitude];
         KEWeatherManager *client = [KEWeatherManager sharedClient];
-        
+        NSLog(@"%d %s",__LINE__, __PRETTY_FUNCTION__);
         [client getPath:getPath
              parameters:nil
                 success:^(AFHTTPRequestOperation *operation, id responseObject) {
                     KEObservation *observation = [KEObservation observationWithDictionary:responseObject[@"current_observation"]];
-					NSLog(@"Reaponce %@", responseObject);
-					
+						//NSLog(@"Reaponce %@", responseObject);
 					NSMutableDictionary *threeDays = [[NSMutableDictionary alloc]initWithObjectsAndKeys:
                                                       [self fillTommorowWithResponse:responseObject], @"Tommorow",
                                                       [self fillAfterTommorowWithResponse:responseObject], @"AfterTommorow",
@@ -92,7 +91,7 @@ static id _sharedClient = nil;
     }
     else {
         completion(nil, nil, [NSError errorWithDomain:@"Invalid Location as argument" code: - 1 userInfo:nil]);
-        [SVProgressHUD showErrorWithStatus:@"Error: invalid location"];
+        [SVProgressHUD showErrorWithStatus:@"Error occured: invalid location"];
     }
 }
 
