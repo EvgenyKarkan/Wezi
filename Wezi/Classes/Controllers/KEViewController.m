@@ -48,7 +48,7 @@ static NSString * const kKEMapPopoverSegue    = @"segPop";
 static NSString * const kKESharePopoverSegue  = @"shareSegue";
 static NSString * const kKENoData			  = @"N/A";
 
-@interface KEViewController () <UIScrollViewDelegate, KECoordinateFillProtocol, KEPopoverHideProtocol, KESocialProvideProtocol>
+@interface KEViewController () <UIScrollViewDelegate, KECoordinateFillProtocol, KESocialProvideProtocol>
 
 @property (nonatomic, strong)       KEWindowView *templateView;
 @property (nonatomic, strong)       KEObservation *geo;
@@ -458,7 +458,6 @@ static NSString * const kKENoData			  = @"N/A";
 	if ([[segue identifier] isEqualToString:kKESharePopoverSegue]) {
 		self.currentPopoverSegue = (UIStoryboardPopoverSegue *)segue;
 		self.shareViewController = [segue destinationViewController];
-		[self.shareViewController setFirstDelegate:self];
 		[self.shareViewController setSecondDelegate:self];
 	}
 }

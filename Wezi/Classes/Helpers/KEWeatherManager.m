@@ -47,6 +47,7 @@ static id _sharedClient = nil;
 {
     return self;
 }
+
 #pragma mark - Initialization
 
 - (id)initWithBaseURL:(NSURL *)url
@@ -67,7 +68,6 @@ static id _sharedClient = nil;
         NSString *getPath = [NSString stringWithFormat:@"geolookup/conditions/forecast/q/%.6f,%.6f.json", location.coordinate.latitude,
                                                                                        location.coordinate.longitude];
         KEWeatherManager *client = [KEWeatherManager sharedClient];
-        NSLog(@"%d %s",__LINE__, __PRETTY_FUNCTION__);
         [client getPath:getPath
              parameters:nil
                 success:^(AFHTTPRequestOperation *operation, id responseObject) {

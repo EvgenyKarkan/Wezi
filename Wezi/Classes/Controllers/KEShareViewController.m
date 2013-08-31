@@ -70,7 +70,6 @@
 
 - (void)buttonPressed:(id)sender
 {
-	[self.firstDelegate hideSharePopover];
 	[self.secondDelegate provideSocialMediaWithSender:sender];
 }
 

@@ -8,12 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol KEPopoverHideProtocol <NSObject>
-
-- (void)hideSharePopover;
-
-@end
-
 
 @protocol KESocialProvideProtocol <NSObject>
 
@@ -24,7 +18,6 @@
 
 @interface KEShareViewController : UIViewController
 
-@property (nonatomic, unsafe_unretained)    id <KEPopoverHideProtocol> firstDelegate;
 @property (nonatomic, unsafe_unretained)	id <KESocialProvideProtocol> secondDelegate;
 
 @end
