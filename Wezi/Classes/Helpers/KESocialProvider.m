@@ -60,9 +60,9 @@ static NSUInteger const kKEBugButtonTag         = 103;
 				
 			case kKEBugButtonTag: {
 				NSArray *arr = @[@"wezi@gmail.com"];
-				[mail showMailComposerWithSubject:@"Bug report to Wezi Team"
+				[mail showMailComposerWithSubject:@"Bug report to Wezi team"
 				                    withRecepient:arr
-				                  withMessageBody:@"Hi Wezi Team!"];
+				                  withMessageBody:@"Hi Wezi team!"];
 			}
 				break;
 				

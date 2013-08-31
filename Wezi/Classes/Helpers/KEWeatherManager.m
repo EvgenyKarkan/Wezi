@@ -15,7 +15,7 @@
 static NSString * const kWeatherUndergroundAPIBaseURLString = @"http://api.wunderground.com/api/";
 
 
-@implementation KEWeatherManager
+@implementation KEWeatherManager;
 
 #pragma mark - Singleton stuff
 

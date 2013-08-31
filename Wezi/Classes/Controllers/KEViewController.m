@@ -67,7 +67,7 @@ static NSString * const kKENoData			  = @"N/A";
 @end
 
 
-@implementation KEViewController
+@implementation KEViewController;
 
 - (void)prepareForLoading
 {
@@ -111,9 +111,7 @@ static NSString * const kKENoData			  = @"N/A";
 		[self configurateUIElements];
 		self.pageControl.numberOfPages = 1;
 	}
-	else {
-			//[self subscribeToReachabilityNotifications];
-		
+	else {		
 		__weak KEViewController *weakSelf = self;
 		[[NSNotificationCenter defaultCenter] addObserverForName:kKELocationDidChangeNotificationKey
 		                                                  object:nil
@@ -324,8 +322,6 @@ static NSString * const kKENoData			  = @"N/A";
 	}
 }
 
-#pragma -  i add it
-
 - (void)updateTommorowWithForecast:(KETommorowForecast *)forecast withView:(KEWindowView *)viewToUpdate
 {
 	[viewToUpdate.tomorrowView setImage:[KEUIImageFactoryUtil imageDependsOnURL:forecast.iconURL]];
@@ -410,7 +406,6 @@ static NSString * const kKENoData			  = @"N/A";
 		}
 	    else {
 	        [weakSelf updateUIWithObservationForCurrentLocation:observation forecastDays:days];
-			
 			if (isHUD) {
 				[SVProgressHUD showSuccessWithStatus:@"Ok!"];
 			}
@@ -438,7 +433,6 @@ static NSString * const kKENoData			  = @"N/A";
 			[weakSelf updateTommorowWithForecast:[days valueForKey:@"Tommorow"] withView:viewToUpdate];
 	        [weakSelf updateAfterTomorrowWithForecast:[days valueForKey:@"AfterTommorow"] withView:viewToUpdate];
 	        [weakSelf updateAfterAfterTommorowWithForecast:[days valueForKey:@"AfterAfterTommorow"] withView:viewToUpdate];
-			
 	        if (isHUD) {
 				[SVProgressHUD showSuccessWithStatus:@"Ok!"];
 			}
@@ -622,11 +616,6 @@ static NSString * const kKENoData			  = @"N/A";
 - (void)showSharePopover
 {	
     [self performSegueWithIdentifier:kKESharePopoverSegue sender:self];
-}
-
-- (void)hideSharePopover
-{
-	[[self.currentPopoverSegue popoverController] dismissPopoverAnimated:YES];
 }
 
 #pragma mark - ScrollView delegate stuff
