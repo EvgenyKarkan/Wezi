@@ -11,7 +11,6 @@
 @interface KEShareViewController ()
 
 @property (nonatomic, strong) UIStoryboardPopoverSegue *currentPopoverSegue;
-
 @property (nonatomic, strong) UIButton *twitter;
 @property (nonatomic, strong) UIButton *facebook;
 @property (nonatomic, strong) UIButton *email;
@@ -21,7 +20,9 @@
 @end
 
 
-@implementation KEShareViewController
+@implementation KEShareViewController;
+
+#pragma mark - Life cycle
 
 - (void)viewDidLoad
 {
@@ -34,7 +35,7 @@
 	[super didReceiveMemoryWarning];
 }
 
-#pragma mark - Add buttons
+#pragma mark - UI stuff
 
 - (void)createSubViews
 {

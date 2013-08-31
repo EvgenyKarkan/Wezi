@@ -7,7 +7,7 @@
 //
 #import <UIKit/UIKit.h>
 
-static NSString *const kKEWindowViewNibName = @ "WindowView";
+static NSString * const kKEWindowViewNibName = @"WindowView";
 
 @interface KEWindowView : UIView
 

@@ -26,6 +26,7 @@ static CGRect  const kKERectSad = {0.0f, 0.0f, 920, 580};
 
 @end
 
+
 @implementation KEWindowView
 
 + (UIView *)loadViewFromNibWithName:(NSString *)nibName

@@ -21,7 +21,7 @@ static NSString * const kKENoInternet = @"NoInternet";
 @end
 
 
-@implementation KEReachabilityUtil
+@implementation KEReachabilityUtil;
 
 #pragma mark - Singleton stuff
 

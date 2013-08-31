@@ -20,7 +20,7 @@ static NSUInteger const kKEFilter = 1000;
 
 @end
 
-@implementation KELocationManager
+@implementation KELocationManager;
 
 #pragma mark - Singleton stuff
 

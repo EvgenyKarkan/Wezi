@@ -8,7 +8,7 @@
 
 #import "KEObservation.h"
 
-@implementation KEObservation
+@implementation KEObservation;
 
 + (NSDictionary *)keyMapping
 {

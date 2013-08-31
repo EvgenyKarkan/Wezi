@@ -478,7 +478,7 @@ static NSString * const kKENoData			  = @"N/A";
 			self.entityArrayCoreData = [NSMutableArray arrayWithArray:places];
 			
 			self.location = [[CLLocation alloc]initWithLatitude:[[self.entityArrayCoreData objectAtIndex:self.pageControl.currentPage - 1] latitude]
-			                                     longitude:[[self.entityArrayCoreData objectAtIndex:self.pageControl.currentPage - 1] longitude]];
+													  longitude:[[self.entityArrayCoreData objectAtIndex:self.pageControl.currentPage - 1] longitude]];
 			
 			if (self.pageControl.currentPage == [self.entityArrayCoreData count]) {
 				[self reloadDataWithNewLocation:self.location

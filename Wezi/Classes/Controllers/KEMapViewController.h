@@ -10,7 +10,6 @@
 
 @protocol KECoordinateFillProtocol <NSObject>
 
-@required
 - (void)addPressedWithCoordinate:(CLLocation *)location;
 
 @end

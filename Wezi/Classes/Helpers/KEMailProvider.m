@@ -19,7 +19,7 @@ static NSString * const kKEMailTo = @"mailto:wezi@gmail.com";
 @end
 
 
-@implementation KEMailProvider
+@implementation KEMailProvider;
 
 - (instancetype)initWithDelegate:(id)delegate
 {

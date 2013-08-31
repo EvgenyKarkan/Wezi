@@ -20,7 +20,7 @@ static CGRect const kKEImageViewRect = {0.0f, 0.0f, 1024.0f, 748.0f};
 	    UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:kKESplashImage]];
 	    imageView.frame = kKEImageViewRect;
 	    [view addSubview:imageView];
-			//[view bringSubviewToFront:imageView];
+		
 		[UIView animateWithDuration:2.0f
 		                      delay:2.0f
 		                    options:UIViewAnimationOptionCurveEaseInOut
@@ -28,7 +28,9 @@ static CGRect const kKEImageViewRect = {0.0f, 0.0f, 1024.0f, 748.0f};
 							 imageView.alpha = 0.0f;
 						 }
 						 completion: ^(BOOL finished) {
-							 [imageView removeFromSuperview];
+							 if (finished) {
+								 [imageView removeFromSuperview];
+							 }
 						 }];
 	});
 }
