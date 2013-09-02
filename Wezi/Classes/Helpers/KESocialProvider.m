@@ -55,6 +55,10 @@ static NSUInteger const kKEBugButtonTag         = 103;
 				[mail showMailComposerWithSubject:@"Wezi app"
 									withRecepient:nil
 								  withMessageBody:@"Hi! Check out @Wezi app"];
+				
+				UIImage *coolImage = [KEScreenShotUtil cropImage];
+				NSData *myData = UIImageJPEGRepresentation(coolImage, 3.0f);
+				[mail.mailForm addAttachmentData:myData mimeType:@"image/png" fileName:@"Wezi.png"];
 			}
 				break;
 				

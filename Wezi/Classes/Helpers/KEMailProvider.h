@@ -10,6 +10,8 @@
 
 @interface KEMailProvider : NSObject 
 
+@property (nonatomic, strong) MFMailComposeViewController *mailForm;
+
 - (instancetype)initWithDelegate:(id)delegate;
 - (void)showMailComposerWithSubject:(NSString *)subject
 					  withRecepient:(NSArray *)recepient

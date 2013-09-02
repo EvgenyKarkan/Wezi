@@ -13,7 +13,7 @@ static NSString * const kKEMailTo = @"mailto:wezi@gmail.com";
 
 @interface KEMailProvider ()
 
-@property (nonatomic, strong)			 MFMailComposeViewController *mailForm;
+
 @property (nonatomic, unsafe_unretained) id delegateObject;
 
 @end
