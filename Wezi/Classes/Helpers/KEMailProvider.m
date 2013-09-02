@@ -13,7 +13,6 @@ static NSString * const kKEMailTo = @"mailto:wezi@gmail.com";
 
 @interface KEMailProvider ()
 
-
 @property (nonatomic, unsafe_unretained) id delegateObject;
 
 @end

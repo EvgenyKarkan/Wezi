@@ -43,5 +43,4 @@ static NSString * const kKEFlurryKey = @"28XKXSWTNJN2YTQS2KPX";
     [[KEDataManager sharedDataManager] saveContext];
 }
 
-
 @end
