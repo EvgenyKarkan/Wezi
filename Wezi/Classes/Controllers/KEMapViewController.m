@@ -14,7 +14,6 @@
 #import "KEDataManager.h"
 #import "KEReachabilityUtil.h"
 #import "SVProgressHUD.h"
-
 #import "KELocationManager.h"
 
 static NSString * const kKENavBar             = @"navbar.png";
@@ -134,6 +133,8 @@ static NSString * const kKEDoneButtonClick    = @"done_button_click.png";
 #warning MAgic
 			UIImageView *myImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Icon-Small.png"]];
 			myImageView.frame = CGRectMake(0.0f, 0.0f, 31.0f, 31.0f);
+			myImageView.layer.cornerRadius = 5.0f;
+			myImageView.layer.masksToBounds = YES;
 			pinView.leftCalloutAccessoryView = myImageView;
 			[pinView setSelected:YES animated:YES];
 		}
