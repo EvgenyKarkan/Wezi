@@ -147,10 +147,10 @@ static id _sharedLocationManager = nil;
 	}
 	
 	if (status) {
-		NSDictionary *dictionary = @{@"Access": value};
+		NSDictionary *dictionary = @{ @"Access": value };
 		[[NSNotificationCenter defaultCenter] postNotificationName:@"HandlePermissions"
-															object:self
-														  userInfo:dictionary];
+		                                                    object:self
+		                                                  userInfo:dictionary];
 	}
 }
 

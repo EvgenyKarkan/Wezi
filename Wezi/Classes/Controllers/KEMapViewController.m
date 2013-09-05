@@ -159,7 +159,7 @@ static NSString * const kKEDoneButtonClick    = @"done_button_click.png";
 		NSError *error = nil;
 		NSArray *places = [self.managedObjectContext executeFetchRequest:[self.dataManager requestWithEntityName:@"Place"] error:&error];
 		
-		if ([places count] == 6/*19*/) {
+		if ([places count] == 4/*19*/) {
 			return;
 		}
 		

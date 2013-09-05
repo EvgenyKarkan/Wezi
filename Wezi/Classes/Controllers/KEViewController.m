@@ -126,10 +126,6 @@ static NSString * const kKENoData			  = @"N/A";
 		self.dataManager = [KEDataManager sharedDataManager];
 		self.managedObjectContext = [self.dataManager managedObjectContextFromDataManager];
 		[self prepareForLoading];
-		
-		NSUserDefaults *myDefaults = [NSUserDefaults standardUserDefaults];
-		[myDefaults setBool:YES forKey:@"ViewDidLoad"];
-		[myDefaults synchronize];
 	}
 }
 
@@ -465,8 +461,8 @@ static NSString * const kKENoData			  = @"N/A";
 
 - (IBAction)goToMap:(id)sender
 {
-	if (self.pageControl.numberOfPages == 7/*20*/) {
-        [SVProgressHUD showErrorWithStatus:@"Sorry maximum 3 cities for this version of Wezi"];
+	if (self.pageControl.numberOfPages == 5/*20*/) {
+        [SVProgressHUD showErrorWithStatus:@"Maximum 5 cities for this version of Wezi"];
         return;
     }
 	
@@ -515,11 +511,7 @@ static NSString * const kKENoData			  = @"N/A";
     [[self.currentPopoverSegue popoverController] dismissPopoverAnimated: YES];
     self.isShownMapPopover = NO;
     
-//    if (self.pageControl.numberOfPages == 7/*20*/) {
-//        [SVProgressHUD showErrorWithStatus:@"Sorry maximum 3 cities for this version of Wezi"];
-//        return;
-//    }
-    if (self.pageControl.numberOfPages < 7/*20*/) {
+    if (self.pageControl.numberOfPages < 5/*20*/) {
         self.pageControl.numberOfPages += 1;
     }    
     if (self.pageControl.numberOfPages == 2) {
@@ -601,8 +593,6 @@ static NSString * const kKENoData			  = @"N/A";
 				
 	            NSError *savingError = nil;
 	            if ([self.managedObjectContext save:&savingError]) {
-//	                NSLog(@"Successfully delete object");
-//	                NSLog(@"Array of entity is %@", [places description]);
 	                self.entityArrayCoreData = [NSMutableArray arrayWithArray:places];
 				}
 	            else {

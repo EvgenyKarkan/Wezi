@@ -141,7 +141,7 @@
 		DE52E4FC17BA5A40009E7E1B /* libFlurry_4.2.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE52E4FB17BA5A40009E7E1B /* libFlurry_4.2.3.a */; };
 		DE52E4FE17BA5B3F009E7E1B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE52E4FD17BA5B3F009E7E1B /* Security.framework */; };
 		DE953F87174AD64500AC7915 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = DE953F86174AD64500AC7915 /* Place.m */; };
-		DE9D441F179728700017A6D5 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9D441E179728700017A6D5 /* Social.framework */; };
+		DE9D441F179728700017A6D5 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9D441E179728700017A6D5 /* Social.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		DEA2694217A308A000C6ED12 /* KEScreenShotUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA2694117A308A000C6ED12 /* KEScreenShotUtil.m */; };
 		DEA43AD2177B90C6009878AC /* KEBackingImageUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA43AD1177B90C6009878AC /* KEBackingImageUtil.m */; };
 		DEAFD03E176A5FF200BA3785 /* KEReachabilityUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DEAFD03D176A5FF200BA3785 /* KEReachabilityUtil.m */; };
@@ -151,7 +151,7 @@
 		DEB833461780925700DD9500 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB833451780925700DD9500 /* MessageUI.framework */; };
 		DEB833491780A1E300DD9500 /* KEMailProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB833481780A1E300DD9500 /* KEMailProvider.m */; };
 		DEB839AD1748D7A0005D211F /* KEDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB839AC1748D7A0005D211F /* KEDataManager.m */; };
-		DED37E8617C6276C00200F09 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED37E8517C6276C00200F09 /* AdSupport.framework */; };
+		DED37E8617C6276C00200F09 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED37E8517C6276C00200F09 /* AdSupport.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		DEDCDCE11748001100D957EC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDCDCE01748001100D957EC /* CoreData.framework */; };
 		DEDCDCE717480B2C00D957EC /* Wezi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DEDCDCE517480B2C00D957EC /* Wezi.xcdatamodeld */; };
 		DEEFE4D11795EB7E0021B3E7 /* KESplashScreenUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEFE4D01795EB7E0021B3E7 /* KESplashScreenUtil.m */; };
