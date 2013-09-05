@@ -1007,8 +1007,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Evgeny  Karkan (5GB3M5GF9S)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Evgeny  Karkan (5GB3M5GF9S)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yevgeniy Karkan (3YZNAVUC8R)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yevgeniy Karkan (3YZNAVUC8R)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1023,8 +1023,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "0C7F340B-95EA-4E83-8F33-69DC12CC6A7B";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0C7F340B-95EA-4E83-8F33-69DC12CC6A7B";
+				PROVISIONING_PROFILE = "8071B842-2E07-4D16-BD71-E06D67E565DE";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8071B842-2E07-4D16-BD71-E06D67E565DE";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -1042,8 +1042,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Evgeny  Karkan (5GB3M5GF9S)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Evgeny  Karkan (5GB3M5GF9S)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yevgeniy Karkan (3YZNAVUC8R)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Yevgeniy Karkan (7VW32GE5L3)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -1051,8 +1051,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "0C7F340B-95EA-4E83-8F33-69DC12CC6A7B";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0C7F340B-95EA-4E83-8F33-69DC12CC6A7B";
+				PROVISIONING_PROFILE = "8071B842-2E07-4D16-BD71-E06D67E565DE";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9C49AA28-1459-45ED-84BB-6F288635FEFA";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
@@ -1062,10 +1062,13 @@
 		CE7C0EC3172FBE4C00E4A8AC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yevgeniy Karkan (3YZNAVUC8R)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yevgeniy Karkan (3YZNAVUC8R)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wezi/Wezi-Prefix.pch";
 				INFOPLIST_FILE = "Wezi/Wezi-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Libraries/Flurry iPad SDK viPad 4.2.3/Flurry-iOS-4.2.3/Flurry\"",
@@ -1073,6 +1076,8 @@
 					"\"$(SRCROOT)/Libraries/Flurry\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8071B842-2E07-4D16-BD71-E06D67E565DE";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8071B842-2E07-4D16-BD71-E06D67E565DE";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1080,10 +1085,13 @@
 		CE7C0EC4172FBE4C00E4A8AC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Yevgeniy Karkan (7VW32GE5L3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Yevgeniy Karkan (7VW32GE5L3)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wezi/Wezi-Prefix.pch";
 				INFOPLIST_FILE = "Wezi/Wezi-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Libraries/Flurry iPad SDK viPad 4.2.3/Flurry-iOS-4.2.3/Flurry\"",
@@ -1091,6 +1099,8 @@
 					"\"$(SRCROOT)/Libraries/Flurry\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "9C49AA28-1459-45ED-84BB-6F288635FEFA";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9C49AA28-1459-45ED-84BB-6F288635FEFA";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

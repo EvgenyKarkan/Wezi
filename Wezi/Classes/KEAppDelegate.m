@@ -29,7 +29,7 @@ static NSString * const kKEFlurryKey = @"28XKXSWTNJN2YTQS2KPX";
 	[[KEReachabilityUtil sharedUtil] checkInternetConnectionWithNotification];
 	
 	[Flurry startSession:kKEFlurryKey];
-	
+
 	return YES;
 }
 
