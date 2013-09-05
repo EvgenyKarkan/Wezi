@@ -8,6 +8,7 @@
 
 #import "KEDataManager.h"
 #import "KEAppDelegate.h"
+#import "SVProgressHUD.h"
 
 @implementation KEDataManager
 
@@ -68,7 +69,7 @@ static id _sharedInstance = nil;
 	NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
 	if (managedObjectContext != nil) {
 		if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
-				//NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+			[SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"Unresolved error %@, %@", error, [error userInfo]]];
 			abort();
 		}
 	}
@@ -111,7 +112,7 @@ static id _sharedInstance = nil;
 	NSError *error = nil;
 	_persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
 	if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
-			//NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+		[SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"Unresolved error %@, %@", error, [error userInfo]]];
 		abort();
 	}
 	

@@ -173,12 +173,10 @@ static NSString * const kKEDoneButtonClick    = @"done_button_click.png";
 			
 			if ([[KEReachabilityUtil sharedUtil] checkInternetConnection]) {
 				if ([self.managedObjectContext save:&savingError]) {
-						//NSLog(@"Successfully saving the context");
 					self.isContextActivated = YES;
 				}
 				else {
-						//NSLog(@"Failed to save the context. Error = %@", [savingError localizedDescription]);
-					[SVProgressHUD showErrorWithStatus:@"Failed to save the context"];
+					[SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"Failed to save the context. Error = %@", [savingError localizedDescription]]];
 				}
 			}
 			else {
