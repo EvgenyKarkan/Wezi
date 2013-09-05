@@ -209,7 +209,7 @@ static NSString * const kKEDoneButtonClick    = @"done_button_click.png";
 		self.myAnnotation = [[KECityAnnotation alloc] init];
 		self.myAnnotation.coordinate = self.map.centerCoordinate;
 		self.myAnnotation.title = @"Chosen location";
-		self.myAnnotation.subtitle = @"Drag to change location";
+		self.myAnnotation.subtitle = @"Drag pin to change location";
 		[self.map addAnnotation:self.myAnnotation];
 		[self.map selectAnnotation:self.myAnnotation animated:YES];
 	}

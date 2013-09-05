@@ -465,6 +465,11 @@ static NSString * const kKENoData			  = @"N/A";
 
 - (IBAction)goToMap:(id)sender
 {
+	if (self.pageControl.numberOfPages == 7/*20*/) {
+        [SVProgressHUD showErrorWithStatus:@"Sorry maximum 3 cities for this version of Wezi"];
+        return;
+    }
+	
     [self performSegueWithIdentifier:kKEMapPopoverSegue sender:self];
 }
 
@@ -510,10 +515,10 @@ static NSString * const kKENoData			  = @"N/A";
     [[self.currentPopoverSegue popoverController] dismissPopoverAnimated: YES];
     self.isShownMapPopover = NO;
     
-    if (self.pageControl.numberOfPages == 7/*20*/) {
-        [SVProgressHUD showErrorWithStatus:@"Sorry maximum 3 cities for this version of Wezi"];
-        return;
-    }
+//    if (self.pageControl.numberOfPages == 7/*20*/) {
+//        [SVProgressHUD showErrorWithStatus:@"Sorry maximum 3 cities for this version of Wezi"];
+//        return;
+//    }
     if (self.pageControl.numberOfPages < 7/*20*/) {
         self.pageControl.numberOfPages += 1;
     }    
@@ -572,7 +577,7 @@ static NSString * const kKENoData			  = @"N/A";
 		[[self.viewWithCoreData objectAtIndex:self.pageControl.currentPage - 1] removeFromSuperview];
 	}
 	else if (self.pageControl.currentPage == 0) {
-		[SVProgressHUD showErrorWithStatus:@"You can not delete the first page"];
+		[SVProgressHUD showErrorWithStatus:@"You can not delete the current location place"];
 	}
 	[UIView animateWithDuration:0.3f animations: ^{
 	    for (UIView * dummyObject in self.viewWithCoreData) {
