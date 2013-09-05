@@ -140,6 +140,7 @@
 		DE52E3C717BA4D95009E7E1B /* Share_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE52E3C517BA4D95009E7E1B /* Share_bg@2x.png */; };
 		DE52E4FC17BA5A40009E7E1B /* libFlurry_4.2.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE52E4FB17BA5A40009E7E1B /* libFlurry_4.2.3.a */; };
 		DE52E4FE17BA5B3F009E7E1B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE52E4FD17BA5B3F009E7E1B /* Security.framework */; };
+		DE6F191F17D9135C0013DA88 /* ForecastIcons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE6F191E17D9135B0013DA88 /* ForecastIcons.bundle */; };
 		DE953F87174AD64500AC7915 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = DE953F86174AD64500AC7915 /* Place.m */; };
 		DE9D441F179728700017A6D5 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9D441E179728700017A6D5 /* Social.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		DEA2694217A308A000C6ED12 /* KEScreenShotUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA2694117A308A000C6ED12 /* KEScreenShotUtil.m */; };
@@ -324,6 +325,7 @@
 		DE52E4FA17BA5A40009E7E1B /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
 		DE52E4FB17BA5A40009E7E1B /* libFlurry_4.2.3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_4.2.3.a; sourceTree = "<group>"; };
 		DE52E4FD17BA5B3F009E7E1B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		DE6F191E17D9135B0013DA88 /* ForecastIcons.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ForecastIcons.bundle; sourceTree = "<group>"; };
 		DE953F85174AD64500AC7915 /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Place.h; sourceTree = "<group>"; };
 		DE953F86174AD64500AC7915 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
 		DE9D441E179728700017A6D5 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -600,6 +602,7 @@
 		CE7C0F28172FC36500E4A8AC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				DE6F191E17D9135B0013DA88 /* ForecastIcons.bundle */,
 				DE52E39917B964C0009E7E1B /* sad face */,
 				DE52E39C17B964C0009E7E1B /* share buttons */,
 				DE52E3AD17B964C0009E7E1B /* splash */,
@@ -925,6 +928,7 @@
 				DE320E4917D155AD00A11649 /* Icon-Small-50@2x.png in Resources */,
 				DE320E4F17D15BFF00A11649 /* Icon-72.png in Resources */,
 				DE320E5117D15C1000A11649 /* Icon-72@2x.png in Resources */,
+				DE6F191F17D9135C0013DA88 /* ForecastIcons.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

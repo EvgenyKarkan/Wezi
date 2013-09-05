@@ -10,6 +10,6 @@
 
 @interface KEUIImageFactoryUtil : NSObject
 
-+ (UIImage *)imageDependsOnURL:(NSString *)URLString;
++ (UIImage *)imageDependsOnURL:(NSString *)URLString bundleName:(NSString *)bundleName;
 
 @end

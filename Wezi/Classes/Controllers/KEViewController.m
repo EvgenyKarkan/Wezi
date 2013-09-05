@@ -47,6 +47,8 @@ static NSString * const kKEWeziLogo			  = @"wezi_logo.png";
 static NSString * const kKEMapPopoverSegue    = @"segPop";
 static NSString * const kKESharePopoverSegue  = @"shareSegue";
 static NSString * const kKENoData			  = @"N/A";
+static NSString * const kKEIconsBundle        = @"Icons.bundle";
+static NSString * const kKEForecastBundle     = @"ForecastIcons.bundle";
 
 @interface KEViewController () <UIScrollViewDelegate, KECoordinateFillProtocol, KEPopoverHideProtocol, KESocialProvideProtocol>
 
@@ -213,7 +215,7 @@ static NSString * const kKENoData			  = @"N/A";
 - (void)updateUIWithObservationForCurrentLocation:(KEObservation *)observation forecastDays:(NSMutableDictionary *)days
 {
 	if (observation) {
-		[self.templateView.conditionIcon setImage:[KEUIImageFactoryUtil imageDependsOnURL:observation.iconUrl]];
+		[self.templateView.conditionIcon setImage:[KEUIImageFactoryUtil imageDependsOnURL:observation.iconUrl bundleName:kKEIconsBundle]];
 		
 		if (([observation.temperatureC floatValue] < -kKELegitimateValue) || ([observation.temperatureC floatValue] > kKELegitimateValue)) {
 			self.templateView.currentTemperature.text = kKENoData;
@@ -250,14 +252,15 @@ static NSString * const kKENoData			  = @"N/A";
 		
 		self.templateView.timeStamp.text = observation.timeString;
 		
-		[self.templateView.tomorrowView setImage:[KEUIImageFactoryUtil imageDependsOnURL:((KETommorowForecast *)[days valueForKey:@"Tommorow"]).iconURL]];
+		[self.templateView.tomorrowView setImage:[KEUIImageFactoryUtil imageDependsOnURL:((KETommorowForecast *)[days valueForKey:@"Tommorow"]).iconURL
+																			  bundleName:kKEIconsBundle]];
 		self.templateView.tommorowTemp.text = [NSString stringWithFormat:@"%@ %@", ((KETommorowForecast *)[days valueForKey:@"Tommorow"]).highTemperature, @"°C"];
 		self.templateView.dateT.text = [NSString stringWithFormat:@"%@, %@ of %@",
 										 ((KETommorowForecast *)[days valueForKey:@"Tommorow"]).weekDay,
 										 [((KETommorowForecast *)[days valueForKey:@"Tommorow"]).dayNumber stringValue],
 										 ((KETommorowForecast *)[days valueForKey:@"Tommorow"]).month];
 		
-		[self.templateView.afterTommorowView setImage:[KEUIImageFactoryUtil imageDependsOnURL:((KEAfterTommorowForecast *)[days valueForKey:@"AfterTommorow"]).iconURL]];
+		[self.templateView.afterTommorowView setImage:[KEUIImageFactoryUtil imageDependsOnURL:((KEAfterTommorowForecast *)[days valueForKey:@"AfterTommorow"]).iconURL																		   bundleName:kKEIconsBundle]];
 		self.templateView.afterTommorowTemp.text = [NSString stringWithFormat:@"%@ %@",
 													((KEAfterTommorowForecast *)[days valueForKey:@"AfterTommorow"]).highTemperature, @"°C"];
 		self.templateView.dateAT.text = [NSString stringWithFormat:@"%@, %@ of %@",
@@ -266,7 +269,8 @@ static NSString * const kKENoData			  = @"N/A";
 										  ((KEAfterTommorowForecast *)[days valueForKey:@"AfterTommorow"]).month];
 		
 		[self.templateView.afterAfterTommorowView setImage:[KEUIImageFactoryUtil imageDependsOnURL:
-															((KEAfterAfterTommorowForecast *)[days valueForKey:@"AfterAfterTommorow"]).iconURL]];
+															((KEAfterAfterTommorowForecast *)[days valueForKey:@"AfterAfterTommorow"]).iconURL
+																						bundleName:kKEIconsBundle]];
 		self.templateView.afrerAfterTommorowTemp.text = [NSString stringWithFormat:@"%@ %@",
 														 ((KEAfterAfterTommorowForecast *)[days valueForKey:@"AfterAfterTommorow"]).highTemperature, @"°C"];
 		self.templateView.dateAAT.text = [NSString stringWithFormat:@"%@, %@ of %@",
@@ -279,7 +283,7 @@ static NSString * const kKENoData			  = @"N/A";
 - (void)updateUIForView:(KEWindowView *)viewtoUpdate observation:(KEObservation *)observation
 {
 	if (observation) {
-		[viewtoUpdate.conditionIcon setImage:[KEUIImageFactoryUtil imageDependsOnURL:observation.iconUrl]];
+		[viewtoUpdate.conditionIcon setImage:[KEUIImageFactoryUtil imageDependsOnURL:observation.iconUrl bundleName:kKEIconsBundle]];
 		
 		if (([observation.temperatureC floatValue] < -kKELegitimateValue) || ([observation.temperatureC floatValue] > kKELegitimateValue)) {
 			viewtoUpdate.currentTemperature.text = kKENoData;
@@ -320,21 +324,21 @@ static NSString * const kKENoData			  = @"N/A";
 
 - (void)updateTommorowWithForecast:(KETommorowForecast *)forecast withView:(KEWindowView *)viewToUpdate
 {
-	[viewToUpdate.tomorrowView setImage:[KEUIImageFactoryUtil imageDependsOnURL:forecast.iconURL]];
+	[viewToUpdate.tomorrowView setImage:[KEUIImageFactoryUtil imageDependsOnURL:forecast.iconURL bundleName:kKEForecastBundle]];
 	viewToUpdate.tommorowTemp.text = [NSString stringWithFormat:@"%@ %@", forecast.highTemperature, @"°C"];
 	viewToUpdate.dateT.text = [NSString stringWithFormat:@"%@, %@ of %@", forecast.weekDay, [forecast.dayNumber stringValue], forecast.month];
 }
 
 - (void)updateAfterTomorrowWithForecast:(KEAfterTommorowForecast *)forecast withView:(KEWindowView *)viewToUpdate
 {
-    [viewToUpdate.afterTommorowView setImage:[KEUIImageFactoryUtil imageDependsOnURL:forecast.iconURL]];
+    [viewToUpdate.afterTommorowView setImage:[KEUIImageFactoryUtil imageDependsOnURL:forecast.iconURL bundleName:kKEForecastBundle]];
     viewToUpdate.afterTommorowTemp.text = [NSString stringWithFormat:@"%@ %@",forecast.highTemperature,@"°C"];
     viewToUpdate.dateAT.text = [NSString stringWithFormat:@"%@, %@ of %@", forecast.weekDay, [forecast.dayNumber stringValue], forecast.month];
 }
 
 - (void)updateAfterAfterTommorowWithForecast:(KEAfterAfterTommorowForecast *)forecast withView:(KEWindowView *)viewToUpdate
 {
-	[viewToUpdate.afterAfterTommorowView setImage:[KEUIImageFactoryUtil imageDependsOnURL:forecast.iconURL]];
+	[viewToUpdate.afterAfterTommorowView setImage:[KEUIImageFactoryUtil imageDependsOnURL:forecast.iconURL bundleName:kKEForecastBundle]];
 	viewToUpdate.afrerAfterTommorowTemp.text = [NSString stringWithFormat:@"%@ %@", forecast.highTemperature, @"°C"];
 	viewToUpdate.dateAAT.text = [NSString stringWithFormat:@"%@, %@ of %@", forecast.weekDay, [forecast.dayNumber stringValue], forecast.month];
 }
@@ -391,7 +395,7 @@ static NSString * const kKENoData			  = @"N/A";
 	CLLocation *location = [[KELocationManager sharedManager] currentLocation];
 	
 	if (isHUD) {
-			[SVProgressHUD show];
+		[SVProgressHUD show];
 	}
 
 	__weak KEViewController *weakSelf = self;
@@ -402,8 +406,8 @@ static NSString * const kKENoData			  = @"N/A";
 		}
 	    else {
 	        [weakSelf updateUIWithObservationForCurrentLocation:observation forecastDays:days];
-			if (isHUD) {
-				[SVProgressHUD showSuccessWithStatus:@"Ok!"];
+	        if (isHUD) {
+	            [SVProgressHUD showSuccessWithStatus:@"Ok!"];
 			}
 		}
 	}];
@@ -426,14 +430,14 @@ static NSString * const kKENoData			  = @"N/A";
 		}
 	    else {
 	        [weakSelf updateUIForView:viewToUpdate observation:observation];
-			[weakSelf updateTommorowWithForecast:[days valueForKey:@"Tommorow"] withView:viewToUpdate];
+	        [weakSelf updateTommorowWithForecast:[days valueForKey:@"Tommorow"] withView:viewToUpdate];
 	        [weakSelf updateAfterTomorrowWithForecast:[days valueForKey:@"AfterTommorow"] withView:viewToUpdate];
 	        [weakSelf updateAfterAfterTommorowWithForecast:[days valueForKey:@"AfterAfterTommorow"] withView:viewToUpdate];
 	        if (isHUD) {
-				[SVProgressHUD showSuccessWithStatus:@"Ok!"];
+	            [SVProgressHUD showSuccessWithStatus:@"Ok!"];
 			}
 		}
-	}];	
+	}];
 }
 
 #pragma mark - Actions stuff
