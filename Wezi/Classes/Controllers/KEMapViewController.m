@@ -130,7 +130,7 @@ static NSString * const kKEDoneButtonClick    = @"done_button_click.png";
 			pinView.animatesDrop = YES;
 			pinView.canShowCallout = YES;
 			pinView.draggable = YES;
-#warning MAgic
+				//#warning MAgic
 			UIImageView *myImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Icon-Small.png"]];
 			myImageView.frame = CGRectMake(0.0f, 0.0f, 31.0f, 31.0f);
 			myImageView.layer.cornerRadius = 5.0f;
@@ -216,7 +216,7 @@ static NSString * const kKEDoneButtonClick    = @"done_button_click.png";
 
 
 #pragma mark - Configurate UI 
-#warning MAgic
+	//#warning MAgic
 - (void)addCustomButtons
 {
 	UIImage *backgroundImage = [UIImage imageNamed:kKENavBar];

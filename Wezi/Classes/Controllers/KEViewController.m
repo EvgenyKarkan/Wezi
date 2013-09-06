@@ -183,7 +183,7 @@ static NSString * const kKEForecastBundle     = @"ForecastIcons.bundle";
 
 - (void)addCustomButtons
 {
-#warning Magic
+		//#warning Magic
 		//TODO: add pixel perfect stuff below !!!
 	UIButton *refresh = [[UIButton alloc] initWithFrame:CGRectMake(959, 5, 60, 30)];
 	[refresh setImage:[UIImage imageNamed:kKERefreshButton] forState:UIControlStateNormal];
@@ -413,7 +413,7 @@ static NSString * const kKEForecastBundle     = @"ForecastIcons.bundle";
 	}];
 }
 
-#warning MAgic strings
+	//#warning MAgic strings
 - (void)reloadDataWithNewLocation:(CLLocation *)newLocation withView:(KEWindowView *)viewToUpdate withHUD:(BOOL)isHUD
 {
 	KEWeatherManager *client = [KEWeatherManager sharedClient];
@@ -688,7 +688,7 @@ static NSString * const kKEForecastBundle     = @"ForecastIcons.bundle";
 }
 
 #pragma mark - Subscribing to reachability notifications and handling them on UI
-#warning Magic strings
+	//#warning Magic strings
 - (void)subscribeToReachabilityNotifications
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onYesInternet) name:@"YesInternet" object:nil];

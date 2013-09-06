@@ -30,43 +30,43 @@ static NSUInteger const kKEBugButtonTag         = 103;
 			case kKETwitterButtonTag:
 				if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
 					SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-					[controller setInitialText:@""];
+					[controller setInitialText:@"Look at my weather tweet sent from @WeziApp"];
 					[controller addImage:[KEScreenShotUtil cropImage]];
 					[object presentViewController:controller animated:YES completion:Nil];
 				}
 				else {
-					[SVProgressHUD showErrorWithStatus:@"Please setup Twitter account first"];
+					[SVProgressHUD showErrorWithStatus:@"Please setup Twitter account on settings"];
 				}
 				break;
 				
 			case kKEFacebookButtonTag:
 				if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
 					SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-					[controller setInitialText:@""];
+					[controller setInitialText:@"Look at my weather post sent from @WeziApp"];
 					[controller addImage:[KEScreenShotUtil cropImage]];
 					[object presentViewController:controller animated:YES completion:Nil];
 				}
 				else {
-					[SVProgressHUD showErrorWithStatus:@"Please setup Facebook account first"];
+					[SVProgressHUD showErrorWithStatus:@"Please setup Facebook account on settings"];
 				}
 				break;
 				
 			case kKEMailButtonTag : {
-				[mail showMailComposerWithSubject:@"Wezi app"
+				[mail showMailComposerWithSubject:@"Wezi"
 									withRecepient:nil
-								  withMessageBody:@"Hi! Check out @Wezi app"];
+								  withMessageBody:@"Hi! Look at the weather in my picture."];
 				
 				UIImage *coolImage = [KEScreenShotUtil cropImage];
 				NSData *myData = UIImageJPEGRepresentation(coolImage, 3.0f);
-				[mail.mailForm addAttachmentData:myData mimeType:@"image/png" fileName:@"Wezi.png"];
+				[mail.mailForm addAttachmentData:myData mimeType:@"image/png" fileName:@"WeziApp.png"];
 			}
 				break;
 				
 			case kKEBugButtonTag: {
-				NSArray *arr = @[@"wezi@gmail.com"];
-				[mail showMailComposerWithSubject:@"Bug report to Wezi team"
+				NSArray *arr = @[@"WeziApp@gmail.com"];
+				[mail showMailComposerWithSubject:@"Bug report to Wezi"
 				                    withRecepient:arr
-				                  withMessageBody:@"Hi Wezi team!"];
+				                  withMessageBody:@"Hi Wezi Team!"];
 			}
 				break;
 				
