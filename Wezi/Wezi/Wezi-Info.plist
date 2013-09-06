@@ -20,8 +20,6 @@
 				<string>Icon-Small@2x.png</string>
 				<string>Icon-Small-50.png</string>
 				<string>Icon-Small-50@2x.png</string>
-				<string>ITunesArtwork</string>
-				<string>ITunesArtwork@2x</string>
 			</array>
 			<key>UIPrerenderedIcon</key>
 			<true/>
