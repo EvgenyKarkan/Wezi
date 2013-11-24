@@ -155,6 +155,7 @@
 		DED37E8617C6276C00200F09 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED37E8517C6276C00200F09 /* AdSupport.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		DEDCDCE11748001100D957EC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDCDCE01748001100D957EC /* CoreData.framework */; };
 		DEDCDCE717480B2C00D957EC /* Wezi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DEDCDCE517480B2C00D957EC /* Wezi.xcdatamodeld */; };
+		DEE861D01842721C005098FE /* Download_on_the_App_Store_Badge_US-UK_135x40.png in Resources */ = {isa = PBXBuildFile; fileRef = DEE861CF1842721C005098FE /* Download_on_the_App_Store_Badge_US-UK_135x40.png */; };
 		DEEFE4D11795EB7E0021B3E7 /* KESplashScreenUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEFE4D01795EB7E0021B3E7 /* KESplashScreenUtil.m */; };
 		DEF1A58817986F900043CDA8 /* KESocialProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF1A58717986F900043CDA8 /* KESocialProvider.m */; };
 /* End PBXBuildFile section */
@@ -349,6 +350,7 @@
 		DED37E8517C6276C00200F09 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		DEDCDCE01748001100D957EC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		DEDCDCE617480B2C00D957EC /* Wezi.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Wezi.xcdatamodel; sourceTree = "<group>"; };
+		DEE861CF1842721C005098FE /* Download_on_the_App_Store_Badge_US-UK_135x40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Download_on_the_App_Store_Badge_US-UK_135x40.png"; sourceTree = "<group>"; };
 		DEEFE4CF1795EB7E0021B3E7 /* KESplashScreenUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KESplashScreenUtil.h; sourceTree = "<group>"; };
 		DEEFE4D01795EB7E0021B3E7 /* KESplashScreenUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KESplashScreenUtil.m; sourceTree = "<group>"; };
 		DEF1A58617986F900043CDA8 /* KESocialProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KESocialProvider.h; sourceTree = "<group>"; };
@@ -602,6 +604,7 @@
 		CE7C0F28172FC36500E4A8AC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				DEE861CF1842721C005098FE /* Download_on_the_App_Store_Badge_US-UK_135x40.png */,
 				DE6F192017D91B150013DA88 /* additional_icons */,
 				DE6F191E17D9135B0013DA88 /* ForecastIcons.bundle */,
 				DE52E39917B964C0009E7E1B /* sad face */,
@@ -929,6 +932,7 @@
 				DE6F192617D91B170013DA88 /* compas_icon.png in Resources */,
 				DE6F192717D91B170013DA88 /* rain_icon.png in Resources */,
 				DE6F192817D91B170013DA88 /* wind_icon.png in Resources */,
+				DEE861D01842721C005098FE /* Download_on_the_App_Store_Badge_US-UK_135x40.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
