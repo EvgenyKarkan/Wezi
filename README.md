@@ -15,7 +15,7 @@ Compatible with iPad. Requires iOS 6.0 and later.
 Download:
 --------
 [![Wezi](https://raw.github.com/EvgenyKarkan/Wezi/master/Wezi/Resourses/Images/Download_on_the_App_Store_Badge_US-UK_135x40.png)](https://itunes.apple.com/us/app/wezi/id701115901?mt=8 "Wezi") 
-Please note:
+Copyright:
 -----------
 If you want to use some of code snippets from Wezi - please ask me before for permissions.   
 Otherwise, use of the code snippets and any kind of Wezi project's recources - e.g. logo, app icon, icons, images, is prohibited.
