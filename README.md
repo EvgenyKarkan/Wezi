@@ -1,7 +1,7 @@
 Wezi
 ====
 ![alt tag](https://raw.github.com/EvgenyKarkan/Wezi/master/Wezi/Resourses/Images/app_icons/gitHubIcon.png)
-Description
+Description:
 -----------
 Don't know what to expect from the weather tomorrow?  
 Just entrust these worries to Wezi.
