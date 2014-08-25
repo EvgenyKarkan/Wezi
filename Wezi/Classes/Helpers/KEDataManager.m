@@ -10,10 +10,10 @@
 #import "KEAppDelegate.h"
 #import "SVProgressHUD.h"
 
-@implementation KEDataManager
+@implementation KEDataManager;
 
-@synthesize managedObjectContext = _managedObjectContext;
-@synthesize managedObjectModel = _managedObjectModel;
+@synthesize managedObjectContext       = _managedObjectContext;
+@synthesize managedObjectModel         = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
 #pragma mark - Singleton stuff

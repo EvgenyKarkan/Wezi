@@ -5,9 +5,9 @@
 //  Created by Evgeniy Karkan on 5/10/13.
 //  Copyright (c) 2013 EvgenyKarkan. All rights reserved.
 //
-#import <UIKit/UIKit.h>
 
 static NSString * const kKEWindowViewNibName = @"WindowView";
+
 
 @interface KEWindowView : UIView
 
@@ -44,3 +44,4 @@ static NSString * const kKEWindowViewNibName = @"WindowView";
 + (KEWindowView *)returnWindowView;
 
 @end
+

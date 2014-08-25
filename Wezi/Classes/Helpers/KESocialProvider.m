@@ -7,19 +7,19 @@
 //
 
 #import "KESocialProvider.h"
-#import "KEShareViewController.h"
 #import "KEMailProvider.h"
-#import "SVProgressHUD.h"
-#import "KEScreenShotUtil.h"
 #import "KEReachabilityUtil.h"
+#import "KEScreenShotUtil.h"
+#import "KEShareViewController.h"
+#import "SVProgressHUD.h"
 
-static NSUInteger const kKETwitterButtonTag     = 100;
-static NSUInteger const kKEFacebookButtonTag    = 101;
-static NSUInteger const kKEMailButtonTag        = 102;
-static NSUInteger const kKEBugButtonTag         = 103;
+static NSUInteger const kKETwitterButtonTag  = 100;
+static NSUInteger const kKEFacebookButtonTag = 101;
+static NSUInteger const kKEMailButtonTag     = 102;
+static NSUInteger const kKEBugButtonTag      = 103;
 
 
-@implementation KESocialProvider
+@implementation KESocialProvider;
 
 + (void)provideSocialMediaWithSender:(id)sender withObject:(id)object
 {

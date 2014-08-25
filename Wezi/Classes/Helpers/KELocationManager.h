@@ -6,14 +6,15 @@
 //  Copyright (c) 2013 EvgenyKarkan. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+
 
 extern NSString * const kKELocationDidChangeNotificationKey;
 
+
 @interface KELocationManager : NSObject
 
-@property (nonatomic, readonly)     CLLocation *currentLocation;
-@property (nonatomic, readonly)     BOOL isMonitoringLocation;
+@property (nonatomic, readonly) CLLocation *currentLocation;
+@property (nonatomic, readonly) BOOL       isMonitoringLocation;
 
 + (instancetype)sharedManager;
 - (void)startMonitoringLocationChanges;

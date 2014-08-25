@@ -10,7 +10,7 @@
 #import "AFHTTPClient.h"
 #import "Reachability.h"
 
-static NSString * const kKEURL         = @"http: //google.com";
+static NSString * const kKEURL         = @"http://google.com";
 static NSString * const kKEYesInternet = @"YesInternet";
 static NSString * const kKENoInternet  = @"NoInternet";
 
@@ -58,8 +58,8 @@ static KEReachabilityUtil *sharedUtil = nil;
 
 - (BOOL)checkInternetConnection
 {
-	Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
-	NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
+    Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus networkStatus       = [networkReachability currentReachabilityStatus];
 	
 	if (networkStatus == NotReachable) {
 		return NO;
@@ -71,18 +71,18 @@ static KEReachabilityUtil *sharedUtil = nil;
 
 - (void)checkInternetConnectionWithNotification
 {
-	self.client = [AFHTTPClient clientWithBaseURL:[NSURL URLWithString:kKEURL]];
-	
-	[self.client setReachabilityStatusChangeBlock: ^(AFNetworkReachabilityStatus status) {
-	    if (status == AFNetworkReachabilityStatusNotReachable) {
-	        [[NSNotificationCenter defaultCenter] postNotificationName:kKENoInternet
-	                                                            object:nil];
-		}
-	    else {
-	        [[NSNotificationCenter defaultCenter] postNotificationName:kKEYesInternet
-	                                                            object:nil];
-		}
-	}];
+    self.client = [AFHTTPClient clientWithBaseURL:[NSURL URLWithString:kKEURL]];
+    
+    [self.client setReachabilityStatusChangeBlock: ^(AFNetworkReachabilityStatus status) {
+        if (status == AFNetworkReachabilityStatusNotReachable) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:kKENoInternet
+                                                                object:nil];
+        }
+        else {
+            [[NSNotificationCenter defaultCenter] postNotificationName:kKEYesInternet
+                                                                object:nil];
+        }
+    }];
 }
 
 @end

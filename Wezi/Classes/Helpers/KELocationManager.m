@@ -10,15 +10,16 @@
 #import "Flurry.h"
 
 NSString * const kKELocationDidChangeNotificationKey = @"locationManagerlocationDidChange";
-static NSUInteger const kKEFilter = 1000;
+static NSUInteger const kKEFilter                    = 1000;
 
 @interface KELocationManager () <CLLocationManagerDelegate>
 
-@property (nonatomic, strong)    CLLocationManager *locationManager;
-@property (nonatomic, assign)    BOOL isMonitoringLocation;
-@property (nonatomic, assign)    BOOL isPermitted;
+@property (nonatomic, strong) CLLocationManager *locationManager;
+@property (nonatomic, assign) BOOL isMonitoringLocation;
+@property (nonatomic, assign) BOOL isPermitted;
 
 @end
+
 
 @implementation KELocationManager;
 

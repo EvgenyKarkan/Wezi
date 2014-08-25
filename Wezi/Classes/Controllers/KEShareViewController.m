@@ -15,7 +15,7 @@
 @property (nonatomic, strong) UIButton *facebook;
 @property (nonatomic, strong) UIButton *email;
 @property (nonatomic, strong) UIButton *bug;
-@property (nonatomic, strong) NSArray  *buttons;
+@property (nonatomic, copy) NSArray *buttons;
 
 @end
 
@@ -40,7 +40,6 @@
 - (void)createSubViews
 {
 		//#warning MAgic
-	
 	self.twitter = [UIButton buttonWithType:UIButtonTypeCustom];
 	[self.twitter setImage:[UIImage imageNamed:@"twitter"] forState:UIControlStateNormal];
 	[self.twitter setImage:[UIImage imageNamed:@"twitter_pressed"] forState:UIControlStateHighlighted];

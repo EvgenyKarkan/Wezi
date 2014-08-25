@@ -9,7 +9,8 @@
 #import "KEMailProvider.h"
 
 static NSString * const kKEMailComposer = @"MFMailComposeViewController";
-static NSString * const kKEMailTo = @"mailto:wezi@gmail.com";
+static NSString * const kKEMailTo       = @"mailto:wezi@gmail.com";
+
 
 @interface KEMailProvider ()
 

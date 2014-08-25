@@ -8,6 +8,7 @@
 
 #import "KEAfterAfterTommorowForecast.h"
 
-@implementation KEAfterAfterTommorowForecast
+
+@implementation KEAfterAfterTommorowForecast;
 
 @end

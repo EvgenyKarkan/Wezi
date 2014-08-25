@@ -50,6 +50,7 @@ static NSString * const kKENoData			  = @"N/A";
 static NSString * const kKEIconsBundle        = @"Icons.bundle";
 static NSString * const kKEForecastBundle     = @"ForecastIcons.bundle";
 
+
 @interface KEViewController () <UIScrollViewDelegate, KECoordinateFillProtocol, KEPopoverHideProtocol, KESocialProvideProtocol>
 
 @property (nonatomic, strong) KEWindowView           *templateView;
@@ -77,11 +78,14 @@ static NSString * const kKEForecastBundle     = @"ForecastIcons.bundle";
     NSArray *places = [self.managedObjectContext executeFetchRequest:[self.dataManager requestWithEntityName:@"Place"]
                                                                error:&error];
     self.entityArrayCoreData = [NSMutableArray arrayWithArray:places];
-    self.viewWithCoreData = [[NSMutableArray alloc] init];
+    self.viewWithCoreData    = [[NSMutableArray alloc] init];
+    
+    NSUInteger counter = [places count];
+    
+	for (NSUInteger i = 1; i <= counter; i++) {
+        KEWindowView *aView = [KEWindowView returnWindowView];
+        aView.frame         = CGRectMake((self.scrollView.contentOffset.x + kKESelfWidth * i) + kKEDeltaX, kKEDeltaY, kKEWindowW, kKEWindowH);
         
-	for (NSUInteger i = 1; i <= [places count]; i++) {
-		KEWindowView *aView = [KEWindowView returnWindowView];
-		aView.frame = CGRectMake((self.scrollView.contentOffset.x + kKESelfWidth * i) + kKEDeltaX, kKEDeltaY, kKEWindowW, kKEWindowH);
 		[self.scrollView addSubview:aView];
 		[self.viewWithCoreData addObject:aView];
 		
@@ -90,8 +94,8 @@ static NSString * const kKEForecastBundle     = @"ForecastIcons.bundle";
 		
 		[self reloadDataWithNewLocation:location withView:aView withHUD:NO];
 	}
-	self.pageControl.numberOfPages = [places count] + 1;
-	self.scrollView.contentSize = CGSizeMake(kKESelfWidth * ([places count] + 1), self.scrollView.contentSize.height);
+    self.pageControl.numberOfPages = [places count] + 1;
+    self.scrollView.contentSize    = CGSizeMake(kKESelfWidth * ([places count] + 1), self.scrollView.contentSize.height);
 }
 
 #pragma mark - UIViewController life cycle
@@ -125,8 +129,9 @@ static NSString * const kKEForecastBundle     = @"ForecastIcons.bundle";
 		[[KELocationManager sharedManager] startMonitoringLocationChanges];
 		
 		[self configurateUIElements];
-		self.dataManager = [KEDataManager sharedDataManager];
-		self.managedObjectContext = [self.dataManager managedObjectContextFromDataManager];
+        
+        self.dataManager          = [KEDataManager sharedDataManager];
+        self.managedObjectContext = [self.dataManager managedObjectContextFromDataManager];
 		[self prepareForLoading];
 	}
 }
@@ -153,7 +158,7 @@ static NSString * const kKEForecastBundle     = @"ForecastIcons.bundle";
 	                     action:@selector(changePage:)
 	           forControlEvents:UIControlEventValueChanged];
     
-    self.templateView = [KEWindowView returnWindowView];
+    self.templateView       = [KEWindowView returnWindowView];
     self.templateView.frame = CGRectMake(kKEDeltaX, kKEDeltaY, kKEWindowW, kKEWindowH);
     [self.scrollView addSubview:self.templateView];
 	
@@ -163,11 +168,11 @@ static NSString * const kKEForecastBundle     = @"ForecastIcons.bundle";
 				subview.hidden = YES;
 			}
 		}
-		self.templateView.sadView.hidden = NO;
-		self.templateView.backImageView.hidden = NO;
+        self.templateView.sadView.hidden       = NO;
+        self.templateView.backImageView.hidden = NO;
 	}
 	
-    self.mapViewController = [[KEMapViewController alloc]init];
+    self.mapViewController                  = [[KEMapViewController alloc]init];
     self.mapViewController.objectToDelegate = self;
     self.isShownMapPopover = NO;
     
@@ -717,15 +722,15 @@ static NSString * const kKEForecastBundle     = @"ForecastIcons.bundle";
 
 - (void)subscribeToCurrentLocationTrackingWithPemissionsNotification
 {
-	[[NSNotificationCenter defaultCenter] addObserver:self
-	                                         selector:@selector(handleCurrentLocationPermission:)
-	                                             name:@"HandlePermissions"
-	                                           object:nil];
-	
-	[[NSNotificationCenter defaultCenter] addObserver:self
-	                                         selector:@selector(refreshCurrentLocation)
-	                                             name:@"RefreshCurrentLocation"
-	                                           object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleCurrentLocationPermission:)
+                                                 name:@"HandlePermissions"
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(refreshCurrentLocation)
+                                                 name:@"RefreshCurrentLocation"
+                                               object:nil];
 }
 
 @end

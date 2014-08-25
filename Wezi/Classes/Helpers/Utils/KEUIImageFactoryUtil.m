@@ -14,6 +14,7 @@
 + (UIImage *)imageDependsOnURL:(NSString *)URLString bundleName:(NSString *)bundleName
 {
 	UIImage *icon = nil;
+    
 	if ([URLString rangeOfString:@"clear"].location != NSNotFound) {
 		if ([URLString rangeOfString:@"nt"].location != NSNotFound) {
 			icon = [UIImage imageNamed:[NSString stringWithFormat:@"%@%@", bundleName, @"/weezle_fullmoon.png"]];

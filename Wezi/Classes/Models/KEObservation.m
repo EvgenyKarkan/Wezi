@@ -8,6 +8,7 @@
 
 #import "KEObservation.h"
 
+
 @implementation KEObservation;
 
 + (NSDictionary *)keyMapping
@@ -16,7 +17,6 @@
     static dispatch_once_t onceToken;
     
     dispatch_once(&onceToken, ^{
-        
         keyMapping = @{
                        @"display_location"             : @"location",
                        @"observation_time"             : @"timeString",
@@ -35,20 +35,20 @@
 
 + (instancetype)observationWithDictionary:(NSDictionary *)dictionary
 {
-	KEObservation *observation = nil;
-	
-	if (dictionary) {
-		observation = [[KEObservation alloc] init];
-		NSDictionary *keyMapping = [self keyMapping];
-		for (NSString *key in keyMapping) {
-			id value = dictionary[key];
-			if (value) {
-				[observation setValue:value forKey:keyMapping[key]];
-			}
-		}
-	}
-	
-	return observation;
+    KEObservation *observation = nil;
+    
+    if (dictionary) {
+        observation = [[KEObservation alloc] init];
+        NSDictionary *keyMapping = [self keyMapping];
+        for (NSString *key in keyMapping) {
+            id value = dictionary[key];
+            if (value) {
+                [observation setValue:value forKey:keyMapping[key]];
+            }
+        }
+    }
+    
+    return observation;
 }
 
 @end

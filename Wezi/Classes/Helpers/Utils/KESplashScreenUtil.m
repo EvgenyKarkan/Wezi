@@ -9,9 +9,9 @@
 #import "KESplashScreenUtil.h"
 
 static NSString * const kKESplashImage = @"Default-Landscape~ipad.png";
-static CGRect const kKEImageViewRect = { 0.0f, 0.0f, 1024.0f, 748.0f };
+static CGRect const kKEImageViewRect   = { 0.0f, 0.0f, 1024.0f, 748.0f };
 
-@implementation KESplashScreenUtil
+@implementation KESplashScreenUtil;
 
 + (void)showSplashScreenOnView:(UIView *)view
 {

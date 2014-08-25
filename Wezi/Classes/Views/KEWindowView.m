@@ -7,18 +7,18 @@
 //
 
 #import "KEWindowView.h"
-#import "KEFonts.h"
 #import "KEBackingImageUtil.h"
+#import "KEFonts.h"
 #import "UIView+Decorate.h"
 
-static CGFloat const kKEBorderWidth			   = 5.0f;
+static CGFloat const kKEBorderWidth            = 5.0f;
 static CGFloat const kKEOpacity                = 0.6f;
 static CGFloat const kKEBunchOfLabelFontSize   = 25.0f;
 static CGFloat const kKEPlaceFontSize          = 35.0f;
 static CGFloat const kKECurrentTempFontSize    = 72.0f;
-static CGFloat const kKETimeStampFontSize	   = 15.0f;
+static CGFloat const kKETimeStampFontSize      = 15.0f;
 static CGFloat const kKEForecastLabelsFontSize = 18.0f;
-static CGRect  const kKERectSad = {0.0f, 0.0f, 920, 580};
+static CGRect  const kKERectSad                = {0.0f, 0.0f, 920.0f, 580.0f};
 
 @interface KEWindowView ()
 
@@ -27,7 +27,7 @@ static CGRect  const kKERectSad = {0.0f, 0.0f, 920, 580};
 @end
 
 
-@implementation KEWindowView
+@implementation KEWindowView;
 
 + (UIView *)loadViewFromNibWithName:(NSString *)nibName
 {
@@ -38,13 +38,13 @@ static CGRect  const kKERectSad = {0.0f, 0.0f, 920, 580};
     tempView.layer.borderColor = [[UIColor whiteColor] CGColor];
     tempView.layer.borderWidth  = kKEBorderWidth;
     [tempView addRoundShadowWithOpacity:kKEOpacity];
-	
+    
     return tempView;
 }
 
 + (KEWindowView *)returnWindowView
 {
-    KEWindowView *dummyView = (KEWindowView *)[self loadViewFromNibWithName:kKEWindowViewNibName];
+    KEWindowView *dummyView       = (KEWindowView *)[self loadViewFromNibWithName:kKEWindowViewNibName];
     dummyView.backImageView.image = [UIImage imageNamed:[KEBackingImageUtil randomObjectFromArray]];
     [KEWindowView settingUIElements:dummyView];
 
@@ -68,9 +68,10 @@ static CGRect  const kKERectSad = {0.0f, 0.0f, 920, 580};
 																	 aView.afrerAfterTommorowTemp]];
     
     for (UILabel *label in allLabelArray) {
-        [label setFont:[KEFonts plutoSansRegularWithSize:kKEBunchOfLabelFontSize]];
+        label.font = [KEFonts plutoSansRegularWithSize:kKEBunchOfLabelFontSize];
     }
     
+#warning - old school synthax
     [aView.place setFont:[KEFonts plutoSansRegularWithSize:kKEPlaceFontSize]];
     [aView.currentTemperature setFont:[KEFonts plutoSansRegularWithSize:kKECurrentTempFontSize]];
 	[aView.timeStamp setFont:[KEFonts plutoSansRegularWithSize:kKETimeStampFontSize]];
@@ -82,13 +83,13 @@ static CGRect  const kKERectSad = {0.0f, 0.0f, 920, 580};
 																		   aView.dateAAT,]];
 	
     for (UILabel *label in forecastLabelsArray) {
-		[label setFont:[KEFonts plutoSansRegularWithSize:kKEForecastLabelsFontSize]];
+        label.font = [KEFonts plutoSansRegularWithSize:kKEForecastLabelsFontSize];
 	}
 	
-	aView.sadView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sad_sun"]];
-	aView.sadView.frame = kKERectSad;
+    aView.sadView        = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sad_sun"]];
+    aView.sadView.frame  = kKERectSad;
+    aView.sadView.hidden = YES;
 	[aView addSubview:aView.sadView];
-	aView.sadView.hidden = YES;
 }
 
 @end

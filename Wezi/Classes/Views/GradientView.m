@@ -12,7 +12,7 @@
 #define GRADIENT_COLOR_2  [[UIColor colorWithRed:(arc4random() % 256 / 256.0) green:(arc4random() % 256 / 256.0) blue:(arc4random() % 256 / 256.0) alpha:1.0] CGColor]
 #define GRADIENT_COLOR_3  [[UIColor colorWithRed:(arc4random() % 256 / 256.0) green:(arc4random() % 256 / 256.0) blue:(arc4random() % 256 / 256.0) alpha:1.0] CGColor]
 
-@implementation GradientView
+@implementation GradientView;
 
 + (Class)layerClass
 {

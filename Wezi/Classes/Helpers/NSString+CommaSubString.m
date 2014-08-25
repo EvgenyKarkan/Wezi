@@ -8,7 +8,7 @@
 
 #import "NSString+CommaSubString.h"
 
-@implementation NSString (CommaSubString)
+@implementation NSString (CommaSubString);
 
 + (NSString *)subStringBeforeFirstCommaInString:(NSString *)longString
 {

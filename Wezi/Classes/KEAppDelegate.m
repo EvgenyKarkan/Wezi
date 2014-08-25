@@ -22,20 +22,20 @@ static NSString * const kKEFlurryKey = @"28XKXSWTNJN2YTQS2KPX";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-	[[UIToolbar appearance] setBackgroundImage:[UIImage imageNamed:kKEToolBar]
-							forToolbarPosition:UIToolbarPositionAny
-									barMetrics:UIBarMetricsDefault];
-	
-	[[KEReachabilityUtil sharedUtil] checkInternetConnectionWithNotification];
-	
-	[Flurry startSession:kKEFlurryKey];
-
-	return YES;
+    [[UIToolbar appearance] setBackgroundImage:[UIImage imageNamed:kKEToolBar]
+                            forToolbarPosition:UIToolbarPositionAny
+                                    barMetrics:UIBarMetricsDefault];
+    
+    [[KEReachabilityUtil sharedUtil] checkInternetConnectionWithNotification];
+    
+    [Flurry startSession:kKEFlurryKey];
+    
+    return YES;
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
-	[[NSNotificationCenter defaultCenter] postNotificationName:kKERefresh object:self];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kKERefresh object:self];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

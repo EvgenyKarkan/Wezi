@@ -9,10 +9,11 @@
 #import "KEScreenShotUtil.h"
 
 static CGRect const kKECropRectRight = { 104.0f, 54.0f, 578.0f, 918.0f };
-static CGRect const kKECropRectLeft = { 84.0f, 54.0f, 578.0f, 918.0f };
-static CGRect const kKECropRectNil = { 0.0f, 0.0f, 0.0f, 0.0f };
+static CGRect const kKECropRectLeft  = { 84.0f, 54.0f, 578.0f, 918.0f };
+static CGRect const kKECropRectNil   = { 0.0f, 0.0f, 0.0f, 0.0f };
 
-@implementation KEScreenShotUtil
+
+@implementation KEScreenShotUtil;
 
 + (UIImage *)makeScreenShot
 {
@@ -45,9 +46,9 @@ static CGRect const kKECropRectNil = { 0.0f, 0.0f, 0.0f, 0.0f };
 		croprect = kKECropRectRight;
 	}
 	
-	CGImageRef imageRef = CGImageCreateWithImageInRect([[self makeScreenShot] CGImage], croprect);
-	UIImage *croppedImage = [UIImage imageWithCGImage:imageRef];
-	CGImageRef foo = [croppedImage CGImage];
+    CGImageRef imageRef   = CGImageCreateWithImageInRect([[self makeScreenShot] CGImage], croprect);
+    UIImage *croppedImage = [UIImage imageWithCGImage:imageRef];
+    CGImageRef foo        = [croppedImage CGImage];
 	
 	UIImage *rotatedImage = nil;
 	if ([UIApplication sharedApplication].statusBarOrientation == UIDeviceOrientationLandscapeLeft) {

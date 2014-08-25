@@ -9,15 +9,16 @@
 #import "UIView+Decorate.h"
 
 static NSUInteger const kKEHorizontalShadowOffset = 4;
-static NSUInteger const kKEVerticalShadowOffsett = 13;
+static NSUInteger const kKEVerticalShadowOffsett  = 13;
 
-@implementation UIView (Decorate)
+
+@implementation UIView (Decorate);
 
 - (void)addRoundShadowWithOpacity:(double)opacity
 {
-	CALayer *layer = self.layer;
-	layer.shadowRadius = 1;
-	layer.shadowOpacity = opacity;
+    CALayer *layer      = self.layer;
+    layer.shadowRadius  = 1;
+    layer.shadowOpacity = opacity;
 	
 	CGRect newRect = layer.frame;
 	NSInteger horizontalShadowOffset = kKEHorizontalShadowOffset;

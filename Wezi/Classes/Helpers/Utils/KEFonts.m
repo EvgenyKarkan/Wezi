@@ -16,7 +16,7 @@ static NSString * const kKEPlutoSansRegular		 = @"PlutoSansRegular";
 static NSString * const kKEPlutoSansCondBold	 = @"PlutoSansCondBold";
 
 
-@implementation KEFonts
+@implementation KEFonts;
 
 + (UIFont *)plutoSansMediumWithSize:(CGFloat)fontSize
 {
