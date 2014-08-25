@@ -33,7 +33,7 @@ static CGRect const kKECropRectNil   = { 0.0f, 0.0f, 0.0f, 0.0f };
 	
 	UIGraphicsEndImageContext();
 	
-	return rotatedImage ? rotatedImage : screenshot;
+	return rotatedImage ? : screenshot;
 }
 
 + (UIImage *)cropImage

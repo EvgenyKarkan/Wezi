@@ -54,7 +54,7 @@
 	
 	self.bug = [UIButton buttonWithType:UIButtonTypeCustom];
 	[self.bug setImage:[UIImage imageNamed:@"Bug-report"] forState:UIControlStateNormal];
-	[self.bug setImage:[UIImage imageNamed:@"Bug_report_pressed"] forState:UIControlStateHighlighted];
+	[self.bug setImage:[UIImage imageNamed:@"Bug-report_pressed"] forState:UIControlStateHighlighted];
 	
 	self.buttons = @[self.twitter, self.facebook, self.email, self.bug];
 	
