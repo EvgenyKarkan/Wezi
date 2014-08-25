@@ -45,13 +45,15 @@ static NSString * const kKEDoneButtonClick    = @"done_button_click.png";
 {
     [super viewDidLoad];
     
-	self.map.delegate = self;
-	self.geocoder = [[CLGeocoder alloc]init];
+    self.map.delegate = self;
     self.map.showsUserLocation = YES;
-    self.isContextActivated = NO;
-	self.isPinAlreadyDropped = NO;
-    self.dataManager = [KEDataManager sharedDataManager];
-	self.managedObjectContext = [self.dataManager managedObjectContextFromDataManager];
+    
+    _geocoder = [[CLGeocoder alloc]init];
+    _isContextActivated  = NO;
+    _isPinAlreadyDropped = NO;
+    _dataManager          = [KEDataManager sharedDataManager];
+    _managedObjectContext = [self.dataManager managedObjectContextFromDataManager];
+    
     [self addCustomButtons];
 }
 
@@ -65,7 +67,9 @@ static NSString * const kKEDoneButtonClick    = @"done_button_click.png";
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)annotationView didChangeDragState:(MKAnnotationViewDragState)newState fromOldState:(MKAnnotationViewDragState)oldState
 {
 	if (oldState == MKAnnotationViewDragStateDragging) {
-		CLLocation *location = [[CLLocation alloc] initWithLatitude:self.myAnnotation.coordinate.latitude longitude:self.myAnnotation.coordinate.longitude];
+		CLLocation *location = [[CLLocation alloc] initWithLatitude:self.myAnnotation.coordinate.latitude
+                                                          longitude:self.myAnnotation.coordinate.longitude];
+        
 		[self.geocoder reverseGeocodeLocation:location completionHandler: ^(NSArray *placemarks, NSError *error) {
 		    if (error) {
 		        return;
@@ -126,18 +130,20 @@ static NSString * const kKEDoneButtonClick    = @"done_button_click.png";
 	if ([annotation isKindOfClass:[KECityAnnotation class]]) {
 		MKPinAnnotationView *pinView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"Pin"];
 		if (pinView == nil) {
-			pinView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"Pin"];
-			pinView.pinColor = MKPinAnnotationColorRed;
-			pinView.animatesDrop = YES;
-			pinView.canShowCallout = YES;
-			pinView.draggable = YES;
+            pinView                = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"Pin"];
+            pinView.pinColor       = MKPinAnnotationColorRed;
+            pinView.animatesDrop   = YES;
+            pinView.canShowCallout = YES;
+            pinView.draggable      = YES;
 				//#warning MAgic
-			UIImageView *myImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Icon-Small.png"]];
-			myImageView.frame = CGRectMake(0.0f, 0.0f, 31.0f, 31.0f);
-			myImageView.layer.cornerRadius = 5.0f;
-			myImageView.layer.masksToBounds = YES;
+            UIImageView *myImageView        = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Icon-Small.png"]];
+            myImageView.frame               = CGRectMake(0.0f, 0.0f, 31.0f, 31.0f);
+            myImageView.layer.cornerRadius  = 5.0f;
+            myImageView.layer.masksToBounds = YES;
 			pinView.leftCalloutAccessoryView = myImageView;
-			[pinView setSelected:YES animated:YES];
+                //[pinView setSelected:YES animated:YES];
+            
+            pinView.selected = YES;
 		}
 		return pinView;
 	}
@@ -151,20 +157,23 @@ static NSString * const kKEDoneButtonClick    = @"done_button_click.png";
 - (IBAction)chooseLocation:(id)sender
 {
 	if (self.isPinAlreadyDropped) {
-		CLLocation *item = [[CLLocation alloc]initWithLatitude:self.myAnnotation.coordinate.latitude longitude:self.myAnnotation.coordinate.longitude];
+		CLLocation *item = [[CLLocation alloc]initWithLatitude:self.myAnnotation.coordinate.latitude
+                                                     longitude:self.myAnnotation.coordinate.longitude];
 		
 		if ([[KEReachabilityUtil sharedUtil] checkInternetConnection]) {
 			[self.objectToDelegate addPressedWithCoordinate:item];
 		}
 		
 		NSError *error = nil;
-		NSArray *places = [self.managedObjectContext executeFetchRequest:[self.dataManager requestWithEntityName:@"Place"] error:&error];
+		NSArray *places = [self.managedObjectContext executeFetchRequest:[self.dataManager requestWithEntityName:@"Place"]
+                                                                   error:&error];
 		
 		if ([places count] == 4/*19*/) {
 			return;
 		}
 		
-		Place *place = [NSEntityDescription insertNewObjectForEntityForName:@"Place" inManagedObjectContext:self.managedObjectContext];
+		Place *place = [NSEntityDescription insertNewObjectForEntityForName:@"Place"
+                                                     inManagedObjectContext:self.managedObjectContext];
 		
 		if (place != nil) {
 			place.latitude = self.myAnnotation.coordinate.latitude;
@@ -177,7 +186,8 @@ static NSString * const kKEDoneButtonClick    = @"done_button_click.png";
 					self.isContextActivated = YES;
 				}
 				else {
-					[SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"Failed to save the context. Error = %@", [savingError localizedDescription]]];
+					[SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"Failed to save the context. Error = %@",
+                                                        [savingError localizedDescription]]];
 				}
 			}
 			else {
@@ -205,10 +215,10 @@ static NSString * const kKEDoneButtonClick    = @"done_button_click.png";
 	}
 	
 	if (!self.isPinAlreadyDropped) {
-		self.myAnnotation = [[KECityAnnotation alloc] init];
-		self.myAnnotation.coordinate = self.map.centerCoordinate;
-		self.myAnnotation.title = @"Chosen location";
-		self.myAnnotation.subtitle = @"Drag pin to change location";
+        self.myAnnotation            = [[KECityAnnotation alloc] init];
+        self.myAnnotation.coordinate = self.map.centerCoordinate;
+        self.myAnnotation.title      = @"Chosen location";
+        self.myAnnotation.subtitle   = @"Drag pin to change location";
 		[self.map addAnnotation:self.myAnnotation];
 		[self.map selectAnnotation:self.myAnnotation animated:YES];
 	}
