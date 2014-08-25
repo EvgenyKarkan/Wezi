@@ -7,24 +7,24 @@
 //
 
 #import "KEViewController.h"
-#import "SVProgressHUD.h"
-#import "KEWeatherManager.h"
-#import "KELocationManager.h"
-#import "KEObservation.h"
-#import "KEWindowView.h"
 #import "KEAfterAfterTommorowForecast.h"
 #import "KEAfterTommorowForecast.h"
-#import "KEMapViewController.h"
-#import "Place.h"
 #import "KEDataManager.h"
-#import "NSString+CommaSubString.h"
-#import "KEUIImageFactoryUtil.h"
-#import "KEReachabilityUtil.h"
 #import "KEDecoratorUtil.h"
-#import "KEShareViewController.h"
+#import "KELocationManager.h"
 #import "KEMailProvider.h"
-#import "KESplashScreenUtil.h"
+#import "KEMapViewController.h"
+#import "KEObservation.h"
+#import "KEReachabilityUtil.h"
+#import "KEShareViewController.h"
 #import "KESocialProvider.h"
+#import "KESplashScreenUtil.h"
+#import "KEUIImageFactoryUtil.h"
+#import "KEWeatherManager.h"
+#import "KEWindowView.h"
+#import "NSString+CommaSubString.h"
+#import "Place.h"
+#import "SVProgressHUD.h"
 
 static NSUInteger const kKESelfWidth		  = 1024;
 static NSUInteger const kKESelfWidthWithDelta = 1076;
@@ -52,19 +52,19 @@ static NSString * const kKEForecastBundle     = @"ForecastIcons.bundle";
 
 @interface KEViewController () <UIScrollViewDelegate, KECoordinateFillProtocol, KEPopoverHideProtocol, KESocialProvideProtocol>
 
-@property (nonatomic, strong)       KEWindowView *templateView;
-@property (nonatomic, strong)       KEObservation *geo;
-@property (nonatomic, strong)       KEMapViewController *mapViewController;
-@property (nonatomic, strong)       KEShareViewController *shareViewController;
-@property (nonatomic, strong)       KEDataManager *dataManager;
-@property (nonatomic, strong)       NSMutableArray *entityArrayCoreData;
-@property (nonatomic, strong)       NSMutableArray *viewWithCoreData;
-@property (nonatomic, strong)       NSManagedObjectContext *managedObjectContext;
-@property (nonatomic, strong)       CLLocation *location;
-@property (nonatomic, assign)       BOOL isShownMapPopover;
-@property (nonatomic, assign)       BOOL pageControlBeingUsed;
-@property (nonatomic, assign)       BOOL internetDroppedFirstly;
-@property (nonatomic, assign)       BOOL internetDropped;
+@property (nonatomic, strong) KEWindowView           *templateView;
+@property (nonatomic, strong) KEObservation          *geo;
+@property (nonatomic, strong) KEMapViewController    *mapViewController;
+@property (nonatomic, strong) KEShareViewController  *shareViewController;
+@property (nonatomic, strong) KEDataManager          *dataManager;
+@property (nonatomic, strong) NSMutableArray         *entityArrayCoreData;
+@property (nonatomic, strong) NSMutableArray         *viewWithCoreData;
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong) CLLocation             *location;
+@property (nonatomic, assign) BOOL isShownMapPopover;
+@property (nonatomic, assign) BOOL pageControlBeingUsed;
+@property (nonatomic, assign) BOOL internetDroppedFirstly;
+@property (nonatomic, assign) BOOL internetDropped;
 
 @end
 

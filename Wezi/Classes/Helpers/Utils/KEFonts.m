@@ -7,12 +7,14 @@
 
 #import "KEFonts.h"
 
+
 static NSString * const kKEPlutoSansMediumItalic = @"PlutoSansMedium-Italic";
 static NSString * const kKEPlutoSansLight		 = @"PlutoSansLight";
 static NSString * const kKEPlutoSansHeavy		 = @"PlutoSansHeavy";
 static NSString * const kKEPlutoSansExtraLight	 = @"PlutoSansExtraLight";
 static NSString * const kKEPlutoSansRegular		 = @"PlutoSansRegular";
 static NSString * const kKEPlutoSansCondBold	 = @"PlutoSansCondBold";
+
 
 @implementation KEFonts
 

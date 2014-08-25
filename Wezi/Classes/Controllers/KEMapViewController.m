@@ -7,14 +7,14 @@
 //
 
 #import "KEMapViewController.h"
-#import "KECityAnnotation.h"
-#import "Place.h"
 #import "KEAppDelegate.h"
-#import "KEViewController.h"
+#import "KECityAnnotation.h"
 #import "KEDataManager.h"
-#import "KEReachabilityUtil.h"
-#import "SVProgressHUD.h"
 #import "KELocationManager.h"
+#import "KEReachabilityUtil.h"
+#import "KEViewController.h"
+#import "Place.h"
+#import "SVProgressHUD.h"
 
 static NSString * const kKENavBar             = @"navbar.png";
 static NSString * const kKEPlusButton         = @"plus_button.png";
@@ -25,13 +25,13 @@ static NSString * const kKEDoneButtonClick    = @"done_button_click.png";
 
 @interface KEMapViewController ()
 
-@property (nonatomic, strong)       CLGeocoder *geocoder;
-@property (nonatomic, strong)       NSManagedObjectContext *managedObjectContext;
-@property (nonatomic, strong)       KECityAnnotation *myAnnotation;
-@property (nonatomic, strong)       KEDataManager *dataManager;
-@property (nonatomic, assign)       BOOL isContextActivated;
-@property (nonatomic, assign)       BOOL isPinAlreadyDropped;
-@property (nonatomic, strong)       NSString *bufferCityName;
+@property (nonatomic, strong) CLGeocoder             *geocoder;
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong) KECityAnnotation       *myAnnotation;
+@property (nonatomic, strong) KEDataManager          *dataManager;
+@property (nonatomic, assign) BOOL                   isContextActivated;
+@property (nonatomic, assign) BOOL                   isPinAlreadyDropped;
+@property (nonatomic, strong) NSString               *bufferCityName;
 
 @end
 

@@ -15,7 +15,7 @@
 @property (nonatomic, strong) UIButton *facebook;
 @property (nonatomic, strong) UIButton *email;
 @property (nonatomic, strong) UIButton *bug;
-@property (nonatomic, strong) NSArray *buttons;
+@property (nonatomic, strong) NSArray  *buttons;
 
 @end
 

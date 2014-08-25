@@ -7,12 +7,13 @@
 //
 
 #import "KEReachabilityUtil.h"
-#import "Reachability.h"
 #import "AFHTTPClient.h"
+#import "Reachability.h"
 
-static NSString * const kKEURL = @"http://google.com";
+static NSString * const kKEURL         = @"http: //google.com";
 static NSString * const kKEYesInternet = @"YesInternet";
-static NSString * const kKENoInternet = @"NoInternet";
+static NSString * const kKENoInternet  = @"NoInternet";
+
 
 @interface KEReachabilityUtil ()
 

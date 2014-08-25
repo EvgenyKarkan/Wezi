@@ -7,14 +7,14 @@
 //
 
 #import "KEAppDelegate.h"
-#import "Place.h"
-#import "KEReachabilityUtil.h"
 #import "AFHTTPClient.h"
-#import "KEDataManager.h"
 #import "Flurry.h"
+#import "KEDataManager.h"
+#import "KEReachabilityUtil.h"
+#import "Place.h"
 
-static NSString * const kKEToolBar = @"toolbar.png";
-static NSString * const kKERefresh = @"RefreshCurrentLocation";
+static NSString * const kKEToolBar   = @"toolbar.png";
+static NSString * const kKERefresh   = @"RefreshCurrentLocation";
 static NSString * const kKEFlurryKey = @"28XKXSWTNJN2YTQS2KPX";
 
 

@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 EvgenyKarkan. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 
 @protocol KEPopoverHideProtocol <NSObject>
 
@@ -24,7 +23,7 @@
 
 @interface KEShareViewController : UIViewController
 
-@property (nonatomic, unsafe_unretained)    id <KEPopoverHideProtocol> firstDelegate;
-@property (nonatomic, unsafe_unretained)	id <KESocialProvideProtocol> secondDelegate;
+@property (nonatomic, unsafe_unretained) id <KEPopoverHideProtocol>   firstDelegate;
+@property (nonatomic, unsafe_unretained) id <KESocialProvideProtocol> secondDelegate;
 
 @end

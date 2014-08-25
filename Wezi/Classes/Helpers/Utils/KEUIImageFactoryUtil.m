@@ -9,7 +9,7 @@
 #import "KEUIImageFactoryUtil.h"
 
 
-@implementation KEUIImageFactoryUtil
+@implementation KEUIImageFactoryUtil;
 
 + (UIImage *)imageDependsOnURL:(NSString *)URLString bundleName:(NSString *)bundleName
 {
