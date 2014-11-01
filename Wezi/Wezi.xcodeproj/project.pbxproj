@@ -135,7 +135,6 @@
 		DE52E3C617BA4D95009E7E1B /* Share_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = DE52E3C417BA4D95009E7E1B /* Share_bg.png */; };
 		DE52E3C717BA4D95009E7E1B /* Share_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE52E3C517BA4D95009E7E1B /* Share_bg@2x.png */; };
 		DE52E4FE17BA5B3F009E7E1B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE52E4FD17BA5B3F009E7E1B /* Security.framework */; };
-		DE69740719AB9CBF00F9F395 /* libFlurry_4.2.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE52E4FB17BA5A40009E7E1B /* libFlurry_4.2.3.a */; };
 		DE6F191F17D9135C0013DA88 /* ForecastIcons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE6F191E17D9135B0013DA88 /* ForecastIcons.bundle */; };
 		DE6F192517D91B170013DA88 /* barometr_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DE6F192117D91B170013DA88 /* barometr_icon.png */; };
 		DE6F192617D91B170013DA88 /* compas_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DE6F192217D91B170013DA88 /* compas_icon.png */; };
@@ -319,8 +318,6 @@
 		DE52E3AC17B964C0009E7E1B /* twitter_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter_pressed@2x.png"; sourceTree = "<group>"; };
 		DE52E3C417BA4D95009E7E1B /* Share_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Share_bg.png; sourceTree = "<group>"; };
 		DE52E3C517BA4D95009E7E1B /* Share_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Share_bg@2x.png"; sourceTree = "<group>"; };
-		DE52E4FA17BA5A40009E7E1B /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
-		DE52E4FB17BA5A40009E7E1B /* libFlurry_4.2.3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_4.2.3.a; sourceTree = "<group>"; };
 		DE52E4FD17BA5B3F009E7E1B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		DE6F191E17D9135B0013DA88 /* ForecastIcons.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ForecastIcons.bundle; sourceTree = "<group>"; };
 		DE6F192117D91B170013DA88 /* barometr_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barometr_icon.png; sourceTree = "<group>"; };
@@ -362,7 +359,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE69740719AB9CBF00F9F395 /* libFlurry_4.2.3.a in Frameworks */,
 				DED37E8617C6276C00200F09 /* AdSupport.framework in Frameworks */,
 				DE52E4FE17BA5B3F009E7E1B /* Security.framework in Frameworks */,
 				CE7C0F0F172FC08600E4A8AC /* SystemConfiguration.framework in Frameworks */,
@@ -469,7 +465,6 @@
 		CE7C0ED9172FBF1B00E4A8AC /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				DE52E4F917BA5A40009E7E1B /* Flurry */,
 				CE7C0EDA172FBF1B00E4A8AC /* AFNetworking */,
 				CE7C0EEE172FBF1B00E4A8AC /* SVProgressHUD */,
 			);
@@ -721,15 +716,6 @@
 				DE52E39517B96343009E7E1B /* Default-Landscape~ipad.png */,
 			);
 			path = splash;
-			sourceTree = "<group>";
-		};
-		DE52E4F917BA5A40009E7E1B /* Flurry */ = {
-			isa = PBXGroup;
-			children = (
-				DE52E4FA17BA5A40009E7E1B /* Flurry.h */,
-				DE52E4FB17BA5A40009E7E1B /* libFlurry_4.2.3.a */,
-			);
-			path = Flurry;
 			sourceTree = "<group>";
 		};
 		DE6F192017D91B150013DA88 /* additional_icons */ = {
@@ -1076,7 +1062,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
-					"$(PROJECT_DIR)/Libraries/Flurry",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8071B842-2E07-4D16-BD71-E06D67E565DE";
@@ -1102,7 +1087,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
-					"$(PROJECT_DIR)/Libraries/Flurry",
 				);
 				OTHER_CFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";

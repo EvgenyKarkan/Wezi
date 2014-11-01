@@ -8,7 +8,6 @@
 
 #import "KEAppDelegate.h"
 #import "AFHTTPClient.h"
-#import "Flurry.h"
 #import "KEDataManager.h"
 #import "KEReachabilityUtil.h"
 #import "Place.h"
@@ -27,8 +26,6 @@ static NSString * const kKEFlurryKey = @"28XKXSWTNJN2YTQS2KPX";
                                     barMetrics:UIBarMetricsDefault];
     
     [[KEReachabilityUtil sharedUtil] checkInternetConnectionWithNotification];
-    
-    [Flurry startSession:kKEFlurryKey];
     
     return YES;
 }

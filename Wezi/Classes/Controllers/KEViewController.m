@@ -89,8 +89,8 @@ static NSString * const kKEForecastBundle     = @"ForecastIcons.bundle";
 		[self.scrollView addSubview:aView];
 		[self.viewWithCoreData addObject:aView];
 		
-		CLLocation *location = [[CLLocation alloc]initWithLatitude:[[places objectAtIndex:i - 1] latitude]
-		                                                 longitude:[[places objectAtIndex:i - 1] longitude]];
+		CLLocation *location = [[CLLocation alloc]initWithLatitude:[places[i - 1] latitude]
+		                                                 longitude:[places[i - 1] longitude]];
 		
 		[self reloadDataWithNewLocation:location withView:aView withHUD:NO];
 	}
@@ -352,7 +352,7 @@ static NSString * const kKEForecastBundle     = @"ForecastIcons.bundle";
 
 - (void)handleCurrentLocationPermission:(NSNotification *)notification
 {
-	if ([[notification.userInfo objectForKey:@"Access"] isEqualToString:@"CurrentLocation"]) {
+	if ([(notification.userInfo)[@"Access"] isEqualToString:@"CurrentLocation"]) {
 		for (UIView *subview in [self.templateView subviews]) {
 			if (subview.hidden) {
 				subview.hidden = NO;
@@ -488,17 +488,17 @@ static NSString * const kKEForecastBundle     = @"ForecastIcons.bundle";
 			
 			self.entityArrayCoreData = [NSMutableArray arrayWithArray:places];
 			
-			self.location = [[CLLocation alloc]initWithLatitude:[[self.entityArrayCoreData objectAtIndex:self.pageControl.currentPage - 1] latitude]
-													  longitude:[[self.entityArrayCoreData objectAtIndex:self.pageControl.currentPage - 1] longitude]];
+			self.location = [[CLLocation alloc]initWithLatitude:[(self.entityArrayCoreData)[self.pageControl.currentPage - 1] latitude]
+													  longitude:[(self.entityArrayCoreData)[self.pageControl.currentPage - 1] longitude]];
 			
 			if (self.pageControl.currentPage == [self.entityArrayCoreData count]) {
 				[self reloadDataWithNewLocation:self.location
-				                       withView:[self.viewWithCoreData objectAtIndex:self.pageControl.currentPage - 1]
+				                       withView:(self.viewWithCoreData)[self.pageControl.currentPage - 1]
 										withHUD:YES];
 			}
 			else {
 				[self reloadDataWithNewLocation:self.location
-				                       withView:[self.viewWithCoreData objectAtIndex:self.pageControl.currentPage - 1]
+				                       withView:(self.viewWithCoreData)[self.pageControl.currentPage - 1]
 										withHUD:YES];
 			}
 		}
@@ -575,7 +575,7 @@ static NSString * const kKEForecastBundle     = @"ForecastIcons.bundle";
 - (IBAction)deletePage:(id)sender
 {
 	if (self.pageControl.currentPage != 0) {
-		[[self.viewWithCoreData objectAtIndex:self.pageControl.currentPage - 1] removeFromSuperview];
+		[(self.viewWithCoreData)[self.pageControl.currentPage - 1] removeFromSuperview];
 	}
 	else if (self.pageControl.currentPage == 0) {
 		[SVProgressHUD showErrorWithStatus:@"You can not delete the current location place"];
@@ -597,7 +597,7 @@ static NSString * const kKEForecastBundle     = @"ForecastIcons.bundle";
 	        NSArray *places = [self.managedObjectContext executeFetchRequest:[self.dataManager requestWithEntityName:@"Place"]
 	                                                                   error:&error];
 	        if ([places count] > 0) {
-	            Place *aPlace = [places objectAtIndex:self.pageControl.currentPage - 1];
+	            Place *aPlace = places[self.pageControl.currentPage - 1];
 	            [self.managedObjectContext deleteObject:aPlace];
 				
 	            NSError *savingError = nil;

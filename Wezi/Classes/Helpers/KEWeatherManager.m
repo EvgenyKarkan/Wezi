@@ -50,7 +50,7 @@ static id _sharedClient = nil;
 
 #pragma mark - Initialization
 
-- (id)initWithBaseURL:(NSURL *)url
+- (instancetype)initWithBaseURL:(NSURL *)url
 {
     self = [super initWithBaseURL:url];
     if (self) {
@@ -99,47 +99,47 @@ static id _sharedClient = nil;
 
 - (KETommorowForecast *)fillTommorowWithResponse:(id)response
 {
-    KETommorowForecast *tommorow = [[KETommorowForecast alloc]initWithCondition:[[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"] objectAtIndex:1] valueForKey:@"conditions"]
-                                                      withMonth:[[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"] objectAtIndex:1] valueForKeyPath:@"date.monthname"]
-                                                    withWeekDay:[[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"] objectAtIndex:1] valueForKeyPath:@"date.weekday_short"]
-                                                  withDayNumber:[[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"] objectAtIndex:1] valueForKeyPath:@"date.day"]
-                                                 withYearNumber:[[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"] objectAtIndex:1] valueForKeyPath:@"date.year"]
-                                                   withHumidity:[[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"] objectAtIndex:1] valueForKey:@"avehumidity"]
-                                                       withWind:[[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"] objectAtIndex:1] valueForKeyPath:@"avewind.kph"]
-                                            withHighTemperature:[[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"] objectAtIndex:1] valueForKeyPath:@"high.celsius"]
-                                             withLowTemperature:[[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"] objectAtIndex:1] valueForKeyPath:@"low.celsius"]
-                                                    withIconURL:[[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"] objectAtIndex:1] valueForKey:@"icon_url"]];
+    KETommorowForecast *tommorow = [[KETommorowForecast alloc]initWithCondition:[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"][1] valueForKey:@"conditions"]
+                                                      withMonth:[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"][1] valueForKeyPath:@"date.monthname"]
+                                                    withWeekDay:[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"][1] valueForKeyPath:@"date.weekday_short"]
+                                                  withDayNumber:[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"][1] valueForKeyPath:@"date.day"]
+                                                 withYearNumber:[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"][1] valueForKeyPath:@"date.year"]
+                                                   withHumidity:[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"][1] valueForKey:@"avehumidity"]
+                                                       withWind:[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"][1] valueForKeyPath:@"avewind.kph"]
+                                            withHighTemperature:[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"][1] valueForKeyPath:@"high.celsius"]
+                                             withLowTemperature:[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"][1] valueForKeyPath:@"low.celsius"]
+                                                    withIconURL:[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"][1] valueForKey:@"icon_url"]];
     
      return tommorow;
 }
 
 - (KEAfterTommorowForecast *)fillAfterTommorowWithResponse:(id)response
 {
-    KEAfterTommorowForecast *afterTommorow = [[KEAfterTommorowForecast alloc]initWithCondition:[[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"] objectAtIndex:2] valueForKey:@"conditions"]
-                                                           withMonth:[[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"] objectAtIndex:2] valueForKeyPath:@"date.monthname"]
-                                                         withWeekDay:[[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"] objectAtIndex:2] valueForKeyPath:@"date.weekday_short"]
-                                                       withDayNumber:[[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"] objectAtIndex:2] valueForKeyPath:@"date.day"]
-                                                      withYearNumber:[[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"] objectAtIndex:2] valueForKeyPath:@"date.year"]
-                                                        withHumidity:[[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"] objectAtIndex:2] valueForKey:@"avehumidity"]
-                                                            withWind:[[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"] objectAtIndex:2] valueForKeyPath:@"avewind.kph"]
-                                                 withHighTemperature:[[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"] objectAtIndex:2] valueForKeyPath:@"high.celsius"]
-                                                  withLowTemperature:[[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"] objectAtIndex:2] valueForKeyPath:@"low.celsius"]
-                                                         withIconURL:[[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"] objectAtIndex:2] valueForKey:@"icon_url"]];
+    KEAfterTommorowForecast *afterTommorow = [[KEAfterTommorowForecast alloc]initWithCondition:[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"][2] valueForKey:@"conditions"]
+                                                           withMonth:[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"][2] valueForKeyPath:@"date.monthname"]
+                                                         withWeekDay:[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"][2] valueForKeyPath:@"date.weekday_short"]
+                                                       withDayNumber:[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"][2] valueForKeyPath:@"date.day"]
+                                                      withYearNumber:[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"][2] valueForKeyPath:@"date.year"]
+                                                        withHumidity:[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"][2] valueForKey:@"avehumidity"]
+                                                            withWind:[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"][2] valueForKeyPath:@"avewind.kph"]
+                                                 withHighTemperature:[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"][2] valueForKeyPath:@"high.celsius"]
+                                                  withLowTemperature:[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"][2] valueForKeyPath:@"low.celsius"]
+                                                         withIconURL:[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"][2] valueForKey:@"icon_url"]];
     return afterTommorow;
 }
 
 - (KEAfterAfterTommorowForecast *)fillAfterAfterTommorowWithResponse:(id)response
 {
-    KEAfterAfterTommorowForecast *afterAfterTommorow = [[KEAfterAfterTommorowForecast alloc]initWithCondition:[[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"] objectAtIndex:3] valueForKey:@"conditions"]
-                                                                withMonth:[[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"] objectAtIndex:3] valueForKeyPath:@"date.monthname"]
-                                                              withWeekDay:[[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"] objectAtIndex:3] valueForKeyPath:@"date.weekday_short"]
-                                                            withDayNumber:[[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"] objectAtIndex:3] valueForKeyPath:@"date.day"]
-                                                           withYearNumber:[[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"] objectAtIndex:3] valueForKeyPath:@"date.year"]
-                                                             withHumidity:[[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"] objectAtIndex:3] valueForKey:@"avehumidity"]
-                                                                 withWind:[[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"] objectAtIndex:3] valueForKeyPath:@"avewind.kph"]
-                                                      withHighTemperature:[[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"] objectAtIndex:3] valueForKeyPath:@"high.celsius"]
-                                                       withLowTemperature:[[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"] objectAtIndex:3] valueForKeyPath:@"low.celsius"]
-                                                              withIconURL:[[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"] objectAtIndex:3] valueForKey:@"icon_url"]];
+    KEAfterAfterTommorowForecast *afterAfterTommorow = [[KEAfterAfterTommorowForecast alloc]initWithCondition:[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"][3] valueForKey:@"conditions"]
+                                                                withMonth:[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"][3] valueForKeyPath:@"date.monthname"]
+                                                              withWeekDay:[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"][3] valueForKeyPath:@"date.weekday_short"]
+                                                            withDayNumber:[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"][3] valueForKeyPath:@"date.day"]
+                                                           withYearNumber:[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"][3] valueForKeyPath:@"date.year"]
+                                                             withHumidity:[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"][3] valueForKey:@"avehumidity"]
+                                                                 withWind:[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"][3] valueForKeyPath:@"avewind.kph"]
+                                                      withHighTemperature:[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"][3] valueForKeyPath:@"high.celsius"]
+                                                       withLowTemperature:[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"][3] valueForKeyPath:@"low.celsius"]
+                                                              withIconURL:[[response valueForKeyPath:@"forecast.simpleforecast.forecastday"][3] valueForKey:@"icon_url"]];
 
      return afterAfterTommorow;
 }

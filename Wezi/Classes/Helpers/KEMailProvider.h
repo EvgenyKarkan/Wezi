@@ -11,7 +11,7 @@
 
 @property (nonatomic, strong) MFMailComposeViewController *mailForm;
 
-- (instancetype)initWithDelegate:(id)delegate;
+- (instancetype)initWithDelegate:(id)delegate NS_DESIGNATED_INITIALIZER;
 - (void)showMailComposerWithSubject:(NSString *)subject
 					  withRecepient:(NSArray *)recepient
 					withMessageBody:(NSString *)message;

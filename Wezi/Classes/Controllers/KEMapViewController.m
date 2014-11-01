@@ -81,7 +81,7 @@ static NSString * const kKEDoneButtonClick    = @"done_button_click.png";
 		    NSString *geoSublocality;
 			
 		    if (placemarks && placemarks.count > 0) {
-		        CLPlacemark *placemark = [placemarks objectAtIndex:0];
+		        CLPlacemark *placemark = placemarks[0];
 		        geocodedAddress = placemark.thoroughfare;
 		        geocodedHome = placemark.subThoroughfare;
 		        geoLocality = placemark.locality;

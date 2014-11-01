@@ -34,7 +34,7 @@ static CGRect  const kKERectSad                = {0.0f, 0.0f, 920.0f, 580.0f};
     NSArray *previews = [[NSBundle mainBundle] loadNibNamed:nibName
                                                       owner:self
                                                     options:nil];
-    UIView *tempView = [previews objectAtIndex:0];
+    UIView *tempView = previews[0];
     tempView.layer.borderColor = [[UIColor whiteColor] CGColor];
     tempView.layer.borderWidth  = kKEBorderWidth;
     [tempView addRoundShadowWithOpacity:kKEOpacity];

@@ -7,7 +7,6 @@
 //
 
 #import "KELocationManager.h"
-#import "Flurry.h"
 
 NSString * const kKELocationDidChangeNotificationKey = @"locationManagerlocationDidChange";
 static NSUInteger const kKEFilter                    = 1000;
@@ -117,10 +116,6 @@ static id _sharedLocationManager = nil;
 		[[NSNotificationCenter defaultCenter] postNotificationName:kKELocationDidChangeNotificationKey
 															object:self
 														  userInfo:userInfo];
-	[Flurry setLatitude:manager.location.coordinate.latitude
-			  longitude:manager.location.coordinate.longitude
-	 horizontalAccuracy:manager.location.horizontalAccuracy
-	   verticalAccuracy:manager.location.verticalAccuracy];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error

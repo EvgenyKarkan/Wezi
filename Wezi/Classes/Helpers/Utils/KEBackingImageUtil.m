@@ -35,7 +35,7 @@ static NSString * const kKEYellow = @"color_backg_yellow.png";
 
 + (id)randomObjectFromArray
 {
-	return [[self arrayWithRainbowImages] objectAtIndex:arc4random() % [[self arrayWithRainbowImages] count]];
+	return [self arrayWithRainbowImages][arc4random() % [[self arrayWithRainbowImages] count]];
 }
 
 @end

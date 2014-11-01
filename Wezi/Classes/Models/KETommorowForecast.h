@@ -29,6 +29,6 @@
                          withWind:(NSNumber *)forecastWind
               withHighTemperature:(NSString *)forecastHighTemperature
                withLowTemperature:(NSNumber *)forecastLowTemperature
-                      withIconURL:(NSString *)forecastIconURL;
+                      withIconURL:(NSString *)forecastIconURL NS_DESIGNATED_INITIALIZER;
 
 @end
