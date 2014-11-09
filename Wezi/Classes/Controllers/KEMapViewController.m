@@ -48,9 +48,9 @@ static NSString * const kKEDoneButtonClick    = @"done_button_click.png";
     self.map.delegate = self;
     self.map.showsUserLocation = YES;
     
-    _geocoder = [[CLGeocoder alloc]init];
-    _isContextActivated  = NO;
-    _isPinAlreadyDropped = NO;
+    _geocoder             = [[CLGeocoder alloc]init];
+    _isContextActivated   = NO;
+    _isPinAlreadyDropped  = NO;
     _dataManager          = [KEDataManager sharedDataManager];
     _managedObjectContext = [self.dataManager managedObjectContextFromDataManager];
     
@@ -64,7 +64,9 @@ static NSString * const kKEDoneButtonClick    = @"done_button_click.png";
 
 #pragma mark - MapView delegate method & geocoding
 
-- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)annotationView didChangeDragState:(MKAnnotationViewDragState)newState fromOldState:(MKAnnotationViewDragState)oldState
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)annotationView
+                                 didChangeDragState:(MKAnnotationViewDragState)newState
+                                       fromOldState:(MKAnnotationViewDragState)oldState
 {
 	if (oldState == MKAnnotationViewDragStateDragging) {
 		CLLocation *location = [[CLLocation alloc] initWithLatitude:self.myAnnotation.coordinate.latitude
@@ -81,11 +83,11 @@ static NSString * const kKEDoneButtonClick    = @"done_button_click.png";
 		    NSString *geoSublocality;
 			
 		    if (placemarks && placemarks.count > 0) {
-		        CLPlacemark *placemark = placemarks[0];
-		        geocodedAddress = placemark.thoroughfare;
-		        geocodedHome = placemark.subThoroughfare;
-		        geoLocality = placemark.locality;
-		        geoSublocality = placemark.name;
+                CLPlacemark *placemark = placemarks[0];
+                geocodedAddress        = placemark.thoroughfare;
+                geocodedHome           = placemark.subThoroughfare;
+                geoLocality            = placemark.locality;
+                geoSublocality         = placemark.name;
 			}
 			
 		    NSString *fooSubtitle;
@@ -140,9 +142,9 @@ static NSString * const kKEDoneButtonClick    = @"done_button_click.png";
             myImageView.frame               = CGRectMake(0.0f, 0.0f, 31.0f, 31.0f);
             myImageView.layer.cornerRadius  = 5.0f;
             myImageView.layer.masksToBounds = YES;
+            
 			pinView.leftCalloutAccessoryView = myImageView;
                 //[pinView setSelected:YES animated:YES];
-            
             pinView.selected = YES;
 		}
 		return pinView;
@@ -176,9 +178,10 @@ static NSString * const kKEDoneButtonClick    = @"done_button_click.png";
                                                      inManagedObjectContext:self.managedObjectContext];
 		
 		if (place != nil) {
-			place.latitude = self.myAnnotation.coordinate.latitude;
-			place.longitude = self.myAnnotation.coordinate.longitude;
-			place.city = self.bufferCityName;
+            place.latitude  = self.myAnnotation.coordinate.latitude;
+            place.longitude = self.myAnnotation.coordinate.longitude;
+            place.city      = self.bufferCityName;
+            
 			NSError *savingError = nil;
 			
 			if ([[KEReachabilityUtil sharedUtil] checkInternetConnection]) {

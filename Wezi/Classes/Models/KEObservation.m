@@ -38,12 +38,15 @@
     KEObservation *observation = nil;
     
     if (dictionary) {
-        observation = [[KEObservation alloc] init];
+        observation              = [[KEObservation alloc] init];
         NSDictionary *keyMapping = [self keyMapping];
+        
         for (NSString *key in keyMapping) {
             id value = dictionary[key];
+            
             if (value) {
-                [observation setValue:value forKey:keyMapping[key]];
+                [observation setValue:value
+                               forKey:keyMapping[key]];
             }
         }
     }
