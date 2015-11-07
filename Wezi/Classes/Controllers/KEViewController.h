@@ -17,8 +17,3 @@
 @property (nonatomic, strong) UIStoryboardPopoverSegue *currentPopoverSegue;
 
 @end
-
-
-
-
-

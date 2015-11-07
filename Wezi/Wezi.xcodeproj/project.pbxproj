@@ -796,8 +796,13 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = KE;
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = EvgenyKarkan;
+				TargetAttributes = {
+					CE7C0E9E172FBE4B00E4A8AC = {
+						DevelopmentTeam = 7VW32GE5L3;
+					};
+				};
 			};
 			buildConfigurationList = CE7C0E9A172FBE4B00E4A8AC /* Build configuration list for PBXProject "Wezi" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -998,8 +1003,9 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Yevgeniy Karkan (3YZNAVUC8R)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yevgeniy Karkan (3YZNAVUC8R)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1013,8 +1019,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "8071B842-2E07-4D16-BD71-E06D67E565DE";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8071B842-2E07-4D16-BD71-E06D67E565DE";
+				PROVISIONING_PROFILE = "1f5392d1-5395-428d-b1bc-2bbb80c32c40";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1f5392d1-5395-428d-b1bc-2bbb80c32c40";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -1032,7 +1038,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Yevgeniy Karkan (7VW32GE5L3)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yevgeniy Karkan (3YZNAVUC8R)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Yevgeniy Karkan (7VW32GE5L3)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1041,7 +1047,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "9C49AA28-1459-45ED-84BB-6F288635FEFA";
+				PROVISIONING_PROFILE = "2d47f155-df41-46d0-a029-5209c24108c9";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9C49AA28-1459-45ED-84BB-6F288635FEFA";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -1053,7 +1059,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: Yevgeniy Karkan (3YZNAVUC8R)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yevgeniy Karkan (3YZNAVUC8R)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wezi/Wezi-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
@@ -1063,9 +1069,10 @@
 					"$(inherited)",
 					"$(SRCROOT)",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.evgenykarkan.wezi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8071B842-2E07-4D16-BD71-E06D67E565DE";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8071B842-2E07-4D16-BD71-E06D67E565DE";
+				PROVISIONING_PROFILE = "1f5392d1-5395-428d-b1bc-2bbb80c32c40";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1f5392d1-5395-428d-b1bc-2bbb80c32c40";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1073,8 +1080,8 @@
 		CE7C0EC4172FBE4C00E4A8AC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Yevgeniy Karkan (7VW32GE5L3)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Yevgeniy Karkan (7VW32GE5L3)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yevgeniy Karkan (3YZNAVUC8R)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wezi/Wezi-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1089,8 +1096,9 @@
 					"$(SRCROOT)",
 				);
 				OTHER_CFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.evgenykarkan.wezi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9C49AA28-1459-45ED-84BB-6F288635FEFA";
+				PROVISIONING_PROFILE = "2d47f155-df41-46d0-a029-5209c24108c9";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9C49AA28-1459-45ED-84BB-6F288635FEFA";
 				WARNING_CFLAGS = "";
 				WRAPPER_EXTENSION = app;
