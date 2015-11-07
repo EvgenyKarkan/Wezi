@@ -9,11 +9,11 @@
 
 @interface KEViewController : UIViewController <UIScrollViewDelegate>
 
-@property (nonatomic, weak  ) IBOutlet UIPageControl   *pageControl;
-@property (nonatomic, weak  ) IBOutlet UIScrollView    *scrollView;
-@property (nonatomic, weak  ) IBOutlet UINavigationBar *navBar;
-@property (nonatomic, weak  ) IBOutlet UIImageView     *weziImage;
-@property (nonatomic, weak  ) IBOutlet UIToolbar       *downBar;
+@property (nonatomic, weak) IBOutlet UIPageControl   *pageControl;
+@property (nonatomic, weak) IBOutlet UIScrollView    *scrollView;
+@property (nonatomic, weak) IBOutlet UINavigationBar *navBar;
+@property (nonatomic, weak) IBOutlet UIImageView     *weziImage;
+@property (nonatomic, weak) IBOutlet UIToolbar       *downBar;
 @property (nonatomic, strong) UIStoryboardPopoverSegue *currentPopoverSegue;
 
 @end
