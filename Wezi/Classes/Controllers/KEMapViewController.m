@@ -55,6 +55,12 @@ static NSString * const kKEDoneButtonClick    = @"done_button_click.png";
     _managedObjectContext = [self.dataManager managedObjectContextFromDataManager];
     
     [self addCustomButtons];
+    
+    self.view.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.view.layer.borderWidth = 2.0f;
+    
+    self.view.layer.cornerRadius = 13.0f;
+    self.view.layer.masksToBounds = YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -236,12 +242,12 @@ static NSString * const kKEDoneButtonClick    = @"done_button_click.png";
 	UIImage *backgroundImage = [UIImage imageNamed:kKENavBar];
 	[self.mapNavBar setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
 	
-	UIButton *done = [[UIButton alloc] initWithFrame:CGRectMake(475.0f, 5.0f, 60.0f, 30.0f)];
+	UIButton *done = [[UIButton alloc] initWithFrame:CGRectMake(474.0f, 6.0f, 60.0f, 30.0f)];
 	[done setImage:[UIImage imageNamed:kKEDoneButton] forState:UIControlStateNormal];
 	[done setImage:[UIImage imageNamed:kKEDoneButtonClick] forState:UIControlStateHighlighted];
 	[done addTarget:self action:@selector(chooseLocation:) forControlEvents:UIControlEventTouchUpInside];
 	
-	UIButton *plus = [[UIButton alloc] initWithFrame:CGRectMake(5.0f, 5.0f, 60.0f, 30.0f)];
+	UIButton *plus = [[UIButton alloc] initWithFrame:CGRectMake(6.0f, 6.0f, 60.0f, 30.0f)];
 	[plus setImage:[UIImage imageNamed:kKEPlusButton] forState:UIControlStateNormal];
 	[plus setImage:[UIImage imageNamed:kKEPlusButtonClick] forState:UIControlStateHighlighted];
 	[plus addTarget:self action:@selector(dropPinPressed:) forControlEvents:UIControlEventTouchUpInside];

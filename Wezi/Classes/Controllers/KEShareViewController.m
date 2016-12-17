@@ -28,6 +28,13 @@
 {
 	[super viewDidLoad];
 	[self createSubViews];
+    
+    self.view.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.view.layer.borderWidth = 2.0f;
+    
+    self.view.layer.cornerRadius = 13.0f;
+    self.view.layer.masksToBounds = YES;
+    
 }
 
 - (void)didReceiveMemoryWarning

@@ -422,7 +422,7 @@ static NSString * const kKEForecastBundle     = @"ForecastIcons.bundle";
 	    else {
 	        [weakSelf updateUIWithObservationForCurrentLocation:observation forecastDays:days];
 	        if (isHUD) {
-	            [SVProgressHUD showSuccessWithStatus:@"Ok!"];
+	            [SVProgressHUD showSuccessWithStatus:@"Data has been updated"];
 			}
 		}
 	}];
@@ -449,7 +449,7 @@ static NSString * const kKEForecastBundle     = @"ForecastIcons.bundle";
 	        [weakSelf updateAfterTomorrowWithForecast:[days valueForKey:@"AfterTommorow"] withView:viewToUpdate];
 	        [weakSelf updateAfterAfterTommorowWithForecast:[days valueForKey:@"AfterAfterTommorow"] withView:viewToUpdate];
 	        if (isHUD) {
-	            [SVProgressHUD showSuccessWithStatus:@"Ok!"];
+	            [SVProgressHUD showSuccessWithStatus:@"Data has been updated"];
 			}
 		}
 	}];

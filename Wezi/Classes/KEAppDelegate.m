@@ -10,10 +10,10 @@
 #import "AFHTTPClient.h"
 #import "KEDataManager.h"
 #import "KEReachabilityUtil.h"
-#import "Place.h"
 
-static NSString * const kKEToolBar   = @"toolbar.png";
-static NSString * const kKERefresh   = @"RefreshCurrentLocation";
+
+static NSString * const kKEToolBar = @"toolbar.png";
+static NSString * const kKERefresh = @"RefreshCurrentLocation";
 
 
 @implementation KEAppDelegate

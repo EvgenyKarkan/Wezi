@@ -29,7 +29,7 @@
 		CE7C0EA7172FBE4B00E4A8AC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7C0EA6172FBE4B00E4A8AC /* CoreGraphics.framework */; };
 		CE7C0EAD172FBE4B00E4A8AC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE7C0EAB172FBE4B00E4A8AC /* InfoPlist.strings */; };
 		CE7C0EAF172FBE4B00E4A8AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7C0EAE172FBE4B00E4A8AC /* main.m */; };
-		CE7C0EF2172FBF1B00E4A8AC /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7C0EDC172FBF1B00E4A8AC /* AFHTTPClient.m */; };
+		CE7C0EF2172FBF1B00E4A8AC /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7C0EDC172FBF1B00E4A8AC /* AFHTTPClient.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		CE7C0EF3172FBF1B00E4A8AC /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7C0EDE172FBF1B00E4A8AC /* AFHTTPRequestOperation.m */; };
 		CE7C0EF4172FBF1B00E4A8AC /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7C0EE0172FBF1B00E4A8AC /* AFImageRequestOperation.m */; };
 		CE7C0EF5172FBF1B00E4A8AC /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7C0EE2172FBF1B00E4A8AC /* AFJSONRequestOperation.m */; };
@@ -38,8 +38,6 @@
 		CE7C0EF8172FBF1B00E4A8AC /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7C0EE9172FBF1B00E4A8AC /* AFURLConnectionOperation.m */; };
 		CE7C0EF9172FBF1B00E4A8AC /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7C0EEB172FBF1B00E4A8AC /* AFXMLRequestOperation.m */; };
 		CE7C0EFA172FBF1B00E4A8AC /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7C0EED172FBF1B00E4A8AC /* UIImageView+AFNetworking.m */; };
-		CE7C0EFB172FBF1B00E4A8AC /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CE7C0EEF172FBF1B00E4A8AC /* SVProgressHUD.bundle */; };
-		CE7C0EFC172FBF1B00E4A8AC /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7C0EF1172FBF1B00E4A8AC /* SVProgressHUD.m */; };
 		CE7C0F01172FC00500E4A8AC /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE7C0F00172FC00500E4A8AC /* MainStoryboard.storyboard */; };
 		CE7C0F09172FC04B00E4A8AC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7C0F08172FC04B00E4A8AC /* QuartzCore.framework */; };
 		CE7C0F0B172FC05300E4A8AC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7C0F0A172FC05300E4A8AC /* CoreLocation.framework */; };
@@ -155,6 +153,11 @@
 		DEDCDCE11748001100D957EC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDCDCE01748001100D957EC /* CoreData.framework */; };
 		DEDCDCE717480B2C00D957EC /* Wezi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DEDCDCE517480B2C00D957EC /* Wezi.xcdatamodeld */; };
 		DEE861D01842721C005098FE /* Download_on_the_App_Store_Badge_US-UK_135x40.png in Resources */ = {isa = PBXBuildFile; fileRef = DEE861CF1842721C005098FE /* Download_on_the_App_Store_Badge_US-UK_135x40.png */; };
+		DEEA2F6E1E05E99C0013D5A2 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEA2F651E05E99C0013D5A2 /* SVIndefiniteAnimatedView.m */; };
+		DEEA2F6F1E05E99C0013D5A2 /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEA2F671E05E99C0013D5A2 /* SVProgressAnimatedView.m */; };
+		DEEA2F701E05E99C0013D5A2 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DEEA2F691E05E99C0013D5A2 /* SVProgressHUD.bundle */; };
+		DEEA2F711E05E99C0013D5A2 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEA2F6B1E05E99C0013D5A2 /* SVProgressHUD.m */; };
+		DEEA2F721E05E99C0013D5A2 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEA2F6D1E05E99C0013D5A2 /* SVRadialGradientLayer.m */; };
 		DEEFE4D11795EB7E0021B3E7 /* KESplashScreenUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEFE4D01795EB7E0021B3E7 /* KESplashScreenUtil.m */; };
 		DEF1A58817986F900043CDA8 /* KESocialProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF1A58717986F900043CDA8 /* KESocialProvider.m */; };
 /* End PBXBuildFile section */
@@ -204,9 +207,6 @@
 		CE7C0EEB172FBF1B00E4A8AC /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
 		CE7C0EEC172FBF1B00E4A8AC /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		CE7C0EED172FBF1B00E4A8AC /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
-		CE7C0EEF172FBF1B00E4A8AC /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
-		CE7C0EF0172FBF1B00E4A8AC /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
-		CE7C0EF1172FBF1B00E4A8AC /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		CE7C0F00172FC00500E4A8AC /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		CE7C0F08172FC04B00E4A8AC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CE7C0F0A172FC05300E4A8AC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -348,6 +348,16 @@
 		DEDCDCE01748001100D957EC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		DEDCDCE617480B2C00D957EC /* Wezi.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Wezi.xcdatamodel; sourceTree = "<group>"; };
 		DEE861CF1842721C005098FE /* Download_on_the_App_Store_Badge_US-UK_135x40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Download_on_the_App_Store_Badge_US-UK_135x40.png"; sourceTree = "<group>"; };
+		DEEA2F641E05E99C0013D5A2 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		DEEA2F651E05E99C0013D5A2 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		DEEA2F661E05E99C0013D5A2 /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressAnimatedView.h; sourceTree = "<group>"; };
+		DEEA2F671E05E99C0013D5A2 /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressAnimatedView.m; sourceTree = "<group>"; };
+		DEEA2F681E05E99C0013D5A2 /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
+		DEEA2F691E05E99C0013D5A2 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		DEEA2F6A1E05E99C0013D5A2 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		DEEA2F6B1E05E99C0013D5A2 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		DEEA2F6C1E05E99C0013D5A2 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		DEEA2F6D1E05E99C0013D5A2 /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
 		DEEFE4CF1795EB7E0021B3E7 /* KESplashScreenUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KESplashScreenUtil.h; sourceTree = "<group>"; };
 		DEEFE4D01795EB7E0021B3E7 /* KESplashScreenUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KESplashScreenUtil.m; sourceTree = "<group>"; };
 		DEF1A58617986F900043CDA8 /* KESocialProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KESocialProvider.h; sourceTree = "<group>"; };
@@ -465,8 +475,8 @@
 		CE7C0ED9172FBF1B00E4A8AC /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				DEEA2F631E05E99C0013D5A2 /* SVProgressHUD */,
 				CE7C0EDA172FBF1B00E4A8AC /* AFNetworking */,
-				CE7C0EEE172FBF1B00E4A8AC /* SVProgressHUD */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
@@ -495,16 +505,6 @@
 				CE7C0EED172FBF1B00E4A8AC /* UIImageView+AFNetworking.m */,
 			);
 			path = AFNetworking;
-			sourceTree = "<group>";
-		};
-		CE7C0EEE172FBF1B00E4A8AC /* SVProgressHUD */ = {
-			isa = PBXGroup;
-			children = (
-				CE7C0EEF172FBF1B00E4A8AC /* SVProgressHUD.bundle */,
-				CE7C0EF0172FBF1B00E4A8AC /* SVProgressHUD.h */,
-				CE7C0EF1172FBF1B00E4A8AC /* SVProgressHUD.m */,
-			);
-			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
 		CE7C0EFD172FBF2900E4A8AC /* Resourses */ = {
@@ -769,6 +769,23 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		DEEA2F631E05E99C0013D5A2 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				DEEA2F641E05E99C0013D5A2 /* SVIndefiniteAnimatedView.h */,
+				DEEA2F651E05E99C0013D5A2 /* SVIndefiniteAnimatedView.m */,
+				DEEA2F661E05E99C0013D5A2 /* SVProgressAnimatedView.h */,
+				DEEA2F671E05E99C0013D5A2 /* SVProgressAnimatedView.m */,
+				DEEA2F681E05E99C0013D5A2 /* SVProgressHUD-Prefix.pch */,
+				DEEA2F691E05E99C0013D5A2 /* SVProgressHUD.bundle */,
+				DEEA2F6A1E05E99C0013D5A2 /* SVProgressHUD.h */,
+				DEEA2F6B1E05E99C0013D5A2 /* SVProgressHUD.m */,
+				DEEA2F6C1E05E99C0013D5A2 /* SVRadialGradientLayer.h */,
+				DEEA2F6D1E05E99C0013D5A2 /* SVRadialGradientLayer.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -827,7 +844,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE7C0EAD172FBE4B00E4A8AC /* InfoPlist.strings in Resources */,
-				CE7C0EFB172FBF1B00E4A8AC /* SVProgressHUD.bundle in Resources */,
 				CE7C0F01172FC00500E4A8AC /* MainStoryboard.storyboard in Resources */,
 				CE9C75CA173CED00008CFE31 /* WindowView.xib in Resources */,
 				CE38029E1757B8840086510C /* PlutoSansBlack.otf in Resources */,
@@ -876,6 +892,7 @@
 				DE40AE1F177F463E0080C64E /* refresh_button_click.png in Resources */,
 				DE40AE20177F463E0080C64E /* refresh_button_click@2x.png in Resources */,
 				DE40AE21177F463E0080C64E /* share_button.png in Resources */,
+				DEEA2F701E05E99C0013D5A2 /* SVProgressHUD.bundle in Resources */,
 				DE40AE22177F463E0080C64E /* share_button@2x.png in Resources */,
 				DE40AE23177F463E0080C64E /* share_button_click.png in Resources */,
 				DE40AE24177F463E0080C64E /* share_button_click@2x.png in Resources */,
@@ -941,14 +958,15 @@
 				CE7C0EF5172FBF1B00E4A8AC /* AFJSONRequestOperation.m in Sources */,
 				CE7C0EF6172FBF1B00E4A8AC /* AFNetworkActivityIndicatorManager.m in Sources */,
 				CE7C0EF7172FBF1B00E4A8AC /* AFPropertyListRequestOperation.m in Sources */,
+				DEEA2F721E05E99C0013D5A2 /* SVRadialGradientLayer.m in Sources */,
 				CE7C0EF8172FBF1B00E4A8AC /* AFURLConnectionOperation.m in Sources */,
 				CE7C0EF9172FBF1B00E4A8AC /* AFXMLRequestOperation.m in Sources */,
 				CE7C0EFA172FBF1B00E4A8AC /* UIImageView+AFNetworking.m in Sources */,
-				CE7C0EFC172FBF1B00E4A8AC /* SVProgressHUD.m in Sources */,
 				CE7C0F22172FC2CC00E4A8AC /* KEViewController.m in Sources */,
 				CE7C0F23172FC2CC00E4A8AC /* KELocationManager.m in Sources */,
 				CE7C0F24172FC2CC00E4A8AC /* KEWeatherManager.m in Sources */,
 				CE7C0F25172FC2CC00E4A8AC /* KEAppDelegate.m in Sources */,
+				DEEA2F6E1E05E99C0013D5A2 /* SVIndefiniteAnimatedView.m in Sources */,
 				CE7C0F26172FC2CC00E4A8AC /* KEObservation.m in Sources */,
 				CE7C0F3317300F9E00E4A8AC /* KETommorowForecast.m in Sources */,
 				CE7F06B21739176D00697A98 /* KEAfterTommorowForecast.m in Sources */,
@@ -957,6 +975,7 @@
 				CE9C75CD173CED5C008CFE31 /* KEWindowView.m in Sources */,
 				CE9D02C617437B2F0057968F /* KECityAnnotation.m in Sources */,
 				DEDCDCE717480B2C00D957EC /* Wezi.xcdatamodeld in Sources */,
+				DEEA2F711E05E99C0013D5A2 /* SVProgressHUD.m in Sources */,
 				DEB839AD1748D7A0005D211F /* KEDataManager.m in Sources */,
 				DE953F87174AD64500AC7915 /* Place.m in Sources */,
 				DEB51ED41759267400F04539 /* NSString+CommaSubString.m in Sources */,
@@ -965,6 +984,7 @@
 				DE228E4917692BDE002DADE3 /* Reachability.m in Sources */,
 				DEAFD03E176A5FF200BA3785 /* KEReachabilityUtil.m in Sources */,
 				DEA43AD2177B90C6009878AC /* KEBackingImageUtil.m in Sources */,
+				DEEA2F6F1E05E99C0013D5A2 /* SVProgressAnimatedView.m in Sources */,
 				DE40AD9E177EF50E0080C64E /* UIView+Decorate.m in Sources */,
 				DE40ADA1177F1B790080C64E /* GradientView.m in Sources */,
 				DE40ADC4177F29D30080C64E /* KEDecoratorUtil.m in Sources */,
