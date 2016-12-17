@@ -12,7 +12,7 @@
 #import "SVProgressHUD.h"
 #import "WeatherAPIKey.h"
 
-static NSString * const kWeatherUndergroundAPIBaseURLString = @"http://api.wunderground.com/api/";
+static NSString * const kWeatherUndergroundAPIBaseURLString = @"https://api.wunderground.com/api/";
 
 
 @implementation KEWeatherManager;

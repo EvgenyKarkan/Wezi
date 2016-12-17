@@ -176,7 +176,9 @@ static NSString * const kKEForecastBundle     = @"ForecastIcons.bundle";
     self.mapViewController.objectToDelegate = self;
     self.isShownMapPopover = NO;
     
-    UIImage *backgroundImage = [UIImage imageNamed:kKENavBar];
+    self.navBar.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 64);
+    
+    UIImage *backgroundImage = [KEViewController imageWithImage: [UIImage imageNamed:kKENavBar] scaledToSize: self.navBar.frame.size]; //;
     [self.navBar setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
     
     [KEDecoratorUtil decorateWithShadow:self.navBar withOffsetValue: kKEShadowOffset];
@@ -186,16 +188,24 @@ static NSString * const kKEForecastBundle     = @"ForecastIcons.bundle";
     [self addCustomButtons];
 }
 
++ (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
+    UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
+    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
+
 - (void)addCustomButtons
 {
 		//#warning Magic
 		//TODO: add pixel perfect stuff below !!!
-	UIButton *refresh = [[UIButton alloc] initWithFrame:CGRectMake(959, 5, 60, 30)];
+	UIButton *refresh = [[UIButton alloc] initWithFrame:CGRectMake(959, 20, 60, 30)];
 	[refresh setImage:[UIImage imageNamed:kKERefreshButton] forState:UIControlStateNormal];
 	[refresh setImage:[UIImage imageNamed:kKERefreshButtonClick] forState:UIControlStateHighlighted];
 	[refresh addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventTouchUpInside];
     
-	UIButton *trash = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 60, 30)];
+	UIButton *trash = [[UIButton alloc] initWithFrame:CGRectMake(5, 20, 60, 30)];
 	[trash setImage:[UIImage imageNamed:kKETrashButton] forState:UIControlStateNormal];
 	[trash setImage:[UIImage imageNamed:kKETrashButtonClick] forState:UIControlStateHighlighted];
 	[trash addTarget:self action:@selector(deletePage:) forControlEvents:UIControlEventTouchUpInside];

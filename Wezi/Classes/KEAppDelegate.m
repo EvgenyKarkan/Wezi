@@ -14,7 +14,6 @@
 
 static NSString * const kKEToolBar   = @"toolbar.png";
 static NSString * const kKERefresh   = @"RefreshCurrentLocation";
-static NSString * const kKEFlurryKey = @"28XKXSWTNJN2YTQS2KPX";
 
 
 @implementation KEAppDelegate

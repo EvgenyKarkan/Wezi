@@ -9,7 +9,7 @@
 #import "KESplashScreenUtil.h"
 
 static NSString * const kKESplashImage = @"Default-Landscape~ipad.png";
-static CGRect const kKEImageViewRect   = { 0.0f, 0.0f, 1024.0f, 748.0f };
+static CGRect const kKEImageViewRect   = { 0.0f, 0.0f, 1024.0f, 768.0f };
 
 @implementation KESplashScreenUtil;
 
@@ -17,8 +17,8 @@ static CGRect const kKEImageViewRect   = { 0.0f, 0.0f, 1024.0f, 748.0f };
 {
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
-	    UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:kKESplashImage]];
-	    imageView.frame = kKEImageViewRect;
+	    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:kKESplashImage]];
+	    imageView.frame        = kKEImageViewRect;
 	    [view addSubview:imageView];
 		
 		[UIView animateWithDuration:2.0f
