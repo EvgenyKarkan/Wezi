@@ -2,7 +2,7 @@
 //  KEForecast.m
 //  Wezi
 //
-//  Created by Evgeniy Karkan on 4/30/13.
+//  Created by Evgeny Karkan on 4/30/13.
 //  Copyright (c) 2013 EvgenyKarkan. All rights reserved.
 //
 
@@ -26,16 +26,16 @@
     self = [super init];
     
     if (self) {
-        self.conditionOnForecast = forecastCondition;
-        self.month               = forecastMonth;
-        self.weekDay             = forecastWeekDay;
-        self.dayNumber           = forecastDayNumber;
-        self.yearNumber          = forecastYearNumber;
-        self.humidity            = forecastHumidity;
-        self.wind                = forecastWind;
-        self.highTemperature     = forecastHighTemperature;
-        self.lowTemperature      = forecastLowTemperature;
-        self.iconURL             = forecastIconURL;
+        _conditionOnForecast = forecastCondition;
+        _month               = forecastMonth;
+        _weekDay             = forecastWeekDay;
+        _dayNumber           = forecastDayNumber;
+        _yearNumber          = forecastYearNumber;
+        _humidity            = forecastHumidity;
+        _wind                = forecastWind;
+        _highTemperature     = forecastHighTemperature;
+        _lowTemperature      = forecastLowTemperature;
+        _iconURL             = forecastIconURL;
     }
     
     return self;

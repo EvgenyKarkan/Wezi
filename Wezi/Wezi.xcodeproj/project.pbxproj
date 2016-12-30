@@ -68,7 +68,6 @@
 		DE320E4F17D15BFF00A11649 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = DE320E4E17D15BFA00A11649 /* Icon-72.png */; };
 		DE320E5117D15C1000A11649 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE320E5017D15C0F00A11649 /* Icon-72@2x.png */; };
 		DE40AD9E177EF50E0080C64E /* UIView+Decorate.m in Sources */ = {isa = PBXBuildFile; fileRef = DE40AD9D177EF50E0080C64E /* UIView+Decorate.m */; };
-		DE40ADA1177F1B790080C64E /* GradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE40ADA0177F1B790080C64E /* GradientView.m */; };
 		DE40ADC4177F29D30080C64E /* KEDecoratorUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DE40ADC3177F29D30080C64E /* KEDecoratorUtil.m */; };
 		DE40AE05177F463E0080C64E /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = DE40ADD7177F463E0080C64E /* background.png */; };
 		DE40AE06177F463E0080C64E /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE40ADD8177F463E0080C64E /* background@2x.png */; };
@@ -149,7 +148,6 @@
 		DEB833461780925700DD9500 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB833451780925700DD9500 /* MessageUI.framework */; };
 		DEB833491780A1E300DD9500 /* KEMailProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB833481780A1E300DD9500 /* KEMailProvider.m */; };
 		DEB839AD1748D7A0005D211F /* KEDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB839AC1748D7A0005D211F /* KEDataManager.m */; };
-		DED37E8617C6276C00200F09 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED37E8517C6276C00200F09 /* AdSupport.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		DEDCDCE11748001100D957EC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDCDCE01748001100D957EC /* CoreData.framework */; };
 		DEDCDCE717480B2C00D957EC /* Wezi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DEDCDCE517480B2C00D957EC /* Wezi.xcdatamodeld */; };
 		DEE861D01842721C005098FE /* Download_on_the_App_Store_Badge_US-UK_135x40.png in Resources */ = {isa = PBXBuildFile; fileRef = DEE861CF1842721C005098FE /* Download_on_the_App_Store_Badge_US-UK_135x40.png */; };
@@ -252,8 +250,6 @@
 		DE320E5017D15C0F00A11649 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
 		DE40AD9C177EF50E0080C64E /* UIView+Decorate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Decorate.h"; sourceTree = "<group>"; };
 		DE40AD9D177EF50E0080C64E /* UIView+Decorate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Decorate.m"; sourceTree = "<group>"; };
-		DE40AD9F177F1B790080C64E /* GradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientView.h; sourceTree = "<group>"; };
-		DE40ADA0177F1B790080C64E /* GradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientView.m; sourceTree = "<group>"; };
 		DE40ADC2177F29D30080C64E /* KEDecoratorUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEDecoratorUtil.h; sourceTree = "<group>"; };
 		DE40ADC3177F29D30080C64E /* KEDecoratorUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEDecoratorUtil.m; sourceTree = "<group>"; };
 		DE40ADD7177F463E0080C64E /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
@@ -369,7 +365,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DED37E8617C6276C00200F09 /* AdSupport.framework in Frameworks */,
 				DE52E4FE17BA5B3F009E7E1B /* Security.framework in Frameworks */,
 				CE7C0F0F172FC08600E4A8AC /* SystemConfiguration.framework in Frameworks */,
 				DE9D441F179728700017A6D5 /* Social.framework in Frameworks */,
@@ -588,8 +583,6 @@
 		CE7C0F1E172FC2CC00E4A8AC /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DE40AD9F177F1B790080C64E /* GradientView.h */,
-				DE40ADA0177F1B790080C64E /* GradientView.m */,
 				CE9C75CB173CED5C008CFE31 /* KEWindowView.h */,
 				CE9C75CC173CED5C008CFE31 /* KEWindowView.m */,
 			);
@@ -986,7 +979,6 @@
 				DEA43AD2177B90C6009878AC /* KEBackingImageUtil.m in Sources */,
 				DEEA2F6F1E05E99C0013D5A2 /* SVProgressAnimatedView.m in Sources */,
 				DE40AD9E177EF50E0080C64E /* UIView+Decorate.m in Sources */,
-				DE40ADA1177F1B790080C64E /* GradientView.m in Sources */,
 				DE40ADC4177F29D30080C64E /* KEDecoratorUtil.m in Sources */,
 				DE1809C81780435C00251C1C /* KEShareViewController.m in Sources */,
 				DEB833491780A1E300DD9500 /* KEMailProvider.m in Sources */,

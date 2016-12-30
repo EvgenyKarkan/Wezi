@@ -2,7 +2,7 @@
 //  KECityAnnotation.h
 //  Wezi
 //
-//  Created by Evgeniy Karkan on 5/15/13.
+//  Created by Evgeny Karkan on 5/15/13.
 //  Copyright (c) 2013 EvgenyKarkan. All rights reserved.
 //
 
@@ -15,6 +15,6 @@
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *subtitle;
 
-- (instancetype)initWithTitle:(NSString *)title subtitle:(NSString *)subtitle NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithTitle:(NSString *)title subtitle:(NSString *)subtitle;
 
 @end

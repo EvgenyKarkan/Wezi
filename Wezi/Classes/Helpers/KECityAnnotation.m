@@ -2,7 +2,7 @@
 //  KECityAnnotation.m
 //  Wezi
 //
-//  Created by Evgeniy Karkan on 5/15/13.
+//  Created by Evgeny Karkan on 5/15/13.
 //  Copyright (c) 2013 EvgenyKarkan. All rights reserved.
 //
 
@@ -13,8 +13,8 @@
 - (instancetype)initWithTitle:(NSString *)newTitle subtitle:(NSString *)newSubtitle
 {
 	if (self = [super init]) {
-		self.title = newTitle;
-		self.subtitle = newSubtitle;
+		_title = newTitle;
+		_subtitle = newSubtitle;
 	}
 	
 	return self;

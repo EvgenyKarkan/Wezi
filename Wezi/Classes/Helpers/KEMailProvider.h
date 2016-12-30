@@ -2,7 +2,7 @@
 //  KEMailProvider.h
 //  Wezi
 //
-//  Created by Evgeniy Karkan on 30.06.13.
+//  Created by Evgeny Karkan on 30.06.13.
 //  Copyright (c) 2013 EvgenyKarkan. All rights reserved.
 //
 
@@ -11,7 +11,7 @@
 
 @property (nonatomic, strong) MFMailComposeViewController *mailForm;
 
-- (instancetype)initWithDelegate:(id)delegate NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithDelegate:(id)delegate;
 
 - (void)showMailComposerWithSubject:(NSString *)subject
 					  withRecepient:(NSArray *)recepient

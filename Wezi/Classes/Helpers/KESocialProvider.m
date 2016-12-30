@@ -2,7 +2,7 @@
 //  KESocialProvider.m
 //  Wezi
 //
-//  Created by Evgeniy Karkan on 18.07.13.
+//  Created by Evgeny Karkan on 18.07.13.
 //  Copyright (c) 2013 EvgenyKarkan. All rights reserved.
 //
 

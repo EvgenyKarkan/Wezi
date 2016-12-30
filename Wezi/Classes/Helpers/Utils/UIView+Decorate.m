@@ -2,7 +2,7 @@
 //  UIView+Decorate.m
 //  Wezi
 //
-//  Created by Evgeniy Karkan on 29.06.13.
+//  Created by Evgeny Karkan on 29.06.13.
 //  Copyright (c) 2013 EvgenyKarkan. All rights reserved.
 //
 
@@ -14,7 +14,7 @@ static NSUInteger const kKEVerticalShadowOffsett  = 13;
 
 @implementation UIView (Decorate);
 
-- (void)addRoundShadowWithOpacity:(double)opacity
+- (void)wzz_addRoundShadowWithOpacity:(double)opacity
 {
     CALayer *layer      = self.layer;
     layer.shadowRadius  = 1;

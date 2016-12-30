@@ -2,7 +2,7 @@
 //  KELocationManager.m
 //  Wezi
 //
-//  Created by Evgeniy Karkan on 4/29/13.
+//  Created by Evgeny Karkan on 4/29/13.
 //  Copyright (c) 2013 EvgenyKarkan. All rights reserved.
 //
 
@@ -52,6 +52,11 @@ static id _sharedLocationManager = nil;
     return self;
 }
 
+- (void)dealloc
+{
+    _locationManager.delegate = nil;
+}
+
 #pragma mark - Public API
 
 - (void)startMonitoringLocationChanges
@@ -60,6 +65,15 @@ static id _sharedLocationManager = nil;
         if (!self.isMonitoringLocation) {
             self.isMonitoringLocation = YES;
             self.locationManager.delegate = self;
+            
+                // For iOS 8.
+            if ([self.locationManager respondsToSelector: @selector(requestWhenInUseAuthorization)]) {
+                [self.locationManager requestWhenInUseAuthorization];
+                
+                [self.locationManager startUpdatingLocation];
+            }
+            
+            
             [self.locationManager startMonitoringSignificantLocationChanges];
         }
     }
@@ -137,7 +151,7 @@ static id _sharedLocationManager = nil;
 	if (status == kCLAuthorizationStatusDenied) {
 		value = @"NoCurrentLocation";
 	}
-	else if (status == kCLAuthorizationStatusAuthorized) {
+	else if (status == kCLAuthorizationStatusAuthorizedWhenInUse) {
 		value = @"CurrentLocation";
 		self.isPermitted = YES;
 	}

@@ -2,7 +2,7 @@
 //  KEMailProvider.m
 //  Wezi
 //
-//  Created by Evgeniy Karkan on 30.06.13.
+//  Created by Evgeny Karkan on 30.06.13.
 //  Copyright (c) 2013 EvgenyKarkan. All rights reserved.
 //
 
@@ -26,9 +26,9 @@ static NSString * const kKEMailTo       = @"mailto:wezi@gmail.com";
     self = [super init];
     
     if (self) {
-        self.mailForm = [[MFMailComposeViewController alloc] init];
-        self.mailForm.mailComposeDelegate = delegate;
-        self.delegateObject = delegate;
+        _mailForm = [[MFMailComposeViewController alloc] init];
+        _mailForm.mailComposeDelegate = delegate;
+        _delegateObject = delegate;
     }
     
     return self;
@@ -41,7 +41,7 @@ static NSString * const kKEMailTo       = @"mailto:wezi@gmail.com";
     if (mailClass != nil) {
         if ([mailClass canSendMail]) {
             if (self.mailForm) {
-                [self.delegateObject presentModalViewController:self.mailForm animated:YES];
+                [self.delegateObject presentViewController:self.mailForm animated:YES completion: nil];
                 [self.mailForm setModalPresentationStyle:UIModalPresentationFormSheet];
                 [self.mailForm setSubject:subject];
                 [self.mailForm setToRecipients:recepient];
@@ -49,7 +49,7 @@ static NSString * const kKEMailTo       = @"mailto:wezi@gmail.com";
             }
         }
         else {
-                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kKEMailTo]];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kKEMailTo]];
         }
     }
     else {

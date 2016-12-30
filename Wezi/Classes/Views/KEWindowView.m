@@ -2,7 +2,7 @@
 //  KEWindowView.m
 //  Wezi
 //
-//  Created by Evgeniy Karkan on 5/10/13.
+//  Created by Evgeny Karkan on 5/10/13.
 //  Copyright (c) 2013 EvgenyKarkan. All rights reserved.
 //
 
@@ -37,7 +37,7 @@ static CGRect  const kKERectSad                = {0.0f, 0.0f, 920.0f, 580.0f};
     UIView *tempView = previews[0];
     tempView.layer.borderColor = [[UIColor whiteColor] CGColor];
     tempView.layer.borderWidth  = kKEBorderWidth;
-    [tempView addRoundShadowWithOpacity:kKEOpacity];
+    [tempView wzz_addRoundShadowWithOpacity:kKEOpacity];
     
     return tempView;
 }

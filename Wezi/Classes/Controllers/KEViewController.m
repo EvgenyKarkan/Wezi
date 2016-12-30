@@ -2,7 +2,7 @@
 //  SUViewController.m
 //  Wezi
 //
-//  Created by Evgeniy Karkan on 4/26/13.
+//  Created by Evgeny Karkan on 4/26/13.
 //  Copyright (c) 2013 EvgenyKarkan. All rights reserved.
 //
 
@@ -241,7 +241,7 @@ static NSString * const kKEForecastBundle     = @"ForecastIcons.bundle";
 		}
 		
 		self.templateView.currentCondition.text = observation.weatherDescription;
-		self.templateView.place.text = [NSString subStringBeforeFirstCommaInString:observation.location[@"full"]];
+		self.templateView.place.text = [NSString wzz_subStringBeforeFirstCommaInString:observation.location[@"full"]];
 		self.templateView.windAbbreviation.text = observation.windShortAbbreviation;
 		
 		if ([observation.windSpeed floatValue] < 0.0f) {
@@ -309,7 +309,7 @@ static NSString * const kKEForecastBundle     = @"ForecastIcons.bundle";
 		}
 		
 		viewtoUpdate.currentCondition.text = observation.weatherDescription;
-		viewtoUpdate.place.text = [NSString subStringBeforeFirstCommaInString:observation.location[@"full"]];
+		viewtoUpdate.place.text = [NSString wzz_subStringBeforeFirstCommaInString:observation.location[@"full"]];
 		viewtoUpdate.windAbbreviation.text = observation.windShortAbbreviation;
 		
 		if ([observation.windSpeed floatValue] < 0.0f) {

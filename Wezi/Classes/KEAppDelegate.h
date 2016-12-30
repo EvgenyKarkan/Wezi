@@ -2,7 +2,7 @@
 //  SUAppDelegate.h
 //  Wezi
 //
-//  Created by Evgeniy Karkan on 4/26/13.
+//  Created by Evgeny Karkan on 4/26/13.
 //  Copyright (c) 2013 EvgenyKarkan. All rights reserved.
 //
 

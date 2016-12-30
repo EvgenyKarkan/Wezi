@@ -2,7 +2,7 @@
 //  main.m
 //  Wezi
 //
-//  Created by Evgeniy Karkan on 4/30/13.
+//  Created by Evgeny Karkan on 4/30/13.
 //  Copyright (c) 2013 EvgenyKarkan. All rights reserved.
 //
 

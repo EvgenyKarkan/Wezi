@@ -2,13 +2,13 @@
 //  UIView+Decorate.h
 //  Wezi
 //
-//  Created by Evgeniy Karkan on 29.06.13.
+//  Created by Evgeny Karkan on 29.06.13.
 //  Copyright (c) 2013 EvgenyKarkan. All rights reserved.
 //
 
 
 @interface UIView (Decorate)
 
-- (void)addRoundShadowWithOpacity:(double)opacity;
+- (void)wzz_addRoundShadowWithOpacity:(double)opacity;
 
 @end

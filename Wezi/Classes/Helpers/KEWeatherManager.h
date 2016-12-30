@@ -2,7 +2,7 @@
 //  KEWeatherManager.h
 //  Wezi
 //
-//  Created by Evgeniy Karkan on 4/29/13.
+//  Created by Evgeny Karkan on 4/29/13.
 //  Copyright (c) 2013 EvgenyKarkan. All rights reserved.
 //
 
@@ -12,7 +12,7 @@
 
 @interface KEWeatherManager : AFHTTPClient
 
-@property (nonatomic, copy) NSMutableDictionary *days;
+@property (nonatomic, strong) NSMutableDictionary *days;
 
 + (instancetype)sharedClient;
 - (void)getCurrentWeatherObservationForLocation:(CLLocation *)location

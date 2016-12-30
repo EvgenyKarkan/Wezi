@@ -2,7 +2,7 @@
 //  NSString+CommaSubString.m
 //  Wezi
 //
-//  Created by Evgeniy Karkan on 31.05.13.
+//  Created by Evgeny Karkan on 31.05.13.
 //  Copyright (c) 2013 EvgenyKarkan. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 @implementation NSString (CommaSubString);
 
-+ (NSString *)subStringBeforeFirstCommaInString:(NSString *)longString
++ (NSString *)wzz_subStringBeforeFirstCommaInString:(NSString *)longString
 {
     NSRange range = [longString rangeOfString:@","];
     NSString *newShortString = [longString substringToIndex:range.location];
