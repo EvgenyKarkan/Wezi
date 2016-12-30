@@ -145,6 +145,10 @@
 		DEB51ED41759267400F04539 /* NSString+CommaSubString.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB51ED31759267400F04539 /* NSString+CommaSubString.m */; };
 		DEB51ED817592D7C00F04539 /* KEFonts.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB51ED717592D7C00F04539 /* KEFonts.m */; };
 		DEB51EDB17592DAB00F04539 /* KEUIImageFactoryUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB51EDA17592DAB00F04539 /* KEUIImageFactoryUtil.m */; };
+		DEB711091E16EA66008663C8 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB711071E16EA66008663C8 /* Fabric.framework */; };
+		DEB7110A1E16EA66008663C8 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB711081E16EA66008663C8 /* Crashlytics.framework */; };
+		DEB7110C1E16EB2A008663C8 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB7110B1E16EB2A008663C8 /* libc++.tbd */; };
+		DEB7110E1E16EB9C008663C8 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB7110D1E16EB9C008663C8 /* libz.tbd */; };
 		DEB833461780925700DD9500 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB833451780925700DD9500 /* MessageUI.framework */; };
 		DEB833491780A1E300DD9500 /* KEMailProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB833481780A1E300DD9500 /* KEMailProvider.m */; };
 		DEB839AD1748D7A0005D211F /* KEDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB839AC1748D7A0005D211F /* KEDataManager.m */; };
@@ -335,6 +339,10 @@
 		DEB51ED717592D7C00F04539 /* KEFonts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEFonts.m; sourceTree = "<group>"; };
 		DEB51ED917592DAB00F04539 /* KEUIImageFactoryUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEUIImageFactoryUtil.h; sourceTree = "<group>"; usesTabs = 1; };
 		DEB51EDA17592DAB00F04539 /* KEUIImageFactoryUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEUIImageFactoryUtil.m; sourceTree = "<group>"; };
+		DEB711071E16EA66008663C8 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		DEB711081E16EA66008663C8 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		DEB7110B1E16EB2A008663C8 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		DEB7110D1E16EB9C008663C8 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		DEB833451780925700DD9500 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		DEB833471780A1E300DD9500 /* KEMailProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEMailProvider.h; sourceTree = "<group>"; };
 		DEB833481780A1E300DD9500 /* KEMailProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEMailProvider.m; sourceTree = "<group>"; };
@@ -365,14 +373,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEB7110E1E16EB9C008663C8 /* libz.tbd in Frameworks */,
+				DEB7110C1E16EB2A008663C8 /* libc++.tbd in Frameworks */,
 				DE52E4FE17BA5B3F009E7E1B /* Security.framework in Frameworks */,
 				CE7C0F0F172FC08600E4A8AC /* SystemConfiguration.framework in Frameworks */,
 				DE9D441F179728700017A6D5 /* Social.framework in Frameworks */,
 				DEB833461780925700DD9500 /* MessageUI.framework in Frameworks */,
 				DEDCDCE11748001100D957EC /* CoreData.framework in Frameworks */,
 				CE7F06BE173A7F5000697A98 /* MapKit.framework in Frameworks */,
+				DEB7110A1E16EA66008663C8 /* Crashlytics.framework in Frameworks */,
 				CE7C0F0D172FC07600E4A8AC /* MobileCoreServices.framework in Frameworks */,
 				CE7C0F0B172FC05300E4A8AC /* CoreLocation.framework in Frameworks */,
+				DEB711091E16EA66008663C8 /* Fabric.framework in Frameworks */,
 				CE7C0F09172FC04B00E4A8AC /* QuartzCore.framework in Frameworks */,
 				CE7C0EA3172FBE4B00E4A8AC /* UIKit.framework in Frameworks */,
 				CE7C0EA5172FBE4B00E4A8AC /* Foundation.framework in Frameworks */,
@@ -430,6 +442,10 @@
 		CE7C0EA1172FBE4B00E4A8AC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DEB7110D1E16EB9C008663C8 /* libz.tbd */,
+				DEB7110B1E16EB2A008663C8 /* libc++.tbd */,
+				DEB711071E16EA66008663C8 /* Fabric.framework */,
+				DEB711081E16EA66008663C8 /* Crashlytics.framework */,
 				DED37E8517C6276C00200F09 /* AdSupport.framework */,
 				DE52E4FD17BA5B3F009E7E1B /* Security.framework */,
 				DE9D441E179728700017A6D5 /* Social.framework */,
@@ -789,6 +805,7 @@
 				CE7C0E9B172FBE4B00E4A8AC /* Sources */,
 				CE7C0E9C172FBE4B00E4A8AC /* Frameworks */,
 				CE7C0E9D172FBE4B00E4A8AC /* Resources */,
+				DEB711061E16EA1A008663C8 /* Fabric/Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -938,6 +955,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DEB711061E16EA1A008663C8 /* Fabric/Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Fabric/Crashlytics;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"$CONFIGURATION\" != \"Debug\" ]; then\n    ./Fabric.framework/run 4760756e56b00e661fdfca38443023c06fd79797 2a108c89744d2e3d74bec86ddbea4b924ecf0289c3ff3c6ca0ca5f4e759471ee\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CE7C0E9B172FBE4B00E4A8AC /* Sources */ = {
@@ -1090,6 +1124,10 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: Yevgeniy Karkan (3YZNAVUC8R)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wezi/Wezi-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
@@ -1112,6 +1150,10 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: Yevgeniy Karkan (3YZNAVUC8R)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wezi/Wezi-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (

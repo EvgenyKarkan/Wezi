@@ -10,6 +10,8 @@
 #import "AFHTTPClient.h"
 #import "KEDataManager.h"
 #import "KEReachabilityUtil.h"
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 
 
 static NSString * const kKEToolBar = @"toolbar.png";
@@ -26,6 +28,8 @@ static NSString * const kKERefresh = @"RefreshCurrentLocation";
     
     [[KEReachabilityUtil sharedUtil] checkInternetConnectionWithNotification];
     
+    [Fabric with:@[[Crashlytics class]]];
+
     return YES;
 }
 

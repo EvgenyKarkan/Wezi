@@ -39,10 +39,26 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1.0.0</string>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>4760756e56b00e661fdfca38443023c06fd79797</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict/>
+				<key>KitName</key>
+				<string>Crashlytics</string>
+			</dict>
+		</array>
+	</dict>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.weather</string>
 	<key>LSRequiresIPhoneOS</key>
 	<false/>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Wezi wants to use your current location</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>PlutoSansHeavy.otf</string>
@@ -64,7 +80,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Wezi wants to use your current location</string>
 </dict>
 </plist>
