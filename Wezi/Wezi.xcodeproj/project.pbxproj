@@ -61,12 +61,6 @@
 		DE286B2F1781C96300F00DA2 /* Icons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE286B2E1781C96300F00DA2 /* Icons.bundle */; };
 		DE320E3F17D153F000A11649 /* ITunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = DE320E3E17D153F000A11649 /* ITunesArtwork */; };
 		DE320E4117D153FF00A11649 /* ITunesArtwork@2x in Resources */ = {isa = PBXBuildFile; fileRef = DE320E4017D153FF00A11649 /* ITunesArtwork@2x */; };
-		DE320E4617D155AD00A11649 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = DE320E4217D155AD00A11649 /* Icon-Small.png */; };
-		DE320E4717D155AD00A11649 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE320E4317D155AD00A11649 /* Icon-Small@2x.png */; };
-		DE320E4817D155AD00A11649 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = DE320E4417D155AD00A11649 /* Icon-Small-50.png */; };
-		DE320E4917D155AD00A11649 /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE320E4517D155AD00A11649 /* Icon-Small-50@2x.png */; };
-		DE320E4F17D15BFF00A11649 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = DE320E4E17D15BFA00A11649 /* Icon-72.png */; };
-		DE320E5117D15C1000A11649 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE320E5017D15C0F00A11649 /* Icon-72@2x.png */; };
 		DE40AD9E177EF50E0080C64E /* UIView+Decorate.m in Sources */ = {isa = PBXBuildFile; fileRef = DE40AD9D177EF50E0080C64E /* UIView+Decorate.m */; };
 		DE40ADC4177F29D30080C64E /* KEDecoratorUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DE40ADC3177F29D30080C64E /* KEDecoratorUtil.m */; };
 		DE40AE05177F463E0080C64E /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = DE40ADD7177F463E0080C64E /* background.png */; };
@@ -109,6 +103,7 @@
 		DE40AE2A177F463E0080C64E /* trash_button_click@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE40ADFD177F463E0080C64E /* trash_button_click@2x.png */; };
 		DE40AE2B177F463E0080C64E /* wezi_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = DE40ADFF177F463E0080C64E /* wezi_logo.png */; };
 		DE40AE2C177F463E0080C64E /* wezi_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE40AE00177F463E0080C64E /* wezi_logo@2x.png */; };
+		DE46186A1E1D918C00A79539 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE4618691E1D918C00A79539 /* Media.xcassets */; };
 		DE52E39617B96343009E7E1B /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = DE52E39517B96343009E7E1B /* Default-Landscape~ipad.png */; };
 		DE52E39817B96350009E7E1B /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = DE52E39717B96350009E7E1B /* Default-Landscape@2x~ipad.png */; };
 		DE52E3AE17B964C0009E7E1B /* sad_sun.png in Resources */ = {isa = PBXBuildFile; fileRef = DE52E39A17B964C0009E7E1B /* sad_sun.png */; };
@@ -246,12 +241,6 @@
 		DE286B2E1781C96300F00DA2 /* Icons.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Icons.bundle; sourceTree = "<group>"; };
 		DE320E3E17D153F000A11649 /* ITunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = ITunesArtwork; sourceTree = "<group>"; };
 		DE320E4017D153FF00A11649 /* ITunesArtwork@2x */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ITunesArtwork@2x"; sourceTree = "<group>"; };
-		DE320E4217D155AD00A11649 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
-		DE320E4317D155AD00A11649 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
-		DE320E4417D155AD00A11649 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
-		DE320E4517D155AD00A11649 /* Icon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50@2x.png"; sourceTree = "<group>"; };
-		DE320E4E17D15BFA00A11649 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
-		DE320E5017D15C0F00A11649 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
 		DE40AD9C177EF50E0080C64E /* UIView+Decorate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Decorate.h"; sourceTree = "<group>"; };
 		DE40AD9D177EF50E0080C64E /* UIView+Decorate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Decorate.m"; sourceTree = "<group>"; };
 		DE40ADC2177F29D30080C64E /* KEDecoratorUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEDecoratorUtil.h; sourceTree = "<group>"; };
@@ -296,6 +285,7 @@
 		DE40ADFD177F463E0080C64E /* trash_button_click@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trash_button_click@2x.png"; sourceTree = "<group>"; };
 		DE40ADFF177F463E0080C64E /* wezi_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wezi_logo.png; sourceTree = "<group>"; };
 		DE40AE00177F463E0080C64E /* wezi_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wezi_logo@2x.png"; sourceTree = "<group>"; };
+		DE4618691E1D918C00A79539 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		DE52E39517B96343009E7E1B /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		DE52E39717B96350009E7E1B /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
 		DE52E39A17B964C0009E7E1B /* sad_sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sad_sun.png; sourceTree = "<group>"; };
@@ -619,6 +609,7 @@
 				DE40ADD6177F463E0080C64E /* backgrounds */,
 				DE40ADE5177F463E0080C64E /* buttons_bars */,
 				DE40ADFE177F463E0080C64E /* logos */,
+				DE4618691E1D918C00A79539 /* Media.xcassets */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -741,12 +732,6 @@
 		DE9D44151797227D0017A6D5 /* app_icons */ = {
 			isa = PBXGroup;
 			children = (
-				DE320E5017D15C0F00A11649 /* Icon-72@2x.png */,
-				DE320E4E17D15BFA00A11649 /* Icon-72.png */,
-				DE320E4217D155AD00A11649 /* Icon-Small.png */,
-				DE320E4317D155AD00A11649 /* Icon-Small@2x.png */,
-				DE320E4417D155AD00A11649 /* Icon-Small-50.png */,
-				DE320E4517D155AD00A11649 /* Icon-Small-50@2x.png */,
 				DE320E3E17D153F000A11649 /* ITunesArtwork */,
 				DE320E4017D153FF00A11649 /* ITunesArtwork@2x */,
 			);
@@ -921,6 +906,7 @@
 				DE52E3AF17B964C0009E7E1B /* sad_sun@2x.png in Resources */,
 				DE52E3B017B964C0009E7E1B /* Bug-report.png in Resources */,
 				DE52E3B117B964C0009E7E1B /* Bug-report@2x.png in Resources */,
+				DE46186A1E1D918C00A79539 /* Media.xcassets in Resources */,
 				DE52E3B217B964C0009E7E1B /* Bug-report_pressed.png in Resources */,
 				DE52E3B317B964C0009E7E1B /* Bug-report_pressed@2x.png in Resources */,
 				DE52E3B417B964C0009E7E1B /* email.png in Resources */,
@@ -939,12 +925,6 @@
 				DE52E3C717BA4D95009E7E1B /* Share_bg@2x.png in Resources */,
 				DE320E3F17D153F000A11649 /* ITunesArtwork in Resources */,
 				DE320E4117D153FF00A11649 /* ITunesArtwork@2x in Resources */,
-				DE320E4617D155AD00A11649 /* Icon-Small.png in Resources */,
-				DE320E4717D155AD00A11649 /* Icon-Small@2x.png in Resources */,
-				DE320E4817D155AD00A11649 /* Icon-Small-50.png in Resources */,
-				DE320E4917D155AD00A11649 /* Icon-Small-50@2x.png in Resources */,
-				DE320E4F17D15BFF00A11649 /* Icon-72.png in Resources */,
-				DE320E5117D15C1000A11649 /* Icon-72@2x.png in Resources */,
 				DE6F191F17D9135C0013DA88 /* ForecastIcons.bundle in Resources */,
 				DE6F192517D91B170013DA88 /* barometr_icon.png in Resources */,
 				DE6F192617D91B170013DA88 /* compas_icon.png in Resources */,
@@ -1122,6 +1102,7 @@
 		CE7C0EC3172FBE4C00E4A8AC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Yevgeniy Karkan (3YZNAVUC8R)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1148,8 +1129,9 @@
 		CE7C0EC4172FBE4C00E4A8AC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Yevgeniy Karkan (3YZNAVUC8R)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Yevgeniy Karkan (7VW32GE5L3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Yevgeniy Karkan (7VW32GE5L3)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1170,8 +1152,8 @@
 				OTHER_CFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.evgenykarkan.wezi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2d47f155-df41-46d0-a029-5209c24108c9";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9C49AA28-1459-45ED-84BB-6F288635FEFA";
+				PROVISIONING_PROFILE = "3653d47b-213a-4ec7-9640-183b7c6c3a39";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "3653d47b-213a-4ec7-9640-183b7c6c3a39";
 				WARNING_CFLAGS = "";
 				WRAPPER_EXTENSION = app;
 			};
